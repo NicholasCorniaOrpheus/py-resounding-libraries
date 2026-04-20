@@ -1,0 +1,28 @@
+[
+	{
+		"field_name": "language",
+		"replace_code_key": "",
+		"mapping_path": "./data/mappings/abbreviations/languages.json"
+	},
+	{
+		"field_name": "main_author",
+		"replace_code_key": "relation",
+		"mapping_path": "./data/mappings/abbreviations/author_relations.json"
+	},
+	{
+		"field_name": "contributors",
+		"replace_code_key": "relation",
+		"mapping_path": "./data/mappings/abbreviations/author_relations.json"
+	},
+	{
+		"field_name": "instrumentation",
+		"replace_code_key": "",
+		"mapping_path": "./data/mappings/abbreviations/musical_instruments.json"
+	},
+	{
+		"field_name": "material_type",
+		"replace_code_key": "",
+		"mapping_path": "./data/mappings/abbreviations/item_types.json"
+	}
+
+]

@@ -5,5 +5,5 @@ Python package from Resounding Libraries research cluster
 """
 
 __version__ = "0.1.0"
-__author__ = "Nicholas"
+__author__ = "Nicholas Cornia"
 __credits__ = "Orpheus Instituut"

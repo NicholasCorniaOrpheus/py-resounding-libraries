@@ -1,0 +1,176 @@
+[
+    {
+      "label": "Gallica",
+      "code": "",
+      "base_url": ["https://gallica.bnf.fr"]
+    },
+    {
+      "label": "International Music Score Library Project",
+      "code": "IMSLP",
+      "base_url": [
+        "https://imslp.org","https://s9.imslp.org",
+        "https://ks.imslp.net"
+      ]
+    },
+    {
+      "label": "Google Books",
+      "code": "",
+      "base_url": [
+        "https://books.google.be",
+        "https://books.google.fm",
+        "https://books.google.de",
+        "https://books.google.it",
+        "https://books.google.ca",
+        "https://books.google.mu",
+        "https://books.googleusercontent.com"
+        ]
+    },
+  
+    {
+      "label": "Project Gutenberg",
+      "code": "",
+      "base_url": [
+        "https://www.gutenberg.org"
+      ]
+    },
+    {
+      "label": "Internet Archive",
+      "code": "",
+      "base_url": [
+        "https://archive.org"
+      ]
+    },
+    {
+      "label": "Bavarian State Library",
+      "code": "MDZ",
+      "base_url": [
+        "www.mdz-nbn-resolving.de",
+        "https://reader.digitale-sammlungen.de",
+        "https://bildsuche.digitale-sammlungen.de",
+        "https://daten.digitale-sammlungen.de",
+        "https://api.digitale-sammlungen.de",
+        "https://www.digitale-sammlungen.de"
+      ]
+    },
+    {
+      "label": "University of Michigan Library",
+      "code": "",
+      "base_url": ["https://quod.lib.umich.edu"]
+    },
+    {
+      "label": "University of Li\u00e8ge",
+      "code": "DONum",
+      "base_url": ["https://donum.uliege.be"]
+    },
+    {
+      "label": "Royal Library of Belgium",
+      "code": "KBR",
+      "base_url": ["https://opac.kbr.be"]
+    },
+    {
+      "label": "Orpheus Instituut - Shared Canvas viewer",
+      "code": "",
+      "base_url": ["https://uv-v4.netlify.app"]
+    },
+    {
+      "label": "Orpheus Instituut - Shared Canvas manifest",
+      "code": "",
+      "base_url": ["https://sharedcanvas.be"]
+    },
+    {
+      "label": "Orpheus Instituut - Koopman Digital",
+      "code": "",
+      "base_url": ["https://drive.google.com"]
+    },
+    {
+      "label": "University of Utrecht",
+      "code": "",
+      "base_url": ["objects.library.uu.nl"]
+    },
+    {
+      "label": "Open Data University of Halle",
+      "code": "",
+      "base_url": ["https://opendata.uni-halle.de"]
+    },
+    {
+      "label": "Digital Library for Dutch Literature (DBNL)",
+      "code": "DBNL",
+      "base_url": ["https://www.dbnl.org"]
+    },
+    {
+      "label": "Library of Congress",
+      "code": "",
+      "base_url": ["https://www.loc.gov"]
+    },
+    {
+      "label": "University of Leiden",
+      "code": "",
+      "base_url": ["https://www.let.leidenuniv.nl"]
+    },
+    {
+      "label": "Municipality of Gen\u00e8ve",
+      "code": "Musinfo",
+      "base_url": ["http://www.ville-ge.ch"]
+    },
+
+    {
+      "label": "National Library of the Netherlands",
+      "code": "KB",
+      "base_url": ["https://geheugen.delpher.nl"]
+    },
+    {
+      "label": "Wikisource",
+      "code": "",
+      "base_url": ["https://nl.wikisource.org"]
+    },
+    {
+      "label": "University Library Heidelberg",
+      "code": "",
+      "base_url": ["https://digi.ub.uni-heidelberg.de"]
+    },
+    {
+      "label": "Universiteitsbibliotheek UGent",
+      "code": "",
+      "base_url": ["https://lib.ugent.be"]
+    },
+    {
+      "label": "Institut National d'Histoire de l'Art",
+      "code": "INHA",
+      "base_url": ["https://bibliotheque-numerique.inha.fr"]
+    },
+    {
+      "label": "Hathi Trust",
+      "code": "",
+      "base_url": ["https://babel.hathitrust.org"]
+    },
+    {
+      "label": "Saxon State and University Library, Dresden",
+      "code": "SLUB",
+      "base_url": ["https://digital.slub-dresden.de"]
+    },
+    {
+      "label": "Lester S. Levy Collection of Sheet Music",
+      "code": "",
+      "base_url": ["https://levysheetmusic.mse.jhu.edu"]
+    },
+    {
+      "label": "Numelyo",
+      "code": "",
+      "base_url": ["https://numelyo.bm-lyon.fr"]
+    },
+    {
+      "label": "National Library of the Netherlands",
+      "code": "KB",
+      "base_url": ["https://www.delpher.nl"]
+    },
+    {
+      "label": "Biblioteca Digital Hisp\u00e1nica",
+      "code": "BDH",
+      "base_url": ["http://bdh-rd.bne.es"]
+    },
+    {
+      "label": "University of Amsterdam",
+      "code": "UVA",
+      "base_url": ["https://cf.hum.uva.nl"]
+    }
+]

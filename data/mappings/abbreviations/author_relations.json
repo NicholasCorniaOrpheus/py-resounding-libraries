@@ -1,0 +1,1796 @@
+[
+    {
+      "label": "expert",
+      "code": "exp",
+      "wd_label": "expert",
+      "wd_qid": "Q381160"
+    },
+    {
+      "label": "Abridger",
+      "code": "abr",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "actor",
+      "code": "act",
+      "wd_label": "actor",
+      "wd_qid": "Q33999"
+    },
+    {
+      "label": "adapter",
+      "code": "adp",
+      "wd_label": "adapter",
+      "wd_qid": "Q61875042"
+    },
+    {
+      "label": "Addressee",
+      "code": "rcp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "analyst",
+      "code": "anl",
+      "wd_label": "analyst",
+      "wd_qid": "Q485178"
+    },
+    {
+      "label": "animator",
+      "code": "anm",
+      "wd_label": "animator",
+      "wd_qid": "Q266569"
+    },
+    {
+      "label": "annotator",
+      "code": "ann",
+      "wd_label": "annotator",
+      "wd_qid": "Q105842399"
+    },
+    {
+      "label": "announcer",
+      "code": "anc",
+      "wd_label": "announcer",
+      "wd_qid": "Q1371925"
+    },
+    {
+      "label": "Appellant",
+      "code": "apl",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Appellee",
+      "code": "ape",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Applicant",
+      "code": "app",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "architect",
+      "code": "arc",
+      "wd_label": "architect",
+      "wd_qid": "Q42973"
+    },
+    {
+      "label": "music arranger",
+      "code": "arr",
+      "wd_label": "music arranger",
+      "wd_qid": "Q1643514"
+    },
+    {
+      "label": "Art copyist",
+      "code": "acp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Art director",
+      "code": "adi",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "artist",
+      "code": "art",
+      "wd_label": "artist",
+      "wd_qid": "Q483501"
+    },
+    {
+      "label": "artistic director",
+      "code": "ard",
+      "wd_label": "artistic director",
+      "wd_qid": "Q1797162"
+    },
+    {
+      "label": "Assignee",
+      "code": "asg",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Associated name",
+      "code": "asn",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Attributed name",
+      "code": "att",
+      "wd_label": "attribution",
+      "wd_qid": "Q230768"
+    },
+    {
+      "label": "auctioneer",
+      "code": "auc",
+      "wd_label": "auctioneer",
+      "wd_qid": "Q2743689"
+    },
+    {
+      "label": "audio engineer",
+      "code": "aue",
+      "wd_label": "audio engineer",
+      "wd_qid": "Q128124"
+    },
+    {
+      "label": "Audio producer",
+      "code": "aup",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "author",
+      "code": "aut",
+      "wd_label": "author",
+      "wd_qid": "Q482980"
+    },
+    {
+      "label": "Author in quotations or text abstracts",
+      "code": "aqt",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Author of afterword, colophon, etc.",
+      "code": "aft",
+      "wd_label": "author of afterword",
+      "wd_qid": "Q230768"
+    },
+    {
+      "label": "Author of dialog",
+      "code": "aud",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Author of introduction, etc.",
+      "code": "aui",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Autographer",
+      "code": "ato",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Bibliographic antecedent",
+      "code": "ant",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "bookbinder",
+      "code": "bnd",
+      "wd_label": "bookbinder",
+      "wd_qid": "Q1413170"
+    },
+    {
+      "label": "book binding designer",
+      "code": "bdd",
+      "wd_label": "book binding designer",
+      "wd_qid": "Q2496261"
+    },
+    {
+      "label": "Blurb writer",
+      "code": "blw",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "book artist",
+      "code": "bka",
+      "wd_label": "book artist",
+      "wd_qid": "Q56884373"
+    },
+    {
+      "label": "book designer",
+      "code": "bkd",
+      "wd_label": "book designer",
+      "wd_qid": "Q28933278"
+    },
+    {
+      "label": "Book producer",
+      "code": "bkp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Bookjacket designer",
+      "code": "bjd",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Bookplate designer",
+      "code": "bpd",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "bookseller",
+      "code": "bsl",
+      "wd_label": "bookseller",
+      "wd_qid": "Q998550"
+    },
+    {
+      "label": "Braille embosser",
+      "code": "brl",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "broadcaster",
+      "code": "brd",
+      "wd_label": "broadcaster",
+      "wd_qid": "Q15958754"
+    },
+    {
+      "label": "calligrapher",
+      "code": "cll",
+      "wd_label": "calligrapher",
+      "wd_qid": "Q3303330"
+    },
+    {
+      "label": "camera operator",
+      "code": "cop",
+      "wd_label": "camera operator",
+      "wd_qid": "Q1208175"
+    },
+    {
+      "label": "cartographer",
+      "code": "ctg",
+      "wd_label": "cartographer",
+      "wd_qid": "Q1734662"
+    },
+    {
+      "label": "caster",
+      "code": "cas",
+      "wd_label": "caster",
+      "wd_qid": "Q47004910"
+    },
+    {
+      "label": "casting director",
+      "code": "cad",
+      "wd_label": "casting director",
+      "wd_qid": "Q1049296"
+    },
+    {
+      "label": "censor",
+      "code": "cns",
+      "wd_label": "censor",
+      "wd_qid": "Q12377291"
+    },
+    {
+      "label": "choreographer",
+      "code": "chr",
+      "wd_label": "choreographer",
+      "wd_qid": "Q2490358"
+    },
+    {
+      "label": "cinematographer",
+      "code": "cng",
+      "wd_label": "cinematographer",
+      "wd_qid": "Q222344"
+    },
+    {
+      "label": "client",
+      "code": "cli",
+      "wd_label": "client",
+      "wd_qid": "Q108325200"
+    },
+    {
+      "label": "museum registrar",
+      "code": "cor",
+      "wd_label": "museum registrar",
+      "wd_qid": "Q3931989"
+    },
+    {
+      "label": "collector",
+      "code": "col",
+      "wd_label": "collector",
+      "wd_qid": "Q3243461"
+    },
+    {
+      "label": "Collotyper",
+      "code": "clt",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "colorist",
+      "code": "clr",
+      "wd_label": "colorist",
+      "wd_qid": "Q1111648"
+    },
+    {
+      "label": "commentator",
+      "code": "cmm",
+      "wd_label": "commentator",
+      "wd_qid": "Q106313281"
+    },
+    {
+      "label": "Commentator for written text",
+      "code": "cwt",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "compiler",
+      "code": "com",
+      "wd_label": "compiler",
+      "wd_qid": "Q29514511"
+    },
+    {
+      "label": "Complainant",
+      "code": "cpl",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Complainant-appellant",
+      "code": "cpt",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Complainant-appellee",
+      "code": "cpe",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "composer",
+      "code": "cmp",
+      "wd_label": "composer",
+      "wd_qid": "Q36834"
+    },
+    {
+      "label": "Compositor",
+      "code": "cmt",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Conceptor",
+      "code": "ccp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "conductor",
+      "code": "cnd",
+      "wd_label": "conductor",
+      "wd_qid": "Q158852"
+    },
+    {
+      "label": "Conservator",
+      "code": "con",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "consultant",
+      "code": "csl",
+      "wd_label": "consultant",
+      "wd_qid": "Q15978655"
+    },
+    {
+      "label": "Consultant to a project",
+      "code": "csp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Contestant",
+      "code": "cos",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Contestant-appellant",
+      "code": "cot",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Contestant-appellee",
+      "code": "coe",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Contestee",
+      "code": "cts",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Contestee-appellant",
+      "code": "ctt",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Contestee-appellee",
+      "code": "cte",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "building contractor",
+      "code": "ctr",
+      "wd_label": "building contractor",
+      "wd_qid": "Q63755054"
+    },
+    {
+      "label": "contributor",
+      "code": "ctb",
+      "wd_label": "contributor",
+      "wd_qid": "Q20204892"
+    },
+    {
+      "label": "Copyright claimant",
+      "code": "cpc",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "copyright holder",
+      "code": "cph",
+      "wd_label": "copyright holder",
+      "wd_qid": "Q29014674"
+    },
+    {
+      "label": "corrector",
+      "code": "crr",
+      "wd_label": "corrector",
+      "wd_qid": "Q539371"
+    },
+    {
+      "label": "correspondent",
+      "code": "crp",
+      "wd_label": "correspondent",
+      "wd_qid": "Q3589290"
+    },
+    {
+      "label": "costume designer",
+      "code": "cst",
+      "wd_label": "costume designer",
+      "wd_qid": "Q1323191"
+    },
+    {
+      "label": "Court governed",
+      "code": "cou",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "court reporter",
+      "code": "crt",
+      "wd_label": "court reporter",
+      "wd_qid": "Q15812002"
+    },
+    {
+      "label": "cover artist",
+      "code": "cov",
+      "wd_label": "cover artist",
+      "wd_qid": "Q27472738"
+    },
+    {
+      "label": "creator",
+      "code": "cre",
+      "wd_label": "creator",
+      "wd_qid": "Q2500638"
+    },
+    {
+      "label": "curator",
+      "code": "cur",
+      "wd_label": "curator",
+      "wd_qid": "Q674426"
+    },
+    {
+      "label": "dancer",
+      "code": "dnc",
+      "wd_label": "dancer",
+      "wd_qid": "Q5716684"
+    },
+    {
+      "label": "data entry clerk",
+      "code": "dtc",
+      "wd_label": "data entry clerk",
+      "wd_qid": "Q918751"
+    },
+    {
+      "label": "data manager",
+      "code": "dtm",
+      "wd_label": "data manager",
+      "wd_qid": "Q48357783"
+    },
+    {
+      "label": "dedicatee",
+      "code": "dte",
+      "wd_label": "dedicatee",
+      "wd_qid": "Q28008298"
+    },
+    {
+      "label": "Dedicator",
+      "code": "dto",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Defendant",
+      "code": "dfd",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Defendant-appellant",
+      "code": "dft",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Defendant-appellee",
+      "code": "dfe",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Degree committee member",
+      "code": "dgc",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Degree granting institution",
+      "code": "dgg",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Degree supervisor",
+      "code": "dgs",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "drawer",
+      "code": "dln",
+      "wd_label": "drawer",
+      "wd_qid": "Q15296811"
+    },
+    {
+      "label": "Depicted",
+      "code": "dpc",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Depositor",
+      "code": "dpt",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "designer",
+      "code": "dsr",
+      "wd_label": "designer",
+      "wd_qid": "Q5322166"
+    },
+    {
+      "label": "director",
+      "code": "drt",
+      "wd_label": "director",
+      "wd_qid": "Q1162163"
+    },
+    {
+      "label": "Dissertant",
+      "code": "dis",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Distribution place",
+      "code": "dbp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "authorized dealer",
+      "code": "dst",
+      "wd_label": "authorized dealer",
+      "wd_qid": "Q328365"
+    },
+    {
+      "label": "disc jockey",
+      "code": "djo",
+      "wd_label": "disc jockey",
+      "wd_qid": "Q130857"
+    },
+    {
+      "label": "donor",
+      "code": "dnr",
+      "wd_label": "donor",
+      "wd_qid": "Q1968442"
+    },
+    {
+      "label": "drafter",
+      "code": "drm",
+      "wd_label": "drafter",
+      "wd_qid": "Q683754"
+    },
+    {
+      "label": "dub director",
+      "code": "dbd",
+      "wd_label": "dub director",
+      "wd_qid": "Q1298794"
+    },
+    {
+      "label": "dubious author",
+      "code": "dub",
+      "wd_label": "dubious author",
+      "wd_qid": "Q126392278"
+    },
+    {
+      "label": "editor",
+      "code": "edt",
+      "wd_label": "editor",
+      "wd_qid": "Q1607826"
+    },
+    {
+      "label": "Editor of compilation",
+      "code": "edc",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Editor of moving image work",
+      "code": "edm",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "editorial director",
+      "code": "edd",
+      "wd_label": "editorial director",
+      "wd_qid": "Q109827921"
+    },
+    {
+      "label": "electrician",
+      "code": "elg",
+      "wd_label": "electrician",
+      "wd_qid": "Q165029"
+    },
+    {
+      "label": "electrotyper",
+      "code": "elt",
+      "wd_label": "electrotyper",
+      "wd_qid": "Q124314308"
+    },
+    {
+      "label": "Enacting jurisdiction",
+      "code": "enj",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "engineer",
+      "code": "eng",
+      "wd_label": "engineer",
+      "wd_qid": "Q81096"
+    },
+    {
+      "label": "engraver",
+      "code": "egr",
+      "wd_label": "engraver",
+      "wd_qid": "Q329439"
+    },
+    {
+      "label": "etcher",
+      "code": "etr",
+      "wd_label": "etcher",
+      "wd_qid": "Q10862983"
+    },
+    {
+      "label": "Event place",
+      "code": "evp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "color commentator",
+      "code": "exp",
+      "wd_label": "color commentator",
+      "wd_qid": "Q3276037"
+    },
+    {
+      "label": "Facsimilist",
+      "code": "fac",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Field director",
+      "code": "fld",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "film director",
+      "code": "fmd",
+      "wd_label": "film director",
+      "wd_qid": "Q2526255"
+    },
+    {
+      "label": "film distributor",
+      "code": "fds",
+      "wd_label": "film distributor",
+      "wd_qid": "Q58623063"
+    },
+    {
+      "label": "film editor",
+      "code": "flm",
+      "wd_label": "film editor",
+      "wd_qid": "Q7042855"
+    },
+    {
+      "label": "film producer",
+      "code": "fmp",
+      "wd_label": "film producer",
+      "wd_qid": "Q3282637"
+    },
+    {
+      "label": "filmmaker",
+      "code": "fmk",
+      "wd_label": "filmmaker",
+      "wd_qid": "Q1414443"
+    },
+    {
+      "label": "First party",
+      "code": "fpy",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "counterfeiter",
+      "code": "frg",
+      "wd_label": "counterfeiter",
+      "wd_qid": "Q3738757"
+    },
+    {
+      "label": "Former owner",
+      "code": "fmo",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "bell founder",
+      "code": "fon",
+      "wd_label": "bell founder",
+      "wd_qid": "Q12031226"
+    },
+    {
+      "label": "Funder",
+      "code": "fnd",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "video game developer",
+      "code": "gdv",
+      "wd_label": "video game developer",
+      "wd_qid": "Q58287519"
+    },
+    {
+      "label": "Geographic information specialist",
+      "code": "gis",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Honoree",
+      "code": "hnr",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Host",
+      "code": "hst",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Host institution",
+      "code": "his",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "illuminator",
+      "code": "ilu",
+      "wd_label": "illuminator",
+      "wd_qid": "Q998628"
+    },
+    {
+      "label": "illustrator",
+      "code": "ill",
+      "wd_label": "illustrator",
+      "wd_qid": "Q644687"
+    },
+    {
+      "label": "Inscriber",
+      "code": "ins",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "instrumentalist",
+      "code": "itr",
+      "wd_label": "instrumentalist",
+      "wd_qid": "Q1278335"
+    },
+    {
+      "label": "Interviewee",
+      "code": "ive",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "interviewer",
+      "code": "ivr",
+      "wd_label": "interviewer",
+      "wd_qid": "Q46034607"
+    },
+    {
+      "label": "inventor",
+      "code": "inv",
+      "wd_label": "inventor",
+      "wd_qid": "Q205375"
+    },
+    {
+      "label": "Issuing body",
+      "code": "isb",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "judge",
+      "code": "jud",
+      "wd_label": "judge",
+      "wd_qid": "Q16533"
+    },
+    {
+      "label": "Jurisdiction governed",
+      "code": "jug",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Laboratory",
+      "code": "lbr",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "laboratory director",
+      "code": "ldr",
+      "wd_label": "laboratory director",
+      "wd_qid": "Q87770683"
+    },
+    {
+      "label": "landscape architect",
+      "code": "lsa",
+      "wd_label": "landscape architect",
+      "wd_qid": "Q2815948"
+    },
+    {
+      "label": "Lead",
+      "code": "led",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Lender",
+      "code": "len",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Libelant",
+      "code": "lil",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Libelant-appellant",
+      "code": "lit",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Libelant-appellee",
+      "code": "lie",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Libelee",
+      "code": "lel",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Libelee-appellant",
+      "code": "let",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Libelee-appellee",
+      "code": "lee",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "librettist",
+      "code": "lbt",
+      "wd_label": "librettist",
+      "wd_qid": "Q8178443"
+    },
+    {
+      "label": "Licensee",
+      "code": "lse",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Licensor",
+      "code": "lso",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "lighting designer",
+      "code": "lgd",
+      "wd_label": "lighting designer",
+      "wd_qid": "Q1823479"
+    },
+    {
+      "label": "lithographer",
+      "code": "ltg",
+      "wd_label": "lithographer",
+      "wd_qid": "Q16947657"
+    },
+    {
+      "label": "lyricist",
+      "code": "lyr",
+      "wd_label": "lyricist",
+      "wd_qid": "Q822146"
+    },
+    {
+      "label": "Makeup artist",
+      "code": "mka",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Manufacture place",
+      "code": "mfp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "manufacturer",
+      "code": "mfr",
+      "wd_label": "manufacturer",
+      "wd_qid": "Q13235160"
+    },
+    {
+      "label": "Marbler",
+      "code": "mrb",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Markup editor",
+      "code": "mrk",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Medium",
+      "code": "med",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Metadata contact",
+      "code": "mdc",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "metal engraver",
+      "code": "mte",
+      "wd_label": "metal engraver",
+      "wd_qid": "Q114049711"
+    },
+    {
+      "label": "Minute taker",
+      "code": "mtk",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "mixing engineer",
+      "code": "mxe",
+      "wd_label": "mixing engineer",
+      "wd_qid": "Q6884071"
+    },
+    {
+      "label": "discussion moderator",
+      "code": "mod",
+      "wd_label": "discussion moderator",
+      "wd_qid": "Q16961937"
+    },
+    {
+      "label": "monitor",
+      "code": "mon",
+      "wd_label": "monitor",
+      "wd_qid": "Q120929613"
+    },
+    {
+      "label": "music typesetter",
+      "code": "mcp",
+      "wd_label": "music typesetter",
+      "wd_qid": "Q100605727"
+    },
+    {
+      "label": "music programmer",
+      "code": "mup",
+      "wd_label": "music programmer",
+      "wd_qid": "Q57999368"
+    },
+    {
+      "label": "music director",
+      "code": "msd",
+      "wd_label": "music director",
+      "wd_qid": "Q1198887"
+    },
+    {
+      "label": "musician",
+      "code": "mus",
+      "wd_label": "musician",
+      "wd_qid": "Q639669"
+    },
+    {
+      "label": "narrator",
+      "code": "nrt",
+      "wd_label": "narrator",
+      "wd_qid": "Q755070"
+    },
+    {
+      "label": "news presenter",
+      "code": "nan",
+      "wd_label": "news presenter",
+      "wd_qid": "Q270389"
+    },
+    {
+      "label": "Onscreen participant",
+      "code": "onp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Onscreen presenter",
+      "code": "osp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "opponent",
+      "code": "opn",
+      "wd_label": "opponent",
+      "wd_qid": "Q2027160"
+    },
+    {
+      "label": "Organizer",
+      "code": "orm",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Originator",
+      "code": "org",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Other",
+      "code": "oth",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "possessor",
+      "code": "own",
+      "wd_label": "possessor",
+      "wd_qid": "Q18574339"
+    },
+    {
+      "label": "Panelist",
+      "code": "pan",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "papermaker",
+      "code": "ppm",
+      "wd_label": "papermaker",
+      "wd_qid": "Q3362826"
+    },
+    {
+      "label": "Patent applicant",
+      "code": "pta",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Patent holder",
+      "code": "pth",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "patron of the arts",
+      "code": "pat",
+      "wd_label": "patron of the arts",
+      "wd_qid": "Q15472169"
+    },
+    {
+      "label": "performing artist",
+      "code": "prf",
+      "wd_label": "performing artist",
+      "wd_qid": "Q713200"
+    },
+    {
+      "label": "Permitting agency",
+      "code": "pma",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "professional photographer",
+      "code": "pht",
+      "wd_label": "professional photographer",
+      "wd_qid": "Q98084799"
+    },
+    {
+      "label": "Place of address",
+      "code": "pad",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Plaintiff",
+      "code": "ptf",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Plaintiff-appellant",
+      "code": "ptt",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Plaintiff-appellee",
+      "code": "pte",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Platemaker",
+      "code": "plt",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Praeses",
+      "code": "pra",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "presenter",
+      "code": "pre",
+      "wd_label": "presenter",
+      "wd_qid": "Q13590141"
+    },
+    {
+      "label": "printer",
+      "code": "prt",
+      "wd_label": "printer",
+      "wd_qid": "Q175151"
+    },
+    {
+      "label": "Printer of plates",
+      "code": "pop",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "printmaker",
+      "code": "prm",
+      "wd_label": "printmaker",
+      "wd_qid": "Q11569986"
+    },
+    {
+      "label": "Process contact",
+      "code": "prc",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "producer",
+      "code": "pro",
+      "wd_label": "producer",
+      "wd_qid": "Q47541952"
+    },
+    {
+      "label": "Production company",
+      "code": "prn",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Production designer",
+      "code": "prs",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Production manager",
+      "code": "pmn",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Production personnel",
+      "code": "prd",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Production place",
+      "code": "prp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "programmer",
+      "code": "prg",
+      "wd_label": "programmer",
+      "wd_qid": "Q5482740"
+    },
+    {
+      "label": "project director",
+      "code": "pdr",
+      "wd_label": "project director",
+      "wd_qid": "Q3029431"
+    },
+    {
+      "label": "proofreader",
+      "code": "pfr",
+      "wd_label": "proofreader",
+      "wd_qid": "Q356139"
+    },
+    {
+      "label": "Provider",
+      "code": "prv",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "place of publication",
+      "code": "pup",
+      "wd_label": "place of publication",
+      "wd_qid": "Q1361759"
+    },
+    {
+      "label": "publisher",
+      "code": "pbl",
+      "wd_label": "publisher",
+      "wd_qid": "Q2516866"
+    },
+    {
+      "label": "Publishing director",
+      "code": "pbd",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "puppeteer",
+      "code": "ppt",
+      "wd_label": "puppeteer",
+      "wd_qid": "Q2629392"
+    },
+    {
+      "label": "radio director",
+      "code": "rdd",
+      "wd_label": "radio director",
+      "wd_qid": "Q21234364"
+    },
+    {
+      "label": "radio producer",
+      "code": "rpc",
+      "wd_label": "radio producer",
+      "wd_qid": "Q3406651"
+    },
+    {
+      "label": "Rapporteur",
+      "code": "rap",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "audio engineer",
+      "code": "rce",
+      "wd_label": "audio engineer",
+      "wd_qid": "Q128124"
+    },
+    {
+      "label": "recordist",
+      "code": "rcd",
+      "wd_label": "recordist",
+      "wd_qid": "Q112791061"
+    },
+    {
+      "label": "Redaktor",
+      "code": "red",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Remix artist",
+      "code": "rxa",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Renderer",
+      "code": "ren",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "reporter",
+      "code": "rpt",
+      "wd_label": "reporter",
+      "wd_qid": "Q11348441"
+    },
+    {
+      "label": "repository",
+      "code": "rps",
+      "wd_label": "repository",
+      "wd_qid": "Q3133368"
+    },
+    {
+      "label": "Research team head",
+      "code": "rth",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Research team member",
+      "code": "rtm",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Researcher",
+      "code": "res",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Respondent",
+      "code": "rsp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Respondent-appellant",
+      "code": "rst",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Respondent-appellee",
+      "code": "rse",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Responsible party",
+      "code": "rpy",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Restager",
+      "code": "rsg",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Restorationist",
+      "code": "rsr",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "reviewer",
+      "code": "rev",
+      "wd_label": "reviewer",
+      "wd_qid": "Q10650082"
+    },
+    {
+      "label": "rubricator",
+      "code": "rbr",
+      "wd_label": "rubricator",
+      "wd_qid": "Q15881498"
+    },
+    {
+      "label": "Scenarist",
+      "code": "sce",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "scientific consultant",
+      "code": "sad",
+      "wd_label": "scientific consultant",
+      "wd_qid": "Q64153541"
+    },
+    {
+      "label": "screenwriter",
+      "code": "aus",
+      "wd_label": "screenwriter",
+      "wd_qid": "Q28389"
+    },
+    {
+      "label": "Scribe",
+      "code": "scr",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "sculptor",
+      "code": "scl",
+      "wd_label": "sculptor",
+      "wd_qid": "Q1281618"
+    },
+    {
+      "label": "Second party",
+      "code": "spy",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "secretary",
+      "code": "sec",
+      "wd_label": "secretary",
+      "wd_qid": "Q93521113"
+    },
+    {
+      "label": "vendor",
+      "code": "sll",
+      "wd_label": "vendor",
+      "wd_qid": "Q104099828"
+    },
+    {
+      "label": "Set designer",
+      "code": "std",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Setting",
+      "code": "stg",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "signer",
+      "code": "sgn",
+      "wd_label": "signer",
+      "wd_qid": "Q116943409"
+    },
+    {
+      "label": "singer",
+      "code": "sng",
+      "wd_label": "singer",
+      "wd_qid": "Q177220"
+    },
+    {
+      "label": "software developer",
+      "code": "swd",
+      "wd_label": "software developer",
+      "wd_qid": "Q183888"
+    },
+    {
+      "label": "sound designer",
+      "code": "sds",
+      "wd_label": "sound designer",
+      "wd_qid": "Q3024424"
+    },
+    {
+      "label": "audio engineer",
+      "code": "sde",
+      "wd_label": "audio engineer",
+      "wd_qid": "Q128124"
+    },
+    {
+      "label": "Speaker",
+      "code": "spk",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Special effects provider",
+      "code": "sfx",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Sponsor",
+      "code": "spn",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "theatrical director",
+      "code": "sgd",
+      "wd_label": "theatrical director",
+      "wd_qid": "Q3387717"
+    },
+    {
+      "label": "stage manager",
+      "code": "stm",
+      "wd_label": "stage manager",
+      "wd_qid": "Q64825422"
+    },
+    {
+      "label": "Standards body",
+      "code": "stn",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "stereotyper",
+      "code": "str",
+      "wd_label": "stereotyper",
+      "wd_qid": "Q56612096"
+    },
+    {
+      "label": "narrator",
+      "code": "stl",
+      "wd_label": "narrator",
+      "wd_qid": "Q755070"
+    },
+    {
+      "label": "Supporting host",
+      "code": "sht",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Surveyor",
+      "code": "srv",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "teacher",
+      "code": "tch",
+      "wd_label": "teacher",
+      "wd_qid": "Q37226"
+    },
+    {
+      "label": "Technical director",
+      "code": "tcd",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Television director",
+      "code": "tld",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Television guest",
+      "code": "tlg",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "television presenter",
+      "code": "tlh",
+      "wd_label": "television presenter",
+      "wd_qid": "Q947873"
+    },
+    {
+      "label": "television producer",
+      "code": "tlp",
+      "wd_label": "television producer",
+      "wd_qid": "Q578109"
+    },
+    {
+      "label": "television writer",
+      "code": "tau",
+      "wd_label": "television writer",
+      "wd_qid": "Q73306227"
+    },
+    {
+      "label": "thesis advisor",
+      "code": "ths",
+      "wd_label": "thesis advisor",
+      "wd_qid": "Q101405849"
+    },
+    {
+      "label": "copyist",
+      "code": "trc",
+      "wd_label": "copyist",
+      "wd_qid": "Q3997704"
+    },
+    {
+      "label": "translator",
+      "code": "trl",
+      "wd_label": "translator",
+      "wd_qid": "Q333634"
+    },
+    {
+      "label": "type designer",
+      "code": "tyd",
+      "wd_label": "type designer",
+      "wd_qid": "Q354034"
+    },
+    {
+      "label": "typographer",
+      "code": "tyg",
+      "wd_label": "typographer",
+      "wd_qid": "Q1229025"
+    },
+    {
+      "label": "University place",
+      "code": "uvp",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "videographer",
+      "code": "vdg",
+      "wd_label": "videographer",
+      "wd_qid": "Q2737906"
+    },
+    {
+      "label": "Visual effects provider",
+      "code": "vfx",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "voice actor",
+      "code": "vac",
+      "wd_label": "voice actor",
+      "wd_qid": "Q2405480"
+    },
+    {
+      "label": "witness",
+      "code": "wit",
+      "wd_label": "witness",
+      "wd_qid": "Q196939"
+    },
+    {
+      "label": "wood engraver",
+      "code": "wde",
+      "wd_label": "wood engraver",
+      "wd_qid": "Q47005195"
+    },
+    {
+      "label": "Woodcutter",
+      "code": "wdc",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Writer of accompanying material",
+      "code": "wam",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Writer of added commentary",
+      "code": "wac",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Writer of added lyrics",
+      "code": "wal",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Writer of added text",
+      "code": "wat",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Writer of film story",
+      "code": "wfs",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Writer of intertitles",
+      "code": "wft",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Writer of introduction",
+      "code": "win",
+      "wd_label": "preface author",
+      "wd_qid": "Q19839393"
+    },
+    {
+      "label": "Writer of preface",
+      "code": "wpr",
+      "wd_label": "preface author",
+      "wd_qid": "Q19839393"
+    },
+    {
+      "label": "Writer of supplementary textual content",
+      "code": "wst",
+      "wd_label": "",
+      "wd_qid": ""
+    },
+    {
+      "label": "Writer of television story",
+      "code": "wts",
+      "wd_label": "",
+      "wd_qid": ""
+    }
+]

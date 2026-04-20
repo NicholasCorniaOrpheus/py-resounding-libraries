@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-    name="py-resounding-libraries",
+    name="pyreslib",
     version="0.1.0",
     description="Python package from Resounding Libraries research cluster",
     url="https://github.com/NicholasCorniaOrpheus/py-resouding-libraries",
     author="Nicholas Cornia",
     author_email="nicholas.cornia@orpheusinstituut.be",
-    requires_python=">=3.1",
+    requires_python=">=3.6",
     keywords=[
         "koha",
         "MARC",
@@ -19,15 +19,22 @@ setup(
         "library software",
     ],
     license="MIT License",
-    dependencies=["requests"],
-    packages=["py-resounding-libraries"],
-    install_requires=["numpy"],
+    dependencies=[
+        "datetime",
+        "json",
+        "os",
+        "wikibaseintegrator",
+        "requests",
+        "requests_oauth2client",
+    ],
+    packages=["pyreslib"],
+    install_requires=[],
     classifiers=[
         "Development Status :: 1 - Planning",
         "Intended Audience :: Science/Research",
         "License :: OSI Approved :: MIT License",
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.1",
+        "Programming Language :: Python :: 3.12",
     ],
 )

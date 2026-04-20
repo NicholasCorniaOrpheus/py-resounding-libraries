@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+pyreslib/__init__.py
+pyreslib/koha.py
+pyreslib/wikidata.py
+pyreslib.egg-info/PKG-INFO
+pyreslib.egg-info/SOURCES.txt
+pyreslib.egg-info/dependency_links.txt
+pyreslib.egg-info/top_level.txt

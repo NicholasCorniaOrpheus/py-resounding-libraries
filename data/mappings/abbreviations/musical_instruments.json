@@ -1,0 +1,1234 @@
+[
+    {
+      "code": "acc",
+      "label": "accordion",
+      "wd_qid": "Q79838",
+      "wd_label": "accordion",
+      "quantity": ""
+    },
+    {
+      "code": "afl",
+      "label": "alto flute",
+      "wd_qid": "Q544352",
+      "wd_label": "alto flute",
+      "quantity": ""
+    },
+    {
+      "code": "alt",
+      "label": "alto",
+      "wd_qid": "Q6983813",
+      "wd_label": "alto",
+      "quantity": ""
+    },
+    {
+      "code": "A",
+      "label": "alto",
+      "wd_qid": "Q6983813",
+      "wd_label": "alto",
+      "quantity": ""
+    },
+    {
+      "code": "arp",
+      "label": "arpeggione",
+      "wd_qid": "Q638182",
+      "wd_label": "arpeggione",
+      "quantity": ""
+    },
+    {
+      "code": "bag",
+      "label": "bagpipes",
+      "wd_qid": "Q8347",
+      "wd_label": "bagpipes",
+      "quantity": ""
+    },
+    {
+      "code": "bar",
+      "label": "baritone",
+      "wd_qid": "Q31687",
+      "wd_label": "baritone",
+      "quantity": ""
+    },
+    {
+      "code": "bass",
+      "label": "bass",
+      "wd_qid": "Q27911",
+      "wd_label": "bass",
+      "quantity": ""
+    },
+    {
+      "code": "bbar",
+      "label": "bass-baritone",
+      "wd_qid": "Q810480",
+      "wd_label": "bass-baritone",
+      "quantity": ""
+    },
+    {
+      "code": "bc",
+      "label": "continuo group",
+      "wd_qid": "Q114237252",
+      "wd_label": "continuo group",
+      "quantity": ""
+    },
+    {
+      "code": "bcl",
+      "label": "bass clarinet",
+      "wd_qid": "Q8345",
+      "wd_label": "bass clarinet",
+      "quantity": ""
+    },
+    {
+      "code": "2bcl",
+      "label": "bass clarinet",
+      "wd_qid": "Q8345",
+      "wd_label": "bass clarinet",
+      "quantity": "2"
+    },
+    {
+      "code": "bell",
+      "label": "chime",
+      "wd_qid": "Q123915338",
+      "wd_label": "chime",
+      "quantity": ""
+    },
+    {
+      "code": "bfl",
+      "label": "bass flute",
+      "wd_qid": "Q266675",
+      "wd_label": "bass flute",
+      "quantity": ""
+    },
+    {
+      "code": "bgtr",
+      "label": "bass guitar",
+      "wd_qid": "Q46185",
+      "wd_label": "bass guitar",
+      "quantity": ""
+    },
+    {
+      "code": "bjo",
+      "label": "banjo",
+      "wd_qid": "Q258896",
+      "wd_label": "banjo",
+      "quantity": ""
+    },
+    {
+      "code": "bn",
+      "label": "bassoon",
+      "wd_qid": "Q159998",
+      "wd_label": "bassoon",
+      "quantity": ""
+    },
+    {
+      "code": "2bn",
+      "label": "bassoon",
+      "wd_qid": "Q159998",
+      "wd_label": "bassoon",
+      "quantity": "2"
+    },
+    {
+      "code": "bob",
+      "label": "bass oboe",
+      "wd_qid": "Q808215",
+      "wd_label": "bass oboe",
+      "quantity": ""
+    },
+    {
+      "code": "br",
+      "label": "brass instrument",
+      "wd_qid": "Q180744",
+      "wd_label": "brass instrument",
+      "quantity": ""
+    },
+    {
+      "code": "bryt",
+      "label": "baryton",
+      "wd_qid": "Q521151",
+      "wd_label": "baryton",
+      "quantity": ""
+    },
+    {
+      "code": "bstcl",
+      "label": "basset horn",
+      "wd_qid": "Q810515",
+      "wd_label": "basset horn",
+      "quantity": ""
+    },
+    {
+      "code": "bsthn",
+      "label": "basset horn",
+      "wd_qid": "Q810515",
+      "wd_label": "basset horn",
+      "quantity": ""
+    },
+    {
+      "code": "bug",
+      "label": "bugle",
+      "wd_qid": "Q1628293",
+      "wd_label": "bugle",
+      "quantity": ""
+    },
+    {
+      "code": "2bug",
+      "label": "bugle",
+      "wd_qid": "Q1628293",
+      "wd_label": "bugle",
+      "quantity": "2"
+    },
+    {
+      "code": "cbcl",
+      "label": "contrabass clarinet",
+      "wd_qid": "Q2731509",
+      "wd_label": "contrabass clarinet",
+      "quantity": ""
+    },
+    {
+      "code": "cbn",
+      "label": "contrabassoon",
+      "wd_qid": "Q83513",
+      "wd_label": "contrabassoon",
+      "quantity": ""
+    },
+    {
+      "code": "cch",
+      "label": "children's choir",
+      "wd_qid": "Q1753063",
+      "wd_label": "children's choir",
+      "quantity": ""
+    },
+    {
+      "code": "cel",
+      "label": "celesta",
+      "wd_qid": "Q320341",
+      "wd_label": "celesta",
+      "quantity": ""
+    },
+    {
+      "code": "ch",
+      "label": "mixed choir",
+      "wd_qid": "Q3276909",
+      "wd_label": "mixed choir",
+      "quantity": ""
+    },
+    {
+      "code": "SATB",
+      "label": "mixed choir",
+      "wd_qid": "Q3276909",
+      "wd_label": "mixed choir",
+      "quantity": ""
+    },
+    {
+      "code": "cimb",
+      "label": "cimbalom",
+      "wd_qid": "Q8374",
+      "wd_label": "cimbalom",
+      "quantity": ""
+    },
+    {
+      "code": "cit",
+      "label": "cittern",
+      "wd_qid": "Q1093290",
+      "wd_label": "cittern",
+      "quantity": ""
+    },
+    {
+      "code": "cl",
+      "label": "clarinet",
+      "wd_qid": "Q8343",
+      "wd_label": "clarinet",
+      "quantity": ""
+    },
+    {
+      "code": "clr",
+      "label": "clarinet",
+      "wd_qid": "Q8343",
+      "wd_label": "clarinet",
+      "quantity": ""
+    },
+    {
+      "code": "2clr",
+      "label": "clarinet",
+      "wd_qid": "Q8343",
+      "wd_label": "clarinet",
+      "quantity": "2"
+    },
+    {
+      "code": "3clr",
+      "label": "clarinet",
+      "wd_qid": "Q8343",
+      "wd_label": "clarinet",
+      "quantity": "3"
+    },
+    {
+      "code": "4clr",
+      "label": "clarinet",
+      "wd_qid": "Q8343",
+      "wd_label": "clarinet",
+      "quantity": "4"
+    },
+    {
+      "code": "clvd",
+      "label": "clavichord",
+      "wd_qid": "Q191823",
+      "wd_label": "clavichord",
+      "quantity": ""
+    },
+    {
+      "code": "cm",
+      "label": "chalumeau",
+      "wd_qid": "Q1060334",
+      "wd_label": "chalumeau",
+      "quantity": ""
+    },
+    {
+      "code": "conc",
+      "label": "concertina",
+      "wd_qid": "Q593050",
+      "wd_label": "concertina",
+      "quantity": ""
+    },
+    {
+      "code": "crh",
+      "label": "crumhorn",
+      "wd_qid": "Q930367",
+      "wd_label": "crumhorn",
+      "quantity": ""
+    },
+    {
+      "code": "crt",
+      "label": "cornet",
+      "wd_qid": "Q62006205",
+      "wd_label": "cornet",
+      "quantity": ""
+    },
+    {
+      "code": "2crt",
+      "label": "cornet",
+      "wd_qid": "Q62006205",
+      "wd_label": "cornet",
+      "quantity": "2"
+    },
+    {
+      "code": "crtt",
+      "label": "cornett",
+      "wd_qid": "Q204638",
+      "wd_label": "cornett",
+      "quantity": ""
+    },
+    {
+      "code": "ct",
+      "label": "countertenor",
+      "wd_qid": "Q223166",
+      "wd_label": "countertenor",
+      "quantity": ""
+    },
+    {
+      "code": "cv",
+      "label": "boy soprano",
+      "wd_qid": "Q1376492",
+      "wd_label": "boy soprano",
+      "quantity": ""
+    },
+    {
+      "code": "db",
+      "label": "double bass",
+      "wd_qid": "Q80019",
+      "wd_label": "double bass",
+      "quantity": ""
+    },
+    {
+      "code": "dlcn",
+      "label": "dulcian",
+      "wd_qid": "Q911038",
+      "wd_label": "dulcian",
+      "quantity": ""
+    },
+    {
+      "code": "dom",
+      "label": "domra",
+      "wd_qid": "Q941492",
+      "wd_label": "domra",
+      "quantity": ""
+    },
+    {
+      "code": "dulc",
+      "label": "dulcimer",
+      "wd_qid": "Q341663",
+      "wd_label": "dulcimer",
+      "quantity": ""
+    },
+    {
+      "code": "egtr",
+      "label": "electric guitar",
+      "wd_qid": "Q78987",
+      "wd_label": "electric guitar",
+      "quantity": ""
+    },
+    {
+      "code": "eh",
+      "label": "cor anglais",
+      "wd_qid": "Q185041",
+      "wd_label": "cor anglais",
+      "quantity": ""
+    },
+    {
+      "code": "elec",
+      "label": "electronic musical instrument",
+      "wd_qid": "Q1327500",
+      "wd_label": "electronic musical instrument",
+      "quantity": ""
+    },
+    {
+      "code": "epf",
+      "label": "electric piano",
+      "wd_qid": "Q1136507",
+      "wd_label": "electric piano",
+      "quantity": ""
+    },
+    {
+      "code": "eq",
+      "label": "equal voices ensemble",
+      "wd_qid": "Q21087658",
+      "wd_label": "equal voices ensemble",
+      "quantity": ""
+    },
+    {
+      "code": "erhu",
+      "label": "erhu",
+      "wd_qid": "Q726306",
+      "wd_label": "erhu",
+      "quantity": ""
+    },
+    {
+      "code": "euph",
+      "label": "euphonium",
+      "wd_qid": "Q495529",
+      "wd_label": "euphonium",
+      "quantity": ""
+    },
+    {
+      "code": "fch",
+      "label": "women's chorus",
+      "wd_qid": "Q1451652",
+      "wd_label": "women's chorus",
+      "quantity": ""
+    },
+    {
+      "code": "fda",
+      "label": "fl\u00fbte d'amour",
+      "wd_qid": "Q1445673",
+      "wd_label": "fl\u00fbte d'amour",
+      "quantity": ""
+    },
+    {
+      "code": "fgh",
+      "label": "flugelhorn",
+      "wd_qid": "Q382616",
+      "wd_label": "flugelhorn",
+      "quantity": ""
+    },
+    {
+      "code": "fife",
+      "label": "fife",
+      "wd_qid": "Q2255516",
+      "wd_label": "fife",
+      "quantity": ""
+    },
+    {
+      "code": "fl",
+      "label": "flute",
+      "wd_qid": "Q11405",
+      "wd_label": "flute",
+      "quantity": ""
+    },
+    {
+      "code": "2fl",
+      "label": "flute",
+      "wd_qid": "Q11405",
+      "wd_label": "flute",
+      "quantity": "2"
+    },
+    {
+      "code": "3fl",
+      "label": "flute",
+      "wd_qid": "Q11405",
+      "wd_label": "flute",
+      "quantity": "3"
+    },
+    {
+      "code": "flag",
+      "label": "flageolet",
+      "wd_qid": "Q1001877",
+      "wd_label": "flageolet",
+      "quantity": ""
+    },
+    {
+      "code": "ghca",
+      "label": "glass harmonica",
+      "wd_qid": "Q917571",
+      "wd_label": "glass harmonica",
+      "quantity": ""
+    },
+    {
+      "code": "gl",
+      "label": "glockenspiel",
+      "wd_qid": "Q626035",
+      "wd_label": "glockenspiel",
+      "quantity": ""
+    },
+    {
+      "code": "gtr",
+      "label": "guitar",
+      "wd_qid": "Q6607",
+      "wd_label": "guitar",
+      "quantity": ""
+    },
+    {
+      "code": "harm",
+      "label": "Indian harmonium",
+      "wd_qid": "Q213461",
+      "wd_label": "Indian harmonium",
+      "quantity": ""
+    },
+    {
+      "code": "hca",
+      "label": "harmonica",
+      "wd_qid": "Q51290",
+      "wd_label": "harmonica",
+      "quantity": ""
+    },
+    {
+      "code": "heck",
+      "label": "heckelphone",
+      "wd_qid": "Q1571002",
+      "wd_label": "heckelphone",
+      "quantity": ""
+    },
+    {
+      "code": "hn",
+      "label": "horn",
+      "wd_qid": "Q163759",
+      "wd_label": "horn",
+      "quantity": ""
+    },
+    {
+      "code": "2hn",
+      "label": "horn",
+      "wd_qid": "Q163759",
+      "wd_label": "horn",
+      "quantity": "2"
+    },
+    {
+      "code": "3hn",
+      "label": "horn",
+      "wd_qid": "Q163759",
+      "wd_label": "horn",
+      "quantity": "3"
+    },
+    {
+      "code": "4hn",
+      "label": "horn",
+      "wd_qid": "Q163759",
+      "wd_label": "horn",
+      "quantity": "4"
+    },
+    {
+      "code": "hrn",
+      "label": "horn",
+      "wd_qid": "Q163759",
+      "wd_label": "horn",
+      "quantity": ""
+    },
+    {
+      "code": "hp ",
+      "label": "harp ",
+      "wd_qid": "Q47369",
+      "wd_label": "harp ",
+      "quantity": ""
+    },
+    {
+      "code": "hpd",
+      "label": "harpsichord",
+      "wd_qid": "Q81982",
+      "wd_label": "harpsichord",
+      "quantity": ""
+    },
+    {
+      "code": "kbd",
+      "label": "keyboard instrument",
+      "wd_qid": "Q52954",
+      "wd_label": "keyboard instrument",
+      "quantity": ""
+    },
+    {
+      "code": "lute",
+      "label": "lute",
+      "wd_qid": "Q180733",
+      "wd_label": "lute",
+      "quantity": ""
+    },
+    {
+      "code": "lyre",
+      "label": "lyre",
+      "wd_qid": "Q201129",
+      "wd_label": "lyre",
+      "quantity": ""
+    },
+    {
+      "code": "mand",
+      "label": "mandolin",
+      "wd_qid": "Q302497",
+      "wd_label": "mandolin",
+      "quantity": ""
+    },
+    {
+      "code": "mar",
+      "label": "marimba",
+      "wd_qid": "Q220971",
+      "wd_label": "marimba",
+      "quantity": ""
+    },
+    {
+      "code": "mch",
+      "label": "men's chorus",
+      "wd_qid": "Q1684352",
+      "wd_label": "men's chorus",
+      "quantity": ""
+    },
+    {
+      "code": "mez",
+      "label": "mezzo-soprano",
+      "wd_qid": "Q186506",
+      "wd_label": "mezzo-soprano",
+      "quantity": ""
+    },
+    {
+      "code": "mus",
+      "label": "musette de cour",
+      "wd_qid": "Q13522404",
+      "wd_label": "musette de cour",
+      "quantity": ""
+    },
+    {
+      "code": "nar",
+      "label": "narrator",
+      "wd_qid": "Q58363586",
+      "wd_label": "narrator",
+      "quantity": ""
+    },
+    {
+      "code": "ob",
+      "label": "oboe",
+      "wd_qid": "Q8377",
+      "wd_label": "oboe",
+      "quantity": ""
+    },
+    {
+      "code": "2ob",
+      "label": "oboe",
+      "wd_qid": "Q8377",
+      "wd_label": "oboe",
+      "quantity": "2"
+    },
+    {
+      "code": "3ob",
+      "label": "oboe",
+      "wd_qid": "Q8377",
+      "wd_label": "oboe",
+      "quantity": "3"
+    },
+    {
+      "code": "oca",
+      "label": "ocarina",
+      "wd_qid": "Q187780",
+      "wd_label": "ocarina",
+      "quantity": ""
+    },
+    {
+      "code": "oda",
+      "label": "oboe d'amore",
+      "wd_qid": "Q8380",
+      "wd_label": "oboe d'amore",
+      "quantity": ""
+    },
+    {
+      "code": "om",
+      "label": "Ondes Martenot",
+      "wd_qid": "Q862501",
+      "wd_label": "Ondes Martenot",
+      "quantity": ""
+    },
+    {
+      "code": "oph",
+      "label": "ophicleide",
+      "wd_qid": "Q200823",
+      "wd_label": "ophicleide",
+      "quantity": ""
+    },
+    {
+      "code": "orch",
+      "label": "orchestra",
+      "wd_qid": "Q42998",
+      "wd_label": "orchestra",
+      "quantity": ""
+    },
+    {
+      "code": "org",
+      "label": "organ",
+      "wd_qid": "Q1444",
+      "wd_label": "organ",
+      "quantity": ""
+    },
+    {
+      "code": "oud",
+      "label": "oud",
+      "wd_qid": "Q191000",
+      "wd_label": "oud",
+      "quantity": ""
+    },
+    {
+      "code": "pan",
+      "label": "pan flute",
+      "wd_qid": "Q218802",
+      "wd_label": "pan flute",
+      "quantity": ""
+    },
+    {
+      "code": "perc",
+      "label": "percussion instrument",
+      "wd_qid": "Q133163",
+      "wd_label": "percussion instrument",
+      "quantity": ""
+    },
+    {
+      "code": "pf",
+      "label": "piano",
+      "wd_qid": "Q5994",
+      "wd_label": "piano",
+      "quantity": ""
+    },
+    {
+      "code": "2pf",
+      "label": "piano",
+      "wd_qid": "Q5994",
+      "wd_label": "piano",
+      "quantity": "2"
+    },
+    {
+      "code": "pf3h",
+      "label": "keyboard three hands",
+      "wd_qid": "Q123436613",
+      "wd_label": "keyboard three hands",
+      "quantity": ""
+    },
+    {
+      "code": "pf4h",
+      "label": "keyboard four hands",
+      "wd_qid": "Q123282445",
+      "wd_label": "keyboard four hands",
+      "quantity": ""
+    },
+    {
+      "code": "4h",
+      "label": "keyboard four hands",
+      "wd_qid": "Q123282445",
+      "wd_label": "keyboard four hands",
+      "quantity": ""
+    },
+    {
+      "code": "pf5h",
+      "label": "Piano 5 hands",
+      "wd_qid": "",
+      "wd_label": "",
+      "quantity": ""
+    },
+    {
+      "code": "pf6h",
+      "label": "Piano 6 hands",
+      "wd_qid": "",
+      "wd_label": "",
+      "quantity": ""
+    },
+    {
+      "code": "pflh",
+      "label": "Piano left hand",
+      "wd_qid": "",
+      "wd_label": "",
+      "quantity": ""
+    },
+    {
+      "code": "pfped",
+      "label": "pedal piano",
+      "wd_qid": "Q2631948",
+      "wd_label": "pedal piano",
+      "quantity": ""
+    },
+    {
+      "code": "pfrh",
+      "label": "Piano right hand",
+      "wd_qid": "",
+      "wd_label": "",
+      "quantity": ""
+    },
+    {
+      "code": "picc",
+      "label": "piccolo",
+      "wd_qid": "Q83509",
+      "wd_label": "piccolo",
+      "quantity": ""
+    },
+    {
+      "code": "2picc",
+      "label": "piccolo",
+      "wd_qid": "Q83509",
+      "wd_label": "piccolo",
+      "quantity": "2"
+    },
+    {
+      "code": "pipa",
+      "label": "pipa",
+      "wd_qid": "Q6685124",
+      "wd_label": "pipa",
+      "quantity": ""
+    },
+    {
+      "code": "pk",
+      "label": "timpani",
+      "wd_qid": "Q189737",
+      "wd_label": "timpani",
+      "quantity": ""
+    },
+    {
+      "code": "timp",
+      "label": "timpani",
+      "wd_qid": "Q189737",
+      "wd_label": "timpani",
+      "quantity": ""
+    },
+    {
+      "code": "ptpt",
+      "label": "piccolo trumpet",
+      "wd_qid": "Q1569742",
+      "wd_label": "piccolo trumpet",
+      "quantity": ""
+    },
+    {
+      "code": "reb",
+      "label": "rebec",
+      "wd_qid": "Q737520",
+      "wd_label": "rebec",
+      "quantity": ""
+    },
+    {
+      "code": "rec",
+      "label": "recorder",
+      "wd_qid": "Q187851",
+      "wd_label": "recorder",
+      "quantity": ""
+    },
+    {
+      "code": "sar",
+      "label": "sarrusophone",
+      "wd_qid": "Q901239",
+      "wd_label": "sarrusophone",
+      "quantity": ""
+    },
+    {
+      "code": "sax",
+      "label": "saxophone",
+      "wd_qid": "Q9798",
+      "wd_label": "saxophone",
+      "quantity": ""
+    },
+    {
+      "code": "2sax",
+      "label": "saxophone",
+      "wd_qid": "Q9798",
+      "wd_label": "saxophone",
+      "quantity": "2"
+    },
+    {
+      "code": "3sax",
+      "label": "saxophone",
+      "wd_qid": "Q9798",
+      "wd_label": "saxophone",
+      "quantity": "3"
+    },
+    {
+      "code": "4sax",
+      "label": "saxophone",
+      "wd_qid": "Q9798",
+      "wd_label": "saxophone",
+      "quantity": "4"
+    },
+    {
+      "code": "sheng",
+      "label": "sheng",
+      "wd_qid": "Q849052",
+      "wd_label": "sheng",
+      "quantity": ""
+    },
+    {
+      "code": "shw",
+      "label": "shawm",
+      "wd_qid": "Q677921",
+      "wd_label": "shawm",
+      "quantity": ""
+    },
+    {
+      "code": "sit",
+      "label": "sitar",
+      "wd_qid": "Q229205",
+      "wd_label": "sitar",
+      "quantity": ""
+    },
+    {
+      "code": "skbt",
+      "label": "sackbut",
+      "wd_qid": "Q808573",
+      "wd_label": "sackbut",
+      "quantity": ""
+    },
+    {
+      "code": "sop",
+      "label": "soprano",
+      "wd_qid": "Q30903",
+      "wd_label": "soprano",
+      "quantity": ""
+    },
+    {
+      "code": "S",
+      "label": "soprano",
+      "wd_qid": "Q30903",
+      "wd_label": "soprano",
+      "quantity": ""
+    },
+    {
+      "code": "srp",
+      "label": "serpent",
+      "wd_qid": "Q742168",
+      "wd_label": "serpent",
+      "quantity": ""
+    },
+    {
+      "code": "stpt",
+      "label": "slide trumpet",
+      "wd_qid": "Q228529",
+      "wd_label": "slide trumpet",
+      "quantity": ""
+    },
+    {
+      "code": "str",
+      "label": "string instrument",
+      "wd_qid": "Q1798603",
+      "wd_label": "string instrument",
+      "quantity": ""
+    },
+    {
+      "code": "sxh",
+      "label": "saxhorn",
+      "wd_qid": "Q787557",
+      "wd_label": "saxhorn",
+      "quantity": ""
+    },
+    {
+      "code": "syn",
+      "label": "synthesizer",
+      "wd_qid": "Q163829",
+      "wd_label": "synthesizer",
+      "quantity": ""
+    },
+    {
+      "code": "tba",
+      "label": "tuba",
+      "wd_qid": "Q131168",
+      "wd_label": "tuba",
+      "quantity": ""
+    },
+    {
+      "code": "2tba",
+      "label": "tuba",
+      "wd_qid": "Q131168",
+      "wd_label": "tuba",
+      "quantity": "2"
+    },
+    {
+      "code": "tbn",
+      "label": "trombone",
+      "wd_qid": "Q8350",
+      "wd_label": "trombone",
+      "quantity": ""
+    },
+    {
+      "code": "2tbn",
+      "label": "trombone",
+      "wd_qid": "Q8350",
+      "wd_label": "trombone",
+      "quantity": "2"
+    },
+    {
+      "code": "3tbn",
+      "label": "trombone",
+      "wd_qid": "Q8350",
+      "wd_label": "trombone",
+      "quantity": "3"
+    },
+    {
+      "code": "ten",
+      "label": "tenor",
+      "wd_qid": "Q27914",
+      "wd_label": "tenor",
+      "quantity": ""
+    },
+    {
+      "code": "T",
+      "label": "tenor",
+      "wd_qid": "Q27914",
+      "wd_label": "tenor",
+      "quantity": ""
+    },
+    {
+      "code": "thrm",
+      "label": "theremin",
+      "wd_qid": "Q207691",
+      "wd_label": "theremin",
+      "quantity": ""
+    },
+    {
+      "code": "timp",
+      "label": "timpani",
+      "wd_qid": "Q189737",
+      "wd_label": "timpani",
+      "quantity": ""
+    },
+    {
+      "code": "tpt",
+      "label": "trumpet",
+      "wd_qid": "Q8338",
+      "wd_label": "trumpet",
+      "quantity": ""
+    },
+    {
+      "code": "2tpt",
+      "label": "trumpet",
+      "wd_qid": "Q8338",
+      "wd_label": "trumpet",
+      "quantity": "2"
+    },
+    {
+      "code": "3tpt",
+      "label": "trumpet",
+      "wd_qid": "Q8338",
+      "wd_label": "trumpet",
+      "quantity": "3"
+    },
+    {
+      "code": "uch",
+      "label": "unison chorus",
+      "wd_qid": "Q115273416",
+      "wd_label": "unison chorus",
+      "quantity": ""
+    },
+    {
+      "code": "uke",
+      "label": "ukulele",
+      "wd_qid": "Q61285",
+      "wd_label": "ukulele",
+      "quantity": ""
+    },
+    {
+      "code": "v",
+      "label": "voice",
+      "wd_qid": "Q17172850",
+      "wd_label": "voice",
+      "quantity": ""
+    },
+    {
+      "code": "va",
+      "label": "viola",
+      "wd_qid": "Q80284",
+      "wd_label": "viola",
+      "quantity": ""
+    },
+    {
+      "code": "2va",
+      "label": "viola",
+      "wd_qid": "Q80284",
+      "wd_label": "viola",
+      "quantity": "2"
+    },
+    {
+      "code": "3va",
+      "label": "viola",
+      "wd_qid": "Q80284",
+      "wd_label": "viola",
+      "quantity": "3"
+    },
+    {
+      "code": "vla",
+      "label": "viola",
+      "wd_qid": "Q80284",
+      "wd_label": "viola",
+      "quantity": ""
+    },
+    {
+      "code": "2vla",
+      "label": "viola",
+      "wd_qid": "Q80284",
+      "wd_label": "viola",
+      "quantity": "2"
+    },
+    {
+      "code": "3vla",
+      "label": "viola",
+      "wd_qid": "Q80284",
+      "wd_label": "viola",
+      "quantity": "3"
+    },
+    {
+      "code": "vap",
+      "label": "viola pomposa",
+      "wd_qid": "Q595730",
+      "wd_label": "viola pomposa",
+      "quantity": ""
+    },
+    {
+      "code": "vc",
+      "label": "cello",
+      "wd_qid": "Q8371",
+      "wd_label": "cello",
+      "quantity": ""
+    },
+    {
+      "code": "vda",
+      "label": "viola d'amore",
+      "wd_qid": "Q742180",
+      "wd_label": "viola d'amore",
+      "quantity": ""
+    },
+    {
+      "code": "vib",
+      "label": "vibraphone",
+      "wd_qid": "Q206987",
+      "wd_label": "vibraphone",
+      "quantity": ""
+    },
+    {
+      "code": "vie",
+      "label": "hurdy-gurdy",
+      "wd_qid": "Q207821",
+      "wd_label": "hurdy-gurdy",
+      "quantity": ""
+    },
+    {
+      "code": "viol",
+      "label": "bass viol",
+      "wd_qid": "Q51446928",
+      "wd_label": "bass viol",
+      "quantity": ""
+    },
+    {
+      "code": "vlne",
+      "label": "violone",
+      "wd_qid": "Q667047",
+      "wd_label": "violone",
+      "quantity": ""
+    },
+    {
+      "code": "vn",
+      "label": "violin",
+      "wd_qid": "Q8355",
+      "wd_label": "violin",
+      "quantity": ""
+    },
+    {
+      "code": "2vn",
+      "label": "violin",
+      "wd_qid": "Q8355",
+      "wd_label": "violin",
+      "quantity": "2"
+    },
+    {
+      "code": "3vn",
+      "label": "violin",
+      "wd_qid": "Q8355",
+      "wd_label": "violin",
+      "quantity": "3"
+    },
+    {
+      "code": "vuv",
+      "label": "vuvuzela",
+      "wd_qid": "Q83266",
+      "wd_label": "vuvuzela",
+      "quantity": ""
+    },
+    {
+      "code": "vv",
+      "label": "vocal ensemble",
+      "wd_qid": "Q29881373",
+      "wd_label": "vocal ensemble",
+      "quantity": ""
+    },
+    {
+      "code": "wag",
+      "label": "Wagner tuba",
+      "wd_qid": "Q902984",
+      "wd_label": "Wagner tuba",
+      "quantity": ""
+    },
+    {
+      "code": "ww",
+      "label": "woodwind instrument",
+      "wd_qid": "Q181247",
+      "wd_label": "woodwind instrument",
+      "quantity": ""
+    },
+    {
+      "code": "xiao",
+      "label": "xiao",
+      "wd_qid": "Q1394795",
+      "wd_label": "xiao",
+      "quantity": ""
+    },
+    {
+      "code": "xyl",
+      "label": "xylophone",
+      "wd_qid": "Q165666",
+      "wd_label": "xylophone",
+      "quantity": ""
+    },
+    {
+      "code": "zith",
+      "label": "zither",
+      "wd_qid": "Q76239",
+      "wd_label": "zither",
+      "quantity": ""
+    },
+    {
+      "code": "bsn",
+      "label": "bassoon",
+      "wd_qid": "Q159998",
+      "wd_label": "bassoon",
+      "quantity": ""
+    },
+    {
+      "code": "helicon",
+      "label": "helicon",
+      "wd_qid": "Q779650",
+      "wd_label": "helicon",
+      "quantity": ""
+    },
+    {
+      "code": "tromba-marina",
+      "label": "tromba marina",
+      "wd_qid": "Q1095084",
+      "wd_label": "Tromba marina",
+      "quantity": ""
+    },
+    {
+      "code": "2tromba-marina",
+      "label": "tromba marina",
+      "wd_qid": "Q1095084",
+      "wd_label": "Tromba marina",
+      "quantity": "2"
+    }
+]

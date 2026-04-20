@@ -1,0 +1,3002 @@
+[
+    {
+      "code" : "aar",
+      "label" : "Afar",
+      "wd_qid" : "Q27811",
+      "wd_label" : "Afar"
+    },
+    {
+      "code" : "abk",
+      "label" : "Abkhaz",
+      "wd_qid" : "Q5111",
+      "wd_label" : "Abkhaz"
+    },
+    {
+      "code" : "ace",
+      "label" : "Achinese",
+      "wd_qid" : "Q27683",
+      "wd_label" : "Acehnese"
+    },
+    {
+      "code" : "ach",
+      "label" : "Acoli",
+      "wd_qid" : "Q34926",
+      "wd_label" : "Acholi"
+    },
+    {
+      "code" : "ada",
+      "label" : "Adangme",
+      "wd_qid" : "Q35141",
+      "wd_label" : "Dangme"
+    },
+    {
+      "code" : "ady",
+      "label" : "Adygei",
+      "wd_qid" : "Q27776",
+      "wd_label" : "Adyghe"
+    },
+    {
+      "code" : "afa",
+      "label" : "Afroasiatic (Other)",
+      "wd_qid" : "Q25268",
+      "wd_label" : "Afroasiatic"
+    },
+    {
+      "code" : "afh",
+      "label" : "Afrihili (Artificial language)",
+      "wd_qid" : "Q384707",
+      "wd_label" : "Afrihili"
+    },
+    {
+      "code" : "afr",
+      "label" : "Afrikaans",
+      "wd_qid" : "Q14196",
+      "wd_label" : "Afrikaans"
+    },
+    {
+      "code" : "ain",
+      "label" : "Ainu",
+      "wd_qid" : "Q27969",
+      "wd_label" : "Ainu"
+    },
+    {
+      "code" : "-ajm",
+      "label" : "Aljamía",
+      "wd_qid" : "Q36652",
+      "wd_label" : "aljamiado"
+    },
+    {
+      "code" : "aka",
+      "label" : "Akan",
+      "wd_qid" : "Q28026",
+      "wd_label" : "Akan"
+    },
+    {
+      "code" : "akk",
+      "label" : "Akkadian",
+      "wd_qid" : "Q35518",
+      "wd_label" : "Akkadian"
+    },
+    {
+      "code" : "alb",
+      "label" : "Albanian",
+      "wd_qid" : "Q8748",
+      "wd_label" : "Albanian"
+    },
+    {
+      "code" : "ale",
+      "label" : "Aleut",
+      "wd_qid" : "Q27210",
+      "wd_label" : "Aleut"
+    },
+    {
+      "code" : "alg",
+      "label" : "Algonquian (Other)",
+      "wd_qid" : "Q33392",
+      "wd_label" : "Algonquian"
+    },
+    {
+      "code" : "alt",
+      "label" : "Altai",
+      "wd_qid" : "Q28176",
+      "wd_label" : "Altai"
+    },
+    {
+      "code" : "amh",
+      "label" : "Amharic",
+      "wd_qid" : "Q28244",
+      "wd_label" : "Amharic"
+    },
+    {
+      "code" : "ang",
+      "label" : "English, Old (ca. 450-1100)",
+      "wd_qid" : "Q42365",
+      "wd_label" : "Old English"
+    },
+    {
+      "code" : "anp",
+      "label" : "Angika",
+      "wd_qid" : "Q28378",
+      "wd_label" : "Angika"
+    },
+    {
+      "code" : "apa",
+      "label" : "Apache languages",
+      "wd_qid" : "Q28060",
+      "wd_label" : "Western Apache"
+    },
+    {
+      "code" : "ara",
+      "label" : "Arabic",
+      "wd_qid" : "Q13955",
+      "wd_label" : "Arabic"
+    },
+    {
+      "code" : "arc",
+      "label" : "Aramaic",
+      "wd_qid" : "Q3398392",
+      "wd_label" : "Old Aramaic"
+    },
+    {
+      "code" : "arg",
+      "label" : "Aragonese",
+      "wd_qid" : "Q8765",
+      "wd_label" : "Aragonese"
+    },
+    {
+      "code" : "arm",
+      "label" : "Armenian",
+      "wd_qid" : "Q8785",
+      "wd_label" : "Armenian"
+    },
+    {
+      "code" : "arn",
+      "label" : "Mapuche",
+      "wd_qid" : "Q33730",
+      "wd_label" : "Mapudungun"
+    },
+    {
+      "code" : "arp",
+      "label" : "Arapaho",
+      "wd_qid" : "Q56417",
+      "wd_label" : "Arapaho"
+    },
+    {
+      "code" : "art",
+      "label" : "Artificial (Other)",
+      "wd_qid" : "Q3247505",
+      "wd_label" : "artificial language"
+    },
+    {
+      "code" : "arw",
+      "label" : "Arawak",
+      "wd_qid" : "Q2655664",
+      "wd_label" : "Arawak"
+    },
+    {
+      "code" : "asm",
+      "label" : "Assamese",
+      "wd_qid" : "Q29401",
+      "wd_label" : "Assamese"
+    },
+    {
+      "code" : "ast",
+      "label" : "Bable",
+      "wd_qid" : "Q29507",
+      "wd_label" : "Asturian"
+    },
+    {
+      "code" : "ath",
+      "label" : "Athapascan (Other)",
+      "wd_qid" : "Q27475",
+      "wd_label" : "Athabaskan"
+    },
+    {
+      "code" : "aus",
+      "label" : "Australian languages",
+      "wd_qid" : "Q205143",
+      "wd_label" : "Australian Aboriginal languages"
+    },
+    {
+      "code" : "ava",
+      "label" : "Avaric",
+      "wd_qid" : "Q29561",
+      "wd_label" : "Avar"
+    },
+    {
+      "code" : "ave",
+      "label" : "Avestan",
+      "wd_qid" : "Q29572",
+      "wd_label" : "Avestan"
+    },
+    {
+      "code" : "awa",
+      "label" : "Awadhi",
+      "wd_qid" : "Q29579",
+      "wd_label" : "Awadhi"
+    },
+    {
+      "code" : "aym",
+      "label" : "Aymara",
+      "wd_qid" : "Q4627",
+      "wd_label" : "Aymara"
+    },
+    {
+      "code" : "aze",
+      "label" : "Azerbaijani",
+      "wd_qid" : "Q9292",
+      "wd_label" : "Azerbaijani"
+    },
+    {
+      "code" : "bad",
+      "label" : "Banda languages",
+      "wd_qid" : "Q3504147",
+      "wd_label" : "Banda"
+    },
+    {
+      "code" : "bai",
+      "label" : "Bamileke languages",
+      "wd_qid" : "Q806005",
+      "wd_label" : "Bamileke"
+    },
+    {
+      "code" : "bak",
+      "label" : "Bashkir",
+      "wd_qid" : "Q13389",
+      "wd_label" : "Bashkir"
+    },
+    {
+      "code" : "bal",
+      "label" : "Baluchi",
+      "wd_qid" : "Q33049",
+      "wd_label" : "Balochi"
+    },
+    {
+      "code" : "bam",
+      "label" : "Bambara",
+      "wd_qid" : "Q33243",
+      "wd_label" : "Bambara"
+    },
+    {
+      "code" : "ban",
+      "label" : "Balinese",
+      "wd_qid" : "Q33070",
+      "wd_label" : "Balinese"
+    },
+    {
+      "code" : "baq",
+      "label" : "Basque",
+      "wd_qid" : "Q8752",
+      "wd_label" : "Basque"
+    },
+    {
+      "code" : "bas",
+      "label" : "Basa",
+      "wd_qid" : "Q33093",
+      "wd_label" : "Basaa"
+    },
+    {
+      "code" : "bat",
+      "label" : "Baltic (Other)",
+      "wd_qid" : "Q33136",
+      "wd_label" : "Baltic"
+    },
+    {
+      "code" : "bej",
+      "label" : "Beja",
+      "wd_qid" : "Q33025",
+      "wd_label" : "Beja"
+    },
+    {
+      "code" : "bel",
+      "label" : "Belarusian",
+      "wd_qid" : "Q9091",
+      "wd_label" : "Belarusian"
+    },
+    {
+      "code" : "bem",
+      "label" : "Bemba",
+      "wd_qid" : "Q33052",
+      "wd_label" : "Bemba"
+    },
+    {
+      "code" : "ben",
+      "label" : "Bengali",
+      "wd_qid" : "Q9610",
+      "wd_label" : "Bangla"
+    },
+    {
+      "code" : "ber",
+      "label" : "Berber (Other)",
+      "wd_qid" : "Q25448",
+      "wd_label" : "Berber"
+    },
+    {
+      "code" : "bho",
+      "label" : "Bhojpuri",
+      "wd_qid" : "Q33268",
+      "wd_label" : "Bhojpuri"
+    },
+    {
+      "code" : "bih",
+      "label" : "Bihari (Other)",
+      "wd_qid" : "Q135305",
+      "wd_label" : "Bihari"
+    },
+    {
+      "code" : "bik",
+      "label" : "Bikol",
+      "wd_qid" : "Q35455",
+      "wd_label" : "Bikol"
+    },
+    {
+      "code" : "bin",
+      "label" : "Edo",
+      "wd_qid" : "Q35375",
+      "wd_label" : "Edo"
+    },
+    {
+      "code" : "bis",
+      "label" : "Bislama",
+      "wd_qid" : "Q35452",
+      "wd_label" : "Bislama"
+    },
+    {
+      "code" : "bla",
+      "label" : "Siksika",
+      "wd_qid" : "Q33060",
+      "wd_label" : "Blackfoot"
+    },
+    {
+      "code" : "bnt",
+      "label" : "Bantu (Other)",
+      "wd_qid" : "Q33146",
+      "wd_label" : "Bantu"
+    },
+    {
+      "code" : "bos",
+      "label" : "Bosnian",
+      "wd_qid" : "Q9301",
+      "wd_label" : "Serbo-Croatian"
+    },
+    {
+      "code" : "bra",
+      "label" : "Braj",
+      "wd_qid" : "Q35243",
+      "wd_label" : "Braj Bhasha"
+    },
+    {
+      "code" : "bre",
+      "label" : "Breton",
+      "wd_qid" : "Q12107",
+      "wd_label" : "Breton"
+    },
+    {
+      "code" : "btk",
+      "label" : "Batak",
+      "wd_qid" : "Q1998595",
+      "wd_label" : "Batak"
+    },
+    {
+      "code" : "bua",
+      "label" : "Buriat",
+      "wd_qid" : "Q33120",
+      "wd_label" : "Buryat"
+    },
+    {
+      "code" : "bug",
+      "label" : "Bugis",
+      "wd_qid" : "Q33190",
+      "wd_label" : "Bugis"
+    },
+    {
+      "code" : "bul",
+      "label" : "Bulgarian",
+      "wd_qid" : "Q7918",
+      "wd_label" : "Bulgarian"
+    },
+    {
+      "code" : "bur",
+      "label" : "Burmese",
+      "wd_qid" : "Q9228",
+      "wd_label" : "Burmese"
+    },
+    {
+      "code" : "byn",
+      "label" : "Bilin",
+      "wd_qid" : "Q56491",
+      "wd_label" : "Blin"
+    },
+    {
+      "code" : "cad",
+      "label" : "Caddo",
+      "wd_qid" : "Q56756",
+      "wd_label" : "Caddo"
+    },
+    {
+      "code" : "cai",
+      "label" : "Central American Indian (Other)",
+      "wd_qid" : "Q12642598",
+      "wd_label" : "Central American Indian languages"
+    },
+    {
+      "code" : "-cam",
+      "label" : "Khmer",
+      "wd_qid" : "Q9205",
+      "wd_label" : "Khmer"
+    },
+    {
+      "code" : "car",
+      "label" : "Carib",
+      "wd_qid" : "Q56611",
+      "wd_label" : "Carib"
+    },
+    {
+      "code" : "cat",
+      "label" : "Catalan",
+      "wd_qid" : "Q7026",
+      "wd_label" : "Catalan"
+    },
+    {
+      "code" : "cau",
+      "label" : "Caucasian (Other)",
+      "wd_qid" : "Q169921",
+      "wd_label" : "Ibero-Caucasian"
+    },
+    {
+      "code" : "ceb",
+      "label" : "Cebuano",
+      "wd_qid" : "Q33239",
+      "wd_label" : "Cebuano"
+    },
+    {
+      "code" : "cel",
+      "label" : "Celtic (Other)",
+      "wd_qid" : "Q25293",
+      "wd_label" : "Celtic"
+    },
+    {
+      "code" : "cha",
+      "label" : "Chamorro",
+      "wd_qid" : "Q33262",
+      "wd_label" : "Chamorro"
+    },
+    {
+      "code" : "chb",
+      "label" : "Chibcha",
+      "wd_qid" : "Q2356431",
+      "wd_label" : "Chibcha"
+    },
+    {
+      "code" : "che",
+      "label" : "Chechen",
+      "wd_qid" : "Q33350",
+      "wd_label" : "Chechen"
+    },
+    {
+      "code" : "chg",
+      "label" : "Chagatai",
+      "wd_qid" : "Q36831",
+      "wd_label" : "Chagatai"
+    },
+    {
+      "code" : "chi",
+      "label" : "Chinese",
+      "wd_qid" : "Q7850",
+      "wd_label" : "Chinese"
+    },
+    {
+      "code" : "chk",
+      "label" : "Chuukese",
+      "wd_qid" : "Q33161",
+      "wd_label" : "Chuukese"
+    },
+    {
+      "code" : "chm",
+      "label" : "Mari",
+      "wd_qid" : "Q973685",
+      "wd_label" : "Mari"
+    },
+    {
+      "code" : "chn",
+      "label" : "Chinook jargon",
+      "wd_qid" : "Q35173",
+      "wd_label" : "Chinook Jargon"
+    },
+    {
+      "code" : "cho",
+      "label" : "Choctaw",
+      "wd_qid" : "Q32979",
+      "wd_label" : "Choctaw"
+    },
+    {
+      "code" : "chp",
+      "label" : "Chipewyan",
+      "wd_qid" : "Q27692",
+      "wd_label" : "Chipewyan"
+    },
+    {
+      "code" : "chr",
+      "label" : "Cherokee",
+      "wd_qid" : "Q33388",
+      "wd_label" : "Cherokee"
+    },
+    {
+      "code" : "chu",
+      "label" : "Church Slavic",
+      "wd_qid" : "Q33251",
+      "wd_label" : "Church Slavonic"
+    },
+    {
+      "code" : "chv",
+      "label" : "Chuvash",
+      "wd_qid" : "Q33348",
+      "wd_label" : "Chuvash"
+    },
+    {
+      "code" : "chy",
+      "label" : "Cheyenne",
+      "wd_qid" : "Q33265",
+      "wd_label" : "Cheyenne"
+    },
+    {
+      "code" : "cmc",
+      "label" : "Chamic languages",
+      "wd_qid" : "Q2997506",
+      "wd_label" : "Chamic"
+    },
+    {
+      "code" : "cnr",
+      "label" : "Montenegrin",
+      "wd_qid" : "Q8821",
+      "wd_label" : "Montenegrin"
+    },
+    {
+      "code" : "cop",
+      "label" : "Coptic",
+      "wd_qid" : "Q36155",
+      "wd_label" : "Coptic"
+    },
+    {
+      "code" : "cor",
+      "label" : "Cornish",
+      "wd_qid" : "Q25289",
+      "wd_label" : "Cornish"
+    },
+    {
+      "code" : "cos",
+      "label" : "Corsican",
+      "wd_qid" : "Q33111",
+      "wd_label" : "Corsican"
+    },
+    {
+      "code" : "cre",
+      "label" : "Cree",
+      "wd_qid" : "Q33390",
+      "wd_label" : "Cree"
+    },
+    {
+      "code" : "crh",
+      "label" : "Crimean Tatar",
+      "wd_qid" : "Q33357",
+      "wd_label" : "Crimean Tatar"
+    },
+    {
+      "code" : "csb",
+      "label" : "Kashubian",
+      "wd_qid" : "Q33690",
+      "wd_label" : "Kashubian"
+    },
+    {
+      "code" : "cze",
+      "label" : "Czech",
+      "wd_qid" : "Q9056",
+      "wd_label" : "Czech"
+    },
+    {
+      "code" : "dak",
+      "label" : "Dakota",
+      "wd_qid" : "Q530384",
+      "wd_label" : "Dakota"
+    },
+    {
+      "code" : "dan",
+      "label" : "Danish",
+      "wd_qid" : "Q9035",
+      "wd_label" : "Danish"
+    },
+    {
+      "code" : "dar",
+      "label" : "Dargwa",
+      "wd_qid" : "Q32332",
+      "wd_label" : "Dargwa"
+    },
+    {
+      "code" : "day",
+      "label" : "Dayak",
+      "wd_qid" : "Q3057743",
+      "wd_label" : "Dayak"
+    },
+    {
+      "code" : "del",
+      "label" : "Delaware",
+      "wd_qid" : "Q2665761",
+      "wd_label" : "Delaware"
+    },
+    {
+      "code" : "den",
+      "label" : "Slavey",
+      "wd_qid" : "Q13272",
+      "wd_label" : "Slavey"
+    },
+    {
+      "code" : "dgr",
+      "label" : "Dogrib",
+      "wd_qid" : "Q20979",
+      "wd_label" : "Dogrib"
+    },
+    {
+      "code" : "din",
+      "label" : "Dinka",
+      "wd_qid" : "Q56466",
+      "wd_label" : "Dinka"
+    },
+    {
+      "code" : "div",
+      "label" : "Divehi",
+      "wd_qid" : "Q32656",
+      "wd_label" : "Maldivian"
+    },
+    {
+      "code" : "doi",
+      "label" : "Dogri",
+      "wd_qid" : "Q32730",
+      "wd_label" : "Dogri"
+    },
+    {
+      "code" : "dra",
+      "label" : "Dravidian (Other)",
+      "wd_qid" : "Q33311",
+      "wd_label" : "Dravidian"
+    },
+    {
+      "code" : "dsb",
+      "label" : "Lower Sorbian",
+      "wd_qid" : "Q13286",
+      "wd_label" : "Lower Sorbian"
+    },
+    {
+      "code" : "dua",
+      "label" : "Duala",
+      "wd_qid" : "Q33013",
+      "wd_label" : "Duala"
+    },
+    {
+      "code" : "dum",
+      "label" : "Dutch, Middle (ca. 1050-1350)",
+      "wd_qid" : "Q178806",
+      "wd_label" : "Middle Dutch"
+    },
+    {
+      "code" : "dut",
+      "label" : "Dutch",
+      "wd_qid" : "Q7411",
+      "wd_label" : "Dutch"
+    },
+    {
+      "code" : "dyu",
+      "label" : "Dyula",
+      "wd_qid" : "Q32706",
+      "wd_label" : "Dioula"
+    },
+    {
+      "code" : "dzo",
+      "label" : "Dzongkha",
+      "wd_qid" : "Q33081",
+      "wd_label" : "Dzongkha"
+    },
+    {
+      "code" : "efi",
+      "label" : "Efik",
+      "wd_qid" : "Q35377",
+      "wd_label" : "Efik"
+    },
+    {
+      "code" : "egy",
+      "label" : "Egyptian",
+      "wd_qid" : "Q50868",
+      "wd_label" : "Egyptian"
+    },
+    {
+      "code" : "eka",
+      "label" : "Ekajuk",
+      "wd_qid" : "Q35250",
+      "wd_label" : "Ekajuk"
+    },
+    {
+      "code" : "elx",
+      "label" : "Elamite",
+      "wd_qid" : "Q35470",
+      "wd_label" : "Elamite"
+    },
+    {
+      "code" : "eng",
+      "label" : "English",
+      "wd_qid" : "Q1860",
+      "wd_label" : "English"
+    },
+    {
+      "code" : "enm",
+      "label" : "English, Middle (1100-1500)",
+      "wd_qid" : "Q36395",
+      "wd_label" : "Middle English"
+    },
+    {
+      "code" : "epo",
+      "label" : "Esperanto",
+      "wd_qid" : "Q143",
+      "wd_label" : "Esperanto"
+    },
+    {
+      "code" : "-esk",
+      "label" : "Eskimo languages",
+      "wd_qid" : "Q20736",
+      "wd_label" : "Eskimo languages"
+    },
+    {
+      "code" : "-esp",
+      "label" : "Esperanto",
+      "wd_qid" : "Q143",
+      "wd_label" : "Esperanto"
+    },
+    {
+      "code" : "est",
+      "label" : "Estonian",
+      "wd_qid" : "Q9072",
+      "wd_label" : "Estonian"
+    },
+    {
+      "code" : "-eth",
+      "label" : "Ethiopic",
+      "wd_qid" : "Q163629",
+      "wd_label" : "Ethiopian Semitic"
+    },
+    {
+      "code" : "ewe",
+      "label" : "Ewe",
+      "wd_qid" : "Q30005",
+      "wd_label" : "Ewe"
+    },
+    {
+      "code" : "ewo",
+      "label" : "Ewondo",
+      "wd_qid" : "Q35459",
+      "wd_label" : "Ewondo"
+    },
+    {
+      "code" : "fan",
+      "label" : "Fang",
+      "wd_qid" : "Q33484",
+      "wd_label" : "Fang"
+    },
+    {
+      "code" : "fao",
+      "label" : "Faroese",
+      "wd_qid" : "Q25258",
+      "wd_label" : "Faroese"
+    },
+    {
+      "code" : "-far",
+      "label" : "Faroese",
+      "wd_qid" : "Q25258",
+      "wd_label" : "Faroese"
+    },
+    {
+      "code" : "fat",
+      "label" : "Fanti",
+      "wd_qid" : "Q35570",
+      "wd_label" : "Fante"
+    },
+    {
+      "code" : "fij",
+      "label" : "Fijian",
+      "wd_qid" : "Q33295",
+      "wd_label" : "Fijian"
+    },
+    {
+      "code" : "fil",
+      "label" : "Filipino",
+      "wd_qid" : "Q33298",
+      "wd_label" : "Filipino"
+    },
+    {
+      "code" : "fin",
+      "label" : "Finnish",
+      "wd_qid" : "Q1412",
+      "wd_label" : "Finnish"
+    },
+    {
+      "code" : "fiu",
+      "label" : "Finno-Ugrian (Other)",
+      "wd_qid" : "Q79890",
+      "wd_label" : "Finno-Ugric"
+    },
+    {
+      "code" : "fon",
+      "label" : "Fon",
+      "wd_qid" : "Q33291",
+      "wd_label" : "Fon"
+    },
+    {
+      "code" : "fre",
+      "label" : "French",
+      "wd_qid" : "Q150",
+      "wd_label" : "French"
+    },
+    {
+      "code" : "-fri",
+      "label" : "Frisian",
+      "wd_qid" : "Q27175",
+      "wd_label" : "West Frisian"
+    },
+    {
+      "code" : "frm",
+      "label" : "French, Middle (ca. 1300-1600)",
+      "wd_qid" : "Q1473289",
+      "wd_label" : "Middle French"
+    },
+    {
+      "code" : "fro",
+      "label" : "French, Old (ca. 842-1300)",
+      "wd_qid" : "Q35222",
+      "wd_label" : "Old French"
+    },
+    {
+      "code" : "frr",
+      "label" : "North Frisian",
+      "wd_qid" : "Q28224",
+      "wd_label" : "North Frisian"
+    },
+    {
+      "code" : "frs",
+      "label" : "East Frisian",
+      "wd_qid" : "Q494355",
+      "wd_label" : "East Frisian language"
+    },
+    {
+      "code" : "fry",
+      "label" : "Frisian",
+      "wd_qid" : "Q27175",
+      "wd_label" : "West Frisian"
+    },
+    {
+      "code" : "ful",
+      "label" : "Fula",
+      "wd_qid" : "Q33454",
+      "wd_label" : "Fula"
+    },
+    {
+      "code" : "fur",
+      "label" : "Friulian",
+      "wd_qid" : "Q33441",
+      "wd_label" : "Friulian"
+    },
+    {
+      "code" : "gaa",
+      "label" : "Gã",
+      "wd_qid" : "Q33287",
+      "wd_label" : "Ga"
+    },
+    {
+      "code" : "-gae",
+      "label" : "Scottish Gaelix",
+      "wd_qid" : "Q9314",
+      "wd_label" : "Scottish Gaelic"
+    },
+    {
+      "code" : "-gag",
+      "label" : "Galician",
+      "wd_qid" : "Q9307",
+      "wd_label" : "Galician"
+    },
+    {
+      "code" : "-gal",
+      "label" : "Oromo",
+      "wd_qid" : "Q33864",
+      "wd_label" : "Oromo"
+    },
+    {
+      "code" : "gay",
+      "label" : "Gayo",
+      "wd_qid" : "Q33286",
+      "wd_label" : "Gayo"
+    },
+    {
+      "code" : "gba",
+      "label" : "Gbaya",
+      "wd_qid" : "Q3099986",
+      "wd_label" : "Gbaya"
+    },
+    {
+      "code" : "gem",
+      "label" : "Germanic (Other)",
+      "wd_qid" : "Q21200",
+      "wd_label" : "Germanic"
+    },
+    {
+      "code" : "geo",
+      "label" : "Georgian",
+      "wd_qid" : "Q8108",
+      "wd_label" : "Georgian"
+    },
+    {
+      "code" : "ger",
+      "label" : "German",
+      "wd_qid" : "Q188",
+      "wd_label" : "German"
+    },
+    {
+      "code" : "gez",
+      "label" : "Ethiopic",
+      "wd_qid" : "Q163629",
+      "wd_label" : "Ethiopian Semitic"
+    },
+    {
+      "code" : "gil",
+      "label" : "Gilbertese",
+      "wd_qid" : "Q30898",
+      "wd_label" : "Gilbertese"
+    },
+    {
+      "code" : "gla",
+      "label" : "Scottish Gaelic",
+      "wd_qid" : "Q9314",
+      "wd_label" : "Scottish Gaelic"
+    },
+    {
+      "code" : "gle",
+      "label" : "Irish",
+      "wd_qid" : "Q9142",
+      "wd_label" : "Irish"
+    },
+    {
+      "code" : "glg",
+      "label" : "Galician",
+      "wd_qid" : "Q9307",
+      "wd_label" : "Galician"
+    },
+    {
+      "code" : "glv",
+      "label" : "Manx",
+      "wd_qid" : "Q12175",
+      "wd_label" : "Manx"
+    },
+    {
+      "code" : "gmh",
+      "label" : "German, Middle High (ca. 1050-1500)",
+      "wd_qid" : "Q837985",
+      "wd_label" : "Middle High German"
+    },
+    {
+      "code" : "goh",
+      "label" : "German, Old High (ca. 750-1050)",
+      "wd_qid" : "Q35218",
+      "wd_label" : "Old High German"
+    },
+    {
+      "code" : "gon",
+      "label" : "Gondi",
+      "wd_qid" : "Q1775361",
+      "wd_label" : "Gondi"
+    },
+    {
+      "code" : "gor",
+      "label" : "Gorontalo",
+      "wd_qid" : "Q2501174",
+      "wd_label" : "Gorontalo"
+    },
+    {
+      "code" : "got",
+      "label" : "Gothic",
+      "wd_qid" : "Q35722",
+      "wd_label" : "Gothic"
+    },
+    {
+      "code" : "grb",
+      "label" : "Grebo",
+      "wd_qid" : "Q35257",
+      "wd_label" : "Grebo"
+    },
+    {
+      "code" : "grc",
+      "label" : "Greek, Ancient (to 1453)",
+      "wd_qid" : "Q35497",
+      "wd_label" : "Ancient Greek"
+    },
+    {
+      "code" : "gre",
+      "label" : "Greek, Modern (1453-)",
+      "wd_qid" : "Q9129",
+      "wd_label" : "Greek"
+    },
+    {
+      "code" : "grn",
+      "label" : "Guarani",
+      "wd_qid" : "Q35876",
+      "wd_label" : "Guarani"
+    },
+    {
+      "code" : "gsw",
+      "label" : "Swiss German",
+      "wd_qid" : "Q387066",
+      "wd_label" : "Swiss German"
+    },
+    {
+      "code" : "-gua",
+      "label" : "Guarani",
+      "wd_qid" : "Q35876",
+      "wd_label" : "Guarani"
+    },
+    {
+      "code" : "guj",
+      "label" : "Gujarati",
+      "wd_qid" : "Q5137",
+      "wd_label" : "Gujarati"
+    },
+    {
+      "code" : "gwi",
+      "label" : "Gwich'in",
+      "wd_qid" : "Q21057",
+      "wd_label" : "Gwich’in"
+    },
+    {
+      "code" : "hai",
+      "label" : "Haida",
+      "wd_qid" : "Q33303",
+      "wd_label" : "Haida"
+    },
+    {
+      "code" : "hat",
+      "label" : "Haitian French Creole",
+      "wd_qid" : "Q33491",
+      "wd_label" : "Haitian Creole"
+    },
+    {
+      "code" : "hau",
+      "label" : "Hausa",
+      "wd_qid" : "Q56475",
+      "wd_label" : "Hausa"
+    },
+    {
+      "code" : "haw",
+      "label" : "Hawaiian",
+      "wd_qid" : "Q33569",
+      "wd_label" : "Hawaiian"
+    },
+    {
+      "code" : "heb",
+      "label" : "Hebrew",
+      "wd_qid" : "Q9288",
+      "wd_label" : "Hebrew"
+    },
+    {
+      "code" : "her",
+      "label" : "Herero",
+      "wd_qid" : "Q33315",
+      "wd_label" : "Herero"
+    },
+    {
+      "code" : "hil",
+      "label" : "Hiligaynon",
+      "wd_qid" : "Q35978",
+      "wd_label" : "Hiligaynon"
+    },
+    {
+      "code" : "him",
+      "label" : "Western Pahari languages",
+      "wd_qid" : "Q10939493",
+      "wd_label" : "Western Pahari"
+    },
+    {
+      "code" : "hin",
+      "label" : "Hindi",
+      "wd_qid" : "Q1568",
+      "wd_label" : "Hindi"
+    },
+    {
+      "code" : "hit",
+      "label" : "Hittite",
+      "wd_qid" : "Q35668",
+      "wd_label" : "Hittite"
+    },
+    {
+      "code" : "hmn",
+      "label" : "Hmong",
+      "wd_qid" : "Q3307894",
+      "wd_label" : "Hmong"
+    },
+    {
+      "code" : "hmo",
+      "label" : "Hiri Motu",
+      "wd_qid" : "Q33617",
+      "wd_label" : "Hiri Motu"
+    },
+    {
+      "code" : "hrv",
+      "label" : "Croatian",
+      "wd_qid" : "Q6654",
+      "wd_label" : "Croatian"
+    },
+    {
+      "code" : "hsb",
+      "label" : "Upper Sorbian",
+      "wd_qid" : "Q13248",
+      "wd_label" : "Upper Sorbian"
+    },
+    {
+      "code" : "hun",
+      "label" : "Hungarian",
+      "wd_qid" : "Q9067",
+      "wd_label" : "Hungarian"
+    },
+    {
+      "code" : "hup",
+      "label" : "Hupa",
+      "wd_qid" : "Q28058",
+      "wd_label" : "Hupa"
+    },
+    {
+      "code" : "iba",
+      "label" : "Iban",
+      "wd_qid" : "Q33424",
+      "wd_label" : "Iban"
+    },
+    {
+      "code" : "ibo",
+      "label" : "Igbo",
+      "wd_qid" : "Q33578",
+      "wd_label" : "Igbo"
+    },
+    {
+      "code" : "ice",
+      "label" : "Icelandic",
+      "wd_qid" : "Q294",
+      "wd_label" : "Icelandic"
+    },
+    {
+      "code" : "ido",
+      "label" : "Ido",
+      "wd_qid" : "Q35224",
+      "wd_label" : "Ido"
+    },
+    {
+      "code" : "iii",
+      "label" : "Sichuan Yi",
+      "wd_qid" : "Q34235",
+      "wd_label" : "Nuosu"
+    },
+    {
+      "code" : "ijo",
+      "label" : "Ijo",
+      "wd_qid" : "Q3915854",
+      "wd_label" : "Nembe"
+    },
+    {
+      "code" : "iku",
+      "label" : "Inuktitut",
+      "wd_qid" : "Q29921",
+      "wd_label" : "Inuktitut"
+    },
+    {
+      "code" : "ile",
+      "label" : "Interlingue",
+      "wd_qid" : "Q35850",
+      "wd_label" : "Interlingue"
+    },
+    {
+      "code" : "ilo",
+      "label" : "Iloko",
+      "wd_qid" : "Q35936",
+      "wd_label" : "Ilocano"
+    },
+    {
+      "code" : "ina",
+      "label" : "Interlingua (International Auxiliary Language Association)",
+      "wd_qid" : "Q35934",
+      "wd_label" : "Interlingua"
+    },
+    {
+      "code" : "inc",
+      "label" : "Indic (Other)",
+      "wd_qid" : "Q33577",
+      "wd_label" : "Indo-Aryan"
+    },
+    {
+      "code" : "ind",
+      "label" : "Indonesian",
+      "wd_qid" : "Q9240",
+      "wd_label" : "Indonesian"
+    },
+    {
+      "code" : "ine",
+      "label" : "Indo-European (Other)",
+      "wd_qid" : "Q19860",
+      "wd_label" : "Indo-European"
+    },
+    {
+      "code" : "inh",
+      "label" : "Ingush",
+      "wd_qid" : "Q33509",
+      "wd_label" : "Ingush"
+    },
+    {
+      "code" : "-int",
+      "label" : "Interlingua (International Auxiliary Language Association)",
+      "wd_qid" : "Q35934",
+      "wd_label" : "Interlingua"
+    },
+    {
+      "code" : "ipk",
+      "label" : "Inupiaq",
+      "wd_qid" : "Q27183",
+      "wd_label" : "Iñupiaq"
+    },
+    {
+      "code" : "ira",
+      "label" : "Iranian (Other)",
+      "wd_qid" : "Q9168",
+      "wd_label" : "Persian"
+    },
+    {
+      "code" : "-iri",
+      "label" : "Irish",
+      "wd_qid" : "Q9142",
+      "wd_label" : "Irish"
+    },
+    {
+      "code" : "iro",
+      "label" : "Iroquoian (Other)",
+      "wd_qid" : "Q33623",
+      "wd_label" : "Iroquoian"
+    },
+    {
+      "code" : "ita",
+      "label" : "Italian",
+      "wd_qid" : "Q652",
+      "wd_label" : "Italian"
+    },
+    {
+      "code" : "jav",
+      "label" : "Javanese",
+      "wd_qid" : "Q33549",
+      "wd_label" : "Javanese"
+    },
+    {
+      "code" : "jbo",
+      "label" : "Lojban (Artificial language)",
+      "wd_qid" : "Q36350",
+      "wd_label" : "Lojban"
+    },
+    {
+      "code" : "jpn",
+      "label" : "Japanese",
+      "wd_qid" : "Q5287",
+      "wd_label" : "Japanese"
+    },
+    {
+      "code" : "jpr",
+      "label" : "Judeo-Persian",
+      "wd_qid" : "Q33367",
+      "wd_label" : "Judæo-Persian"
+    },
+    {
+      "code" : "jrb",
+      "label" : "Judeo-Arabic",
+      "wd_qid" : "Q37733",
+      "wd_label" : "Judeo-Arabic"
+    },
+    {
+      "code" : "kaa",
+      "label" : "Kara-Kalpak",
+      "wd_qid" : "Q33541",
+      "wd_label" : "Karakalpak"
+    },
+    {
+      "code" : "kab",
+      "label" : "Kabyle",
+      "wd_qid" : "Q35853",
+      "wd_label" : "Kabyle"
+    },
+    {
+      "code" : "kac",
+      "label" : "Kachin",
+      "wd_qid" : "Q33332",
+      "wd_label" : "Jingpho"
+    },
+    {
+      "code" : "kam",
+      "label" : "Kamba",
+      "wd_qid" : "Q2574767",
+      "wd_label" : "Kamba"
+    },
+    {
+      "code" : "kan",
+      "label" : "Kannada",
+      "wd_qid" : "Q33673",
+      "wd_label" : "Kannada"
+    },
+    {
+      "code" : "kar",
+      "label" : "Karen languages",
+      "wd_qid" : "Q1364815",
+      "wd_label" : "Karenic"
+    },
+    {
+      "code" : "kas",
+      "label" : "Kashmiri",
+      "wd_qid" : "Q33552",
+      "wd_label" : "Kashmiri"
+    },
+    {
+      "code" : "kau",
+      "label" : "Kanuri",
+      "wd_qid" : "Q36094",
+      "wd_label" : "Kanuri"
+    },
+    {
+      "code" : "kaw",
+      "label" : "Kawi",
+      "wd_qid" : "Q49341",
+      "wd_label" : "Kawi"
+    },
+    {
+      "code" : "kaz",
+      "label" : "Kazakh",
+      "wd_qid" : "Q9252",
+      "wd_label" : "Kazakh"
+    },
+    {
+      "code" : "kbd",
+      "label" : "Kabardian",
+      "wd_qid" : "Q33522",
+      "wd_label" : "Kabardian"
+    },
+    {
+      "code" : "kha",
+      "label" : "Khasi",
+      "wd_qid" : "Q33584",
+      "wd_label" : "Khasi"
+    },
+    {
+      "code" : "khi",
+      "label" : "Khoisan (Other)",
+      "wd_qid" : "Q33614",
+      "wd_label" : "Khoisan"
+    },
+    {
+      "code" : "khm",
+      "label" : "Khmer",
+      "wd_qid" : "Q9205",
+      "wd_label" : "Khmer"
+    },
+    {
+      "code" : "kho",
+      "label" : "Khotanese",
+      "wd_qid" : "Q6583551",
+      "wd_label" : "Khotanese"
+    },
+    {
+      "code" : "kik",
+      "label" : "Kikuyu",
+      "wd_qid" : "Q33587",
+      "wd_label" : "Gikuyu"
+    },
+    {
+      "code" : "kin",
+      "label" : "Kinyarwanda",
+      "wd_qid" : "Q33573",
+      "wd_label" : "Kinyarwanda"
+    },
+    {
+      "code" : "kir",
+      "label" : "Kyrgyz",
+      "wd_qid" : "Q9255",
+      "wd_label" : "Kyrgyz"
+    },
+    {
+      "code" : "kmb",
+      "label" : "Kimbundu",
+      "wd_qid" : "Q35891",
+      "wd_label" : "Kimbundu"
+    },
+    {
+      "code" : "kok",
+      "label" : "Konkani",
+      "wd_qid" : "Q34239",
+      "wd_label" : "Konkani"
+    },
+    {
+      "code" : "kom",
+      "label" : "Komi",
+      "wd_qid" : "Q36126",
+      "wd_label" : "Komi"
+    },
+    {
+      "code" : "kon",
+      "label" : "Kongo",
+      "wd_qid" : "Q33702",
+      "wd_label" : "Kongo"
+    },
+    {
+      "code" : "kor",
+      "label" : "Korean",
+      "wd_qid" : "Q9176",
+      "wd_label" : "Korean"
+    },
+    {
+      "code" : "kos",
+      "label" : "Kosraean",
+      "wd_qid" : "Q33464",
+      "wd_label" : "Kosraean"
+    },
+    {
+      "code" : "kpe",
+      "label" : "Kpelle",
+      "wd_qid" : "Q35673",
+      "wd_label" : "Kpelle"
+    },
+    {
+      "code" : "krc",
+      "label" : "Karachay-Balkar",
+      "wd_qid" : "Q33714",
+      "wd_label" : "Karachay-Balkar"
+    },
+    {
+      "code" : "krl",
+      "label" : "Karelian",
+      "wd_qid" : "Q33557",
+      "wd_label" : "Karelian"
+    },
+    {
+      "code" : "kro",
+      "label" : "Kru (Other)",
+      "wd_qid" : "Q33535",
+      "wd_label" : "Kru"
+    },
+    {
+      "code" : "kru",
+      "label" : "Kurukh",
+      "wd_qid" : "Q33492",
+      "wd_label" : "Kurukh"
+    },
+    {
+      "code" : "kua",
+      "label" : "Kuanyama",
+      "wd_qid" : "Q1405077",
+      "wd_label" : "Kwanyama"
+    },
+    {
+      "code" : "kum",
+      "label" : "Kumyk",
+      "wd_qid" : "Q36209",
+      "wd_label" : "Kumyk"
+    },
+    {
+      "code" : "kur",
+      "label" : "Kurdish",
+      "wd_qid" : "Q36368",
+      "wd_label" : "Kurdish"
+    },
+    {
+      "code" : "-kus",
+      "label" : "Kusaie",
+      "wd_qid" : "Q33464",
+      "wd_label" : "Kosraean"
+    },
+    {
+      "code" : "kut",
+      "label" : "Kootenai",
+      "wd_qid" : "Q33434",
+      "wd_label" : "Kutenai"
+    },
+    {
+      "code" : "lad",
+      "label" : "Ladino",
+      "wd_qid" : "Q36202",
+      "wd_label" : "Ladin"
+    },
+    {
+      "code" : "lah",
+      "label" : "Lahndā",
+      "wd_qid" : "Q112670533",
+      "wd_label" : "Lahnda"
+    },
+    {
+      "code" : "lam",
+      "label" : "Lamba (Zambia and Congo)",
+      "wd_qid" : "Q2365491",
+      "wd_label" : "Lamba"
+    },
+    {
+      "code" : "-lan",
+      "label" : "Occitan (post 1500)",
+      "wd_qid" : "Q14185",
+      "wd_label" : "Occitan"
+    },
+    {
+      "code" : "lao",
+      "label" : "Lao",
+      "wd_qid" : "Q9211",
+      "wd_label" : "Lao"
+    },
+    {
+      "code" : "-lap",
+      "label" : "Sami",
+      "wd_qid" : "Q56593",
+      "wd_label" : "Levantine Arabic"
+    },
+    {
+      "code" : "lat",
+      "label" : "Latin",
+      "wd_qid" : "Q397",
+      "wd_label" : "Latin"
+    },
+    {
+      "code" : "lav",
+      "label" : "Latvian",
+      "wd_qid" : "Q9078",
+      "wd_label" : "Latvian"
+    },
+    {
+      "code" : "lez",
+      "label" : "Lezgian",
+      "wd_qid" : "Q31746",
+      "wd_label" : "Lezgian"
+    },
+    {
+      "code" : "lim",
+      "label" : "Limburgish",
+      "wd_qid" : "Q102172",
+      "wd_label" : "Limburgish"
+    },
+    {
+      "code" : "lin",
+      "label" : "Lingala",
+      "wd_qid" : "Q36217",
+      "wd_label" : "Lingala"
+    },
+    {
+      "code" : "lit",
+      "label" : "Lithuanian",
+      "wd_qid" : "Q9083",
+      "wd_label" : "Lithuanian"
+    },
+    {
+      "code" : "lol",
+      "label" : "Mongo-Nkundu",
+      "wd_qid" : "Q112893",
+      "wd_label" : "Mongo"
+    },
+    {
+      "code" : "loz",
+      "label" : "Lozi",
+      "wd_qid" : "Q33628",
+      "wd_label" : "Lozi"
+    },
+    {
+      "code" : "ltz",
+      "label" : "Luxembourgish",
+      "wd_qid" : "Q9051",
+      "wd_label" : "Luxembourgish"
+    },
+    {
+      "code" : "lua",
+      "label" : "Luba-Lulua",
+      "wd_qid" : "Q34173",
+      "wd_label" : "Luba-Kasai"
+    },
+    {
+      "code" : "lub",
+      "label" : "Luba-Katanga",
+      "wd_qid" : "Q36157",
+      "wd_label" : "Luba-Katanga"
+    },
+    {
+      "code" : "lug",
+      "label" : "Ganda",
+      "wd_qid" : "Q56245",
+      "wd_label" : "Ga'anda"
+    },
+    {
+      "code" : "lui",
+      "label" : "Luiseño",
+      "wd_qid" : "Q56236",
+      "wd_label" : "Luiseño"
+    },
+    {
+      "code" : "lun",
+      "label" : "Lunda",
+      "wd_qid" : "Q33607",
+      "wd_label" : "Lunda"
+    },
+    {
+      "code" : "luo",
+      "label" : "Luo (Kenya and Tanzania)",
+      "wd_qid" : "Q5414796",
+      "wd_label" : "Dholuo"
+    },
+    {
+      "code" : "lus",
+      "label" : "Lushai",
+      "wd_qid" : "Q36147",
+      "wd_label" : "Mizo"
+    },
+    {
+      "code" : "mac",
+      "label" : "Macedonian",
+      "wd_qid" : "Q9296",
+      "wd_label" : "Macedonian"
+    },
+    {
+      "code" : "mad",
+      "label" : "Madurese",
+      "wd_qid" : "Q36213",
+      "wd_label" : "Madurese"
+    },
+    {
+      "code" : "mag",
+      "label" : "Magahi",
+      "wd_qid" : "Q33728",
+      "wd_label" : "Magahi"
+    },
+    {
+      "code" : "mah",
+      "label" : "Marshallese",
+      "wd_qid" : "Q36280",
+      "wd_label" : "Marshallese"
+    },
+    {
+      "code" : "mai",
+      "label" : "Maithili",
+      "wd_qid" : "Q36109",
+      "wd_label" : "Maithili"
+    },
+    {
+      "code" : "mak",
+      "label" : "Makasar",
+      "wd_qid" : "Q33643",
+      "wd_label" : "Makassar"
+    },
+    {
+      "code" : "mal",
+      "label" : "Malayalam",
+      "wd_qid" : "Q36236",
+      "wd_label" : "Malayalam"
+    },
+    {
+      "code" : "man",
+      "label" : "Mandingo",
+      "wd_qid" : "Q35772",
+      "wd_label" : "Manding"
+    },
+    {
+      "code" : "mao",
+      "label" : "Maori",
+      "wd_qid" : "Q36451",
+      "wd_label" : "Māori"
+    },
+    {
+      "code" : "map",
+      "label" : "Austronesian (Other)",
+      "wd_qid" : "Q49228",
+      "wd_label" : "Austronesian"
+    },
+    {
+      "code" : "mar",
+      "label" : "Marathi",
+      "wd_qid" : "Q1571",
+      "wd_label" : "Marathi"
+    },
+    {
+      "code" : "mas",
+      "label" : "Maasai",
+      "wd_qid" : "Q35787",
+      "wd_label" : "Maasai"
+    },
+    {
+      "code" : "-max",
+      "label" : "Manx",
+      "wd_qid" : "Q12175",
+      "wd_label" : "Manx"
+    },
+    {
+      "code" : "may",
+      "label" : "Malay",
+      "wd_qid" : "Q9237",
+      "wd_label" : "Malay"
+    },
+    {
+      "code" : "mdf",
+      "label" : "Moksha",
+      "wd_qid" : "Q13343",
+      "wd_label" : "Moksha"
+    },
+    {
+      "code" : "mdr",
+      "label" : "Mandar",
+      "wd_qid" : "Q35995",
+      "wd_label" : "Mandar"
+    },
+    {
+      "code" : "men",
+      "label" : "Mende",
+      "wd_qid" : "Q1478672",
+      "wd_label" : "Mende"
+    },
+    {
+      "code" : "mga",
+      "label" : "Irish, Middle (ca. 1100-1550)",
+      "wd_qid" : "Q36116",
+      "wd_label" : "Middle Irish"
+    },
+    {
+      "code" : "mic",
+      "label" : "Micmac",
+      "wd_qid" : "Q13321",
+      "wd_label" : "Mi'kmaq"
+    },
+    {
+      "code" : "min",
+      "label" : "Minangkabau",
+      "wd_qid" : "Q13324",
+      "wd_label" : "Minangkabau"
+    },
+    {
+      "code" : "mis",
+      "label" : "Miscellaneous languages",
+      "wd_qid" : "Q124796501",
+      "wd_label" : "uncoded language"
+    },
+    {
+      "code" : "-mla",
+      "label" : "Malagasy",
+      "wd_qid" : "Q7930",
+      "wd_label" : "Malagasy"
+    },
+    {
+      "code" : "mlg",
+      "label" : "Malagasy",
+      "wd_qid" : "Q7930",
+      "wd_label" : "Malagasy"
+    },
+    {
+      "code" : "mlt",
+      "label" : "Maltese",
+      "wd_qid" : "Q9166",
+      "wd_label" : "Maltese"
+    },
+    {
+      "code" : "mnc",
+      "label" : "Manchu",
+      "wd_qid" : "Q33638",
+      "wd_label" : "Manchu"
+    },
+    {
+      "code" : "mni",
+      "label" : "Manipuri",
+      "wd_qid" : "Q33868",
+      "wd_label" : "Meitei"
+    },
+    {
+      "code" : "mno",
+      "label" : "Manobo languages",
+      "wd_qid" : "Q3217483",
+      "wd_label" : "Manobo"
+    },
+    {
+      "code" : "moh",
+      "label" : "Mohawk",
+      "wd_qid" : "Q13339",
+      "wd_label" : "Mohawk"
+    },
+    {
+      "code" : "-mol",
+      "label" : "Moldavian",
+      "wd_qid" : "Q36392",
+      "wd_label" : "Moldovan"
+    },
+    {
+      "code" : "mon",
+      "label" : "Mongolian",
+      "wd_qid" : "Q9246",
+      "wd_label" : "Mongolian"
+    },
+    {
+      "code" : "mos",
+      "label" : "Mooré",
+      "wd_qid" : "Q36096",
+      "wd_label" : "Mooré"
+    },
+    {
+      "code" : "mul",
+      "label" : "Multiple languages",
+      "wd_qid" : "Q90470657",
+      "wd_label" : "any / multiple languages"
+    },
+    {
+      "code" : "mus",
+      "label" : "Creek",
+      "wd_qid" : "Q523014",
+      "wd_label" : "Muscogee"
+    },
+    {
+      "code" : "mwl",
+      "label" : "Mirandese",
+      "wd_qid" : "Q13330",
+      "wd_label" : "Mirandese"
+    },
+    {
+      "code" : "mwr",
+      "label" : "Marwari",
+      "wd_qid" : "Q56312",
+      "wd_label" : "Marwari"
+    },
+    {
+      "code" : "myn",
+      "label" : "Mayan languages",
+      "wd_qid" : "Q33738",
+      "wd_label" : "Mayan"
+    },
+    {
+      "code" : "myv",
+      "label" : "Erzya",
+      "wd_qid" : "Q29952",
+      "wd_label" : "Erzya"
+    },
+    {
+      "code" : "nah",
+      "label" : "Nahuatl",
+      "wd_qid" : "Q13300",
+      "wd_label" : "Nahuatl"
+    },
+    {
+      "code" : "nai",
+      "label" : "North American Indian (Other)",
+      "wd_qid" : "Q4200688",
+      "wd_label" : "indigenous language of North America"
+    },
+    {
+      "code" : "nap",
+      "label" : "Neapolitan Italian",
+      "wd_qid" : "Q33845",
+      "wd_label" : "Neapolitan"
+    },
+    {
+      "code" : "nau",
+      "label" : "Nauru",
+      "wd_qid" : "Q13307",
+      "wd_label" : "Nauruan"
+    },
+    {
+      "code" : "nav",
+      "label" : "Navajo",
+      "wd_qid" : "Q13310",
+      "wd_label" : "Navajo"
+    },
+    {
+      "code" : "nbl",
+      "label" : "Ndebele (South Africa)",
+      "wd_qid" : "Q36785",
+      "wd_label" : "Southern Ndebele"
+    },
+    {
+      "code" : "nde",
+      "label" : "Ndebele (Zimbabwe)",
+      "wd_qid" : "Q35613",
+      "wd_label" : "Northern Ndebele"
+    },
+    {
+      "code" : "ndo",
+      "label" : "Ndonga",
+      "wd_qid" : "Q33900",
+      "wd_label" : "Ndonga"
+    },
+    {
+      "code" : "nds",
+      "label" : "Low German",
+      "wd_qid" : "Q25433",
+      "wd_label" : "Low German"
+    },
+    {
+      "code" : "nep",
+      "label" : "Nepali",
+      "wd_qid" : "Q33823",
+      "wd_label" : "Nepali"
+    },
+    {
+      "code" : "new",
+      "label" : "Newari",
+      "wd_qid" : "Q33979",
+      "wd_label" : "Newar"
+    },
+    {
+      "code" : "nia",
+      "label" : "Nias",
+      "wd_qid" : "Q2407831",
+      "wd_label" : "Nias"
+    },
+    {
+      "code" : "niu",
+      "label" : "Niuean",
+      "wd_qid" : "Q33790",
+      "wd_label" : "Niuean"
+    },
+    {
+      "code" : "nno",
+      "label" : "Norwegian (Nynorsk)",
+      "wd_qid" : "Q25164",
+      "wd_label" : "Nynorsk"
+    },
+    {
+      "code" : "nob",
+      "label" : "Norwegian (Bokmål)",
+      "wd_qid" : "Q25167",
+      "wd_label" : "Bokmål"
+    },
+    {
+      "code" : "nog",
+      "label" : "Nogai",
+      "wd_qid" : "Q33871",
+      "wd_label" : "Nogai"
+    },
+    {
+      "code" : "non",
+      "label" : "Old Norse",
+      "wd_qid" : "Q35505",
+      "wd_label" : "Old Norse"
+    },
+    {
+      "code" : "nor",
+      "label" : "Norwegian",
+      "wd_qid" : "Q9043",
+      "wd_label" : "Norwegian"
+    },
+    {
+      "code" : "nqo",
+      "label" : "N'Ko",
+      "wd_qid" : "Q18546266",
+      "wd_label" : "NKo"
+    },
+    {
+      "code" : "nso",
+      "label" : "Northern Sotho",
+      "wd_qid" : "Q33890",
+      "wd_label" : "Northern Sotho"
+    },
+    {
+      "code" : "nub",
+      "label" : "Nubian languages",
+      "wd_qid" : "Q1517194",
+      "wd_label" : "Nubian"
+    },
+    {
+      "code" : "nwc",
+      "label" : "Newari, Old",
+      "wd_qid" : "Q5128301",
+      "wd_label" : "Classical Newari"
+    },
+    {
+      "code" : "nya",
+      "label" : "Nyanja",
+      "wd_qid" : "Q11732537",
+      "wd_label" : "Nyanja language"
+    },
+    {
+      "code" : "nym",
+      "label" : "Nyamwezi",
+      "wd_qid" : "Q4121131",
+      "wd_label" : "Nyamwezi"
+    },
+    {
+      "code" : "nyn",
+      "label" : "Nyankole",
+      "wd_qid" : "Q13207",
+      "wd_label" : "Runyankole"
+    },
+    {
+      "code" : "nyo",
+      "label" : "Nyoro",
+      "wd_qid" : "Q33794",
+      "wd_label" : "Nyoro"
+    },
+    {
+      "code" : "nzi",
+      "label" : "Nzima",
+      "wd_qid" : "Q36337",
+      "wd_label" : "Nzema"
+    },
+    {
+      "code" : "oci",
+      "label" : "Occitan (post-1500)",
+      "wd_qid" : "Q14185",
+      "wd_label" : "Occitan"
+    },
+    {
+      "code" : "oji",
+      "label" : "Ojibwa",
+      "wd_qid" : "Q33875",
+      "wd_label" : "Ojibwe"
+    },
+    {
+      "code" : "ori",
+      "label" : "Oriya",
+      "wd_qid" : "Q33810",
+      "wd_label" : "Odia"
+    },
+    {
+      "code" : "orm",
+      "label" : "Oromo",
+      "wd_qid" : "Q33864",
+      "wd_label" : "Oromo"
+    },
+    {
+      "code" : "osa",
+      "label" : "Osage",
+      "wd_qid" : "Q2600085",
+      "wd_label" : "Osage"
+    },
+    {
+      "code" : "oss",
+      "label" : "Ossetic",
+      "wd_qid" : "Q33968",
+      "wd_label" : "Ossetian"
+    },
+    {
+      "code" : "ota",
+      "label" : "Turkish, Ottoman",
+      "wd_qid" : "Q36730",
+      "wd_label" : "Ottoman Turkish"
+    },
+    {
+      "code" : "oto",
+      "label" : "Otomian languages",
+      "wd_qid" : "Q116773252",
+      "wd_label" : "Proto-Otomian"
+    },
+    {
+      "code" : "paa",
+      "label" : "Papuan (Other)",
+      "wd_qid" : "Q236425",
+      "wd_label" : "Papuan"
+    },
+    {
+      "code" : "pag",
+      "label" : "Pangasinan",
+      "wd_qid" : "Q33879",
+      "wd_label" : "Pangasinan"
+    },
+    {
+      "code" : "pal",
+      "label" : "Pahlavi",
+      "wd_qid" : "Q120186224",
+      "wd_label" : "Pahlavi"
+    },
+    {
+      "code" : "pam",
+      "label" : "Pampanga",
+      "wd_qid" : "Q36121",
+      "wd_label" : "Kapampangan"
+    },
+    {
+      "code" : "pan",
+      "label" : "Panjabi",
+      "wd_qid" : "Q58635",
+      "wd_label" : "Punjabi"
+    },
+    {
+      "code" : "pap",
+      "label" : "Papiamento",
+      "wd_qid" : "Q33856",
+      "wd_label" : "Papiamento"
+    },
+    {
+      "code" : "pau",
+      "label" : "Palauan",
+      "wd_qid" : "Q33776",
+      "wd_label" : "Palauan"
+    },
+    {
+      "code" : "peo",
+      "label" : "Old Persian (ca. 600-400 B.C.)",
+      "wd_qid" : "Q35225",
+      "wd_label" : "Old Persian"
+    },
+    {
+      "code" : "per",
+      "label" : "Persian",
+      "wd_qid" : "Q9168",
+      "wd_label" : "Persian"
+    },
+    {
+      "code" : "phi",
+      "label" : "Philippine (Other)",
+      "wd_qid" : "Q947858",
+      "wd_label" : "Philippine"
+    },
+    {
+      "code" : "phn",
+      "label" : "Phoenician",
+      "wd_qid" : "Q36734",
+      "wd_label" : "Phoenician"
+    },
+    {
+      "code" : "pol",
+      "label" : "Polish",
+      "wd_qid" : "Q809",
+      "wd_label" : "Polish"
+    },
+    {
+      "code" : "pon",
+      "label" : "Pohnpeian",
+      "wd_qid" : "Q28422",
+      "wd_label" : "Pohnpeian"
+    },
+    {
+      "code" : "por",
+      "label" : "Portuguese",
+      "wd_qid" : "Q5146",
+      "wd_label" : "Portuguese"
+    },
+    {
+      "code" : "pra",
+      "label" : "Prakrit languages",
+      "wd_qid" : "Q192170",
+      "wd_label" : "Prakrit"
+    },
+    {
+      "code" : "pro",
+      "label" : "Provençal (to 1500)",
+      "wd_qid" : "Q241243",
+      "wd_label" : "Provençal"
+    },
+    {
+      "code" : "pus",
+      "label" : "Pushto",
+      "wd_qid" : "Q58680",
+      "wd_label" : "Pashto"
+    },
+    {
+      "code" : "que",
+      "label" : "Quechua",
+      "wd_qid" : "Q5218",
+      "wd_label" : "Quechua"
+    },
+    {
+      "code" : "raj",
+      "label" : "Rajasthani",
+      "wd_qid" : "Q13196",
+      "wd_label" : "Rajasthani"
+    },
+    {
+      "code" : "rap",
+      "label" : "Rapanui",
+      "wd_qid" : "Q36746",
+      "wd_label" : "Rapa Nui"
+    },
+    {
+      "code" : "rar",
+      "label" : "Rarotongan",
+      "wd_qid" : "Q36745",
+      "wd_label" : "Cook Islands Maori"
+    },
+    {
+      "code" : "roa",
+      "label" : "Romance (Other)",
+      "wd_qid" : "Q19814",
+      "wd_label" : "Romance languages"
+    },
+    {
+      "code" : "roh",
+      "label" : "Raeto-Romance",
+      "wd_qid" : "Q33441",
+      "wd_label" : "Friulian"
+    },
+    {
+      "code" : "rom",
+      "label" : "Romani",
+      "wd_qid" : "Q13201",
+      "wd_label" : "Romani"
+    },
+    {
+      "code" : "rum",
+      "label" : "Romanian",
+      "wd_qid" : "Q7913",
+      "wd_label" : "Romanian"
+    },
+    {
+      "code" : "run",
+      "label" : "Rundi",
+      "wd_qid" : "Q33583",
+      "wd_label" : "Kirundi"
+    },
+    {
+      "code" : "rup",
+      "label" : "Aromanian",
+      "wd_qid" : "Q29316",
+      "wd_label" : "Aromanian"
+    },
+    {
+      "code" : "rus",
+      "label" : "Russian",
+      "wd_qid" : "Q7737",
+      "wd_label" : "Russian"
+    },
+    {
+      "code" : "sad",
+      "label" : "Sandawe",
+      "wd_qid" : "Q34016",
+      "wd_label" : "Sandawe"
+    },
+    {
+      "code" : "sah",
+      "label" : "Yakut",
+      "wd_qid" : "Q34299",
+      "wd_label" : "Yakut"
+    },
+    {
+      "code" : "sai",
+      "label" : "South American Indian (Other)",
+      "wd_qid" : "Q54801970",
+      "wd_label" : "indigenous language of South America"
+    },
+    {
+      "code" : "sal",
+      "label" : "Salishan languages",
+      "wd_qid" : "Q33985",
+      "wd_label" : "Salishan"
+    },
+    {
+      "code" : "sam",
+      "label" : "Samaritan Aramaic",
+      "wd_qid" : "Q56612",
+      "wd_label" : "Samaritan Aramaic"
+    },
+    {
+      "code" : "san",
+      "label" : "Sanskrit",
+      "wd_qid" : "Q11059",
+      "wd_label" : "Sanskrit"
+    },
+    {
+      "code" : "-sao",
+      "label" : "Samoan",
+      "wd_qid" : "Q34011",
+      "wd_label" : "Samoan"
+    },
+    {
+      "code" : "sas",
+      "label" : "Sasak",
+      "wd_qid" : "Q1294047",
+      "wd_label" : "Sasak"
+    },
+    {
+      "code" : "sat",
+      "label" : "Santali",
+      "wd_qid" : "Q33965",
+      "wd_label" : "Santali"
+    },
+    {
+      "code" : "-scc",
+      "label" : "Serbian",
+      "wd_qid" : "Q9301",
+      "wd_label" : "Serbo-Croatian"
+    },
+    {
+      "code" : "scn",
+      "label" : "Sicilian Italian",
+      "wd_qid" : "Q33973",
+      "wd_label" : "Sicilian"
+    },
+    {
+      "code" : "sco",
+      "label" : "Scots",
+      "wd_qid" : "Q14549",
+      "wd_label" : "Scots"
+    },
+    {
+      "code" : "-scr",
+      "label" : "Croatian",
+      "wd_qid" : "Q6654",
+      "wd_label" : "Croatian"
+    },
+    {
+      "code" : "sem",
+      "label" : "Semitic (Other)",
+      "wd_qid" : "Q34049",
+      "wd_label" : "Semitic"
+    },
+    {
+      "code" : "sga",
+      "label" : "Irish, Old (to 1100)",
+      "wd_qid" : "Q35308",
+      "wd_label" : "Old Irish"
+    },
+    {
+      "code" : "sgn",
+      "label" : "Sign languages",
+      "wd_qid" : "Q34228",
+      "wd_label" : "sign language"
+    },
+    {
+      "code" : "shn",
+      "label" : "Shan",
+      "wd_qid" : "Q56482",
+      "wd_label" : "Shan"
+    },
+    {
+      "code" : "-sho",
+      "label" : "Shona",
+      "wd_qid" : "Q34004",
+      "wd_label" : "Shona"
+    },
+    {
+      "code" : "sid",
+      "label" : "Sidamo",
+      "wd_qid" : "Q33786",
+      "wd_label" : "Sidamo"
+    },
+    {
+      "code" : "sin",
+      "label" : "Sinhalese",
+      "wd_qid" : "Q13267",
+      "wd_label" : "Sinhala"
+    },
+    {
+      "code" : "sla",
+      "label" : "Slavic (Other)",
+      "wd_qid" : "Q33251",
+      "wd_label" : "Church Slavonic"
+    },
+    {
+      "code" : "slo",
+      "label" : "Slovak",
+      "wd_qid" : "Q9058",
+      "wd_label" : "Slovak"
+    },
+    {
+      "code" : "slv",
+      "label" : "Slovenian",
+      "wd_qid" : "Q9063",
+      "wd_label" : "Slovene"
+    },
+    {
+      "code" : "sma",
+      "label" : "Southern Sami",
+      "wd_qid" : "Q13293",
+      "wd_label" : "Southern Sami"
+    },
+    {
+      "code" : "sme",
+      "label" : "Northern Sami",
+      "wd_qid" : "Q33947",
+      "wd_label" : "Northern Sami"
+    },
+    {
+      "code" : "smi",
+      "label" : "Sami",
+      "wd_qid" : "Q56593",
+      "wd_label" : "Levantine Arabic"
+    },
+    {
+      "code" : "smj",
+      "label" : "Lule Sami",
+      "wd_qid" : "Q56322",
+      "wd_label" : "Lule Sami"
+    },
+    {
+      "code" : "smn",
+      "label" : "Inari Sami",
+      "wd_qid" : "Q33462",
+      "wd_label" : "Inari Sami"
+    },
+    {
+      "code" : "smo",
+      "label" : "Samoan",
+      "wd_qid" : "Q34011",
+      "wd_label" : "Samoan"
+    },
+    {
+      "code" : "sms",
+      "label" : "Skolt Sami",
+      "wd_qid" : "Q13271",
+      "wd_label" : "Skolt Sami"
+    },
+    {
+      "code" : "sna",
+      "label" : "Shona",
+      "wd_qid" : "Q34004",
+      "wd_label" : "Shona"
+    },
+    {
+      "code" : "snd",
+      "label" : "Sindhi",
+      "wd_qid" : "Q33997",
+      "wd_label" : "Sindhi"
+    },
+    {
+      "code" : "-snh",
+      "label" : "Sinhalese",
+      "wd_qid" : "Q13267",
+      "wd_label" : "Sinhala"
+    },
+    {
+      "code" : "snk",
+      "label" : "Soninke",
+      "wd_qid" : "Q36660",
+      "wd_label" : "Soninke"
+    },
+    {
+      "code" : "sog",
+      "label" : "Sogdian",
+      "wd_qid" : "Q205979",
+      "wd_label" : "Sogdian"
+    },
+    {
+      "code" : "som",
+      "label" : "Somali",
+      "wd_qid" : "Q13275",
+      "wd_label" : "Somali"
+    },
+    {
+      "code" : "son",
+      "label" : "Songhai",
+      "wd_qid" : "Q505198",
+      "wd_label" : "Songhay"
+    },
+    {
+      "code" : "sot",
+      "label" : "Sotho",
+      "wd_qid" : "Q34340",
+      "wd_label" : "Sesotho"
+    },
+    {
+      "code" : "spa",
+      "label" : "Spanish",
+      "wd_qid" : "Q1321",
+      "wd_label" : "Spanish"
+    },
+    {
+      "code" : "srd",
+      "label" : "Sardinian",
+      "wd_qid" : "Q33976",
+      "wd_label" : "Sardinian"
+    },
+    {
+      "code" : "srn",
+      "label" : "Sranan",
+      "wd_qid" : "Q33989",
+      "wd_label" : "Sranan Tongo"
+    },
+    {
+      "code" : "srp",
+      "label" : "Serbian",
+      "wd_qid" : "Q9301",
+      "wd_label" : "Serbo-Croatian"
+    },
+    {
+      "code" : "srr",
+      "label" : "Serer",
+      "wd_qid" : "Q36284",
+      "wd_label" : "Serer"
+    },
+    {
+      "code" : "-sso",
+      "label" : "Sotho",
+      "wd_qid" : "Q34340",
+      "wd_label" : "Sesotho"
+    },
+    {
+      "code" : "ssw",
+      "label" : "Swazi",
+      "wd_qid" : "Q34014",
+      "wd_label" : "Swazi"
+    },
+    {
+      "code" : "suk",
+      "label" : "Sukuma",
+      "wd_qid" : "Q2638144",
+      "wd_label" : "Sukuma"
+    },
+    {
+      "code" : "sun",
+      "label" : "Sundanese",
+      "wd_qid" : "Q34002",
+      "wd_label" : "Sundanese"
+    },
+    {
+      "code" : "sus",
+      "label" : "Susu",
+      "wd_qid" : "Q33990",
+      "wd_label" : "Susu"
+    },
+    {
+      "code" : "sux",
+      "label" : "Sumerian",
+      "wd_qid" : "Q36790",
+      "wd_label" : "Sumerian"
+    },
+    {
+      "code" : "swa",
+      "label" : "Swahili",
+      "wd_qid" : "Q7838",
+      "wd_label" : "Swahili"
+    },
+    {
+      "code" : "swe",
+      "label" : "Swedish",
+      "wd_qid" : "Q9027",
+      "wd_label" : "Swedish"
+    },
+    {
+      "code" : "-swz",
+      "label" : "Swazi",
+      "wd_qid" : "Q34014",
+      "wd_label" : "Swazi"
+    },
+    {
+      "code" : "syc",
+      "label" : "Syriac",
+      "wd_qid" : "Q33538",
+      "wd_label" : "Syriac"
+    },
+    {
+      "code" : "syr",
+      "label" : "Syriac, Modern",
+      "wd_qid" : "Q33538",
+      "wd_label" : "Syriac"
+    },
+    {
+      "code" : "-tag",
+      "label" : "Tagalog",
+      "wd_qid" : "Q34057",
+      "wd_label" : "Tagalog"
+    },
+    {
+      "code" : "tah",
+      "label" : "Tahitian",
+      "wd_qid" : "Q34128",
+      "wd_label" : "Tahitian"
+    },
+    {
+      "code" : "tai",
+      "label" : "Tai (Other)",
+      "wd_qid" : "Q749720",
+      "wd_label" : "Tai"
+    },
+    {
+      "code" : "-taj",
+      "label" : "Tajik",
+      "wd_qid" : "Q9260",
+      "wd_label" : "Tajik"
+    },
+    {
+      "code" : "tam",
+      "label" : "Tamil",
+      "wd_qid" : "Q5885",
+      "wd_label" : "Tamil"
+    },
+    {
+      "code" : "-tar",
+      "label" : "Tatar",
+      "wd_qid" : "Q25285",
+      "wd_label" : "Tatar"
+    },
+    {
+      "code" : "tat",
+      "label" : "Tatar",
+      "wd_qid" : "Q25285",
+      "wd_label" : "Tatar"
+    },
+    {
+      "code" : "tel",
+      "label" : "Telugu",
+      "wd_qid" : "Q8097",
+      "wd_label" : "Telugu"
+    },
+    {
+      "code" : "tem",
+      "label" : "Temne",
+      "wd_qid" : "Q36613",
+      "wd_label" : "Temne"
+    },
+    {
+      "code" : "ter",
+      "label" : "Terena",
+      "wd_qid" : "Q3314742",
+      "wd_label" : "Terêna"
+    },
+    {
+      "code" : "tet",
+      "label" : "Tetum",
+      "wd_qid" : "Q34125",
+      "wd_label" : "Tetum"
+    },
+    {
+      "code" : "tgk",
+      "label" : "Tajik",
+      "wd_qid" : "Q9260",
+      "wd_label" : "Tajik"
+    },
+    {
+      "code" : "tgl",
+      "label" : "Tagalog",
+      "wd_qid" : "Q34057",
+      "wd_label" : "Tagalog"
+    },
+    {
+      "code" : "tha",
+      "label" : "Thai",
+      "wd_qid" : "Q9217",
+      "wd_label" : "Thai"
+    },
+    {
+      "code" : "tib",
+      "label" : "Tibetan",
+      "wd_qid" : "Q34271",
+      "wd_label" : "Tibetan"
+    },
+    {
+      "code" : "tig",
+      "label" : "Tigré",
+      "wd_qid" : "Q34129",
+      "wd_label" : "Tigre"
+    },
+    {
+      "code" : "tir",
+      "label" : "Tigrinya",
+      "wd_qid" : "Q34124",
+      "wd_label" : "Tigrinya"
+    },
+    {
+      "code" : "tiv",
+      "label" : "Tiv",
+      "wd_qid" : "Q34131",
+      "wd_label" : "Tiv"
+    },
+    {
+      "code" : "tkl",
+      "label" : "Tokelauan",
+      "wd_qid" : "Q34097",
+      "wd_label" : "Tokelauan"
+    },
+    {
+      "code" : "tlh",
+      "label" : "Klingon (Artificial language)",
+      "wd_qid" : "Q10134",
+      "wd_label" : "Klingon"
+    },
+    {
+      "code" : "tli",
+      "label" : "Tlingit",
+      "wd_qid" : "Q27792",
+      "wd_label" : "Tlingit"
+    },
+    {
+      "code" : "tmh",
+      "label" : "Tamashek",
+      "wd_qid" : "Q4670066",
+      "wd_label" : "Tamasheq"
+    },
+    {
+      "code" : "tog",
+      "label" : "Tonga (Nyasa)",
+      "wd_qid" : "Q3847648",
+      "wd_label" : "Tonga"
+    },
+    {
+      "code" : "ton",
+      "label" : "Tongan",
+      "wd_qid" : "Q34094",
+      "wd_label" : "Tongan"
+    },
+    {
+      "code" : "tpi",
+      "label" : "Tok Pisin",
+      "wd_qid" : "Q34159",
+      "wd_label" : "Tok Pisin"
+    },
+    {
+      "code" : "-tru",
+      "label" : "Truk",
+      "wd_qid" : "Q33161",
+      "wd_label" : "Chuukese"
+    },
+    {
+      "code" : "tsi",
+      "label" : "Tsimshian",
+      "wd_qid" : "Q20085721",
+      "wd_label" : "Tsimshian"
+    },
+    {
+      "code" : "tsn",
+      "label" : "Tswana",
+      "wd_qid" : "Q34137",
+      "wd_label" : "Tswana"
+    },
+    {
+      "code" : "tso",
+      "label" : "Tsonga",
+      "wd_qid" : "Q34327",
+      "wd_label" : "Tsonga"
+    },
+    {
+      "code" : "-tsw",
+      "label" : "Tswana",
+      "wd_qid" : "Q34137",
+      "wd_label" : "Tswana"
+    },
+    {
+      "code" : "tuk",
+      "label" : "Turkmen",
+      "wd_qid" : "Q9267",
+      "wd_label" : "Turkmen"
+    },
+    {
+      "code" : "tum",
+      "label" : "Tumbuka",
+      "wd_qid" : "Q34138",
+      "wd_label" : "Tumbuka"
+    },
+    {
+      "code" : "tup",
+      "label" : "Tupi languages",
+      "wd_qid" : "Q56944",
+      "wd_label" : "Tupi"
+    },
+    {
+      "code" : "tur",
+      "label" : "Turkish",
+      "wd_qid" : "Q256",
+      "wd_label" : "Turkish"
+    },
+    {
+      "code" : "tvl",
+      "label" : "Tuvaluan",
+      "wd_qid" : "Q34055",
+      "wd_label" : "Tuvaluan"
+    },
+    {
+      "code" : "twi",
+      "label" : "Twi",
+      "wd_qid" : "Q36850",
+      "wd_label" : "Twi"
+    },
+    {
+      "code" : "tyv",
+      "label" : "Tuvinian",
+      "wd_qid" : "Q34119",
+      "wd_label" : "Tuvan"
+    },
+    {
+      "code" : "udm",
+      "label" : "Udmurt",
+      "wd_qid" : "Q13238",
+      "wd_label" : "Udmurt"
+    },
+    {
+      "code" : "uga",
+      "label" : "Ugaritic",
+      "wd_qid" : "Q36928",
+      "wd_label" : "Ugaritic"
+    },
+    {
+      "code" : "uig",
+      "label" : "Uighur",
+      "wd_qid" : "Q13263",
+      "wd_label" : "Uyghur"
+    },
+    {
+      "code" : "ukr",
+      "label" : "Ukrainian",
+      "wd_qid" : "Q8798",
+      "wd_label" : "Ukrainian"
+    },
+    {
+      "code" : "umb",
+      "label" : "Umbundu",
+      "wd_qid" : "Q36983",
+      "wd_label" : "Umbundu"
+    },
+    {
+      "code" : "und",
+      "label" : "Undetermined",
+      "wd_qid" : "Q22282914",
+      "wd_label" : "undetermined language"
+    },
+    {
+      "code" : "urd",
+      "label" : "Urdu",
+      "wd_qid" : "Q1617",
+      "wd_label" : "Urdu"
+    },
+    {
+      "code" : "uzb",
+      "label" : "Uzbek",
+      "wd_qid" : "Q9264",
+      "wd_label" : "Uzbek"
+    },
+    {
+      "code" : "vai",
+      "label" : "Vai",
+      "wd_qid" : "Q36939",
+      "wd_label" : "Vai"
+    },
+    {
+      "code" : "ven",
+      "label" : "Venda",
+      "wd_qid" : "Q32704",
+      "wd_label" : "Venda"
+    },
+    {
+      "code" : "vie",
+      "label" : "Vietnamese",
+      "wd_qid" : "Q9199",
+      "wd_label" : "Vietnamese"
+    },
+    {
+      "code" : "vol",
+      "label" : "Volapük",
+      "wd_qid" : "Q36986",
+      "wd_label" : "Volapük"
+    },
+    {
+      "code" : "vot",
+      "label" : "Votic",
+      "wd_qid" : "Q32858",
+      "wd_label" : "Votic"
+    },
+    {
+      "code" : "wak",
+      "label" : "Wakashan languages",
+      "wd_qid" : "Q60069",
+      "wd_label" : "Wakashan"
+    },
+    {
+      "code" : "wal",
+      "label" : "Wolayta",
+      "wd_qid" : "Q36943",
+      "wd_label" : "Wolayttattuwa"
+    },
+    {
+      "code" : "war",
+      "label" : "Waray",
+      "wd_qid" : "Q34279",
+      "wd_label" : "Waray"
+    },
+    {
+      "code" : "was",
+      "label" : "Washoe",
+      "wd_qid" : "Q34198",
+      "wd_label" : "Washo"
+    },
+    {
+      "code" : "wel",
+      "label" : "Welsh",
+      "wd_qid" : "Q9309",
+      "wd_label" : "Welsh"
+    },
+    {
+      "code" : "wen",
+      "label" : "Sorbian (Other)",
+      "wd_qid" : "Q25442",
+      "wd_label" : "Sorbian"
+    },
+    {
+      "code" : "wln",
+      "label" : "Walloon",
+      "wd_qid" : "Q34219",
+      "wd_label" : "Walloon"
+    },
+    {
+      "code" : "wol",
+      "label" : "Wolof",
+      "wd_qid" : "Q34257",
+      "wd_label" : "Wolof"
+    },
+    {
+      "code" : "xal",
+      "label" : "Oirat",
+      "wd_qid" : "Q56959",
+      "wd_label" : "Oirat"
+    },
+    {
+      "code" : "xho",
+      "label" : "Xhosa",
+      "wd_qid" : "Q13218",
+      "wd_label" : "Xhosa"
+    },
+    {
+      "code" : "yao",
+      "label" : "Yao (Africa)",
+      "wd_qid" : "Q36902",
+      "wd_label" : "Yao"
+    },
+    {
+      "code" : "yap",
+      "label" : "Yapese",
+      "wd_qid" : "Q34029",
+      "wd_label" : "Yapese"
+    },
+    {
+      "code" : "yid",
+      "label" : "Yiddish",
+      "wd_qid" : "Q8641",
+      "wd_label" : "Yiddish"
+    },
+    {
+      "code" : "yor",
+      "label" : "Yoruba",
+      "wd_qid" : "Q34311",
+      "wd_label" : "Yoruba"
+    },
+    {
+      "code" : "ypk",
+      "label" : "Yupik languages",
+      "wd_qid" : "Q27970",
+      "wd_label" : "Yupik"
+    },
+    {
+      "code" : "zap",
+      "label" : "Zapotec",
+      "wd_qid" : "Q13214",
+      "wd_label" : "Zapotec"
+    },
+    {
+      "code" : "zbl",
+      "label" : "Blissymbolics",
+      "wd_qid" : "Q609817",
+      "wd_label" : "Blissymbols"
+    },
+    {
+      "code" : "zen",
+      "label" : "Zenaga",
+      "wd_qid" : "Q37005",
+      "wd_label" : "Zenaga"
+    },
+    {
+      "code" : "zha",
+      "label" : "Zhuang",
+      "wd_qid" : "Q13216",
+      "wd_label" : "Zhuang"
+    },
+    {
+      "code" : "znd",
+      "label" : "Zande languages",
+      "wd_qid" : "Q35015",
+      "wd_label" : "Zande"
+    },
+    {
+      "code" : "zul",
+      "label" : "Zulu",
+      "wd_qid" : "Q10179",
+      "wd_label" : "Zulu"
+    },
+    {
+      "code" : "zun",
+      "label" : "Zuni",
+      "wd_qid" : "Q10188",
+      "wd_label" : "Zuni"
+    },
+    {
+      "code" : "zxx",
+      "label" : "No linguistic content",
+      "wd_qid" : "Q22282939",
+      "wd_label" : "no linguistic content"
+    },
+    {
+      "code" : "zza",
+      "label" : "Zaza",
+      "wd_qid" : "Q10199",
+      "wd_label" : "Zazaki"
+    }
+]

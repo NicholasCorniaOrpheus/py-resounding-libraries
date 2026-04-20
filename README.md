@@ -1,6 +1,10 @@
 # py-resounding-libraries
 Python package for digital libraries from the Resounding Libraries cluster at Orpheus Instituut.
 
+## Documentation
+
+Package documentation available [here]()...
+
 ## Installation and Setup
 
 ### Setting up virtual enviroment
@@ -23,7 +27,7 @@ source $rl-env/bin/activate
 ### Installation via pip
 
 ```bash
-pip install py-resouding-libraries
+pip install pyreslib
 ```
 
 Dependencies listed in `requirements.txt`.
@@ -64,12 +68,12 @@ After cloning this repository, you should create a `credentials` folder to store
 
 ### Koha
 
-This folder collects a series of Python scripts, build upon [pyMARC](https://pymarc.readthedocs.io/en/latest/) and the [Koha REST API](https://api.koha-community.org/),  to allow batch operation for your library catalogue and enriching metadata scripts with external linked open data information from [Wikidata](https://www.wikidata.org/).
+This module collects a series of Python scripts, build upon [pyMARC](https://pymarc.readthedocs.io/en/latest/) and the [Koha REST API](https://api.koha-community.org/),  to allow batch operation for your library catalogue and enriching metadata scripts with external linked open data information from [Wikidata](https://www.wikidata.org/).
 
 ### ResourceSpace
 [Resourcespace](https://www.resourcespace.com/) is an open source digital assets management system.
 
-In the folder `resourcespace` you can find some useful Python scripts to dynamically interact with your Resourcespace instance. 
+In the module `resourcespace` you can find some useful Python scripts to dynamically interact with your Resourcespace instance. 
 Metadata for each record are pulled through Koha and ingested to Resource Space fields, collections and resources.
 
 ### Transkribus
@@ -89,6 +93,6 @@ Metadata for each record are pulled through Koha and ingested to Resource Space 
 
 [ORCID](https://orcid.org/) is a non-profit organization that provides a persistent digital identifier (an ORCID iD) that distinguishes you from every other researcher. Since 2023, Orpheus Instituut registers the research output of its members through the Koha catalogue. Each research output is stored as record and a plugin has been developed to batch export the data to [FRIS](https://researchportal.be/en).
 
-In the folder `orcid` you can find some useful Python scripts, build upon [pyOrcid](https://github.com/sri0606/PyOrcid)to dynamically interact with your ORCID instance.
+In the module `orcid` you can find some useful Python scripts, build upon [pyOrcid](https://github.com/sri0606/PyOrcid)to dynamically interact with your ORCID instance.
 
 **NOTE**: Still in development...

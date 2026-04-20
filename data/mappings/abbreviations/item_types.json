@@ -1,0 +1,92 @@
+[
+    {
+      "code" : "REC",
+      "label" : "Audio and video recording",
+      "wd_label" : "record",
+      "wd_qid" : "Q107435521"
+    },
+    {
+      "code" : "BOO",
+      "label" : "Book",
+      "wd_label" : "book",
+      "wd_qid" : "Q571"
+    },
+    {
+      "code" : "CHA",
+      "label" : "Book chapter",
+      "wd_label" : "chapter",
+      "wd_qid" : "Q1980247"
+    },
+    {
+      "code" : "DIS",
+      "label" : "Dissertation",
+      "wd_label" : "thesis",
+      "wd_qid" : "Q1266946"
+    },
+    {
+      "code" : "EPH",
+      "label" : "Ephemera",
+      "wd_label" : "ephemera",
+      "wd_qid" : "Q1523267"
+    },
+    {
+      "code" : "EQU",
+      "label" : "Equipment",
+      "wd_label" : "equipment",
+      "wd_qid" : "Q10273457"
+    },
+    {
+      "code" : "ART",
+      "label" : "Journal article",
+      "wd_label" : "article",
+      "wd_qid" : "Q191067"
+    },
+    {
+      "code" : "MS",
+      "label" : "Manuscript",
+      "wd_label" : "manuscript",
+      "wd_qid" : "Q87167"
+    },
+    {
+      "code" : "MIC",
+      "label" : "Microfilm",
+      "wd_label" : "microfilm",
+      "wd_qid" : "Q12498524"
+    },
+    {
+      "code" : "SCO",
+      "label" : "Music score",
+      "wd_label" : "sheet music",
+      "wd_qid" : "Q187947"
+    },
+    {
+      "code" : "NWO",
+      "label" : "Non-written output",
+      "wd_label" : "non-written output",
+      "wd_qid" : null
+    },
+    {
+      "code" : "DAT",
+      "label" : "Open data set",
+      "wd_label" : "data set",
+      "wd_qid" : "Q1172284"
+    },
+    {
+      "code" : "PER",
+      "label" : "Periodical",
+      "wd_label" : "periodical",
+      "wd_qid" : "Q1002697"
+    },
+    {
+      "code" : "RAR",
+      "label" : "Special collections",
+      "wd_label" : "special collection",
+      "wd_qid" : null
+    },
+    {
+      "code" : "TYPE_UNK",
+      "label" : "Unknown type",
+      "wd_label" : "unknown type",
+      "wd_qid" : null
+    }
+]

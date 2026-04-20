@@ -1,0 +1,5 @@
+test/
+pyreslib-env/
+requirements.txt
+build/
+mkdocs.yml
