@@ -89,7 +89,7 @@ def wikibase_integrator_session_oauth2(
     return wb
 
 
-def convert_point_in_time_to_date(point_in_time: str, date_format: f"%Y-%m-%d") -> str:
+def convert_point_in_time_to_date(point_in_time: str, date_format=f"%Y-%m-%d") -> str:
     """Returns a formatted date given a Wikibase [Point in time] string. The default format is `%y-%m-%d` according to the [datetime](https://docs.python.org/3/library/datetime.html) syntaxt. For `DD/MM/YYYY` format use `%d/%m/%y` instead.
 
     Args:

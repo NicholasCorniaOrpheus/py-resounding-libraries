@@ -4,12 +4,15 @@ import json
 import os
 
 
-def oauth2_session(client_id: str, client_secret: str, base_url: str, scope="all"):
+def oauth2_session(
+    client_id: str, client_secret: str, user_agent: str, base_url: str, scope="all"
+):
     """Returns an OAuth2 session, given client ID and secret key of your Koha account.
 
     Args:
                     client_id (str): Client ID associated with your Koha Admin User.
                     client_secret (str): Secret key provided by the Koha Administration.
+                    user_agent (str): User-Agent string. Default is None.
                     base_url (str): Base URL for your Koha Staff interface
 
     Returns:
@@ -24,9 +27,15 @@ def oauth2_session(client_id: str, client_secret: str, base_url: str, scope="all
     oauth2client = OAuth2Client(
         token_endpoint=token_url, client_id=client_id, client_secret=client_secret
     )
+    # Force the User-Agent before authorization
+    if user_agent is not None:
+        oauth2client.session.headers.update({"User-Agent": user_agent})
     auth = OAuth2ClientCredentialsAuth(oauth2client, scope=scope, resource=base_url)
     session = requests.Session()
     session.auth = auth
+    # And also later, why not?
+    if user_agent is not None:
+        session.headers.update({"User-Agent": user_agent})
     return session
 
 
