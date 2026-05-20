@@ -126,7 +126,7 @@ def get_biblionumber_json(session, biblio_id: int) -> dict:
     return response.json()
 
 
-def get_items_from_biblio_json(session, biblio_id: int) -> dict:
+def get_items_from_biblio_json(session, biblio_id: int, base_url: str) -> dict:
     """Get JSON item data for biblionumber from Koha API.
 
     Args:
