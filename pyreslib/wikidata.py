@@ -17,6 +17,15 @@ from typing import List, Dict, Any
 import traceback
 
 
+### TO-DO
+"""
+1. Import umbrella terms to authority from Wikidata based on mapping.
+2. Import Wikidata description into catalogue record (append to field 500$a).
+3. Import authorities from OpenRefine CSV reconciliation list with headers = {"auth_id","auth_main_heading","qid","wd_uri","wd_label"} 
+
+"""
+
+
 def wikibase_integrator_session_basic(
     username: str,
     password: str,
@@ -25,15 +34,15 @@ def wikibase_integrator_session_basic(
     """Returns an wikibase_integrator session, given user and password of your Wikidata account. We advice to create a Wikidata user in oder to prevent a "Too Many Requests HTTP 429" code.
 
     Args:
-                    username (str): Username associated with your Wikidata user.
-                    password (str): Password associated with your Wikidata user.
-                    mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.
+    username (str): Username associated with your Wikidata user.
+    password (str): Password associated with your Wikidata user.
+    mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.
 
     Returns:
-                    wb: Wikibase Integrator session
+    wb (WikibaseIntegrator): Wikibase Integrator session
 
     Examples:
-                    >>> wb = pyreslib.koha.wikibase_integrator_session_basic(username="{USERNAME}"", password="{PASSWORD}" , mediawiki_api_url="https://www.wikidata.org/w/rest.php/wikibase/v1")
+    >>> wb = pyreslib.koha.wikibase_integrator_session_basic(username="{USERNAME}"", password="{PASSWORD}" , mediawiki_api_url="https://www.wikidata.org/w/rest.php/wikibase/v1")
 
     """
 
@@ -60,15 +69,15 @@ def wikibase_integrator_session_oauth2(
     """Returns an wikibase_integrator session, given API consumer token and secret keys of your Wikidata account. You have to make a request to Wikimedia via this [URL](https://meta.wikimedia.org/wiki/Special:OAuthConsumerRegistration/propose/oauth2) in order to have such credentials. For advanced use only.
 
     Args:
-                    consumer_token (str): API consumer key associated with your Wikidata user.
-                    consumer_secret (str): API secret key associated with your Wikidata user.
-                    mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.
+    consumer_token (str): API consumer key associated with your Wikidata user.
+    consumer_secret (str): API secret key associated with your Wikidata user.
+    mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.
 
     Returns:
-                    wb: Wikibase Integrator session
+    wb (WikibaseIntegrator): Wikibase Integrator session
 
     Examples:
-                    >>> wb = pyreslib.koha.wikibase_integrator_session_basic(username="{USERNAME}"", password="{PASSWORD}" , mediawiki_api_url="https://www.wikidata.org/w/rest.php/wikibase/v1")
+    >>> wb = pyreslib.koha.wikibase_integrator_session_basic(username="{USERNAME}"", password="{PASSWORD}" , mediawiki_api_url="https://www.wikidata.org/w/rest.php/wikibase/v1")
 
     """
 
@@ -140,27 +149,27 @@ def convert_qid_to_URI(qid: str, base_uri="http://wikidata.org/") -> str:
     return f"{base_uri}{qid}"
 
 
-def wb_get_property_data(wb_entity, pid: str, wikibase_URI=True, base_uri="http://wikidata.org/", date_format: f"%Y-%m-%d") -> dict:
+def wb_get_property_data(wb_entity, pid: str, wikibase_URI=True, base_uri="http://wikidata.org/", date_format: str = f"%Y-%m-%d") -> dict:
     """Returns a dictionary with information related to statements, given a WikibaseIntegrator entity tied to a QID, and a specific property PID.
 
     Args:
-                    wb_entity: `ItemEntity` object retrieved by using the `item.get()` WikibaseIntegrator mwethod.
-                    pid (str): String indicating the PID of the property.
-                    wikibase_URI (bool): Returns full URI of Wikibase item. True by default.
-                    base_uri (str): Base Concept URI for the item. By default `http://wikidata.org/`.
-                    date_format (str): `datetime` formatting string. Default set to ISO 8601 date.
+    wb_entity: `ItemEntity` object retrieved by using the `item.get()` WikibaseIntegrator mwethod.
+    pid (str): String indicating the PID of the property.
+    wikibase_URI (bool): Returns full URI of Wikibase item. True by default.
+    base_uri (str): Base Concept URI for the item. By default `http://wikidata.org/`.
+    date_format (str): `datetime` formatting string. Default set to ISO 8601 date.
 
 
     Returns:
-                    statements: List of dictionaries with statement values, qualifiers and references.
+    statements: List of dictionaries with statement values, qualifiers and references.
 
     Examples:
-                    >>> qid = "Q1296"
-                    >>> pid = "P1082"
-                    >>> wb_entity = wb.item.get(qid)
-                    >>> statements = wb_get_property_data(wb_entity,pid)
-                    >>> print(statements)
-                    >>> [{"value": 257029,"references": [], "qualifiers": [{"pid": "P585","value": "2016-01-01"}]}, {"value": 230951,"references": [{"pid": "P143", "value": ""http://wikidata.org/"Q206855"}], "qualifiers": [{"pid": "P585","value": "2005-01-01"}]}  ]
+    >>> qid = "Q1296"
+    >>> pid = "P1082"
+    >>> wb_entity = wb.item.get(qid)
+    >>> statements = wb_get_property_data(wb_entity,pid)
+    >>> print(statements)
+    >>> [{"value": 257029,"references": [], "qualifiers": [{"pid": "P585","value": "2016-01-01"}]}, {"value": 230951,"references": [{"pid": "P143", "value": ""http://wikidata.org/"Q206855"}], "qualifiers": [{"pid": "P585","value": "2005-01-01"}]}  ]
 
     """
     try:

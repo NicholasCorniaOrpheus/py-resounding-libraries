@@ -1,0 +1,39 @@
+field,subfield,property,data_type,retrieve_label,is_biblionumber,is_authority,is_code,is_item,code_type,description
+001,,dcterms:identifier,URI,,TRUE,FALSE,FALSE,FALSE,,
+020,a,bibo:isbn,Text,,FALSE,FALSE,FALSE,FALSE,,ISBN code (either 10 or 13)
+041,a,dcterms:language,Text,,FALSE,FALSE,TRUE,FALSE,languages,Language code
+100,9,dcterms:creator,URI,100$a,FALSE,TRUE,FALSE,FALSE,,Main author
+110,9,dcterms:creator,URI,110$a,FALSE,TRUE,FALSE,FALSE,,Main corporate
+700,9,dcterms:contributor,URI,700$a,FALSE,TRUE,FALSE,FALSE,,Added Personal Name
+710,9,dcterms:contributor,URI,710$a,FALSE,TRUE,FALSE,FALSE,,Added Corporate Name
+245,a,dcterms:title,Text,,FALSE,FALSE,FALSE,FALSE,,Title
+245,b,bf:subtitle,Text,,FALSE,FALSE,FALSE,FALSE,,Subtitle
+250,a,bf:editionStatement,Text,,FALSE,FALSE,FALSE,FALSE,,Edition
+260,a,gnd:placeOfManufacture,Text,,FALSE,FALSE,FALSE,FALSE,,Place of publication
+260,b,dcterms:publisher,Text,,FALSE,FALSE,FALSE,FALSE,,Publisher
+260,c,dcterms:date,Number,,FALSE,FALSE,FALSE,FALSE,,Year of publication
+490,a,bf:seriesStatement,Text,,FALSE,FALSE,FALSE,FALSE,,Series statement
+490,v,bibo:volume,Text,,FALSE,FALSE,FALSE,FALSE,,Volume/ sequential designation
+773,0,dcterms:isPartOf,URI,773$t,TRUE,FALSE,FALSE,FALSE,,Parent record
+300,a,bibo:numPages,Text,,FALSE,FALSE,FALSE,FALSE,,Extent pages
+500,a,bf:note,Text,,FALSE,FALSE,FALSE,FALSE,,General Note
+520,a,dcterms:abstract,Text,,FALSE,FALSE,FALSE,FALSE,,Summary
+600,9,dcterms:subject,URI,660$a,FALSE,TRUE,FALSE,FALSE,,Keyword Personal
+610,9,dcterms:subject,URI,610$a,FALSE,TRUE,FALSE,FALSE,,Keyword Corporate
+648,9,dcterms:subject,URI,648$a,FALSE,TRUE,FALSE,FALSE,,Keyword Chronological
+650,9,dcterms:subject,URI,650$a,FALSE,TRUE,FALSE,FALSE,,Keyword Topical
+651,9,dcterms:subject,URI,651$a,FALSE,TRUE,FALSE,FALSE,,Keyword Geographical
+856,u,bf:electronicLocator,URI,856$3,FALSE,FALSE,FALSE,FALSE,,Electronic location
+942,c,bf:media,Text,,FALSE,FALSE,TRUE,FALSE,URI_types,Koha Item Type
+533,a,curation:note,Text,,FALSE,FALSE,FALSE,FALSE,,Reproduction note
+653,9,bf:index,URI,653$a,FALSE,TRUE,FALSE,FALSE,,Ton Koopman's keyword
+acquisition_source,,dcterms:provenance,Text,,FALSE,FALSE,FALSE,TRUE,,Provencance code
+callnumber,,bf:shelfMark,Text,,FALSE,FALSE,FALSE,TRUE,,Call number
+external_id,,bf:identifiedBy,Text,,FALSE,FALSE,FALSE,TRUE,,Barcode
+059,a,gnd:instrument,URI,,FALSE,FALSE,TRUE,FALSE,musical_instruments,Instrumentation code is converted to Wikidata URIs
+location,,schema:location,Item Set,,FALSE,FALSE,TRUE,TRUE,library_locations,From the location code in 952$c we extract the item set associated with the location.
+materials_notes,,schema:description,Text,,FALSE,FALSE,FALSE,TRUE,,Material specified
+public_notes,,curation:note,Text,,FALSE,FALSE,FALSE,TRUE,,Public note
+,,,,,FALSE,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,FALSE,,

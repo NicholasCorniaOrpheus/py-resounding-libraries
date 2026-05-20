@@ -1,0 +1,18 @@
+field,subfield,property,data_type,retrieve_label,is_biblionumber,is_authority,is_code,is_item,code_type,description
+245,a,dcterms:title,Text,,FALSE,FALSE,FALSE,FALSE,,Title
+245,b,bf:subtitle,Text,,FALSE,FALSE,FALSE,FALSE,,Subtitle
+250,a,bf:editionStatement,Text,,FALSE,FALSE,FALSE,FALSE,,Edition
+260,a,gnd:placeOfManufacture,Text,,FALSE,FALSE,FALSE,FALSE,,Place of publication
+260,b,dcterms:publisher,Text,,FALSE,FALSE,FALSE,FALSE,,Publisher
+260,c,dcterms:date,Number,,FALSE,FALSE,FALSE,FALSE,,Year of publication
+490,a,bf:seriesStatement,Text,,FALSE,FALSE,FALSE,FALSE,,Series statement
+490,v,bibo:volume,Text,,FALSE,FALSE,FALSE,FALSE,,Volume/ sequential designation
+001,,dcterms:isPartOf,Item,,TRUE,FALSE,FALSE,FALSE,,Parent record
+300,a,bibo:numPages,Text,,FALSE,FALSE,FALSE,FALSE,,Extent pages
+500,a,bf:note,Text,,FALSE,FALSE,FALSE,FALSE,,General Note
+533,a,curation:note,Text,,FALSE,FALSE,FALSE,FALSE,,Reproduction note
+653,9,bf:index,Item,,FALSE,TRUE,FALSE,FALSE,,Ton Koopman's keyword
+acquisition_source,,dcterms:provenance,Text,,FALSE,FALSE,FALSE,TRUE,,Provencance code
+callnumber,,bf:shelfMark,Text,,FALSE,FALSE,FALSE,TRUE,,Call number
+external_id,,bf:identifiedBy,Text,,FALSE,FALSE,FALSE,TRUE,,Barcode
+item_type_id,,bf:media,Text,,FALSE,FALSE,TRUE,TRUE,item_types,Koha Item Type for ITEM

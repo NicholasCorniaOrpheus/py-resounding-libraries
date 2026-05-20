@@ -1,0 +1,20 @@
+field,subfield,property,data_type,retrieve_label,is_biblionumber,is_authority,is_code,code_type,description
+001,,dcterms:identifier,Number,,FALSE,FALSE,FALSE,,
+110,a,dcterms:title,Text,,FALSE,FALSE,FALSE,,Main Heading
+510,9,dcterms:isPartOf,URI,510$a,FALSE,TRUE,FALSE,,Umbrella Corporate
+550,9,dcterms:subject,URI,550$a,FALSE,TRUE,FALSE,,Umbrella Topical
+520,a,dcterms:abstract,Text,,FALSE,FALSE,FALSE,,Abstract
+520,b,dcterms:abstract,Text,,FALSE,FALSE,FALSE,,
+551,9,dcterms:subject,URI,551$a,FALSE,TRUE,FALSE,,Umbrella Geographical
+548,9,dcterms:subject,URI,548$a,FALSE,TRUE,FALSE,,Umbrella Chronological
+500,9,schema:members,URI,500$a,FALSE,TRUE,FALSE,,Participants / Members
+366,k,schema:startDate,Timestamp,,FALSE,FALSE,FALSE,,Lifecycle
+366,l,schema:endDate,Timestamp,,FALSE,FALSE,FALSE,,Lifecycle
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,

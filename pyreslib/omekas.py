@@ -1,15 +1,15 @@
 from omeka_s_tools.api import OmekaAPIClient
 import requests
 from pyreslib import koha
+import os
+import json, csv
 
-# Import credentials, assuming you are running the code from the `koha` directory
-credentials = json2dict("../credentials/credentials.json")
 
-omekas_credentials = {
-    "api_url": credentials["omekas"]["api_url"],
-    "key_identity": credentials["omekas"]["key_identity"],
-    "key_credential": credentials["omekas"]["key_credential"],
-}
+### TO-DO
+"""
+1. Filter records with digitization and create new items and associated media in Omeka S via API.
+2. Update record information via biblio_id and auth_id fields between Koha and Omeka S.
+"""
 
 
 def omekas_session(api_url: str, key_identity: str, key_credential: str):
@@ -28,6 +28,15 @@ def omekas_session(api_url: str, key_identity: str, key_credential: str):
         key_credential=omekas_credentials["key_credential"],
     )
     return omekas_session
+
+
+def csv2dict(csv_filename):  # imports a CSV file as dictionary
+    f = open(csv_filename, "r")
+    reader = csv.DictReader(f)
+    d = {"items": []}
+    for row in reader:
+        d["items"].append(row)
+    return d["items"]
 
 
 def generate_omekas_mapping(mappings_directory: str) -> dict:
@@ -75,7 +84,7 @@ def generate_omekas_mapping(mappings_directory: str) -> dict:
 
 
 def change_item_property_value(
-    session: str,
+    session: OmekaAPIClient,
     value: str,
     property_name: str,
     resource_id: int,

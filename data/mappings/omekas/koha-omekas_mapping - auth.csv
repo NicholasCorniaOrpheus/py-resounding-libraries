@@ -1,0 +1,26 @@
+field,subfield,property,data_type,retrieve_label,is_biblionumber,is_authority,is_code,code_type,description
+001,,dcterms:identifier,URI,,FALSE,TRUE,FALSE,,
+024,1,schema:identifier,URI,024$9,FALSE,FALSE,FALSE,,Wikidata URI
+024,1,dcterms:identifier,URI,024$2,FALSE,FALSE,FALSE,,ORCID ID
+100,a,dcterms:title,Text,,FALSE,FALSE,FALSE,,Main Heading
+510,9,dcterms:subject,URI,510$a,FALSE,TRUE,FALSE,,Umbrella Corporate
+400,a,gnd:pseudonym,Text,,FALSE,FALSE,FALSE,,Aliases
+448,a,gnd:pseudonym,Text,,FALSE,FALSE,FALSE,,Aliases
+450,a,gnd:pseudonym,Text,,FALSE,FALSE,FALSE,,Aliases
+451,a,gnd:pseudonym,Text,,FALSE,FALSE,FALSE,,Aliases
+410,a,gnd:pseudonym,Text,,FALSE,FALSE,FALSE,,Aliases
+550,9,dcterms:subject,URI,550$a,FALSE,TRUE,FALSE,,Umbrella Topical
+680,a,dcterms:description,Text,,FALSE,FALSE,FALSE,,Notes
+551,9,dcterms:subject,URI,551$a,FALSE,TRUE,FALSE,,Umbrella Geographical
+548,9,dcterms:subject,URI,548$a,FALSE,TRUE,FALSE,,Umbrella Chronological
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,,

@@ -7,7 +7,7 @@ setup(
     url="https://github.com/NicholasCorniaOrpheus/py-resouding-libraries",
     author="Nicholas Cornia",
     author_email="nicholas.cornia@orpheusinstituut.be",
-    requires_python=">=3.6",
+    requires_python=">=3.10",
     keywords=[
         "koha",
         "MARC",
@@ -20,12 +20,16 @@ setup(
     ],
     license="MIT License",
     dependencies=[
-        "datetime",
         "json",
         "os",
         "wikibaseintegrator",
         "requests",
         "requests_oauth2client",
+        "urllib",
+        "SPARQLWrapper",
+        "omeka_s_tools",
+        "traceback",
+        "multiprocessing",
     ],
     packages=["pyreslib"],
     install_requires=[],
@@ -35,6 +39,5 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.12",
     ],
 )

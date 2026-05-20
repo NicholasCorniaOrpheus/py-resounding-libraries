@@ -2,7 +2,14 @@ import requests
 import urllib
 
 
-def api_login(user: str, pw: str):
+### TO-DO
+"""
+1. Conversion option for PAGEXML format, such as Plain Text and TEIXML.
+2. Authorities spotting via Fuzzy Search in trascribed text
+
+"""
+
+def api_login(user: str, password: str):
     """
     Args:
     user (user): Client Username
@@ -13,7 +20,7 @@ def api_login(user: str, pw: str):
     session = requests.Session()
     session.post(
         "https://transkribus.eu/TrpServer/rest/auth/login",
-        data={"user": client_id, "pw": client_secret},
+        data={"user": user, "pw": password},
     )
     if session.status_code == requests.codes.ok:
         return session
@@ -29,17 +36,17 @@ def get_documents_metadata(session, collection_id: int) -> list:
 	session: Transkribus session from `pyreslib.transkribus.api_login()` method.
 	collection_id (int): Collection ID identifier from Transkribus.
 
-	Rreturns:
+	Returns:
 	documents (list): List of documents, with metadata and pagelist.
 	
 	Examples:
 
-	>>> transkribus_session = pyreslib.transkribus.api_login(user,password)
-	>>> documents = pyreslib.transkribus.get_documents_metadata(transkribus_session,collection_id=2792)
+	>>> session = pyreslib.transkribus.api_login(user,password)
+	>>> documents = pyreslib.transkribus.get_documents_metadata(session,collection_id=2792)
 	>>> [{"md": {...}, "pageList": {"pages":[...]},"collection": {...}, ... }]
 	"""
 	headers = {"Accept": "application/json"}
-	collection = transkribus_session.get(
+	collection = session.get(
 		f"https://transkribus.eu/TrpServer/rest/collections/{collection_id}/list",
 		headers=headers,
 	).json()
@@ -47,7 +54,7 @@ def get_documents_metadata(session, collection_id: int) -> list:
 	documents_metadata = []
 
 	for document in collection:
-		document = transkribus_session.get(
+		document = session.get(
 			f"https://transkribus.eu/TrpServer/rest/collections/{collection_id}/{document["docId"]}/fulldoc",
 			headers=headers,
 		)
@@ -70,14 +77,14 @@ def get_page_xml(session, collection_id: int,document_id: int,page_number:int) -
 
 	Examples:
 	>>> import xml.etree.ElementTree as ET
-	>>> transkribus_session = pyreslib.transkribus.api_login(user,password)
-	>>> page_xml = pyreslib.transkribus.get_page_xml(transkribus_session,collection_id=2792,document_id=145869,page_number=14)
+	>>> session = pyreslib.transkribus.api_login(user,password)
+	>>> page_xml = pyreslib.transkribus.get_page_xml(session,collection_id=2792,document_id=145869,page_number=14)
 	>>> root = ET.fromstring(page_xml)
 	"""
 
 
 	headers = {"Accept": "application/xml"}
-	page_xml = transkribus_session.get(
+	page_xml = session.get(
 			f"https://transkribus.eu/TrpServer/rest/collections/{collection_id}/{document_id}/{page_number}/text",
 			headers=headers,
 		)
@@ -90,7 +97,7 @@ def get_jpg_image(session, collection_id: int,document_id: int,page_number:int, 
 	Args:
 	session: Transkribus session from `pyreslib.transkribus.api_login()` method.
 	collection_id (int): Collection ID identifier from Transkribus.
-	collection_id (int): Document ID identifier from Transkribus.
+	document_id (int): Document ID identifier from Transkribus.
 	page_number (int): Internal page number identifier from Transkribus.
 	output_filepath (str): local path for download.
 
@@ -98,14 +105,14 @@ def get_jpg_image(session, collection_id: int,document_id: int,page_number:int, 
 	None
 
 	Examples:
-	>>> transkribus_session = pyreslib.transkribus.api_login(user,password)
+	>>> session = pyreslib.transkribus.api_login(user,password)
 	>>> output_filepath = f"./tmp/{str(document_id)}_{str(page_number).zfill(3)}"
-	>>> get_jpg_image(transkribus_session,collection_id=2792,document_id=145869,page_number=14,output_filepath=output_filepath)
+	>>> get_jpg_image(session,collection_id=2792,document_id=145869,page_number=14,output_filepath=output_filepath)
 	"""
 
 	# Get document metadata
 	document = session.get(
-			f"https://transkribus.eu/TrpServer/rest/collections/{collection_id}/{document["docId"]}/fulldoc",
+			f"https://transkribus.eu/TrpServer/rest/collections/{collection_id}/{document_id}/fulldoc",
 			headers=headers,
 		)
 
@@ -120,7 +127,7 @@ def get_jpg_image(session, collection_id: int,document_id: int,page_number:int, 
 
 	return None	
 
-def post_page_xml(session,page_xml:str,collection_id: int,document_id:int,page_number:int,,filepath=True):
+def post_page_xml(session,page_xml:str,collection_id: int,document_id:int,page_number:int,filepath=True):
     """
 	Post a PAGEXML file back to Transkribus, either from string or local file.
 	Args:
@@ -135,7 +142,7 @@ def post_page_xml(session,page_xml:str,collection_id: int,document_id:int,page_n
 	None
 
 	Examples:
-	>>> transkribus_session = pyreslib.transkribus.api_login(user,password)
+	>>> session = pyreslib.transkribus.api_login(user,password)
 	>>> 
 	"""
 	headers = {"Content-Type": "application/xml"}
@@ -145,6 +152,7 @@ def post_page_xml(session,page_xml:str,collection_id: int,document_id:int,page_n
 		page_xml_file.close()
 	else:
 		page_xml_data = page_xml
+
 	page_xml_response = session.post(
 			f"https://transkribus.eu/TrpServer/rest/collections/{collection_id}/{document_id}/{page_number}/text",
 			headers=headers,
