@@ -1,9 +1,9 @@
-json_key,type,field,subfield,is_authority,input_format,output_format
-title,str,245,a,FALSE,,
-subtitle,str,245,b,FALSE,,
-authors,list,700,a,TRUE,"""{name} {surname}""","""{surname}, {name}"""
-publisher,str,260,b,FALSE,,
-publishedDate,str,260,c,FALSE,"""%Y-%m-%d""","""%Y"""
-description,str,520,a,FALSE,,
-pageCount,int,300,a,FALSE,"""{pages}""","""{pages} pages"""
-categories,list,650,a,TRUE,,
+json_key,type,field,subfield,ind1,ind2,format
+title,str,245,a,1,0,
+subtitle,str,245,b,1,0,
+authors,list,700,a,,,"name_surname2surname,_name"
+publisher,str,260,b,,,
+publishedDate,str,260,c,,,ymd_date2year
+description,str,520,a,,,
+pageCount,int,300,a,,,page_number2page_number_pages
+categories,list,650,a,,,

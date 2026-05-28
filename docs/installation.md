@@ -4,6 +4,8 @@ Lorem ipsum.
 
 ## Package installation
 
+### Using pip
+
 Generate the virtual enviroment on your project folder:
 
 ```bash
@@ -19,7 +21,27 @@ source pyreslib-env/bin/activate
 ```
 
 ```bash
-pip install py-resounding-libraries
+pip install pyreslib
+```
+
+### Using uv
+
+Generate the virtual enviroment on your project folder:
+
+```bash
+# Generate local python binaries in folder
+uv venv pyreslib-env
+```
+
+Activate virtual enviroment in order to invoke the package:
+
+```bash
+# activate the enviroment for this terminal
+source pyreslib-env/bin/activate
+```
+
+```bash
+uv install pyreslib
 ```
 
 ### Python for Windows and Mac users

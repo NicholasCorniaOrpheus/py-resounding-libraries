@@ -10,24 +10,24 @@ import urllib
 """
 
 def api_login(user: str, password: str):
-    """
-    Args:
-    user (user): Client Username
-    pw (str): Client secret Password
-    Returns:
-    session: requests.Session() for Transkribus API
-    """
-    session = requests.Session()
-    session.post(
-        "https://transkribus.eu/TrpServer/rest/auth/login",
-        data={"user": user, "pw": password},
-    )
-    if session.status_code == requests.codes.ok:
-        return session
-    else:
-        print(r)
-        print("Login failed.")
-        return None
+	"""
+	Args:
+	user (user): Client Username
+	pw (str): Client secret Password
+	Returns:
+	session: requests.Session() for Transkribus API
+	"""
+	session = requests.Session()
+	session.post(
+		"https://transkribus.eu/TrpServer/rest/auth/login",
+		data={"user": user, "pw": password},
+	)
+	if session.status_code == requests.codes.ok:
+		return session
+	else:
+		print(r)
+		print("Login failed.")
+		return None
 
 
 def get_documents_metadata(session, collection_id: int) -> list: 
@@ -128,7 +128,7 @@ def get_jpg_image(session, collection_id: int,document_id: int,page_number:int, 
 	return None	
 
 def post_page_xml(session,page_xml:str,collection_id: int,document_id:int,page_number:int,filepath=True):
-    """
+	"""
 	Post a PAGEXML file back to Transkribus, either from string or local file.
 	Args:
 	session: Transkribus session from `pyreslib.transkribus.api_login()` method.

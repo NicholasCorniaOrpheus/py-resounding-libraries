@@ -1,0 +1,11 @@
+{
+	"ART": "article",
+    "BOO": "book",
+    "CHA": "incollection",
+	"DAT": "misc",
+	"DIS": "phdthesis",
+	"NWO": "misc",
+	"ONL": "misc",
+	"REC": "misc",
+	"SCO": "misc"
+}

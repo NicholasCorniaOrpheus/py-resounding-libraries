@@ -23,7 +23,23 @@ There are two main serialization for the MARC metadata of records and authoritie
 - [put_authority_marc][pyreslib.koha.put_authority_marc]
 - [put_biblionumber_marc][pyreslib.koha.put_biblionumber_marc]
 
-### PUT metadata into Koha
+
+## Google Books
+
+This module allows to harvest metadata information from Google Books API via ISBN of the book. Useful if you wish to populate your new record with basic metadata by only providing the ISBN code in field 020. A mapping between Google and Koha fields is available in `data/mappins/google`.
+
+- [enhance_biblio_record_from_isbn](pyreslib.google_books.enhance_biblio_record_from_isbn)
+- [get_metadata_from_google_api][pyreslib.google_books.get_metadata_from_google_api]
+
+## Transkribus
+
+This module allows the user to interact with the [Transkribus](https://www.transkribus.org/) API directly on Python. Transkribus is a state-of-the-art Handwritten Text Recognition platform for Digital Humanities scholars.
+
+## BibTeX
+
+This modules allows the export of bibliographicn records in BibTeX format, improving the built-in Koha export feature.
+
+- [convert_biblio_to_bibtex](pyreslib.bibtex.convert_biblio_to_bibtex)
 
 ## Wikidata
 

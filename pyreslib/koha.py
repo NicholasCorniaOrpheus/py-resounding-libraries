@@ -182,16 +182,16 @@ def query_biblio_marc(
     params = {"limit": limit, "offset": offset, "q": q}
 
     try:
-            response = session.get(
-                f"{base_url}/biblios",
-                headers=headers,
-                params=params,
-            )
-            response.raise_for_status()
-            return response.json()
-        except requests.exceptions.HTTPError as e:
-            print(f"API Error: {e.response.status_code} - {e.response.text}")
-            raise
+        response = session.get(
+            f"{base_url}/biblios",
+            headers=headers,
+            params=params,
+        )
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.HTTPError as e:
+        print(f"API Error: {e.response.status_code} - {e.response.text}")
+        raise
 
 
 def get_framework_id_biblioitem(session, biblio_id: int, base_url: str) -> str:
@@ -206,13 +206,40 @@ def get_framework_id_biblioitem(session, biblio_id: int, base_url: str) -> str:
     framework (str): Koha Framework ID for the record.
 
     Examples:
-    >>> my_session = pyreslib.koha.oauth2_session(client_id="{CLIENT_ID}"", client_secret="{SECRET_KEY}" , base_url="https://{KOHA_STAFF_URL}/api/v1")
+    >>> my_session = pyreslib.koha.oauth2_session(client_id="{CLIENT_ID}"", client_secret="{SECRET_KEY}" , user_agent="{USER_AGENT}", base_url="https://{KOHA_STAFF_URL}/api/v1")
     >>> pyres;lib.koha.get_framework_id_biblioitem(my_session,12,base_url="https://{KOHA_STAFF_URL}/api/v1")
     >>> "1"
 
     """
     try:
-        return get_biblio_json(biblio_id)["framework_id"]
+        return get_biblio_json(session=session, biblio_id=biblio_id, base_url=base_url)[
+            "framework_id"
+        ]
+    except KeyError:
+        return ""
+
+
+def get_framework_id_authority(session, auth_id: int, base_url: str) -> str:
+    """Get the authority record framework ID .
+
+    Args:
+    session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
+    auth_id (int): Authority ID for the requested record.
+    base_url (str): Koha API url from credentials.
+
+    Returns:
+    framework (str): Koha Framework ID for the record.
+
+    Examples:
+    >>> my_session = pyreslib.koha.oauth2_session(client_id="{CLIENT_ID}"", client_secret="{SECRET_KEY}" , user_agent="{USER_AGENT}", base_url="https://{KOHA_STAFF_URL}/api/v1")
+    >>> pyres;lib.koha.get_framework_id_authority(my_session,1,base_url="https://{KOHA_STAFF_URL}/api/v1")
+    >>> "1"
+
+    """
+    try:
+        return get_authority_json(session=session, auth_id=auth_id, base_url=base_url)[
+            "framework_id"
+        ]
     except KeyError:
         return ""
 
@@ -237,7 +264,9 @@ def update_authority_marc(
 
 
     """
-    framework_id = get_framework_id_authority(auth_id)
+    framework_id = get_framework_id_authority(
+        session=session, auth_id=auth_id, base_url=base_url
+    )
     if str(framework_id) != "":
         headers = {
             "Accept": "application/json",
@@ -279,7 +308,9 @@ def update_biblio_marc(session, biblio_id: int, marc_json: dict, base_url: str) 
 
 
     """
-    framework_id = get_framework_id_biblioitem(biblio_id)
+    framework_id = get_framework_id_biblioitem(
+        session=session, biblio_id=biblio_id, base_url=base_url
+    )
     if str(framework_id) != "":
         headers = {
             "Accept": "application/json",
@@ -300,6 +331,7 @@ def update_biblio_marc(session, biblio_id: int, marc_json: dict, base_url: str) 
     )
     return None
 
+
 # Full catalogue import methods using parallel processing
 
 """
@@ -318,7 +350,11 @@ def import_koha_biblios(session,base_url: str,output_filepath: str) -> list:
 
 # Getting authority and biblio records information via CSV reports from Koha
 
-def get_authority_list(report_csv_file=os.path.join("data","mappings","authorities_list.csv"),separator="|") -> list:
+
+def get_authority_list(
+    report_csv_file=os.path.join("data", "mappings", "authorities_list.csv"),
+    separator="|",
+) -> list:
     """
     This method returns a list of authority IDs and their corresponding metadata from Koha Report CSV.
 
@@ -336,21 +372,28 @@ def get_authority_list(report_csv_file=os.path.join("data","mappings","authoriti
 
     """
     authority_list = []
-    with open(report_csv_file, mode='r', encoding='utf-8') as csvfile:
+    with open(report_csv_file, mode="r", encoding="utf-8") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             authority_list.append(
                 {
-                    "auth_id": int(row['authid']),
-                    "type": row['authtypecode'],
+                    "auth_id": int(row["authid"]),
+                    "type": row["authtypecode"],
                     "main_heading": row("main_heading"),
                     "alt_heading": row["alt_heading"].split(separator),
-                    "uri": row["uri"].split(separator)
-                })
+                    "uri": row["uri"].split(separator),
+                }
+            )
 
     return authority_list
 
-def get_authority_wd_list(report_csv_file=os.path.join("data","mappings","wikidata","authorities_wd_list.csv"),separator="|") -> list:
+
+def get_authority_wd_list(
+    report_csv_file=os.path.join(
+        "data", "mappings", "wikidata", "authorities_wd_list.csv"
+    ),
+    separator="|",
+) -> list:
     """
     This method returns a list of authority IDs and their corresponding Wikidata entities from a CSV report exported from Koha.
 
@@ -368,23 +411,59 @@ def get_authority_wd_list(report_csv_file=os.path.join("data","mappings","wikida
 
     """
     authority_wd_list = []
-    with open(report_csv_file, mode='r', encoding='utf-8') as csvfile:
+    with open(report_csv_file, mode="r", encoding="utf-8") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             authority_wd_list.append(
                 {
-                    "auth_id": int(row['authid']),
-                    "type": row['authtypecode'],
+                    "auth_id": int(row["authid"]),
+                    "type": row["authtypecode"],
                     "main_heading": row("main_heading"),
                     "qid": row["qid"].split(separator),
                     "wd_uri": row["wd_uri"].split(separator),
                     "wd_label": row["wd_label"].split(separator),
-                })
+                }
+            )
 
     return authority_wd_list
 
 
 # Filtering methods for MARC-in-JSON authority records
+
+
+def get_biblio_type(record: dict, biblio_type_field=["942", "c"]) -> str:
+    """
+    This function returns the biblio type code of a given record.
+
+    Args:
+    record (dict): MARC-in-JSON record of the biblio, conform with Koha API.
+    biblio_type_field (list): MARC field holding the biblio type code. Default is 942$c.
+
+
+    Returns:
+    biblio_type (str): Biblio type code.
+
+    Examples:
+    >>> pyreslib.koha.get_biblio_type(record=marc_json_biblio)
+    >>> "BOO"
+    """
+    try:
+        # get biblio type
+        query_field = list(
+            filter(lambda x: biblio_type_field[0] in x.keys(), record["fields"])
+        )
+        # the field should be unique
+        biblio_type = list(
+            filter(
+                lambda x: biblio_type_field[1] in x.keys(),
+                query_field[0][biblio_type_field[0]]["subfields"],
+            )
+        )[0][biblio_type_field[1]]
+
+        return biblio_type
+
+    except Exception:
+        return None
 
 
 def get_authority_type(record: dict, auth_type_field=["942", "a"]) -> str:
@@ -647,7 +726,6 @@ def explicit_abbreviations_from_marc(
         "item_type": {"fields": ["942$c"]},
         "voices_and_musical_instruments": {"fields": ["059$a"]},
     },
-    export,
 ) -> dict:
     """
     The method returns a MARC-in-JSON record where MARC abbreviation codes are made explicit.
@@ -655,6 +733,7 @@ def explicit_abbreviations_from_marc(
     record (dict): MARC-in-JSON record from Koha API.
     abbreviations_dir (str): Directory path (in data/mappings) containing a series of JSON mappings for standard MARC abbreviation codes.
     Returns:
+    explicit_record (dict): MARC-in-JSON record with explicit abbreviations.
 
     Examples:
 
@@ -666,3 +745,36 @@ def explicit_abbreviations_from_marc(
                 abbreviation = json.load(json_file)
                 abbreviation_name = f.name.split(".")[0]
                 abbreviation_codes[abbreviation_name]["values"] = abbreviation
+
+    # explicit abbreviations according to abbreviation_codes
+
+    for key in abbreviation_codes.keys():
+        for tag in abbreviation_codes[key]["fields"]:
+            field = tag.split("$")[0]
+            subfield = tag.split("$")[1]
+            # retrieve field and subfield in record
+            query_field = list(lambda x: field in x.keys(), record["fields"])
+            print(query_field)
+            if len(query_field) > 0:
+                for statement in query_field:
+                    query_subfield = list(
+                        lambda x: subfield in x.keys(), statement["subfields"]
+                    )
+                    print(query_subfield)
+                    if len(query_subfield) > 0:
+                        for sub_statement in query_subfield:
+                            # retrive abbreviation code
+                            retrieved_code = list(
+                                lambda x: x["code"] == sub_statement[subfield],
+                                abbreviation_codes[key]["values"],
+                            )
+                            print(retrieved_code)
+                            if len(retrieved_code) > 0:
+                                # explicit subfield value
+                                sub_statement[subfield] = retrieved_code[0]["label"]
+
+                            else:
+                                # code not found, ignore
+                                pass
+
+    print(f"Explicit MARC-in-JSON record: {record}")

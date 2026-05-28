@@ -6,9 +6,12 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "bibtexparser>=1.4.4",
     "datetime>=6.0",
     "mkdocs>=1.6.1",
     "mkdocstrings[python]>=1.0.4",
+    "omeka-s-tools>=0.3.0",
+    "pandas>=2.3.3",
     "pyyaml>=6.0.3",
     "requests>=2.33.1",
     "requests-oauth2client>=1.8.0",
