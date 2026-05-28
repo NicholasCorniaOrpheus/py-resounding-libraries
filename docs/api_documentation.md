@@ -6,6 +6,10 @@
 
 ## pyreslib.transkribus
 
+::: pyreslib.transkribus
+	options:
+		heading_level_3
+
 ## pyreslib.omekas
 
 ## pyreslib.research_output

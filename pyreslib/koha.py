@@ -316,6 +316,73 @@ def import_koha_biblios(session,base_url: str,output_filepath: str) -> list:
 
 """
 
+# Getting authority and biblio records information via CSV reports from Koha
+
+def get_authority_list(report_csv_file=os.path.join("data","mappings","authorities_list.csv"),separator="|") -> list:
+    """
+    This method returns a list of authority IDs and their corresponding metadata from Koha Report CSV.
+
+    Args:
+    report_csv_file (str): File path to the CSV report exported from Koha. See [Reports](reports) page for the SQL query.
+    separator (str): Separator for multiple values. Pipe is default.
+
+    Returns:
+    authority_list (list): A list of dictionaries, each containing an authority ID and its corresponding Wikidata entities.
+
+    Examples:
+    >>> authority_wd_list = pyreslib.koha.get_authority_wd_list(report_csv_file="path/to/authorities_wd_list.csv")
+    >>> [{"auth_id": 1, "type": "GEOGR_NAME", "main_heading": "Venice", "alt_heading": ["Venezia",Venedig], "uri": ["http://www.wikidata.org/entity/Q641"]"}, ...]
+
+
+    """
+    authority_list = []
+    with open(report_csv_file, mode='r', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            authority_list.append(
+                {
+                    "auth_id": int(row['authid']),
+                    "type": row['authtypecode'],
+                    "main_heading": row("main_heading"),
+                    "alt_heading": row["alt_heading"].split(separator),
+                    "uri": row["uri"].split(separator)
+                })
+
+    return authority_list
+
+def get_authority_wd_list(report_csv_file=os.path.join("data","mappings","wikidata","authorities_wd_list.csv"),separator="|") -> list:
+    """
+    This method returns a list of authority IDs and their corresponding Wikidata entities from a CSV report exported from Koha.
+
+    Args:
+    report_csv_file (str): File path to the CSV report exported from Koha. See [Reports](reports) page for the SQL query.
+    separator (str): Separator for multiple values. Pipe is default.
+
+    Returns:
+    authority_wd_list (list): A list of dictionaries, each containing an authority ID and its corresponding Wikidata entities.
+
+    Examples:
+    >>> authority_wd_list = pyreslib.koha.get_authority_wd_list(report_csv_file="path/to/authorities_wd_list.csv")
+    >>> [{"auth_id": 1, "type": "GEOGR_NAME", "main_heading": "Venice", "qid": ["Q641"], "wd_uri": ["http://www.wikidata.org/entity/Q641"]", "wd_label": ["Venice","Venezia"]}, ...]
+
+
+    """
+    authority_wd_list = []
+    with open(report_csv_file, mode='r', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            authority_wd_list.append(
+                {
+                    "auth_id": int(row['authid']),
+                    "type": row['authtypecode'],
+                    "main_heading": row("main_heading"),
+                    "qid": row["qid"].split(separator),
+                    "wd_uri": row["wd_uri"].split(separator),
+                    "wd_label": row["wd_label"].split(separator),
+                })
+
+    return authority_wd_list
+
 
 # Filtering methods for MARC-in-JSON authority records
 

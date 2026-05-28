@@ -1,0 +1,101 @@
+﻿authid;authtypecode;main_heading;qid;wd_uri;wd_label
+1;GEOGR_NAME;"Venice (Italy)";Q641;http://www.wikidata.org/entity/Q641;Venice
+7;GEOGR_NAME;Indonesia;Q252;http://www.wikidata.org/entity/Q252;Indonesia
+10;GEOGR_NAME;"The Hague (Netherlands)";Q36600;http://www.wikidata.org/entity/Q36600;"The Hague"
+13;GEOGR_NAME;"Trier (Germany)";Q3138;http://www.wikidata.org/entity/Q3138;Trier
+21;GEOGR_NAME;"Naples (Italy)";Q2634;http://www.wikidata.org/entity/Q2634;Naples
+22;GEOGR_NAME;Italy;Q38;http://www.wikidata.org/entity/Q38;Italy
+34;GEOGR_NAME;"Polar region";Q60670;http://www.wikidata.org/entity/Q60670;"polar region"
+37;GEOGR_NAME;"Brussels (Belgium)";Q239;http://www.wikidata.org/entity/Q239;"City of Brussels"
+43;GEOGR_NAME;USA;Q30;http://www.wikidata.org/entity/Q30;"United States"
+45;GEOGR_NAME;"Leipzig (Germany)";Q2079;http://www.wikidata.org/entity/Q2079;Leipzig
+47;GEOGR_NAME;"Dresden (Germany)";Q1731;http://www.wikidata.org/entity/Q1731;Dresden
+48;GEOGR_NAME;"Berlin (Germany)";Q64;http://www.wikidata.org/entity/Q64;Berlin
+49;GEOGR_NAME;"Rome (Italy)";Q220;http://www.wikidata.org/entity/Q220;Rome
+50;GEOGR_NAME;"Brunswick (Germany)";Q2773;http://www.wikidata.org/entity/Q2773;Brunswick
+53;GEOGR_NAME;"Harlem (New York City, USA)";Q189074;http://www.wikidata.org/entity/Q189074;Harlem
+55;GEOGR_NAME;"Saxony (Germany)";Q1202;http://www.wikidata.org/entity/Q1202;Saxony
+59;GEOGR_NAME;"New York City (USA)";Q60;http://www.wikidata.org/entity/Q60;"New York City"
+62;GEOGR_NAME;"Rotterdam (Netherlands)";Q34370;http://www.wikidata.org/entity/Q34370;Rotterdam
+68;GEOGR_NAME;Egypt;Q79;http://www.wikidata.org/entity/Q79;Egypt
+71;GEOGR_NAME;"Holy Roman Empire";Q12548;http://www.wikidata.org/entity/Q12548;"Holy Roman Empire"
+72;GEOGR_NAME;"Naarden (Netherlands)";Q9949;http://www.wikidata.org/entity/Q9949;Naarden
+75;GEOGR_NAME;Turkey;Q43;http://www.wikidata.org/entity/Q43;Turkey
+78;GEOGR_NAME;"Leiden (Netherlands)";Q43631;http://www.wikidata.org/entity/Q43631;Leiden
+82;GEOGR_NAME;"'s-Hertogenbosch (Netherlands)";Q2766547;http://www.wikidata.org/entity/Q2766547;'s-Hertogenbosch
+85;GEOGR_NAME;"Zwolle (Netherlands)";Q793;http://www.wikidata.org/entity/Q793;Zwolle
+89;GEOGR_NAME;"Flanders (Belgium)";Q234;http://www.wikidata.org/entity/Q234;Flanders
+91;GEOGR_NAME;Europe;Q46;http://www.wikidata.org/entity/Q46;Europe
+95;GEOGR_NAME;"Krimpenerwaard (Netherlands)";Q15991891;http://www.wikidata.org/entity/Q15991891;Krimpenerwaard
+96;GEOGR_NAME;Poland;Q36;http://www.wikidata.org/entity/Q36;Poland
+105;GEOGR_NAME;"Deventer (Netherlands)";Q10001;http://www.wikidata.org/entity/Q10001;Deventer
+106;GEOGR_NAME;"Salland (Netherlands)";Q771808;http://www.wikidata.org/entity/Q771808;Salland
+112;GEOGR_NAME;"Bonn (Germany)";Q586;http://www.wikidata.org/entity/Q586;Bonn
+121;GEOGR_NAME;"Limburg an der Lahn (Germany)";Q16026;http://www.wikidata.org/entity/Q16026;"Limburg an der Lahn"
+123;GEOGR_NAME;"London (United Kingdom)";Q84;http://www.wikidata.org/entity/Q84;London
+125;GEOGR_NAME;"Lübeck (Germany)";Q2843;http://www.wikidata.org/entity/Q2843;Lübeck
+126;GEOGR_NAME;"Helsingør (Denmark)";Q26881;http://www.wikidata.org/entity/Q26881;Helsingør
+128;GEOGR_NAME;"Périgord (France)";Q850620;http://www.wikidata.org/entity/Q850620;Périgord
+131;GEOGR_NAME;France;Q142;http://www.wikidata.org/entity/Q142;France
+135;GEOGR_NAME;"Amsterdam (Netherlands)";Q727;http://www.wikidata.org/entity/Q727;Amsterdam
+136;GEOGR_NAME;Portugal;Q45;http://www.wikidata.org/entity/Q45;Portugal
+141;GEOGR_NAME;"Utrecht (Netherlands)";Q803|Q39297398;http://www.wikidata.org/entity/Q803|http://wikidata.org/entity/Q39297398;Utrecht|Utrecht
+153;GEOGR_NAME;"Tokyo (Japan)";Q1490;http://www.wikidata.org/entity/Q1490;Tokyo
+155;GEOGR_NAME;Germany;Q183;http://www.wikidata.org/entity/Q183;Germany
+158;GEOGR_NAME;Borneo;Q36117;http://www.wikidata.org/entity/Q36117;Borneo
+160;GEOGR_NAME;"Paris (France)";Q90;http://www.wikidata.org/entity/Q90;Paris
+163;GEOGR_NAME;"Vancouver (British Columbia, Canada)";Q24639;http://www.wikidata.org/entity/Q24639;Vancouver
+171;GEOGR_NAME;"Florida (USA)";Q812;http://www.wikidata.org/entity/Q812;Florida
+173;GEOGR_NAME;Netherlands;Q55|Q29999|Q170072;http://www.wikidata.org/entity/Q55|http://www.wikidata.org/entity/Q29999|http://wikidata.org/entity/Q170072;"Netherlands|Kingdom of the Netherlands|Dutch Republic"
+178;GEOGR_NAME;Israel;Q801;http://www.wikidata.org/entity/Q801;Israel
+181;GEOGR_NAME;"Orkney Islands (United Kingdom)";Q100166;http://www.wikidata.org/entity/Q100166;"Orkney Islands"
+185;GEOGR_NAME;"Franeker (Netherlands)";Q41974;http://www.wikidata.org/entity/Q41974;Franeker
+196;GEOGR_NAME;"Bassano del Grappa (Italy)";Q47094;http://www.wikidata.org/entity/Q47094;"Bassano del Grappa"
+198;GEOGR_NAME;"Veere (Netherlands)";Q10083;http://www.wikidata.org/entity/Q10083;Veere
+200;GEOGR_NAME;"Epe (Netherlands)";Q238396;http://www.wikidata.org/entity/Q238396;Epe
+201;GEOGR_NAME;"Regensburg (Germany)";Q2978;http://www.wikidata.org/entity/Q2978;Regensburg
+202;GEOGR_NAME;Austria;Q40;http://www.wikidata.org/entity/Q40;Austria
+208;GEOGR_NAME;"Husum (Germany)";Q21159;http://www.wikidata.org/entity/Q21159;Husum
+209;GEOGR_NAME;Brazil;Q155;http://www.wikidata.org/entity/Q155;Brazil
+217;GEOGR_NAME;"Mainz (Germany)";Q1720;http://www.wikidata.org/entity/Q1720;Mainz
+218;GEOGR_NAME;"Mannheim (Germany)";Q2119;http://www.wikidata.org/entity/Q2119;Mannheim
+219;GEOGR_NAME;Ireland;Q27;http://www.wikidata.org/entity/Q27;Ireland
+222;GEOGR_NAME;"Pittsburgh (PA, USA)";Q1342;http://www.wikidata.org/entity/Q1342;Pittsburgh
+226;GEOGR_NAME;"Inn District (Switzerland)";Q659550;http://www.wikidata.org/entity/Q659550;"Inn District"
+228;GEOGR_NAME;"Bavaria (Germany)";Q980;http://www.wikidata.org/entity/Q980;Bavaria
+231;GEOGR_NAME;"Prussia (Germany)";Q38872;http://www.wikidata.org/entity/Q38872;Prussia
+233;GEOGR_NAME;Peru;Q419;http://www.wikidata.org/entity/Q419;Peru
+235;GEOGR_NAME;Palestine;Q23792;http://www.wikidata.org/entity/Q23792;Palestine
+240;GEOGR_NAME;"Liège (Belgium)";Q3992;http://www.wikidata.org/entity/Q3992;Liège
+241;GEOGR_NAME;"Voorne-Putten (Netherlands)";Q2051339;http://www.wikidata.org/entity/Q2051339;Voorne-Putten
+243;GEOGR_NAME;"Laren (Netherlands)";Q9945;http://www.wikidata.org/entity/Q9945;Laren
+247;GEOGR_NAME;"Meiningen (Germany)";Q487278;http://www.wikidata.org/entity/Q487278;Meiningen
+248;GEOGR_NAME;"Florence (Italy)";Q2044;http://www.wikidata.org/entity/Q2044;Florence
+249;GEOGR_NAME;"Lisbon (Portugal)";Q597;http://www.wikidata.org/entity/Q597;Lisbon
+268;GEOGR_NAME;"Munich (Germany)";Q1726;http://www.wikidata.org/entity/Q1726;Munich
+271;GEOGR_NAME;"Milan (Italy)";Q490;http://www.wikidata.org/entity/Q490;Milan
+273;GEOGR_NAME;"United Kingdom";Q145|Q21|Q174193|Q161885;http://www.wikidata.org/entity/Q145|http://www.wikidata.org/entity/Q21|http://wikidata.org/entity/Q174193|http://wikidata.org/entity/Q161885;"United Kingdom|England|United Kingdom of Great Britain and Ireland|Kingdom of Great Britain"
+275;GEOGR_NAME;Sweden;Q34;http://www.wikidata.org/entity/Q34;Sweden
+382;UNIF_TITLE;"Beiträge zur Musikforschung (Musikverlag Katzbichler) ; Bd. 14.";Q72098621;http://www.wikidata.org/entity/Q72098621;Q72098621
+397;UNIF_TITLE;"Atlantis (Rodopi (Firm)) ; 1.";Q25373;http://www.wikidata.org/entity/Q25373;Atlantis
+493;UNIF_TITLE;"Atlantis (Rodopi (Firm)) ; 2.";Q25373;http://www.wikidata.org/entity/Q25373;Atlantis
+497;UNIF_TITLE;"Codex Rost.";Q97394922;http://www.wikidata.org/entity/Q97394922;"Codex Rost"
+574;UNIF_TITLE;"Atlantis (Rodopi (Firm)) ; 8.";Q25373;http://www.wikidata.org/entity/Q25373;Atlantis
+642;UNIF_TITLE;"Beiträge zur Musikforschung (Musikverlag Katzbichler) ; Bd. 5.";Q72098621;http://www.wikidata.org/entity/Q72098621;Q72098621
+929;UNIF_TITLE;"Fryske Akademy (Series) ; nr. 917.";Q528584;http://www.wikidata.org/entity/Q528584;"Fryske Akademy"
+1021;UNIF_TITLE;"Fryske Akademy (Series) ; nr. 648.";Q528584;http://www.wikidata.org/entity/Q528584;"Fryske Akademy"
+1110;UNIF_TITLE;"Santa Maria Novella (Mandragora)";Q51175;http://www.wikidata.org/entity/Q51175;"Basilica of Santa Maria Novella"
+1188;CORPO_NAME;"St. Mary's Church Nottingham (United Kingdom)";Q7594396;http://www.wikidata.org/entity/Q7594396;"St Mary's Church, Nottingham"
+1190;CORPO_NAME;"Gardane (Firm)";Q117383652;http://www.wikidata.org/entity/Q117383652;Gardane
+1191;CORPO_NAME;"Herne (Arnsberg, Germany)";Q2904;http://www.wikidata.org/entity/Q2904;Herne
+1193;CORPO_NAME;"Haags Gemeentemuseum (The Hague, Netherlands)";Q1499958;http://www.wikidata.org/entity/Q1499958;"Kunstmuseum Den Haag"
+1196;CORPO_NAME;"Scottish National Portrait Gallery (Edinburgh, Scotland)";Q2441562;http://www.wikidata.org/entity/Q2441562;"Scottish National Portrait Gallery"
+1197;CORPO_NAME;"Museum für Kunst und Kulturgeschichte der Hansestadt Lübeck (Germany)";Q37710741;http://www.wikidata.org/entity/Q37710741;"Museum für Kunst und Kulturgeschichte der Hansestadt Lübeck"
+1200;CORPO_NAME;"Kunsthalle Hamburg (Germany)";Q28737659;http://www.wikidata.org/entity/Q28737659;"Kunsthalle Hamburg, Library"
+1201;CORPO_NAME;"Beth Haim (Ouderkerk aan de Amstel, Netherlands)";Q831131;http://www.wikidata.org/entity/Q831131;"Beth Haim"
+1203;CORPO_NAME;"Accademia di belle arti di Bologna (Italy)";Q2822373;http://www.wikidata.org/entity/Q2822373;"Accademia di Belle Arti di Bologna"
+1205;CORPO_NAME;"Orgelbau Felsberg AG (Felsberg, Switzerland)";Q112097720;http://www.wikidata.org/entity/Q112097720;"Orgelbau Felsberg AG"
+1209;CORPO_NAME;"Družba ""Braća hrvatskog zmaja"".";Q640591;http://www.wikidata.org/entity/Q640591;"Brethren of the Croatian Dragon"
+1210;CORPO_NAME;"Nacionalna i sveučilišna biblioteka.";Q1520466;http://www.wikidata.org/entity/Q1520466;"National and University Library of Slovenia"
+1211;CORPO_NAME;"United Nations";Q1065;http://www.wikidata.org/entity/Q1065;"United Nations"
+1212;CORPO_NAME;"Bach-Archiv Leipzig (Germany)";Q798038;http://www.wikidata.org/entity/Q798038;"Bach-Archiv Leipzig"
