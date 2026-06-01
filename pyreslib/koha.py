@@ -1,7 +1,15 @@
+from pyreslib import utilities, marc
 import requests
 from requests_oauth2client import OAuth2Client, OAuth2ClientCredentialsAuth
 import json
 import os
+from time import time
+
+# Multiprocessing
+from multiprocessing import Pool, cpu_count
+from functools import partial
+from typing import List, Dict, Any
+import traceback
 
 
 def koha_session(
@@ -334,63 +342,292 @@ def update_biblio_marc(session, biblio_id: int, marc_json: dict, base_url: str) 
 
 # Full catalogue import methods using parallel processing
 
-"""
-def get_auth_id_list_from_report(session,auth_id_csv_filepath: str) -> list:
 
-def get_biblio_id_list_from_report(session,biblio_id_csv_filepath: str) -> list:)
+def get_auth_list_from_csv_report(
+    auth_id_csv_filepath: str = "./data/mappings/koha/authority_list.csv",
+    auth_id_field="authid",
+) -> list:
+    """
+    Returns a list of all authorities in the catalogue.
+
+    Args:
+    auth_id_csv_filepath (str): File path of the csv file coming from report. By default is `data/mappings/authority_list.csv`
+    auth_id_field (str): Koha report field name for authority ID. Default is `authid`.
+
+    Returns:
+    authority_list (list): List of authority IDs.
+
+    """
+
+    # import csv file and return list
+    csv_list = utilities.csv2dict(auth_id_csv_filepath)
+
+    print(csv_list[:4])
+    return [int(auth[auth_id_field]) for auth in csv_list]
 
 
-def import_koha_authorities(session,base_url: str,output_filepath: str) -> list:
+def get_biblio_list_from_csv_report(
+    biblio_id_csv_filepath: str = "./data/mappings/koha/biblio_list.csv",
+    biblio_id_field="biblionumber",
+) -> list:
+    """
+    Returns a list of all bibliographic records in the catalogue.
+
+    Args:
+    biblio_id_csv_filepath (str): File path of the csv file coming from report. By default is `data/mappings/biblio_list.csv`
+    biblio_id_field (str): Koha report field name for biblio ID. Default is `biblionumber`.
+
+    Returns:
+    biblio_list (list): List of biblio IDs.
+
+    """
+
+    # import csv file and return list
+    return [
+        int(biblio[biblio_id_field])
+        for biblio in utilities.csv2dict(biblio_id_csv_filepath)
+    ]
 
 
-def import_koha_biblios(session,base_url: str,output_filepath: str) -> list:    
+def import_koha_authorities_from_marc(
+    marc_filepath: str, output_directory: str = "./data/koha_auth/json"
+) -> list:
+    """
+    Returns a MARC-in-JSON dictionaries from a MARC import of the authority catalogue.
+
+    Args:
+    marc_filepath (str): Location of the MARC file to be processed. Default directory is `./data/koha_auth/marc`.
+    output_directory (str): Output directory for the generated JSON. The default filename is "auth_dict-{yyyy-mm-dd}.json". Default is `data/koha_auth/json`. Set to `None` if you wisj not to save the list as JSON.
+
+    Retruns:
+    auth_dict (list): List of authority dictionaries with auth_id, wd_id, and record
+
+    """
+    # extract all records as dictionaries.
+    record_dict = marc.generate_record_dict(
+        marc_filepath=marc_filepath, json_filepath=None, id_name="auth_id"
+    )
+
+    auth_dict = []
+    for record in record_dict:
+        # extract wikidata_qids
+        wd_id = []
+        wd_id = extract_wikidata_id(record["record"])
+        auth_dict.append(
+            {"auth_id": record["auth_id"], "wd_id": wd_id, "record": record["record"]}
+        )
+
+    # Save results to JSON file
+    output_filepath = os.path.join(
+        output_directory, f"auth_dict-{utilities.get_current_date()}.json"
+    )
+    if output_directory is not None:
+        utilities.dict2json(auth_dict, output_filepath)
+
+    return auth_dict
 
 
-"""
+def import_koha_biblios_from_marc(
+    marc_filepath: str, output_directory: str = "./data/koha_biblio/json"
+) -> list:
+    """
+    Returns a MARC-in-JSON dictionaries from a MARC import of the bibliographic catalogue.
+
+    Args:
+    marc_filepath (str): Location of the MARC file to be processed. Default directory is `./data/koha_biblio/marc`.
+    output_directory (str): Output directory for the generated JSON. The default filename is "biblo_dict-{yyyy-mm-dd}.json". Default directory is `./data/koha_biblio/json`. Set to `None` if you wisj not to save the list as JSON.
+
+    Retruns:
+    biblio_dict (list): List of bibliopgraphic record dictionaries with biblio_id and record
+
+    """
+    # extract all records as dictionaries.
+    record_dict = marc.generate_record_dict(
+        marc_filepath=marc_filepath, json_filepath=None, id_name="biblio_id"
+    )
+
+    biblio_dict = []
+    for record in record_dict:
+        biblio_dict.append({"biblio_id": record["auth_id"], "record": record["record"]})
+
+    # Save results to JSON file
+    output_filepath = os.path.join(
+        output_directory, f"biblio_dict-{utilities.get_current_date()}.json"
+    )
+    if output_directory is not None:
+        utilities.dict2json(biblio_dict, output_filepath)
+
+    return biblio_dict
+
+
+def fetch_and_process_authority(auth_id: int, session, base_url: str) -> Dict[str, Any]:
+    """
+    Fetch a single authority from API and extract metadata.
+    This function runs in parallel worker processes.
+
+    Args:
+    session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
+    auth_id (int): Authority ID for the requested record.
+    base_url (str): Koha API url from credentials.
+
+    Returns:
+    result (dict): Dictionary containing authority ID, Wikidata ID and MARC-in-JSON record.
+
+    """
+    try:
+        record = get_authority_marc(session, auth_id, base_url)
+
+        # Extract Wikidata ID
+        wd_id = extract_wikidata_id(record)
+
+        return {"auth_id": auth_id, "wd_id": wd_id, "record": record}
+    except Exception as e:
+        return {"auth_id": auth_id, "wd_id": [], "record": None}
+
+
+def fetch_and_process_biblio(biblio_id: int, session, base_url: str) -> Dict[str, Any]:
+    """
+    Fetch a single bibliographic record from API and extract metadata.
+    This function runs in parallel worker processes.
+
+    Args:
+    session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
+    biblio_id (int): Biblio ID for the requested record.
+    base_url (str): Koha API url from credentials.
+
+    Returns:
+    result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.
+
+    """
+    try:
+        record = get_biblio_marc(session, biblio_id, base_url)
+
+        return {
+            "biblio_id": biblio_id,
+            "record": record,
+        }
+    except Exception as e:
+        return {"biblio_id": biblio_id, "wd_id": [], "record": None}
+
+
+def import_koha_authorities_from_api(
+    session,
+    base_url: str,
+    output_directory: str = "./data/koha_auth/json",
+    num_workers: int = None,
+) -> List[Dict[str, Any]]:
+    """
+    Generate authority dictionary using parallel processing.
+
+    Args:
+    session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
+    base_url (str): Koha API url from credentials.
+    output_directory (str): Output directory for the generated JSON. The default filename is "auth_dict-{yyyy-mm-dd}.json". Default is `data/koha_auth/json`. Set to `None` if you don't want to save the JSON result.
+    num_workers: Number of parallel workers (default: CPU count)
+
+    Returns:
+    auth_dict (list): List of authority dictionaries with auth_id, wd_id, and record
+    """
+
+    start_time = time()
+
+    # get authority_list
+    authority_list = get_auth_list_from_csv_report()
+
+    # Set number of workers (default: number of CPU cores)
+    if num_workers is None:
+        num_workers = max(1, cpu_count() - 1)  # Leave one core free
+
+    print(f"Using {num_workers} parallel workers")
+
+    # Use Pool for parallel processing
+    with Pool(num_workers) as pool:
+        # Map function across all authority IDs
+        # using partial to fix other parameters, such as session and base_url
+        fetch_auth = partial(
+            fetch_and_process_authority, session=session, base_url=base_url
+        )
+        results = pool.map(fetch_auth, authority_list)
+
+    # Filter successful results
+    auth_dict = [result for result in results if result["record"] is not None]
+
+    print(
+        f"Successfully imported {len(auth_dict)} authorities out of {len(authority_list)} in {float(time()-start_time)/60} minutes."
+    )
+
+    # Save results to JSON file
+    output_filepath = os.path.join(
+        output_directory, f"auth_dict-{utilities.get_current_date()}.json"
+    )
+    if output_filepath is not None:
+        utilities.dict2json(auth_dict, output_filepath)
+
+    return auth_dict
+
+
+def import_koha_biblios_from_api(
+    session,
+    base_url: str,
+    output_directory: str = "./data/koha_biblio/json",
+    num_workers: int = None,
+) -> List[Dict[str, Any]]:
+    """
+    Generate authority dictionary using parallel processing.
+
+    Args:
+    session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
+    base_url (str): Koha API url from credentials.
+    output_directory (str): Output directory for the generated JSON. The default filename is "biblio_dict-{yyyy-mm-dd}.json". Default is `data/koha_biblio/json`.
+    num_workers: Number of parallel workers (default: CPU count)
+
+    Returns:
+        List of bibliographic record dictionaries with biblio_id and record
+    """
+
+    start_time = time()
+
+    # get authority_list
+    biblio_list = get_biblio_list_from_csv_report()
+
+    # Set number of workers (default: number of CPU cores)
+    if num_workers is None:
+        num_workers = max(1, cpu_count() - 1)  # Leave one core free
+
+    print(f"Using {num_workers} parallel workers")
+
+    # Use Pool for parallel processing
+    with Pool(num_workers) as pool:
+        # Map function across all authority IDs
+        # using partial to fix other parameters, such as session and base_url
+        fetch_biblio = partial(
+            fetch_and_process_biblio, session=session, base_url=base_url
+        )
+        results = pool.map(fetch_biblio, biblio_list)
+
+    # Filter successful results
+    biblio_dict = [result for result in results if result["record"] is not None]
+
+    print(
+        f"Successfully imported {len(biblio_dict)} biblios out of {len(biblio_list)} in {float(time()-start_time)/60} minutes."
+    )
+
+    # Save results to JSON file
+    output_filepath = os.path.join(
+        output_directory, f"biblio_dict-{utilities.get_current_date()}.json"
+    )
+
+    utilities.dict2json(biblio_dict, output_filepath)
+
+    return biblio_dict
+
 
 # Getting authority and biblio records information via CSV reports from Koha
 
 
-def get_authority_list(
-    report_csv_file=os.path.join("data", "mappings", "authorities_list.csv"),
-    separator="|",
-) -> list:
-    """
-    This method returns a list of authority IDs and their corresponding metadata from Koha Report CSV.
-
-    Args:
-    report_csv_file (str): File path to the CSV report exported from Koha. See [Reports](reports) page for the SQL query.
-    separator (str): Separator for multiple values. Pipe is default.
-
-    Returns:
-    authority_list (list): A list of dictionaries, each containing an authority ID and its corresponding Wikidata entities.
-
-    Examples:
-    >>> authority_wd_list = pyreslib.koha.get_authority_wd_list(report_csv_file="path/to/authorities_wd_list.csv")
-    >>> [{"auth_id": 1, "type": "GEOGR_NAME", "main_heading": "Venice", "alt_heading": ["Venezia",Venedig], "uri": ["http://www.wikidata.org/entity/Q641"]"}, ...]
-
-
-    """
-    authority_list = []
-    with open(report_csv_file, mode="r", encoding="utf-8") as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            authority_list.append(
-                {
-                    "auth_id": int(row["authid"]),
-                    "type": row["authtypecode"],
-                    "main_heading": row("main_heading"),
-                    "alt_heading": row["alt_heading"].split(separator),
-                    "uri": row["uri"].split(separator),
-                }
-            )
-
-    return authority_list
-
-
-def get_authority_wd_list(
+def get_wd_authority_list(
     report_csv_file=os.path.join(
-        "data", "mappings", "wikidata", "authorities_wd_list.csv"
+        "data", "mappings", "wikidata", "wd_authoritu_list.csv"
     ),
     separator="|",
 ) -> list:
@@ -429,6 +666,32 @@ def get_authority_wd_list(
 
 
 # Filtering methods for MARC-in-JSON authority records
+
+
+def extract_wikidata_id(record: dict, wd_field=["024", "1"]):
+    query = list(filter(lambda x: wd_field[0] in x.keys(), record["fields"]))
+    wd_id = []
+    if len(query) > 0:
+        for result in query:
+            uri_subfield = list(
+                filter(
+                    lambda x: wd_field[1] in x.keys(), result[wd_field[0]]["subfields"]
+                )
+            )
+            if len(uri_subfield) > 0:
+                if "wikidata" in uri_subfield[0][wd_field[1]]:
+                    try:
+                        wd_id.append(
+                            int(
+                                uri_subfield[0][wd_field[1]]
+                                .split("/")[-1]
+                                .replace("Q", "")
+                            )
+                        )
+                    except Exception:
+                        pass
+
+    return wd_id
 
 
 def get_biblio_type(record: dict, biblio_type_field=["942", "c"]) -> str:

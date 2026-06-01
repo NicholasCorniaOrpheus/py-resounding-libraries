@@ -12,6 +12,7 @@ dependencies = [
     "mkdocstrings[python]>=1.0.4",
     "omeka-s-tools>=0.3.0",
     "pandas>=2.3.3",
+    "pymarc>=5.3.1",
     "pyyaml>=6.0.3",
     "requests>=2.33.1",
     "requests-oauth2client>=1.8.0",

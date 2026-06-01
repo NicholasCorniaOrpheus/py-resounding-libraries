@@ -447,9 +447,7 @@ def get_doi(
     return doi
 
 
-def get_institution(
-    record_dict, field="610", subfield="a", main_institution="Orpheus Instituut"
-):
+def get_institution(record_dict, field="610", subfield="a"):
     institution = ""
 
     filter_query = list(filter(lambda x: field in x.keys(), record_dict["fields"]))
@@ -479,19 +477,25 @@ def get_issn(record_dict, field="773", subfield="x"):
     return issn
 
 
-def get_isbn(record_dict, field="773", subfield="z"):
+def get_isbn(record_dict, fields=[["020", "a"], ["773", "z"]]):
     isbn = ""
 
-    filter_query = list(filter(lambda x: field in x.keys(), record_dict["fields"]))
-
-    if len(filter_query) > 0:
-        subfield_query = list(
-            filter(lambda x: subfield in x.keys(), filter_query[0][field]["subfields"])
+    for field in fields:
+        filter_query = list(
+            filter(lambda x: field[0] in x.keys(), record_dict["fields"])
         )
-        if len(subfield_query) > 0:
-            isbn = subfield_query[0][subfield].replace("-", "")
 
-    return isbn
+        if len(filter_query) > 0:
+            subfield_query = list(
+                filter(
+                    lambda x: field[1] in x.keys(),
+                    filter_query[0][field[0]]["subfields"],
+                )
+            )
+            if len(subfield_query) > 0:
+                # found isbn
+                isbn = subfield_query[0][field[1]]
+                return isbn
 
 
 def get_journal(record_dict, field="773", subfield="t"):
@@ -562,25 +566,27 @@ def get_issue_number(record_dict, field="773", subfield="g"):
     return issue_number
 
 
-def get_pages(record_dict, field="773", subfield="g"):
+def get_pages(record_dict, fields=[["300", "a"], ["773", "g"]]):
     pages = ""
 
-    filter_query = list(filter(lambda x: field in x.keys(), record_dict["fields"]))
-
-    if len(filter_query) > 0:
-        subfield_query = list(
-            filter(lambda x: subfield in x.keys(), filter_query[0][field]["subfields"])
+    for field in fields:
+        filter_query = list(
+            filter(lambda x: field[0] in x.keys(), record_dict["fields"])
         )
-        if len(subfield_query) > 0:
-            # check if there are multiple informations, such as volume and issue.
-            comma_sep = subfield_query[0][subfield].split(",")
-            if len(comma_sep) == 1:  # only pages case
-                pages = comma_sep[0].replace("-", "--").replace(" ", "")
 
-            else:  # volume,issue,pages case
-                pages = comma_sep[2].replace("-", "--").replace(" ", "")
-
-    return pages
+        if len(filter_query) > 0:
+            subfield_query = list(
+                filter(
+                    lambda x: field[1] in x.keys(),
+                    filter_query[0][field[0]]["subfields"],
+                )
+            )
+            if len(subfield_query) > 0:
+                # found pages
+                pages = (
+                    subfield_query[0][field[1]].replace("pages", "").replace("-", "--")
+                )
+                return pages
 
 
 def get_publisher(record_dict, field="260", subfield="b"):
@@ -628,33 +634,17 @@ def get_title(record_dict, field="245", subfield="a"):
     return title
 
 
-def get_url(
-    record_dict,
-    field="856",
-    subfield="u",
-    control_field="856",
-    control_subfield="3",
-    control_value="Universal Resource Locator",
-):
+def get_url(record_dict, field="856", subfield="u"):
     url = ""
 
     filter_query = list(filter(lambda x: field in x.keys(), record_dict["fields"]))
     if len(filter_query) > 0:
-        for entry in filter_query:
-            control_subfield_query = list(
-                filter(
-                    lambda x: control_subfield in x.keys(), entry[field]["subfields"]
-                )
-            )
-            if len(control_subfield_query) > 0:
-                if control_subfield_query[0][control_subfield] == control_value:
-                    subfield_query = list(
-                        filter(
-                            lambda x: subfield in x.keys(), entry[field]["subfields"]
-                        )
-                    )
-                    if len(subfield_query) > 0:
-                        url = subfield_query[0][subfield]
+        # only considering first url value:
+        subfield_query = list(
+            filter(lambda x: subfield in x.keys(), filter_query[0][field]["subfields"])
+        )
+        if len(subfield_query) > 0:
+            url = subfield_query[0][subfield]
 
     return url
 

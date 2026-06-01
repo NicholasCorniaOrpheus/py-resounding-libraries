@@ -8,7 +8,20 @@ This section provides a list of SQL reports that have been intergrated in the wo
 
 ## Authorities
 
-This report returns a list of authorities with the following fields:
+This report returns a list of authority IDs from catalogue:
+
+```sql
+SELECT authid
+FROM `auth_header`
+ORDER BY authid
+LIMIT 50000
+```
+
+
+Used by [pyreslib.koha.get_auth_list_from_csv_report].
+
+
+A more advanced report returns a list of authorities with the following fields:
 
 - ``auth_id``: unique identifier for authority.
 - ``type``:
@@ -124,6 +137,24 @@ ORDER BY authid
 LIMIT 50000
 ```
 
+### Bibliographic Records
+
+The following report returns a list of biblionumbers from your catalogue.
+
+```sql
+SELECT  biblio.biblionumber FROM biblio ORDER BY biblio.biblionumber
+LIMIT 50000
+```
+
+This report is used in order to batch import bibliographic records via Koha API. Used by [pyreslib.koha.get_biblio_list_from_csv_report].
+
+An alternative version of this report includes all barcodes of items associated with a given biblionumber:
+
+```sql
+SELECT  items.biblionumber,items.barcode FROM items ORDER BY items.biblionumber
+LIMIT 50000
+```
+
 
 ### Wikidata Report
 
@@ -178,4 +209,4 @@ ORDER BY authid
 LIMIT 50000
 ```
 
-Export the result of the report as CSV file in `data/mappins/authority_wd_list.csv` and use the method [pyreslib.koha.get_authority_wd_list]
+Export the result of the report as CSV file in `data/mappins/authority_wd_list.csv` and use the method [pyreslib.koha.get_wd_authoritylist].

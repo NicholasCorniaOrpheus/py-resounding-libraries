@@ -102,18 +102,18 @@ def convert_point_in_time_to_date(point_in_time: str, date_format=f"%Y-%m-%d") -
 	"""Returns a formatted date given a Wikibase [Point in time] string. The default format is `%y-%m-%d` according to the [datetime](https://docs.python.org/3/library/datetime.html) syntaxt. For `DD/MM/YYYY` format use `%d/%m/%y` instead.
 
 	Args:
-					point_in_time: Wikibase Point in Time string similar to ISO 8061 date, with the exception of + sign. The conversion only works for AD dates.
-					date_format (str): `datetime` formatting string. Default set to ISO 8601 date.
+	point_in_time: Wikibase Point in Time string similar to ISO 8061 date, with the exception of + sign. The conversion only works for AD dates.
+	date_format (str): `datetime` formatting string. Default set to ISO 8601 date.
 
 
 	Returns:
-					date (str): Formatted date.
+	date (str): Formatted date.
 
 	Examples:
-					>>> point_in_time = "+2016-01-01T00:00:00Z"
-					>>> date_value = convert_point_in_time_to_date(point_in_time)
-					>>> print(date_value)
-					>>> '2016-01-01'
+	>>> point_in_time = "+2016-01-01T00:00:00Z"
+	>>> date_value = convert_point_in_time_to_date(point_in_time)
+	>>> print(date_value)
+	>>> '2016-01-01'
 	"""
 	# extract date from Wikibase Point in time
 	extracted_date = point_in_time[1:11]
@@ -134,17 +134,17 @@ def convert_qid_to_URI(qid: str, base_uri="http://wikidata.org/") -> str:
 	"""Returns a a QID string into the entity URI. By default the method uses the Wikidata Concept URI.
 
 	Args:
-					qid (str): Wikibase Point in Time string similar to ISO 8061 date, with the exception of + sign. The conversion only works for AD dates.
-					base_uri (str): By default set to `http://wikidata.org/`.
+	qid (str): Wikibase Point in Time string similar to ISO 8061 date, with the exception of + sign. The conversion only works for AD dates.
+	base_uri (str): By default set to `http://wikidata.org/`.
 
 
 	Returns:
-					URI (str): URI of the entity.
+	URI (str): URI of the entity.
 
 	Examples:
-					>>> qid = "Q1296"
-					>>> print(convert_qid_to_URI(qid,base_uri="http://my.wikibase.org/"))
-					>>> 'http://my.wikibase.org/Q1296'
+	>>> qid = "Q1296"
+	>>> print(convert_qid_to_URI(qid,base_uri="http://my.wikibase.org/"))
+	>>> 'http://my.wikibase.org/Q1296'
 	"""
 	return f"{base_uri}{qid}"
 

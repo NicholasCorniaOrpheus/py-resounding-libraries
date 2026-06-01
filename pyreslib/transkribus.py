@@ -1,5 +1,6 @@
 import requests
 import urllib
+import xml.etree.ElementTree as ET
 
 
 ### TO-DO
@@ -18,11 +19,11 @@ def api_login(user: str, password: str):
 	session: requests.Session() for Transkribus API
 	"""
 	session = requests.Session()
-	session.post(
+	response = session.post(
 		"https://transkribus.eu/TrpServer/rest/auth/login",
 		data={"user": user, "pw": password},
 	)
-	if session.status_code == requests.codes.ok:
+	if response.status_code == requests.codes.ok:
 		return session
 	else:
 		print(r)
@@ -126,6 +127,40 @@ def get_jpg_image(session, collection_id: int,document_id: int,page_number:int, 
 		print(f"Page not found for {document_id}/{page_number}")
 
 	return None	
+
+
+def get_page_txt(session, collection_id: int,document_id: int,page_number:int) -> str:
+	"""
+	Retrieves the TXT transcription of a given page of a document as string.
+	Args:
+	session: Transkribus session from `pyreslib.transkribus.api_login()` method.
+	collection_id (int): Collection ID identifier from Transkribus.
+	collection_id (int): Document ID identifier from Transkribus.
+	page_number (int): Internal page number identifier from Transkribus.
+
+	Returns:
+	plain_text (str): string of the plaintext transcription of the page by Transkribus.
+	Examples:
+	>>> session = pyreslib.transkribus.api_login(user,password)
+	>>> plain_text = pyreslib.transkribus.get_page_txt(session,collection_id=2792,document_id=145869,page_number=14)
+	"""
+
+	# get PAGEXML
+	page_xml = get_page_xml(session=session,collection_id=collection_id,document_id=document_id,page_number=page_number)
+	# parse PAGEXML and extract plain text
+	root = ET.fromstring(page_xml)
+	text_regions = root.findall("./{http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15}Page/{http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15}TextRegion/{http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15}TextLine")
+	plain_text = ""
+	for region in text_regions:
+		text_elements = region.findall("./{http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15}TextEquiv/{http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15}Unicode")
+
+		for text_elem in text_elements:
+			plain_text += text_elem.text + "\n"
+
+
+	return plain_text
+
+
 
 def post_page_xml(session,page_xml:str,collection_id: int,document_id:int,page_number:int,filepath=True):
 	"""

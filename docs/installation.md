@@ -4,7 +4,7 @@ Lorem ipsum.
 
 ## Package installation
 
-### Using pip
+### Using [pip](https://pip.pypa.io/en/stable/getting-started/)
 
 Generate the virtual enviroment on your project folder:
 
@@ -24,7 +24,9 @@ source pyreslib-env/bin/activate
 pip install pyreslib
 ```
 
-### Using uv
+### Using [uv](https://docs.astral.sh/uv)
+
+Do not forget to include the `pyproject.toml` file in your project directory. You can find a copy of the file in our [GitHub repository](https://github.com/NicholasCorniaOrpheus/py-resounding-libraries/blob/main/pyproject.toml).
 
 Generate the virtual enviroment on your project folder:
 
@@ -41,7 +43,7 @@ source pyreslib-env/bin/activate
 ```
 
 ```bash
-uv install pyreslib
+uv add pyreslib
 ```
 
 ### Python for Windows and Mac users
@@ -69,14 +71,33 @@ your_project
 │   │   └── marc
 │   └── mappings
 │       ├── abbreviations
-│       │   ├── author_relations.json
 │       │   ├── item_types.json
 │       │   ├── languages.json
-│       │   └── musical_instruments.json
-│       ├── mapping_abbreviation_codes.json
-│       ├── mapping_external_sources.json
-│       ├── mapping_reports.json
-│       └── wikidata-koha-properties.csv
+│       │   ├── music_instruments.json
+│       │   └── relationships.json
+│       ├── bibtex
+│       │   ├── country_codes.csv
+│       │   ├── koha_entry_types.json
+│       │   └── role_codes.csv
+│       ├── external_sources
+│       │   └── external_sources.json
+│       ├── google
+│       │   └── google_books-koha_mapping.csv
+│       ├── koha
+│       │   └── authority_list.csv
+│       ├── omekas
+│       │   ├── biblionumber_barcode.csv
+│       │   ├── koha-omekas_mapping - auth.csv
+│       │   ├── koha-omekas_mapping - biblio.csv
+│       │   ├── koha-omekas_mapping - locations.csv
+│       │   ├── koha-omekas_mapping - media.csv
+│       │   ├── koha-omekas_mapping - projects.csv
+│       │   ├── koha-omekas_mapping - researchers.csv
+│       │   └── koha-omekas_mapping - research_groups.csv
+│       └── wikidata
+│           ├── authority_wd_list.csv
+│           └── wikidata-koha-properties.csv
+
 
 ```
 
@@ -97,4 +118,4 @@ Create a `data/mappings` folder in order to store all mappings between your Koha
 
 - Generate Client ID and Secret Key for your Koha admin user.
 - Generate public reports for calculating maximal id for authorities and biblionumbers.
-- Allow API preferences from Koha Administration (?). 
+- Allow API preferences from Koha Administration. 

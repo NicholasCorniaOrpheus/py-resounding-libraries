@@ -3,18 +3,25 @@ Basic utilities scripts
 """
 import json, csv
 import pandas as pd
-from time import gmtime, strftime
+from time import gmtime, strftime, time
 import math
 import os
+import requests
 
 
-def csv2dict(csv_filename):  # imports a CSV file as dictionary
-    f = open(csv_filename, "r")
-    reader = csv.DictReader(f)
-    d = {"items": []}
-    for row in reader:
-        d["items"].append(row)
-    return d["items"]
+# def csv2dict(csv_filename):  # imports a CSV file as dictionary
+#     f = open(csv_filename, "r", encoding="utf-8-sig")
+#     reader = csv.DictReader(f)
+#     d = {"items": []}
+#     for row in reader:
+#         d["items"].append(row)
+#     return d["items"]
+
+
+def csv2dict(csv_filename):
+    df = pd.read_csv(csv_filename, encoding="utf-8-sig")
+    d = df.to_dict(orient="records")
+    return d
 
 
 def dict2csv(d, csv_filename):
