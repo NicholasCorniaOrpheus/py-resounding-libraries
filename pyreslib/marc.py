@@ -10,12 +10,12 @@ def generate_record_dict(marc_filepath: str, json_filepath: str, id_name: str) -
     Returns a list of dictionaries from a MARC record downloaded via Koha Cataloging batch import tool.
 
     Args:
-    marc_filepath (str): Location of the MARC file to be processed. Default directory is `./data/koha_auth/marc` for authorities and `./data/koha_biblio/marc` for bibliographic records.
-    json_filepath (str): Destination file. Default directory is `./data/koha_auth/json` for authorities and `./data/koha_biblio/json` for bibliographic records. Set to `None` if you wish not to save the JSON file locally.
-    id_name (str): Field name of ID value. Use `biblio_id` for bibliographic records and `auth_id` for authorities.
+        marc_filepath (str): Location of the MARC file to be processed. Default directory is `./data/koha_auth/marc` for authorities and `./data/koha_biblio/marc` for bibliographic records.
+        json_filepath (str): Destination file. Default directory is `./data/koha_auth/json` for authorities and `./data/koha_biblio/json` for bibliographic records. Set to `None` if you wish not to save the JSON file locally.
+        id_name (str): Field name of ID value. Use `biblio_id` for bibliographic records and `auth_id` for authorities.
 
     Returns:
-    record_dict (list): List of dictionaries in MARC-in-JSON format.
+        record_dict (list): List of dictionaries in MARC-in-JSON format.
     """
     n = 0
     success = 0

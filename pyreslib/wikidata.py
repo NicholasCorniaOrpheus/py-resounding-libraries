@@ -34,15 +34,15 @@ def wikibase_integrator_session_basic(
 	"""Returns an wikibase_integrator session, given user and password of your Wikidata account. We advice to create a Wikidata user in oder to prevent a "Too Many Requests HTTP 429" code.
 
 	Args:
-	username (str): Username associated with your Wikidata user.
-	password (str): Password associated with your Wikidata user.
-	mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.
+		username (str): Username associated with your Wikidata user.
+		password (str): Password associated with your Wikidata user.
+		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.
 
 	Returns:
-	wb (WikibaseIntegrator): Wikibase Integrator session
+		wb (WikibaseIntegrator): Wikibase Integrator session
 
 	Examples:
-	>>> wb = pyreslib.koha.wikibase_integrator_session_basic(username="{USERNAME}"", password="{PASSWORD}" , mediawiki_api_url="https://www.wikidata.org/w/rest.php/wikibase/v1")
+		>>> wb = pyreslib.koha.wikibase_integrator_session_basic(username="{USERNAME}"", password="{PASSWORD}" , mediawiki_api_url="https://www.wikidata.org/w/rest.php/wikibase/v1")
 
 	"""
 
@@ -69,15 +69,15 @@ def wikibase_integrator_session_oauth2(
 	"""Returns an wikibase_integrator session, given API consumer token and secret keys of your Wikidata account. You have to make a request to Wikimedia via this [URL](https://meta.wikimedia.org/wiki/Special:OAuthConsumerRegistration/propose/oauth2) in order to have such credentials. For advanced use only.
 
 	Args:
-	consumer_token (str): API consumer key associated with your Wikidata user.
-	consumer_secret (str): API secret key associated with your Wikidata user.
-	mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.
+		consumer_token (str): API consumer key associated with your Wikidata user.
+		consumer_secret (str): API secret key associated with your Wikidata user.
+		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.
 
 	Returns:
-	wb (WikibaseIntegrator): Wikibase Integrator session
+		wb (WikibaseIntegrator): Wikibase Integrator session
 
 	Examples:
-	>>> wb = pyreslib.koha.wikibase_integrator_session_basic(username="{USERNAME}"", password="{PASSWORD}" , mediawiki_api_url="https://www.wikidata.org/w/rest.php/wikibase/v1")
+		>>> wb = pyreslib.koha.wikibase_integrator_session_basic(username="{USERNAME}"", password="{PASSWORD}" , mediawiki_api_url="https://www.wikidata.org/w/rest.php/wikibase/v1")
 
 	"""
 
@@ -102,18 +102,18 @@ def convert_point_in_time_to_date(point_in_time: str, date_format=f"%Y-%m-%d") -
 	"""Returns a formatted date given a Wikibase [Point in time] string. The default format is `%y-%m-%d` according to the [datetime](https://docs.python.org/3/library/datetime.html) syntaxt. For `DD/MM/YYYY` format use `%d/%m/%y` instead.
 
 	Args:
-	point_in_time: Wikibase Point in Time string similar to ISO 8061 date, with the exception of + sign. The conversion only works for AD dates.
-	date_format (str): `datetime` formatting string. Default set to ISO 8601 date.
+		point_in_time: Wikibase Point in Time string similar to ISO 8061 date, with the exception of + sign. The conversion only works for AD dates.
+		date_format (str): `datetime` formatting string. Default set to ISO 8601 date.
 
 
 	Returns:
-	date (str): Formatted date.
+		date (str): Formatted date.
 
 	Examples:
-	>>> point_in_time = "+2016-01-01T00:00:00Z"
-	>>> date_value = convert_point_in_time_to_date(point_in_time)
-	>>> print(date_value)
-	>>> '2016-01-01'
+		>>> point_in_time = "+2016-01-01T00:00:00Z"
+		>>> date_value = convert_point_in_time_to_date(point_in_time)
+		>>> print(date_value)
+		>>> '2016-01-01'
 	"""
 	# extract date from Wikibase Point in time
 	extracted_date = point_in_time[1:11]
@@ -134,17 +134,17 @@ def convert_qid_to_URI(qid: str, base_uri="http://wikidata.org/") -> str:
 	"""Returns a a QID string into the entity URI. By default the method uses the Wikidata Concept URI.
 
 	Args:
-	qid (str): Wikibase Point in Time string similar to ISO 8061 date, with the exception of + sign. The conversion only works for AD dates.
-	base_uri (str): By default set to `http://wikidata.org/`.
+		qid (str): Wikibase Point in Time string similar to ISO 8061 date, with the exception of + sign. The conversion only works for AD dates.
+		base_uri (str): By default set to `http://wikidata.org/`.
 
 
 	Returns:
-	URI (str): URI of the entity.
+		URI (str): URI of the entity.
 
 	Examples:
-	>>> qid = "Q1296"
-	>>> print(convert_qid_to_URI(qid,base_uri="http://my.wikibase.org/"))
-	>>> 'http://my.wikibase.org/Q1296'
+		>>> qid = "Q1296"
+		>>> print(convert_qid_to_URI(qid,base_uri="http://my.wikibase.org/"))
+		>>> 'http://my.wikibase.org/Q1296'
 	"""
 	return f"{base_uri}{qid}"
 
@@ -153,23 +153,23 @@ def wb_get_property_data(wb_entity, pid: str, wikibase_URI=True, base_uri="http:
 	"""Returns a dictionary with information related to statements, given a WikibaseIntegrator entity tied to a QID, and a specific property PID.
 
 	Args:
-	wb_entity: `ItemEntity` object retrieved by using the `item.get()` WikibaseIntegrator mwethod.
-	pid (str): String indicating the PID of the property.
-	wikibase_URI (bool): Returns full URI of Wikibase item. True by default.
-	base_uri (str): Base Concept URI for the item. By default `http://wikidata.org/`.
-	date_format (str): `datetime` formatting string. Default set to ISO 8601 date.
+		wb_entity: `ItemEntity` object retrieved by using the `item.get()` WikibaseIntegrator mwethod.
+		pid (str): String indicating the PID of the property.
+		wikibase_URI (bool): Returns full URI of Wikibase item. True by default.
+		base_uri (str): Base Concept URI for the item. By default `http://wikidata.org/`.
+		date_format (str): `datetime` formatting string. Default set to ISO 8601 date.
 
 
 	Returns:
-	statements: List of dictionaries with statement values, qualifiers and references.
+		statements: List of dictionaries with statement values, qualifiers and references.
 
 	Examples:
-	>>> qid = "Q1296"
-	>>> pid = "P1082"
-	>>> wb_entity = wb.item.get(qid)
-	>>> statements = wb_get_property_data(wb_entity,pid)
-	>>> print(statements)
-	>>> [{"value": 257029,"references": [], "qualifiers": [{"pid": "P585","value": "2016-01-01"}]}, {"value": 230951,"references": [{"pid": "P143", "value": ""http://wikidata.org/"Q206855"}], "qualifiers": [{"pid": "P585","value": "2005-01-01"}]}  ]
+		>>> qid = "Q1296"
+		>>> pid = "P1082"
+		>>> wb_entity = wb.item.get(qid)
+		>>> statements = wb_get_property_data(wb_entity,pid)
+		>>> print(statements)
+		>>> [{"value": 257029,"references": [], "qualifiers": [{"pid": "P585","value": "2016-01-01"}]}, {"value": 230951,"references": [{"pid": "P143", "value": ""http://wikidata.org/"Q206855"}], "qualifiers": [{"pid": "P585","value": "2005-01-01"}]}  ]
 
 	"""
 	try:

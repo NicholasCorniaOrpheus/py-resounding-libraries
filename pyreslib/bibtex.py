@@ -22,13 +22,13 @@ def convert_biblio_to_bibtex(
     Converts MARC-in-JSON record from Koha API into BibTeX file.
 
     Args:
-    biblio_id (int): Unique idenfier for the record in Koha catalogue.
-    bibtex_filepath (str): String filepath indicating the location where the .bib output has to be stored.
-    koha_session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
-    base_url (str): Koha API url from credentials.
+        biblio_id (int): Unique idenfier for the record in Koha catalogue.
+        bibtex_filepath (str): String filepath indicating the location where the .bib output has to be stored.
+        koha_session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
+        base_url (str): Koha API url from credentials.
 
     Returns:
-    None
+        `None`
 
     Examples:
 

@@ -10,15 +10,15 @@ def get_metadata_from_google_api(isbn: str, google_api_key: str) -> dict:
     """
     Get book metadata from Google Books API.
     Args:
-    isbn (str): The ISBN number of the book as string.
-    google_api_key (str): Your Google API key for accessing the Books API from credentials.
+        isbn (str): The ISBN number of the book as string.
+        google_api_key (str): Your Google API key for accessing the Books API from credentials.
 
     Returns:
-    response (dict): JSON dictionary of the Google API metadata
+        response (dict): JSON dictionary of the Google API metadata
 
     Examples:
-    >>> get_metadata_from_google_api(isbn="9780674970472",goole_api_key=credentals["google"]["api_key"])
-    >>> {'kind': 'books#volumes', 'totalItems': 1, 'items': [{'kind': 'books#volume', 'id': 'IXV-EAAAQBAJ', 'etag': 'J8cdkA9cXTg', 'selfLink': 'https://www.googleapis.com/books/v1/volumes/IXV-EAAAQBAJ', 'volumeInfo': {'title': 'In Praise of Failure', 'subtitle': 'Four Lessons in Humility', 'authors': ['Costica Bradatan'], 'publisher': 'Harvard University Press' ...}
+        >>> get_metadata_from_google_api(isbn="9780674970472",goole_api_key=credentals["google"]["api_key"])
+        >>> {'kind': 'books#volumes', 'totalItems': 1, 'items': [{'kind': 'books#volume', 'id': 'IXV-EAAAQBAJ', 'etag': 'J8cdkA9cXTg', 'selfLink': 'https://www.googleapis.com/books/v1/volumes/IXV-EAAAQBAJ', 'volumeInfo': {'title': 'In Praise of Failure', 'subtitle': 'Four Lessons in Humility', 'authors': ['Costica Bradatan'], 'publisher': 'Harvard University Press' ...}
 
     """
     GB_API_URL = "https://www.googleapis.com/books/v1/volumes"
@@ -47,11 +47,12 @@ def get_google_api_koha_mapping(
 ) -> list:
     """
     Get the mapping between Google Books API metadata fields and Koha metadata fields from a CSV file.
+
     Args:
-    google_koha_mapping_filepath (str): The file path to the CSV file containing the mapping.
+        google_koha_mapping_filepath (str): The file path to the CSV file containing the mapping.
 
     Returns:
-    mapping (list): A list of dictionaries of the mappins.
+        mapping (list): A list of dictionaries of the mappins.
     """
     mapping = []
     with open(google_koha_mapping_filepath, mode="r", encoding="utf-8") as csvfile:
@@ -75,13 +76,14 @@ def get_google_api_koha_mapping(
 def get_isbn_from_biblio_id(biblio_id: int, koha_session, base_url: str) -> str:
     """
     Get the ISBN number from a Koha biblio_id.
+
     Args:
-    biblio_id (int): The biblio_id of the book in Koha.
-    koha_session: An authenticated Koha session object.
-    base_url (str): The base URL of the Koha API.
+        biblio_id (int): The biblio_id of the book in Koha.
+        koha_session: An authenticated Koha session object.
+        base_url (str): The base URL of the Koha API.
 
     Returns:
-    isbn (str): The ISBN number of the book as string.
+        isbn (str): The ISBN number of the book as string.
     """
     biblio_metadata = koha.get_biblio_marc(
         session=koha_session, biblio_id=biblio_id, base_url=base_url

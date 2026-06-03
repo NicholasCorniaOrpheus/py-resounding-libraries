@@ -1,11 +1,12 @@
 import requests
 import urllib
 import xml.etree.ElementTree as ET
+from pyreslib import koha
 
 
 ### TO-DO
 """
-1. Conversion option for PAGEXML format, such as Plain Text and TEIXML.
+1. Conversion option for PAGEXML format, such TEIXML.
 2. Authorities spotting via Fuzzy Search in trascribed text
 
 """
@@ -13,10 +14,10 @@ import xml.etree.ElementTree as ET
 def api_login(user: str, password: str):
 	"""
 	Args:
-	user (user): Client Username
-	pw (str): Client secret Password
+		user (user): Client Username
+		pw (str): Client secret Password
 	Returns:
-	session: requests.Session() for Transkribus API
+		session: requests.Session() for Transkribus API
 	"""
 	session = requests.Session()
 	response = session.post(
@@ -34,17 +35,17 @@ def api_login(user: str, password: str):
 def get_documents_metadata(session, collection_id: int) -> list: 
 	"""Returns a full dictionary of documents, including pages metadata.
 	Args:
-	session: Transkribus session from `pyreslib.transkribus.api_login()` method.
-	collection_id (int): Collection ID identifier from Transkribus.
+		session: Transkribus session from `pyreslib.transkribus.api_login()` method.
+		collection_id (int): Collection ID identifier from Transkribus.
 
 	Returns:
-	documents (list): List of documents, with metadata and pagelist.
+		documents (list): List of documents, with metadata and pagelist.
 	
 	Examples:
 
-	>>> session = pyreslib.transkribus.api_login(user,password)
-	>>> documents = pyreslib.transkribus.get_documents_metadata(session,collection_id=2792)
-	>>> [{"md": {...}, "pageList": {"pages":[...]},"collection": {...}, ... }]
+		>>> session = pyreslib.transkribus.api_login(user,password)
+		>>> documents = pyreslib.transkribus.get_documents_metadata(session,collection_id=2792)
+		>>> [{"md": {...}, "pageList": {"pages":[...]},"collection": {...}, ... }]
 	"""
 	headers = {"Accept": "application/json"}
 	collection = session.get(
@@ -67,20 +68,21 @@ def get_documents_metadata(session, collection_id: int) -> list:
 def get_page_xml(session, collection_id: int,document_id: int,page_number:int) -> str:
 	"""
 	Retrieves the PAGEXML transcription of a given page of a document as string.
+	
 	Args:
-	session: Transkribus session from `pyreslib.transkribus.api_login()` method.
-	collection_id (int): Collection ID identifier from Transkribus.
-	collection_id (int): Document ID identifier from Transkribus.
-	page_number (int): Internal page number identifier from Transkribus.
+		session: Transkribus session from `pyreslib.transkribus.api_login()` method.
+		collection_id (int): Collection ID identifier from Transkribus.
+		collection_id (int): Document ID identifier from Transkribus.
+		page_number (int): Internal page number identifier from Transkribus.
 
 	Returns:
-	page_xml (str): string serialization of the PAGEXML transcription of the page by Transkribus. You can parse it later by usin `xml.etree.ElementTree.fromstring()` method.
+		page_xml (str): string serialization of the PAGEXML transcription of the page by Transkribus. You can parse it later by usin `xml.etree.ElementTree.fromstring()` method.
 
 	Examples:
-	>>> import xml.etree.ElementTree as ET
-	>>> session = pyreslib.transkribus.api_login(user,password)
-	>>> page_xml = pyreslib.transkribus.get_page_xml(session,collection_id=2792,document_id=145869,page_number=14)
-	>>> root = ET.fromstring(page_xml)
+		>>> import xml.etree.ElementTree as ET
+		>>> session = pyreslib.transkribus.api_login(user,password)
+		>>> page_xml = pyreslib.transkribus.get_page_xml(session,collection_id=2792,document_id=145869,page_number=14)
+		>>> root = ET.fromstring(page_xml)
 	"""
 
 
@@ -95,20 +97,21 @@ def get_page_xml(session, collection_id: int,document_id: int,page_number:int) -
 def get_jpg_image(session, collection_id: int,document_id: int,page_number:int, output_filepath: str):
 	"""
 	Extract the JPG image of a given page from Transkribus API
+	
 	Args:
-	session: Transkribus session from `pyreslib.transkribus.api_login()` method.
-	collection_id (int): Collection ID identifier from Transkribus.
-	document_id (int): Document ID identifier from Transkribus.
-	page_number (int): Internal page number identifier from Transkribus.
-	output_filepath (str): local path for download.
+		session: Transkribus session from `pyreslib.transkribus.api_login()` method.
+		collection_id (int): Collection ID identifier from Transkribus.
+		document_id (int): Document ID identifier from Transkribus.
+		page_number (int): Internal page number identifier from Transkribus.
+		output_filepath (str): local path for download.
 
 	Returns:
-	None
+		`None`
 
 	Examples:
-	>>> session = pyreslib.transkribus.api_login(user,password)
-	>>> output_filepath = f"./tmp/{str(document_id)}_{str(page_number).zfill(3)}"
-	>>> get_jpg_image(session,collection_id=2792,document_id=145869,page_number=14,output_filepath=output_filepath)
+		>>> session = pyreslib.transkribus.api_login(user,password)
+		>>> output_filepath = f"./tmp/{str(document_id)}_{str(page_number).zfill(3)}"
+		>>> get_jpg_image(session,collection_id=2792,document_id=145869,page_number=14,output_filepath=output_filepath)
 	"""
 
 	# Get document metadata
@@ -132,17 +135,19 @@ def get_jpg_image(session, collection_id: int,document_id: int,page_number:int, 
 def get_page_txt(session, collection_id: int,document_id: int,page_number:int) -> str:
 	"""
 	Retrieves the TXT transcription of a given page of a document as string.
+	
 	Args:
-	session: Transkribus session from `pyreslib.transkribus.api_login()` method.
-	collection_id (int): Collection ID identifier from Transkribus.
-	collection_id (int): Document ID identifier from Transkribus.
-	page_number (int): Internal page number identifier from Transkribus.
+		session: Transkribus session from `pyreslib.transkribus.api_login()` method.
+		collection_id (int): Collection ID identifier from Transkribus.
+		collection_id (int): Document ID identifier from Transkribus.
+		page_number (int): Internal page number identifier from Transkribus.
 
 	Returns:
-	plain_text (str): string of the plaintext transcription of the page by Transkribus.
+		plain_text (str): string of the plaintext transcription of the page by Transkribus.
+	
 	Examples:
-	>>> session = pyreslib.transkribus.api_login(user,password)
-	>>> plain_text = pyreslib.transkribus.get_page_txt(session,collection_id=2792,document_id=145869,page_number=14)
+		>>> session = pyreslib.transkribus.api_login(user,password)
+		>>> plain_text = pyreslib.transkribus.get_page_txt(session,collection_id=2792,document_id=145869,page_number=14)
 	"""
 
 	# get PAGEXML
@@ -159,6 +164,67 @@ def get_page_txt(session, collection_id: int,document_id: int,page_number:int) -
 
 
 	return plain_text
+
+
+def import_text_transcription_to_koha_field(text: str, biblio_id: int, koha_session, koha_base_url: str, field: list = ["520","a"]):
+	"""
+	Creates a new field statement for a bibliographic record with the given Transkribus transcription.
+	
+	Args:
+		text (str): String to be ingested in Koha.
+		biblio_id (int): Biblio ID for the record.
+		koha_session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
+		koha_base_url (str): Koha API url from credentials.
+		field (list): Field and subfield where the text has to be added to record. Default is Summary/Abstract (520$a) field = ["520","a"]
+	
+	Returns:
+		`None`
+	"""
+
+	# Import record via API
+	print(f"Importing record {biblio_id} from Koha API...")
+	record = koha.get_biblio_marc(biblio_id=biblio_id,session=koha_session,base_url=koha_base_url)
+	print(f"Number of fields: {len(record["fields"])}")
+	# Add new statement for given field
+	query_field = list(filter(lambda x: field[0] in x.keys(), record["fields"]))
+	if len(query_field) >0: # append new statement
+		pos = record["fields"].index(query_field[0])
+		new_statement = {field[0]: {
+			"ind2": " ",
+			"ind1": " ",
+			"subfields": [{field[1]: text}]
+		  }}
+		# append the field statement after the first found with the same tag.
+		record["fields"].insert(pos,new_statement)
+	else:
+		# append the field according to order
+		field_n = int(field[0])
+		for statement in record["fields"]:
+			stat_n = int(list(statement.keys())[0])
+			if field_n < stat_n:
+				pos = record["fields"].index(statement)
+				new_statement = {field[0]: {
+					"ind2": " ",
+					"ind1": " ",
+					"subfields": [{field[1]: text}]
+				  }}
+
+				record["fields"].insert(pos-1,new_statement)
+				break
+
+
+	# update record back to Koha catalogue
+
+	print(record)
+
+	input()
+
+	koha.update_biblio_marc(session=koha_session, biblio_id=biblio_id, marc_json=record, base_url=koha_base_url)
+
+
+
+
+
 
 
 

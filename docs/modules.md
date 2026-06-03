@@ -15,13 +15,13 @@ There are two main serialization for the MARC metadata of records and authoritie
 
 - [get_authority_marc][pyreslib.koha.get_authority_marc]
 - [get_authority_json][pyreslib.koha.get_authority_json]
-- [get_biblionumber_marc][pyreslib.koha.get_biblionumber_marc]
-- [get_biblionumber_json][pyreslib.koha.get_biblionumber_json]
+- [get_biblionumber_marc][pyreslib.koha.get_biblio_marc]
+- [get_biblionumber_json][pyreslib.koha.get_biblio_json]
 
 ### PUT metadata to Koha
 
-- [put_authority_marc][pyreslib.koha.put_authority_marc]
-- [put_biblionumber_marc][pyreslib.koha.put_biblionumber_marc]
+- [update_authority_marc][pyreslib.koha.update_authority_marc]
+- [update_biblionumber_marc][pyreslib.koha.update_biblio_marc]
 
 
 ### Import bibliographic and authority catalogue
@@ -29,7 +29,7 @@ There are two main serialization for the MARC metadata of records and authoritie
 In order to import the whole catalogue, we provide two methods: 
 
 1. Batch import from pre-downloaded MARC file from `Cataloging/Stage record for import`. See [import_koha_authorities_from_marc](pyreslib.koha.import_koha_authorities_from_marc) and [import_koha_biblios_from_marc](pyreslib.koha.import_koha_biblios_from_marc).
-2. Batch import via API with parallel processing.
+2. Batch import via API with parallel processing. See [import_koha_authorities_from_api](pyreslib.koha.import_koha_authorities_from_api) and [import_koha_biblios_from_api](pyreslib.koha.import_koha_biblios_from_api).
 
 ### Utilities
 

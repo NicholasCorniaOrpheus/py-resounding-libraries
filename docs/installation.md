@@ -56,6 +56,12 @@ Have a look at this detailed [documentation](https://realpython.com/installing-p
 
 ## MARC and JSON records
 
+The package suppose a specific folder structure for credentials, mappings files and data paths. You can easily clone our [GitHub repository](https://github.com/NicholasCorniaOrpheus/py-resounding-libraries) and copy the relevant directories to your projec folder.
+
+```bash
+git clone https://github.com/NicholasCorniaOrpheus/py-resounding-libraries.git
+```
+
 Create a `data` folder with subfolders `koha_auth` and `koha_biblio`. For both authorities and biblionumbers, make subdirectories `marc` and `json`.
 
 ```project
@@ -106,12 +112,9 @@ your_project
 In your `data` folder you should create a `credentials` directory to store all your sensible data. All credentials are stored in `credentials.json` file. Copy the [credential template](https://github.com/NicholasCorniaOrpheus/py-resounding-libraries/blob/main/credentials/credentials.json) from our GitHub repository.
 
 
-
 ## Mappings
 
 Create a `data/mappings` folder in order to store all mappings between your Koha instance and other external services, such as Wikidata, Google Books, Omeka S and Resource Space. You can copy the [mappings template]() from our GitHub repository and modify them accordingly.
-
-
 
 
 ## Koha Setup
