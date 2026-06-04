@@ -13,15 +13,15 @@ Follow the [offical documentation](https://koha-community.org/manual/23.11/en/ht
 
 There are two main serialization for the MARC metadata of records and authorities that the Koha API provides: a detailed MARC in JSON dictionary serialization and a standard JSON serialization.
 
-- [get_authority_marc][pyreslib.koha.get_authority_marc]
-- [get_authority_json][pyreslib.koha.get_authority_json]
-- [get_biblionumber_marc][pyreslib.koha.get_biblio_marc]
-- [get_biblionumber_json][pyreslib.koha.get_biblio_json]
+- [Get authority record metadata from Koha API as MARC-in-JSON][pyreslib.koha.get_authority_marc]
+- [Get authority record metadata from Koha API as JSON][pyreslib.koha.get_authority_json]
+- [Get bibliographic record metadata from Koha API as MARC-in-JSON][pyreslib.koha.get_biblio_marc]
+- [Get bibliographic record metadata from Koha API as JSON][pyreslib.koha.get_biblio_json]
 
 ### PUT metadata to Koha
 
-- [update_authority_marc][pyreslib.koha.update_authority_marc]
-- [update_biblionumber_marc][pyreslib.koha.update_biblio_marc]
+- [Updates authority via Koha API][pyreslib.koha.update_authority_marc]
+- [Updates bibliographic record via Koha API][pyreslib.koha.update_biblio_marc]
 
 
 ### Import bibliographic and authority catalogue
@@ -48,15 +48,18 @@ The module provides a series of functions that will extract specific fields from
 
 This module allows to process MARC files and records with the help of [pymarc](https://pymarc.readthedocs.io/en/latest/). It provides methods to convert MARC records to JSON dictionaries and vice versa, as well as to extract and modify specific information from MARC records.
 
-- [pyreslib.marc.generate_record_dict](pyreslib.marc.generate_record_dict)
+- [Convert MARC file to MARC-in-JSON dictionary for Koha API](pyreslib.marc.generate_record_dict)
+- [Convert MARC file into plain text](pyreslib.marc.marc2txt)
+- [Convert MARC file into CSV](pyreslib.marc.marc2csv)
+- [Convert CSV file to MARC for ingestion](pyreslib.marc.csv2marc) based on template in `data/biblio_id/csv`.
 
 
 ## Google Books
 
 This module allows to harvest metadata information from Google Books API via ISBN of the book. Useful if you wish to populate your new record with basic metadata by only providing the ISBN code in field 020. A mapping between Google and Koha fields is available in `data/mappins/google`.
 
-- [enhance_biblio_record_from_isbn](pyreslib.google_books.enhance_biblio_record_from_isbn)
-- [get_metadata_from_google_api][pyreslib.google_books.get_metadata_from_google_api]
+- [Enhance record from ISBN code](pyreslib.google_books.enhance_biblio_record_from_isbn)
+- [Get book metadata from Google API based on ISBN][pyreslib.google_books.get_metadata_from_google_api]
 
 ## Transkribus
 
@@ -72,7 +75,7 @@ This module allows the user to interact with the [Transkribus](https://www.trans
 
 This modules allows the export of bibliographicn records in BibTeX format, improving the built-in Koha export feature.
 
-- [convert_biblio_to_bibtex](pyreslib.bibtex.convert_biblio_to_bibtex)
+- [Convert bibliographic record into BibTeX](pyreslib.bibtex.convert_biblio_to_bibtex)
 
 ## Wikidata
 
