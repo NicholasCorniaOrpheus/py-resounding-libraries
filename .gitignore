@@ -2,6 +2,8 @@ test/
 pyreslib-env/
 requirements.txt
 build/
+.github/
+figures/
 
 # Python-generated files
 __pycache__/
