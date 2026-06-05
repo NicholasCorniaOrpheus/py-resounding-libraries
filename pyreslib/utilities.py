@@ -11,7 +11,7 @@ import requests
 
 def csv2dict(csv_filename, encoding="utf-8-sig", orient="records", na_values=""):
     df = pd.read_csv(csv_filename, encoding=encoding)
-    df = df.fillna(na_values, inplace=True)
+    df = df.fillna(na_values)
     d = df.to_dict(orient=orient)
     return d
 
@@ -30,8 +30,8 @@ def json2dict(json_filename):  # imports a JSON file as dictionary
 def dict2json(
     d, json_filename, ensure_ascii=False, indent=2
 ):  # export a dictionary to JSON file
-    json_file = open(json_filename, "w")
-    json.dump(d, json_file, indent=indent, ensure_ascii=ensure_ascii)
+    with open(json_filename, "w") as json_file:
+        json.dump(d, json_file, indent=indent, ensure_ascii=ensure_ascii)
 
 
 def get_current_date():

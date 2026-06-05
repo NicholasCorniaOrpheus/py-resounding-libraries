@@ -1,44 +1,48 @@
-label,pid,heading,alias,type_source,type_target,description,value_i_subfield,,
-student of,P1066,student of,has teacher,PERSO_NAME,PERSO_NAME,student of (has teacher) [P1066],http://wikidata.org/entity/P1066,,
-sibling,P3373,sibling,has sibling,PERSO_NAME,PERSO_NAME,sibling (has sibling) [P3373],http://wikidata.org/entity/P3373,,
-instrument,P1303,instrument,plays instrument,PERSO_NAME,TOPIC_TERM,instrument (plays instrument) [P1303],http://wikidata.org/entity/P1303,,
-product or material produced,P1056,makes,"produces, builds, creates",PERSO_NAME,TOPIC_TERM,"makes (produces, builds, creates) [P1056]",http://wikidata.org/entity/P1056,,
-manufacturer,P176,made by,built by,BIBLIO_NUM,PERSO_NAME,made by (built by) [P176],http://wikidata.org/entity/P176,,
-occupation,P106,occupation,has occupation,PERSO_NAME,TOPIC_TERM,occupation (has occupation) [P106],http://wikidata.org/entity/P106,,
-place of birth,P19,place of birth,,PERSO_NAME,GEOGR_NAME,place of birth () [P19],http://wikidata.org/entity/P19,,
-place of death,P20,place of death,,PERSO_NAME,GEOGR_NAME,place of death () [P20],http://wikidata.org/entity/P20,,
-country of citizenship,P27,nationality,country of citizenship,PERSO_NAME,GEOGR_NAME,nationality (country of citizenship) [P27],http://wikidata.org/entity/P27,,
-sex or gender,P21,gender,sex or gender,PERSO_NAME,TOPIC_TERM,gender (sex or gender) [P21],http://wikidata.org/entity/P21,,
-father,P22,father,has father,PERSO_NAME,PERSO_NAME,father (has father) [P22],http://wikidata.org/entity/P22,,
-mother,P25,mother,has mother,PERSO_NAME,PERSO_NAME,mother (has mother) [P25],http://wikidata.org/entity/P25,,
-student  ,P802,has student,has pupil,PERSO_NAME,PERSO_NAME,has student (has pupil) [P802],http://wikidata.org/entity/P802,,
-relative,P1038,has relative,has family member,PERSO_NAME,PERSO_NAME,has relative (has family member) [P1038],http://wikidata.org/entity/P1038,,
-family,P53,belongs to family,is part of family,PERSO_NAME,CORPO_NAME,belongs to family (is part of family) [P53],http://wikidata.org/entity/P53,,
-employer,P108,has employer,works for,PERSO_NAME,CORPO_NAME,has employer (works for) [P108],http://wikidata.org/entity/P108,,
-educated at,P69,educated at,has studied at,PERSO_NAME,CORPO_NAME,educated at (has studied at) [P69],http://wikidata.org/entity/P69,,Ook mogelijk in combinatie met GEOGR_NAME indien het niet om een instituut gaat?
-work location,P937,work location,place of work,PERSO_NAME,GEOGR_NAME,work location (place of work) [P937],http://wikidata.org/entity/P937,,
-influenced by,P737,influenced by,inspired by,PERSO_NAME,PERSO_NAME,influenced by (inspired by) [P737],http://wikidata.org/entity/P737,,
-country,P17,country,,GEOGR_NAME,GEOGR_NAME,country () [P17],http://wikidata.org/entity/P17,,
-part of,P361,part of,belongs to region,GEOGR_NAME,GEOGR_NAME,part of (belongs to region) [P361],http://wikidata.org/entity/P361,,
-country,P17,country,,CORPO_NAME,GEOGR_NAME,country () [P17],http://wikidata.org/entity/P17,,
-part of,P361,part of,,CHRON_TERM,CHRON_TERM,part of () [P361],http://wikidata.org/entity/P361,,
-located in the administrative territorial entity,P131,located in the administrative territorial entity,belongs to area,GEOGR_NAME,GEOGR_NAME,located in the administrative territorial entity (belongs to area) [P131],http://wikidata.org/entity/P131,,
-instance of,P31,instance of,type,CORPO_NAME,CORPO_NAME,instance of (type) [P31],http://wikidata.org/entity/P31,,
-instance of,P31,instance of,type,CORPO_NAME,TOPIC_TERM,instance of (type) [P31],http://wikidata.org/entity/P31,,
-instance of,P31,instance of,type,TOPIC_TERM,TOPIC_TERM,instance of (type) [P31],http://wikidata.org/entity/P31,,
-founded by,P112,founded by,,CORPO_NAME,PERSO_NAME,founded by () [P112],http://wikidata.org/entity/P112,,
-located in the administrative territorial entity,P131,location,place,CORPO_NAME,GEOGR_NAME,location (place) [P131],http://wikidata.org/entity/P131,,
-headquarters location,P159,headquarters location,,CORPO_NAME,GEOGR_NAME,headquarters location () [P159],http://wikidata.org/entity/P159,,
-subclass of,P279,subclass of,,TOPIC_TERM,TOPIC_TERM,subclass of () [P279],http://wikidata.org/entity/P279,,
-has part(s),P527,has part,,TOPIC_TERM,TOPIC_TERM,has part () [P527],http://wikidata.org/entity/P527,,
-opposite of,P461,opposite of,,TOPIC_TERM,TOPIC_TERM,opposite of () [P461],http://wikidata.org/entity/P461,,
-main subject,P921,subject,about,TOPIC_TERM,BIBLIO_NUM,subject (about) [P921],http://wikidata.org/entity/P921,,
-based on,P144,based on,inspired by,BIBLIO_NUM,BIBLIO_NUM,based on (inspired by) [P144],http://wikidata.org/entity/P144,,
-genre,P136,genre,,BIBLIO_NUM,TOPIC_TERM,genre () [P136],http://wikidata.org/entity/P136,,
-genre,P136,genre,,BIBLIO_NUM,CHRON_TERM,genre () [P136],http://wikidata.org/entity/P136,,
-described by source,P1343,reference,described by source,CORPO_NAME,BIBLIO_NUM,reference (described by source) [P1343],http://wikidata.org/entity/P1343,,
-described by source,P1343,reference,described by source,PERSO_NAME,BIBLIO_NUM,reference (described by source) [P1343],http://wikidata.org/entity/P1343,,
-described by source,P1343,reference,described by source,TOPIC_TERM,BIBLIO_NUM,reference (described by source) [P1343],http://wikidata.org/entity/P1343,,
-cites work,P2860,cites,cites work,BIBLIO_NUM,BIBLIO_NUM,cites (cites work) [P2860],http://wikidata.org/entity/P2860,,
-dedicated to,P825,dedicated to,addressed to,BIBLIO_NUM,PERSO_NAME,dedicated to (addressed to) [P825],http://wikidata.org/entity/P825,,
-acknowledged,P7137,acknowledges,cites person,BIBLIO_NUM,PERSO_NAME,acknowledges (cites person) [P7137],http://wikidata.org/entity/P7137,,
+label,pid,heading,alias,type_source,type_target,description,value_i_subfield
+student of,P1066,student of,has teacher,PERSO_NAME,PERSO_NAME,student of (has teacher) [P1066],http://wikidata.org/entity/P1066
+sibling,P3373,sibling,has sibling,PERSO_NAME,PERSO_NAME,sibling (has sibling) [P3373],http://wikidata.org/entity/P3373
+instrument,P1303,instrument,plays instrument,PERSO_NAME,TOPIC_TERM,instrument (plays instrument) [P1303],http://wikidata.org/entity/P1303
+product or material produced,P1056,makes,"produces, builds, creates",PERSO_NAME,TOPIC_TERM,"makes (produces, builds, creates) [P1056]",http://wikidata.org/entity/P1056
+manufacturer,P176,made by,built by,BIBLIO_NUM,PERSO_NAME,made by (built by) [P176],http://wikidata.org/entity/P176
+occupation,P106,occupation,has occupation,PERSO_NAME,TOPIC_TERM,occupation (has occupation) [P106],http://wikidata.org/entity/P106
+place of birth,P19,place of birth,,PERSO_NAME,GEOGR_NAME,place of birth () [P19],http://wikidata.org/entity/P19
+place of death,P20,place of death,,PERSO_NAME,GEOGR_NAME,place of death () [P20],http://wikidata.org/entity/P20
+country of citizenship,P27,nationality,country of citizenship,PERSO_NAME,GEOGR_NAME,nationality (country of citizenship) [P27],http://wikidata.org/entity/P27
+sex or gender,P21,gender,sex or gender,PERSO_NAME,TOPIC_TERM,gender (sex or gender) [P21],http://wikidata.org/entity/P21
+father,P22,father,has father,PERSO_NAME,PERSO_NAME,father (has father) [P22],http://wikidata.org/entity/P22
+mother,P25,mother,has mother,PERSO_NAME,PERSO_NAME,mother (has mother) [P25],http://wikidata.org/entity/P25
+student  ,P802,has student,has pupil,PERSO_NAME,PERSO_NAME,has student (has pupil) [P802],http://wikidata.org/entity/P802
+relative,P1038,has relative,has family member,PERSO_NAME,PERSO_NAME,has relative (has family member) [P1038],http://wikidata.org/entity/P1038
+family,P53,belongs to family,is part of family,PERSO_NAME,CORPO_NAME,belongs to family (is part of family) [P53],http://wikidata.org/entity/P53
+employer,P108,has employer,works for,PERSO_NAME,CORPO_NAME,has employer (works for) [P108],http://wikidata.org/entity/P108
+educated at,P69,educated at,has studied at,PERSO_NAME,CORPO_NAME,educated at (has studied at) [P69],http://wikidata.org/entity/P69
+work location,P937,work location,place of work,PERSO_NAME,GEOGR_NAME,work location (place of work) [P937],http://wikidata.org/entity/P937
+influenced by,P737,influenced by,inspired by,PERSO_NAME,PERSO_NAME,influenced by (inspired by) [P737],http://wikidata.org/entity/P737
+country,P17,country,,GEOGR_NAME,GEOGR_NAME,country () [P17],http://wikidata.org/entity/P17
+part of,P361,part of,belongs to region,GEOGR_NAME,GEOGR_NAME,part of (belongs to region) [P361],http://wikidata.org/entity/P361
+country,P17,country,,CORPO_NAME,GEOGR_NAME,country () [P17],http://wikidata.org/entity/P17
+part of,P361,part of,,CHRON_TERM,CHRON_TERM,part of () [P361],http://wikidata.org/entity/P361
+located in the administrative territorial entity,P131,located in the administrative territorial entity,belongs to area,GEOGR_NAME,GEOGR_NAME,located in the administrative territorial entity (belongs to area) [P131],http://wikidata.org/entity/P131
+instance of,P31,instance of,type,CORPO_NAME,CORPO_NAME,instance of (type) [P31],http://wikidata.org/entity/P31
+instance of,P31,instance of,type,CORPO_NAME,TOPIC_TERM,instance of (type) [P31],http://wikidata.org/entity/P31
+instance of,P31,instance of,type,TOPIC_TERM,TOPIC_TERM,instance of (type) [P31],http://wikidata.org/entity/P31
+founded by,P112,founded by,,CORPO_NAME,PERSO_NAME,founded by () [P112],http://wikidata.org/entity/P112
+located in the administrative territorial entity,P131,location,place,CORPO_NAME,GEOGR_NAME,location (place) [P131],http://wikidata.org/entity/P131
+headquarters location,P159,headquarters location,,CORPO_NAME,GEOGR_NAME,headquarters location () [P159],http://wikidata.org/entity/P159
+subclass of,P279,subclass of,,TOPIC_TERM,TOPIC_TERM,subclass of () [P279],http://wikidata.org/entity/P279
+has part(s),P527,has part,,TOPIC_TERM,TOPIC_TERM,has part () [P527],http://wikidata.org/entity/P527
+opposite of,P461,opposite of,,TOPIC_TERM,TOPIC_TERM,opposite of () [P461],http://wikidata.org/entity/P461
+main subject,P921,subject,about,TOPIC_TERM,BIBLIO_NUM,subject (about) [P921],http://wikidata.org/entity/P921
+based on,P144,based on,inspired by,BIBLIO_NUM,BIBLIO_NUM,based on (inspired by) [P144],http://wikidata.org/entity/P144
+genre,P136,genre,,BIBLIO_NUM,TOPIC_TERM,genre () [P136],http://wikidata.org/entity/P136
+genre,P136,genre,,BIBLIO_NUM,CHRON_TERM,genre () [P136],http://wikidata.org/entity/P136
+described by source,P1343,reference,described by source,CORPO_NAME,BIBLIO_NUM,reference (described by source) [P1343],http://wikidata.org/entity/P1343
+described by source,P1343,reference,described by source,PERSO_NAME,BIBLIO_NUM,reference (described by source) [P1343],http://wikidata.org/entity/P1343
+described by source,P1343,reference,described by source,TOPIC_TERM,BIBLIO_NUM,reference (described by source) [P1343],http://wikidata.org/entity/P1343
+cites work,P2860,cites,cites work,BIBLIO_NUM,BIBLIO_NUM,cites (cites work) [P2860],http://wikidata.org/entity/P2860
+dedicated to,P825,dedicated to,addressed to,BIBLIO_NUM,PERSO_NAME,dedicated to (addressed to) [P825],http://wikidata.org/entity/P825
+acknowledged,P7137,acknowledges,cites person,BIBLIO_NUM,PERSO_NAME,acknowledges (cites person) [P7137],http://wikidata.org/entity/P7137
+continent,P30,continent,part of continent,GEOGR_NAME,GEOGR_NAME,continent (part of continent) [P30],http://wikidata.org/entity/P30
+field of work,P101,field of work,discipline,PERSO_NAME,TOPIC_TERM,field of work (discipline) [P101],http://wikidata.org/entity/P101
+interested in,P2650,topic of interest,interested in,PERSO_NAME,TOPIC_TERM,topic of interest (interested in) [P2650],http://wikidata.org/entity/P2650
+affiliation,P1416,affiliation,institution,PERSO_NAME,CORPO_NAME,affiliation (institution) [P1416],http://wikidata.org/entity/P1416

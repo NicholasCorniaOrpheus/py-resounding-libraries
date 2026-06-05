@@ -3,7 +3,7 @@ Python package for digital libraries from the Resounding Libraries cluster at Or
 
 ## Documentation
 
-Package documentation available [here]()...
+[Package documentation](https://nicholascorniaorpheus.github.io/py-resounding-libraries/) available via GitHub Pages.
 
 ## Installation and Setup
 
@@ -13,7 +13,7 @@ Generate the virtual enviroment on your project folder:
 
 ```bash
 # Generate local python binaries in folder
-python3 -m venv $rl-env
+python3 -m venv rl-env
 ```
 
 Activate virtual enviroment in order to invoke the package:

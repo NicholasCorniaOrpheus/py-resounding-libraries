@@ -39,7 +39,7 @@ def wikibase_integrator_session_basic(
 	Args:
 		username (str): Username associated with your Wikidata user.
 		password (str): Password associated with your Wikidata user.
-		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.
+		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https://www.wikidata.org/w/api.php` with your own Wikibase URL.
 
 	Returns:
 		wb (WikibaseIntegrator): Wikibase Integrator session
@@ -74,13 +74,13 @@ def wikibase_integrator_session_oauth2(
 	Args:
 		consumer_token (str): API consumer key associated with your Wikidata user.
 		consumer_secret (str): API secret key associated with your Wikidata user.
-		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.
+		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https://www.wikidata.org/w/api.php` with your own Wikibase URL.
 
 	Returns:
 		wb (WikibaseIntegrator): Wikibase Integrator session
 
 	Examples:
-		>>> wb = pyreslib.koha.wikibase_integrator_session_oauth2(consumer_token="{TOKEN}"", consumer_secret="{SECRET_TOKEN}" , mediawiki_api_url="https://www.wikidata.org/w/rest.php/wikibase/v1")
+		>>> wb = pyreslib.koha.wikibase_integrator_session_oauth2(consumer_token="{TOKEN}"", consumer_secret="{SECRET_TOKEN}" , mediawiki_api_url="https://www.wikidata.org/w/api.php")
 
 	"""
 
@@ -586,7 +586,7 @@ def enhance_authorities_via_wikidata(
 			entry["occurrence"] = int(entry["occurrence"])
 
 	print("Sorting authorities according to their QID...")
-	auth_dict_sorted_qid,auth_qid_list = generate_qid_sorted_dict_and_list(auth_dict)
+	auth_dict_sorted_qid,auth_qid_list = generate_qid_sorted_dict_and_list(auth_dict,exclude_types=exclude_types)
 
 	# Counters for partial backups, and measuring operation.
 	backup_counter = 0
@@ -642,62 +642,66 @@ def enhance_authorities_via_wikidata(
 									else:
 										value_uri = wikibase_base_url + value
 										value_qid = value
-									#1. value is already in authority record, but no $i subfield --> Add value_i_subfield
-									# search QID value in authority record field
-									try:
-										field = koha_fields[prop["type_target"]]
-										field_query = list(filter(lambda x: field in x.keys(),auth["record"]["fields"]))
 
-										if len(field_query) > 0: # statement(s) in authority
+									if value_qid != qid: # exclude reflective statements.	
+										#1. value is already in authority record, but no $i subfield --> Add value_i_subfield
+										# search QID value in authority record field
+										try:
+											field = koha_fields[prop["type_target"]]
+											field_query = list(filter(lambda x: field in x.keys(),auth["record"]["fields"]))
 
-											for statement in field_query:
-												#print(statement)
-												#print(statement[field])
-												subfield_query = list(filter(lambda x: "1" in x.keys(),statement[field]["subfields"]))
-												for subfield_1 in subfield_query:
-													if subfield_1["1"] == value_uri:
-														# check if $i subfield is already filled
-														subfield_i_query = list(filter(lambda x: "i" in x.keys(),statement[field]["subfields"]))
-														try:
-															if subfield_i_query[0]["i"] != "":
-																#2. value is already in authority record, and $i is filled --> skip
-																continue
-															else:
+											if len(field_query) > 0: # statement(s) in authority
+
+												for statement in field_query:
+													#print(statement)
+													#print(statement[field])
+													subfield_query = list(filter(lambda x: "1" in x.keys(),statement[field]["subfields"]))
+													for subfield_1 in subfield_query:
+														if subfield_1["1"] == value_uri:
+															# check if $i subfield is already filled
+															subfield_i_query = list(filter(lambda x: "i" in x.keys(),statement[field]["subfields"]))
+															try:
+																if subfield_i_query[0]["i"] != "":
+																	#2. value is already in authority record, and $i is filled --> skip
+																	continue
+																else:
+																	#value is already in authority record, but no $i subfield --> Add value_i_subfield
+																	subfield_i_query[0]["i"] = prop["value_i_subfield"]
+																	changed_record = True
+
+
+															except IndexError:
 																#value is already in authority record, but no $i subfield --> Add value_i_subfield
-																subfield_i_query[0]["i"] = prop["value_i_subfield"]
+																statement[field]["subfields"].append({"i": prop["value_i_subfield"]})
 																changed_record = True
 
+											else: # statement not in authority
+												# add authority statement, if QID matches an existing authority
+												retrieved_authority = retrieve_authority_from_qid(value_qid,auth_qid_list,auth_dict_sorted_qid)
+												if retrieved_authority is None:
+													print(f"Value {value_qid} not found in Koha thesaurus. Adding it to log list...")
+													append_qid_to_qid_log(value_qid,qid_log,wb)
+													changed_record = False
+												else:
+													# value is in the authority
+													print(f"Found authority {retrieved_authority["auth_id"]}. Adding it as statement for {auth["auth_id"]}...")
+													try:
+														retrieved_authority_heading = list(filter(lambda x: headings[prop["type_target"]] in x.keys(), retrieved_authority["record"]["fields"] ))
+														retrieved_authority_heading = retrieved_authority_heading[0][headings[prop["type_target"]]]["subfields"][0]["a"]
+														#print(retrieved_authority_heading)
+														#input()
+														print(f"a: {retrieved_authority_heading} \n 9: {retrieved_authority["auth_id"]} \n i: {prop["value_i_subfield"]} ")
+														auth["record"]["fields"].append({field: {"ind2": " ","ind1": " ", "subfields": [{"a": retrieved_authority_heading ,"9": retrieved_authority["auth_id"] ,"i": prop["value_i_subfield"] }]}})
+														changed_record = True
 
-														except IndexError:
-															#value is already in authority record, but no $i subfield --> Add value_i_subfield
-															statement[field]["subfields"].append({"i": prop["value_i_subfield"]})
-															changed_record = True
+													except Exception:
+														pass
 
-										else: # statement not in authority
-											# add authority statement, if QID matches an existing authority
-											retrieved_authority = retrieve_authority_from_qid(value_qid,auth_qid_list,auth_dict_sorted_qid)
-											if retrieved_authority is None:
-												print(f"Value {value_qid} not found in Koha thesaurus. Adding it to log list...")
-												append_qid_to_qid_log(value_qid,qid_log,wb)
-												changed_record = False
-											else:
-												# value is in the authority
-												print(f"Found authority {retrieved_authority["auth_id"]}. Adding it as statement for {auth["auth_id"]}...")
-												try:
-													retrieved_authority_heading = list(filter(lambda x: headings[prop["type_target"]] in x.keys(), retrieved_authority["record"]["fields"] ))
-													retrieved_authority_heading = retrieved_authority_heading[0][headings[prop["type_target"]]]["subfields"][0]["a"]
-													#print(retrieved_authority_heading)
-													#input()
-													print(f"a: {retrieved_authority_heading} \n 9: {retrieved_authority["auth_id"]} \n i: {prop["value_i_subfield"]} ")
-													auth["record"]["fields"].append({field: {"ind2": " ","ind1": " ", "subfields": [{"a": retrieved_authority_heading ,"9": retrieved_authority["auth_id"] ,"i": prop["value_i_subfield"] }]}})
-													changed_record = True
+										except KeyError:
+											continue
 
-												except Exception:
-													pass
-
-									except KeyError:
-										continue
-
+									else:
+										print(f"Excluding reflective statement for {qid}")
 
 			else:
 				continue
@@ -712,17 +716,17 @@ def enhance_authorities_via_wikidata(
 					utilities.dict2json(
 						backup_authorities,
 						os.path.join(
-							backup_auth_dir, "backup_auth-" + get_current_date() + ".json"
+							backup_auth_dir, "backup_auth-" + utilities.get_current_date() + ".json"
 						),
 					)
 					utilities.dict2json(
 						changed_authorities,
 						os.path.join(
-							changed_auth_dir, "changed_auth" + get_current_date() + ".json"
+							changed_auth_dir, "changed_auth-" + utilities.get_current_date() + ".json"
 						),
 					)
 					# Saving to CSV
-					utilities.dict2csv(qid_log,os.path.join(qid_log_dir,f"qid_log-{get_current_date()}.csv"))
+					utilities.dict2csv(qid_log,os.path.join(qid_log_dir,f"qid_log-{utilities.get_current_date()}.csv"))
 
 					backup_counter = 0
 

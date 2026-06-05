@@ -70,9 +70,11 @@ your_project
 │   ├── credentials
 │   │   └── credentials.json
 │   ├── koha_auth
+│   │   ├── csv
 │   │   ├── json
 │   │   └── marc
 │   ├── koha_biblio
+│   │   ├── csv
 │   │   ├── json
 │   │   └── marc
 │   └── mappings
@@ -90,7 +92,10 @@ your_project
 │       ├── google
 │       │   └── google_books-koha_mapping.csv
 │       ├── koha
-│       │   └── authority_list.csv
+│       │   ├── authority_list.csv
+│       │   └── biblio_list.csv
+│       ├── lod
+│       │   └── external_identifiers.json
 │       ├── omekas
 │       │   ├── biblionumber_barcode.csv
 │       │   ├── koha-omekas_mapping - auth.csv
@@ -102,7 +107,9 @@ your_project
 │       │   └── koha-omekas_mapping - research_groups.csv
 │       └── wikidata
 │           ├── authority_wd_list.csv
+│           ├── wd_authority_list.csv
 │           └── wikidata-koha-properties.csv
+
 
 
 ```

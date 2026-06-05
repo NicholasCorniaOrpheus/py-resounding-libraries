@@ -1,7 +1,7 @@
 from pyreslib import koha
 from pyreslib import utilities
 
-import os, json
+import os, json, re
 from bibtexparser.bwriter import BibTexWriter
 from bibtexparser.bibdatabase import BibDatabase
 
@@ -153,8 +153,7 @@ def convert_biblio_to_bibtex(
             "howpublished": get_howpublished(record),
         }
     else:
-        print(f"Error: no entry_type found for biblio_id {biblio_id}")
-        pass
+        raise ValueError(f"No entry_type found for biblio_id {biblio_id}")
 
     # generate single bibtex file
     bibtex_db = BibDatabase()
