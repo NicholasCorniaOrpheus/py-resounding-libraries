@@ -2,7 +2,6 @@ test/
 pyreslib-env/
 requirements.txt
 build/
-mkdocs.yml
 
 # Python-generated files
 __pycache__/

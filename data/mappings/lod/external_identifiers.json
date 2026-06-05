@@ -1,0 +1,29 @@
+[
+	{
+		"source": "Wikidata",
+		"domain_name": "wikidata.org" 
+	},
+
+	{
+		"source": "ORCID",
+		"domain_name": "orcid.org"
+	},
+	{
+		"source": "VIAF",
+		"domain_name": "viaf.org"
+	},
+	{
+		"source": "RISM",
+		"domain_name": "rism.online"
+	},
+	{
+		"source": "ISNI",
+		"domain_name": "isni.org"
+	},
+
+	{
+		"source": "Bibliothèque nationale de France",
+		"domain_name": "catalogue.bnf.fr"
+	}
+
+]

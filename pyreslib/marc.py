@@ -19,7 +19,7 @@ def generate_record_dict(marc_filepath: str, json_filepath: str, id_name: str) -
     """
     n = 0
     success = 0
-    f = open(records_filename, "rb")
+    f = open(marc_filepath, "rb")
     reader = MARCReader(f)
     record_dict = []
     for record in reader:

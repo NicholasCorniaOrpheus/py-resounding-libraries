@@ -89,7 +89,7 @@ def change_item_property_value(
     property_name: str,
     resource_id: int,
     resource_type: str,
-    value_position=0,
+    value_position: int = 0,
 ):
     """Change the value of a specific statement of a property of a given resource.
     Args:

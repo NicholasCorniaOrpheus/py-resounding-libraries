@@ -79,8 +79,29 @@ This modules allows the export of bibliographicn records in BibTeX format, impro
 
 ## Wikidata
 
-Series of scripts to programmatically interact with Wikidata or another Wikibase instance. It is mostly based on [WikibaseIntegrator](wikibaseintegrator.readthedocs.io/en/stable/) and requires specific username-password or API keys credentials.
+This module provides a way to programmatically interact with Wikidata or another Wikibase instance. It is mostly based on [WikibaseIntegrator](wikibaseintegrator.readthedocs.io/en/stable/) and requires specific username-password or API keys credentials.
 
-**TO BE CONTINUED**...
+### Authentication
+
+In order to avoid Too Many Requests errors from the API endpoint, we advise to create an account on Wikidata (or another Wikibase instance)
+
+- [Authenticate to Wikidata or Wikibase instance via username and password](pyreslib.wikidata.wikibase_integrator_session_basic)
+- [Authenticate via Oauth2 credentials](pyreslib.wikidata.wikibase_integrator_session_oauth2). See [official documentation](https://www.wikidata.org/wiki/Wikidata:REST_API/Authentication) for more information.
+
+
+### Enhancing Authorities
+
+These scripts provide a controlled way to enrich your catalogue's authorities from Wikidata or another Wikibase instance.
+
+- [Add metadata from authority's external URIs field](pyreslib.wikidata.external_sources_metadata_authorities), such as source name, entity label (Wikidata only) and id value. You can customize the external sources list via `data/mappings/lod/external_identifiers.json` mapping.
+- [Enhance authorities via Wikidata properties](pyreslib.wikidata.enhance_authorities_via_wikidata) by establishing a mapping between properties and umbrella terms. The mapping CSV is avalable at `data/mappings/wikidata/wikidata-koha-properties.csv`.
+
+The methods do not direct update the Koha catalogue. Instead, they generate `backup_auth` and `changed_auth` lists of dictionaries that are stored locally as JSON files. Once the user has manually checked the integrity of the data via sampling, the new records can be updated via [pyreslib.wikidata.update_enhanced_authorities][].
+
+### Mapping Wikidata properties URIs
+
+In order to specify a relation statement between two authorites in our Koha catalogue, we have found a solution by recording the property's URI (such as [country][http://wikidata.org/entity/P17]) via a new subfield `i`, not belonging to the standard [MARC21 framework for field 024](https://www.loc.gov/marc/authority/ad024.html).
+
+To facilitate readibility of the URIs, we have created a new Authorized value group called `RELATION_PROPERTY`, associating each URI to the property name.
 
 

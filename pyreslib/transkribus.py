@@ -15,7 +15,7 @@ def api_login(user: str, password: str):
 	"""
 	Args:
 		user (user): Client Username
-		pw (str): Client secret Password
+		password (str): Client secret Password
 	Returns:
 		session: requests.Session() for Transkribus API
 	"""
@@ -33,7 +33,9 @@ def api_login(user: str, password: str):
 
 
 def get_documents_metadata(session, collection_id: int) -> list: 
-	"""Returns a full dictionary of documents, including pages metadata.
+	"""
+	Returns a full dictionary of documents, including pages metadata.
+	
 	Args:
 		session: Transkribus session from `pyreslib.transkribus.api_login()` method.
 		collection_id (int): Collection ID identifier from Transkribus.
@@ -99,7 +101,7 @@ def get_jpg_image(session, collection_id: int,document_id: int,page_number:int, 
 	Extract the JPG image of a given page from Transkribus API
 	
 	Args:
-		session: Transkribus session from `pyreslib.transkribus.api_login()` method.
+		session (): Transkribus session from `pyreslib.transkribus.api_login()` method.
 		collection_id (int): Collection ID identifier from Transkribus.
 		document_id (int): Document ID identifier from Transkribus.
 		page_number (int): Internal page number identifier from Transkribus.
@@ -178,7 +180,7 @@ def import_text_transcription_to_koha_field(text: str, biblio_id: int, koha_sess
 		field (list): Field and subfield where the text has to be added to record. Default is Summary/Abstract (520$a) field = ["520","a"]
 	
 	Returns:
-		`None`
+		None
 	"""
 
 	# Import record via API

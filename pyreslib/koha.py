@@ -400,9 +400,8 @@ def import_koha_authorities_from_marc(
     Args:
         marc_filepath (str): Location of the MARC file to be processed. Default directory is `./data/koha_auth/marc`.
         output_directory (str): Output directory for the generated JSON. The default filename is "auth_dict-{yyyy-mm-dd}.json". Default is `data/koha_auth/json`. Set to `None` if you wisj not to save the list as JSON.
-
-    Retruns:
-        auth_dict (list): List of authority dictionaries with auth_id, wd_id, and record
+    Returns:
+        auth_dict (list): List of authority dictionaries with auth_id, wd_id, and record.
 
     """
     # extract all records as dictionaries.
@@ -741,7 +740,7 @@ def get_authority_type(record: dict, auth_type_field=["942", "a"]) -> str:
 
 
     Returns:
-        auth_type (str): Authority type code.
+        auth_type (str): Authority type code or None if not found.
 
     Examples:
         >>> pyreslib.koha.get_authority_type(record=marc_json_authority)
@@ -998,10 +997,10 @@ def explicit_abbreviations_from_marc(
     Args:
         record (dict): MARC-in-JSON record from Koha API.
         abbreviations_dir (str): Directory path (in data/mappings) containing a series of JSON mappings for standard MARC abbreviation codes.
+
     Returns:
         explicit_record (dict): MARC-in-JSON record with explicit abbreviations.
 
-    Examples:
 
     """
     # load abbreviation jsons

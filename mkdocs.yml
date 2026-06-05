@@ -1,0 +1,93 @@
+site_name: Py Resouding Libraries
+site_author: Nicholas Cornia
+repo_url: https://github.com/NicholasCorniaOrpheus/py-resounding-libraries
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Modules: modules.md 
+  - Koha Reports: reports.md
+  - API Documentation: api_documentation.md
+
+plugins:
+  - search
+  - mkdocstrings
+
+
+theme:
+  name: material
+  #logo: docs/assets/rl-icon.png
+  #favicon: docs/assets/favicon.ico
+  language: en
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    admonition:
+      abstract: fontawesome/solid/book
+      note: fontawesome/solid/note-sticky
+      quote: fontawesome/solid/quote-left
+
+  font:
+      text: Sofia Sans
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: light green
+      default: light green
+      footer: light green
+      accent: light green
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: light green
+      default: light green
+      footer: light green
+      accent: light green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode        
+
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.expand
+    - navigation.prune
+    - search.share
+    - toc.integrate
+    #- navigation.footer
+    #- navigation.tabs
+    #- navigation.tabs.sticky
+    #- navigation.top
+    #- toc.follow
+    #- toc
+
+copyright: Copyright &copy; 2026 Orpheus Instituut, Resounding Libraries
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/NicholasCorniaOrpheus/py-resounding-libraries
+      name: GitHub repository
+  social:
+    - icon: material/music-note
+      link: https://orpheusinstituut.be/
+      name: Orpheus Instituut
+
+markdown_extensions:
+  - footnotes
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  # icons extension!
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
