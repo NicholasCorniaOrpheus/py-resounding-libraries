@@ -7109,8 +7109,7 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 <span class="normal">164</span>
 <span class="normal">165</span>
 <span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">convert_biblio_to_bibtex</span><span class="p">(</span>
+<span class="normal">167</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">convert_biblio_to_bibtex</span><span class="p">(</span>
     <span class="n">biblio_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">bibtex_filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">koha_session</span><span class="p">,</span>
@@ -7251,8 +7250,7 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
             <span class="s2">&quot;howpublished&quot;</span><span class="p">:</span> <span class="n">get_howpublished</span><span class="p">(</span><span class="n">record</span><span class="p">),</span>
         <span class="p">}</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: no entry_type found for biblio_id </span><span class="si">{</span><span class="n">biblio_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">pass</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No entry_type found for biblio_id </span><span class="si">{</span><span class="n">biblio_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="c1"># generate single bibtex file</span>
     <span class="n">bibtex_db</span> <span class="o">=</span> <span class="n">BibDatabase</span><span class="p">()</span>
@@ -9509,7 +9507,11 @@ None</p>
 <span class="normal">739</span>
 <span class="normal">740</span>
 <span class="normal">741</span>
-<span class="normal">742</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">enhance_authorities_via_wikidata</span><span class="p">(</span>
+<span class="normal">742</span>
+<span class="normal">743</span>
+<span class="normal">744</span>
+<span class="normal">745</span>
+<span class="normal">746</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">enhance_authorities_via_wikidata</span><span class="p">(</span>
 	<span class="n">auth_dict</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
 	<span class="n">wb</span><span class="p">,</span>
 	<span class="n">starting_auth_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -9574,7 +9576,7 @@ None</p>
 			<span class="n">entry</span><span class="p">[</span><span class="s2">&quot;occurrence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;occurrence&quot;</span><span class="p">])</span>
 
 	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorting authorities according to their QID...&quot;</span><span class="p">)</span>
-	<span class="n">auth_dict_sorted_qid</span><span class="p">,</span><span class="n">auth_qid_list</span> <span class="o">=</span> <span class="n">generate_qid_sorted_dict_and_list</span><span class="p">(</span><span class="n">auth_dict</span><span class="p">)</span>
+	<span class="n">auth_dict_sorted_qid</span><span class="p">,</span><span class="n">auth_qid_list</span> <span class="o">=</span> <span class="n">generate_qid_sorted_dict_and_list</span><span class="p">(</span><span class="n">auth_dict</span><span class="p">,</span><span class="n">exclude_types</span><span class="o">=</span><span class="n">exclude_types</span><span class="p">)</span>
 
 	<span class="c1"># Counters for partial backups, and measuring operation.</span>
 	<span class="n">backup_counter</span> <span class="o">=</span> <span class="mi">0</span>
@@ -9630,62 +9632,66 @@ None</p>
 									<span class="k">else</span><span class="p">:</span>
 										<span class="n">value_uri</span> <span class="o">=</span> <span class="n">wikibase_base_url</span> <span class="o">+</span> <span class="n">value</span>
 										<span class="n">value_qid</span> <span class="o">=</span> <span class="n">value</span>
-									<span class="c1">#1. value is already in authority record, but no $i subfield --&gt; Add value_i_subfield</span>
-									<span class="c1"># search QID value in authority record field</span>
-									<span class="k">try</span><span class="p">:</span>
-										<span class="n">field</span> <span class="o">=</span> <span class="n">koha_fields</span><span class="p">[</span><span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type_target&quot;</span><span class="p">]]</span>
-										<span class="n">field_query</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">auth</span><span class="p">[</span><span class="s2">&quot;record&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">]))</span>
 
-										<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">field_query</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># statement(s) in authority</span>
+									<span class="k">if</span> <span class="n">value_qid</span> <span class="o">!=</span> <span class="n">qid</span><span class="p">:</span> <span class="c1"># exclude reflective statements.	</span>
+										<span class="c1">#1. value is already in authority record, but no $i subfield --&gt; Add value_i_subfield</span>
+										<span class="c1"># search QID value in authority record field</span>
+										<span class="k">try</span><span class="p">:</span>
+											<span class="n">field</span> <span class="o">=</span> <span class="n">koha_fields</span><span class="p">[</span><span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type_target&quot;</span><span class="p">]]</span>
+											<span class="n">field_query</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">auth</span><span class="p">[</span><span class="s2">&quot;record&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">]))</span>
 
-											<span class="k">for</span> <span class="n">statement</span> <span class="ow">in</span> <span class="n">field_query</span><span class="p">:</span>
-												<span class="c1">#print(statement)</span>
-												<span class="c1">#print(statement[field])</span>
-												<span class="n">subfield_query</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">statement</span><span class="p">[</span><span class="n">field</span><span class="p">][</span><span class="s2">&quot;subfields&quot;</span><span class="p">]))</span>
-												<span class="k">for</span> <span class="n">subfield_1</span> <span class="ow">in</span> <span class="n">subfield_query</span><span class="p">:</span>
-													<span class="k">if</span> <span class="n">subfield_1</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">value_uri</span><span class="p">:</span>
-														<span class="c1"># check if $i subfield is already filled</span>
-														<span class="n">subfield_i_query</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;i&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">statement</span><span class="p">[</span><span class="n">field</span><span class="p">][</span><span class="s2">&quot;subfields&quot;</span><span class="p">]))</span>
-														<span class="k">try</span><span class="p">:</span>
-															<span class="k">if</span> <span class="n">subfield_i_query</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;i&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-																<span class="c1">#2. value is already in authority record, and $i is filled --&gt; skip</span>
-																<span class="k">continue</span>
-															<span class="k">else</span><span class="p">:</span>
+											<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">field_query</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># statement(s) in authority</span>
+
+												<span class="k">for</span> <span class="n">statement</span> <span class="ow">in</span> <span class="n">field_query</span><span class="p">:</span>
+													<span class="c1">#print(statement)</span>
+													<span class="c1">#print(statement[field])</span>
+													<span class="n">subfield_query</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">statement</span><span class="p">[</span><span class="n">field</span><span class="p">][</span><span class="s2">&quot;subfields&quot;</span><span class="p">]))</span>
+													<span class="k">for</span> <span class="n">subfield_1</span> <span class="ow">in</span> <span class="n">subfield_query</span><span class="p">:</span>
+														<span class="k">if</span> <span class="n">subfield_1</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">value_uri</span><span class="p">:</span>
+															<span class="c1"># check if $i subfield is already filled</span>
+															<span class="n">subfield_i_query</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;i&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">statement</span><span class="p">[</span><span class="n">field</span><span class="p">][</span><span class="s2">&quot;subfields&quot;</span><span class="p">]))</span>
+															<span class="k">try</span><span class="p">:</span>
+																<span class="k">if</span> <span class="n">subfield_i_query</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;i&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+																	<span class="c1">#2. value is already in authority record, and $i is filled --&gt; skip</span>
+																	<span class="k">continue</span>
+																<span class="k">else</span><span class="p">:</span>
+																	<span class="c1">#value is already in authority record, but no $i subfield --&gt; Add value_i_subfield</span>
+																	<span class="n">subfield_i_query</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;i&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;value_i_subfield&quot;</span><span class="p">]</span>
+																	<span class="n">changed_record</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+															<span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
 																<span class="c1">#value is already in authority record, but no $i subfield --&gt; Add value_i_subfield</span>
-																<span class="n">subfield_i_query</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;i&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;value_i_subfield&quot;</span><span class="p">]</span>
+																<span class="n">statement</span><span class="p">[</span><span class="n">field</span><span class="p">][</span><span class="s2">&quot;subfields&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;i&quot;</span><span class="p">:</span> <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;value_i_subfield&quot;</span><span class="p">]})</span>
 																<span class="n">changed_record</span> <span class="o">=</span> <span class="kc">True</span>
 
+											<span class="k">else</span><span class="p">:</span> <span class="c1"># statement not in authority</span>
+												<span class="c1"># add authority statement, if QID matches an existing authority</span>
+												<span class="n">retrieved_authority</span> <span class="o">=</span> <span class="n">retrieve_authority_from_qid</span><span class="p">(</span><span class="n">value_qid</span><span class="p">,</span><span class="n">auth_qid_list</span><span class="p">,</span><span class="n">auth_dict_sorted_qid</span><span class="p">)</span>
+												<span class="k">if</span> <span class="n">retrieved_authority</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+													<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Value </span><span class="si">{</span><span class="n">value_qid</span><span class="si">}</span><span class="s2"> not found in Koha thesaurus. Adding it to log list...&quot;</span><span class="p">)</span>
+													<span class="n">append_qid_to_qid_log</span><span class="p">(</span><span class="n">value_qid</span><span class="p">,</span><span class="n">qid_log</span><span class="p">,</span><span class="n">wb</span><span class="p">)</span>
+													<span class="n">changed_record</span> <span class="o">=</span> <span class="kc">False</span>
+												<span class="k">else</span><span class="p">:</span>
+													<span class="c1"># value is in the authority</span>
+													<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found authority </span><span class="si">{</span><span class="n">retrieved_authority</span><span class="p">[</span><span class="s2">&quot;auth_id&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">. Adding it as statement for </span><span class="si">{</span><span class="n">auth</span><span class="p">[</span><span class="s2">&quot;auth_id&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+													<span class="k">try</span><span class="p">:</span>
+														<span class="n">retrieved_authority_heading</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">headings</span><span class="p">[</span><span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type_target&quot;</span><span class="p">]]</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">retrieved_authority</span><span class="p">[</span><span class="s2">&quot;record&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">]</span> <span class="p">))</span>
+														<span class="n">retrieved_authority_heading</span> <span class="o">=</span> <span class="n">retrieved_authority_heading</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">headings</span><span class="p">[</span><span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type_target&quot;</span><span class="p">]]][</span><span class="s2">&quot;subfields&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+														<span class="c1">#print(retrieved_authority_heading)</span>
+														<span class="c1">#input()</span>
+														<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a: </span><span class="si">{</span><span class="n">retrieved_authority_heading</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> 9: </span><span class="si">{</span><span class="n">retrieved_authority</span><span class="p">[</span><span class="s2">&quot;auth_id&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> i: </span><span class="si">{</span><span class="n">prop</span><span class="p">[</span><span class="s2">&quot;value_i_subfield&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+														<span class="n">auth</span><span class="p">[</span><span class="s2">&quot;record&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">field</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;ind2&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot;ind1&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;subfields&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">retrieved_authority_heading</span> <span class="p">,</span><span class="s2">&quot;9&quot;</span><span class="p">:</span> <span class="n">retrieved_authority</span><span class="p">[</span><span class="s2">&quot;auth_id&quot;</span><span class="p">]</span> <span class="p">,</span><span class="s2">&quot;i&quot;</span><span class="p">:</span> <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;value_i_subfield&quot;</span><span class="p">]</span> <span class="p">}]}})</span>
+														<span class="n">changed_record</span> <span class="o">=</span> <span class="kc">True</span>
 
-														<span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
-															<span class="c1">#value is already in authority record, but no $i subfield --&gt; Add value_i_subfield</span>
-															<span class="n">statement</span><span class="p">[</span><span class="n">field</span><span class="p">][</span><span class="s2">&quot;subfields&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;i&quot;</span><span class="p">:</span> <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;value_i_subfield&quot;</span><span class="p">]})</span>
-															<span class="n">changed_record</span> <span class="o">=</span> <span class="kc">True</span>
+													<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+														<span class="k">pass</span>
 
-										<span class="k">else</span><span class="p">:</span> <span class="c1"># statement not in authority</span>
-											<span class="c1"># add authority statement, if QID matches an existing authority</span>
-											<span class="n">retrieved_authority</span> <span class="o">=</span> <span class="n">retrieve_authority_from_qid</span><span class="p">(</span><span class="n">value_qid</span><span class="p">,</span><span class="n">auth_qid_list</span><span class="p">,</span><span class="n">auth_dict_sorted_qid</span><span class="p">)</span>
-											<span class="k">if</span> <span class="n">retrieved_authority</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-												<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Value </span><span class="si">{</span><span class="n">value_qid</span><span class="si">}</span><span class="s2"> not found in Koha thesaurus. Adding it to log list...&quot;</span><span class="p">)</span>
-												<span class="n">append_qid_to_qid_log</span><span class="p">(</span><span class="n">value_qid</span><span class="p">,</span><span class="n">qid_log</span><span class="p">,</span><span class="n">wb</span><span class="p">)</span>
-												<span class="n">changed_record</span> <span class="o">=</span> <span class="kc">False</span>
-											<span class="k">else</span><span class="p">:</span>
-												<span class="c1"># value is in the authority</span>
-												<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found authority </span><span class="si">{</span><span class="n">retrieved_authority</span><span class="p">[</span><span class="s2">&quot;auth_id&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">. Adding it as statement for </span><span class="si">{</span><span class="n">auth</span><span class="p">[</span><span class="s2">&quot;auth_id&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
-												<span class="k">try</span><span class="p">:</span>
-													<span class="n">retrieved_authority_heading</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">headings</span><span class="p">[</span><span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type_target&quot;</span><span class="p">]]</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">retrieved_authority</span><span class="p">[</span><span class="s2">&quot;record&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">]</span> <span class="p">))</span>
-													<span class="n">retrieved_authority_heading</span> <span class="o">=</span> <span class="n">retrieved_authority_heading</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">headings</span><span class="p">[</span><span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type_target&quot;</span><span class="p">]]][</span><span class="s2">&quot;subfields&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
-													<span class="c1">#print(retrieved_authority_heading)</span>
-													<span class="c1">#input()</span>
-													<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a: </span><span class="si">{</span><span class="n">retrieved_authority_heading</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> 9: </span><span class="si">{</span><span class="n">retrieved_authority</span><span class="p">[</span><span class="s2">&quot;auth_id&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> i: </span><span class="si">{</span><span class="n">prop</span><span class="p">[</span><span class="s2">&quot;value_i_subfield&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
-													<span class="n">auth</span><span class="p">[</span><span class="s2">&quot;record&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">field</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;ind2&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot;ind1&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;subfields&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">retrieved_authority_heading</span> <span class="p">,</span><span class="s2">&quot;9&quot;</span><span class="p">:</span> <span class="n">retrieved_authority</span><span class="p">[</span><span class="s2">&quot;auth_id&quot;</span><span class="p">]</span> <span class="p">,</span><span class="s2">&quot;i&quot;</span><span class="p">:</span> <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;value_i_subfield&quot;</span><span class="p">]</span> <span class="p">}]}})</span>
-													<span class="n">changed_record</span> <span class="o">=</span> <span class="kc">True</span>
+										<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+											<span class="k">continue</span>
 
-												<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-													<span class="k">pass</span>
-
-									<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-										<span class="k">continue</span>
-
+									<span class="k">else</span><span class="p">:</span>
+										<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Excluding reflective statement for </span><span class="si">{</span><span class="n">qid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 			<span class="k">else</span><span class="p">:</span>
 				<span class="k">continue</span>
@@ -9700,17 +9706,17 @@ None</p>
 					<span class="n">utilities</span><span class="o">.</span><span class="n">dict2json</span><span class="p">(</span>
 						<span class="n">backup_authorities</span><span class="p">,</span>
 						<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-							<span class="n">backup_auth_dir</span><span class="p">,</span> <span class="s2">&quot;backup_auth-&quot;</span> <span class="o">+</span> <span class="n">get_current_date</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;.json&quot;</span>
+							<span class="n">backup_auth_dir</span><span class="p">,</span> <span class="s2">&quot;backup_auth-&quot;</span> <span class="o">+</span> <span class="n">utilities</span><span class="o">.</span><span class="n">get_current_date</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;.json&quot;</span>
 						<span class="p">),</span>
 					<span class="p">)</span>
 					<span class="n">utilities</span><span class="o">.</span><span class="n">dict2json</span><span class="p">(</span>
 						<span class="n">changed_authorities</span><span class="p">,</span>
 						<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-							<span class="n">changed_auth_dir</span><span class="p">,</span> <span class="s2">&quot;changed_auth&quot;</span> <span class="o">+</span> <span class="n">get_current_date</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;.json&quot;</span>
+							<span class="n">changed_auth_dir</span><span class="p">,</span> <span class="s2">&quot;changed_auth-&quot;</span> <span class="o">+</span> <span class="n">utilities</span><span class="o">.</span><span class="n">get_current_date</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;.json&quot;</span>
 						<span class="p">),</span>
 					<span class="p">)</span>
 					<span class="c1"># Saving to CSV</span>
-					<span class="n">utilities</span><span class="o">.</span><span class="n">dict2csv</span><span class="p">(</span><span class="n">qid_log</span><span class="p">,</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">qid_log_dir</span><span class="p">,</span><span class="sa">f</span><span class="s2">&quot;qid_log-</span><span class="si">{</span><span class="n">get_current_date</span><span class="p">()</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">))</span>
+					<span class="n">utilities</span><span class="o">.</span><span class="n">dict2csv</span><span class="p">(</span><span class="n">qid_log</span><span class="p">,</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">qid_log_dir</span><span class="p">,</span><span class="sa">f</span><span class="s2">&quot;qid_log-</span><span class="si">{</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_current_date</span><span class="p">()</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">))</span>
 
 					<span class="n">backup_counter</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -10492,11 +10498,7 @@ None</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pyreslib/wikidata.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">744</span>
-<span class="normal">745</span>
-<span class="normal">746</span>
-<span class="normal">747</span>
-<span class="normal">748</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">748</span>
 <span class="normal">749</span>
 <span class="normal">750</span>
 <span class="normal">751</span>
@@ -10545,7 +10547,11 @@ None</p>
 <span class="normal">794</span>
 <span class="normal">795</span>
 <span class="normal">796</span>
-<span class="normal">797</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">generate_statistics_authorities_wikidata_enhancement</span><span class="p">(</span>
+<span class="normal">797</span>
+<span class="normal">798</span>
+<span class="normal">799</span>
+<span class="normal">800</span>
+<span class="normal">801</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">generate_statistics_authorities_wikidata_enhancement</span><span class="p">(</span>
 	<span class="n">changed_authorities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
 	<span class="n">statistics_filepath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span><span class="s2">&quot;wikidata&quot;</span><span class="p">,</span><span class="s2">&quot;statistics&quot;</span><span class="p">,</span><span class="sa">f</span><span class="s2">&quot;statistics-</span><span class="si">{</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_current_date</span><span class="p">()</span><span class="si">}</span><span class="s2">.json&quot;</span><span class="p">),</span>
 	<span class="n">wikidata_koha_mapping_filepath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span><span class="s2">&quot;mappings&quot;</span><span class="p">,</span><span class="s2">&quot;wikidata&quot;</span><span class="p">,</span><span class="s2">&quot;wikidata-koha-properties.csv&quot;</span><span class="p">),</span>
@@ -10876,11 +10882,7 @@ None</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pyreslib/wikidata.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">799</span>
-<span class="normal">800</span>
-<span class="normal">801</span>
-<span class="normal">802</span>
-<span class="normal">803</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">803</span>
 <span class="normal">804</span>
 <span class="normal">805</span>
 <span class="normal">806</span>
@@ -10910,7 +10912,11 @@ None</p>
 <span class="normal">830</span>
 <span class="normal">831</span>
 <span class="normal">832</span>
-<span class="normal">833</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">update_enhanced_authorities</span><span class="p">(</span>
+<span class="normal">833</span>
+<span class="normal">834</span>
+<span class="normal">835</span>
+<span class="normal">836</span>
+<span class="normal">837</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">update_enhanced_authorities</span><span class="p">(</span>
 	<span class="n">koha_session</span><span class="p">,</span>
 	<span class="n">koha_base_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 	<span class="n">changed_auth_filepath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span><span class="s2">&quot;wikidata&quot;</span><span class="p">,</span><span class="s2">&quot;changed_auth&quot;</span><span class="p">,</span><span class="sa">f</span><span class="s2">&quot;changed_auth-</span><span class="si">{</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_current_date</span><span class="p">()</span><span class="si">}</span><span class="s2">.json&quot;</span><span class="p">),</span>
@@ -11375,7 +11381,7 @@ None</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Wikidata REST API by default. You can change it by replacing the <code>https:wikidata.org/</code> with your own Wikibase URL.</p>
+                <p>Wikidata REST API by default. You can change it by replacing the <code>https://www.wikidata.org/w/api.php</code> with your own Wikibase URL.</p>
               </div>
             </td>
             <td>
@@ -11458,7 +11464,7 @@ None</p>
 <span class="sd">	Args:</span>
 <span class="sd">		username (str): Username associated with your Wikidata user.</span>
 <span class="sd">		password (str): Password associated with your Wikidata user.</span>
-<span class="sd">		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.</span>
+<span class="sd">		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https://www.wikidata.org/w/api.php` with your own Wikibase URL.</span>
 
 <span class="sd">	Returns:</span>
 <span class="sd">		wb (WikibaseIntegrator): Wikibase Integrator session</span>
@@ -11553,7 +11559,7 @@ None</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Wikidata REST API by default. You can change it by replacing the <code>https:wikidata.org/</code> with your own Wikibase URL.</p>
+                <p>Wikidata REST API by default. You can change it by replacing the <code>https://www.wikidata.org/w/api.php</code> with your own Wikibase URL.</p>
               </div>
             </td>
             <td>
@@ -11588,7 +11594,7 @@ None</p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">wb</span> <span class="o">=</span> <span class="n">pyreslib</span><span class="o">.</span><span class="n">koha</span><span class="o">.</span><span class="n">wikibase_integrator_session_oauth2</span><span class="p">(</span><span class="n">consumer_token</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{TOKEN}</span><span class="s2">&quot;&quot;, consumer_secret=&quot;</span><span class="p">{</span><span class="n">SECRET_TOKEN</span><span class="p">}</span><span class="s2">&quot; , mediawiki_api_url=&quot;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">wikidata</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">w</span><span class="o">/</span><span class="n">rest</span><span class="o">.</span><span class="n">php</span><span class="o">/</span><span class="n">wikibase</span><span class="o">/</span><span class="n">v1</span><span class="s2">&quot;)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">wb</span> <span class="o">=</span> <span class="n">pyreslib</span><span class="o">.</span><span class="n">koha</span><span class="o">.</span><span class="n">wikibase_integrator_session_oauth2</span><span class="p">(</span><span class="n">consumer_token</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{TOKEN}</span><span class="s2">&quot;&quot;, consumer_secret=&quot;</span><span class="p">{</span><span class="n">SECRET_TOKEN</span><span class="p">}</span><span class="s2">&quot; , mediawiki_api_url=&quot;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">wikidata</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">w</span><span class="o">/</span><span class="n">api</span><span class="o">.</span><span class="n">php</span><span class="s2">&quot;)</span>
 </code></pre></div>
 
 
@@ -11644,13 +11650,13 @@ None</p>
 <span class="sd">	Args:</span>
 <span class="sd">		consumer_token (str): API consumer key associated with your Wikidata user.</span>
 <span class="sd">		consumer_secret (str): API secret key associated with your Wikidata user.</span>
-<span class="sd">		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https:wikidata.org/` with your own Wikibase URL.</span>
+<span class="sd">		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https://www.wikidata.org/w/api.php` with your own Wikibase URL.</span>
 
 <span class="sd">	Returns:</span>
 <span class="sd">		wb (WikibaseIntegrator): Wikibase Integrator session</span>
 
 <span class="sd">	Examples:</span>
-<span class="sd">		&gt;&gt;&gt; wb = pyreslib.koha.wikibase_integrator_session_oauth2(consumer_token=&quot;{TOKEN}&quot;&quot;, consumer_secret=&quot;{SECRET_TOKEN}&quot; , mediawiki_api_url=&quot;https://www.wikidata.org/w/rest.php/wikibase/v1&quot;)</span>
+<span class="sd">		&gt;&gt;&gt; wb = pyreslib.koha.wikibase_integrator_session_oauth2(consumer_token=&quot;{TOKEN}&quot;&quot;, consumer_secret=&quot;{SECRET_TOKEN}&quot; , mediawiki_api_url=&quot;https://www.wikidata.org/w/api.php&quot;)</span>
 
 <span class="sd">	&quot;&quot;&quot;</span>
 
