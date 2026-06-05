@@ -101,7 +101,7 @@ def change_item_property_value(
         value_position (int): position of the value to be change, in case of multiple statements for property. 0 is default.
 
     Returns:
-        `None`
+        None
 
     """
     data = session.get_resource_by_id(resource_id, resource_type=resource_type)
