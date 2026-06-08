@@ -10,7 +10,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-version = "0.1.0"
+version = "0.2.0"
 description = "Python package for digital libraries from the Resounding Libraries cluster at Orpheus Instituut"
 keywords = ["koha", "wikidata", "digital-libraries", "transkribus","omekas","bibtex","marc","library-software"]
 readme = "README.md"
