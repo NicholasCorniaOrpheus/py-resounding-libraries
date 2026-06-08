@@ -566,6 +566,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RDF
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -652,10 +663,10 @@
 <h2 id="koha">Koha</h2>
 <p>Koha scripts for processing MARC files and interacting with API.</p>
 <h3 id="oauth2-session">Oauth2 session</h3>
-<p>In order to interact with your Koha API you will need to create a Client ID and Secret Key for yuor Koha admin user.
+<p>In order to interact with your Koha API you will need to create a Client ID and Secret Key for your Koha admin user.
 Follow the <a href="https://koha-community.org/manual/23.11/en/html/webservices.html#api-key-management-interface-for-patrons">offical documentation</a> in order to generate Client and Secret keys for your user.</p>
 <h3 id="get-metadata-from-koha">GET metadata from Koha</h3>
-<p>There are two main serialization for the MARC metadata of records and authorities that the Koha API provides: a detailed MARC in JSON dictionary serialization and a standard JSON serialization.</p>
+<p>There are two main serializations for the MARC metadata of records and authorities that the Koha API provides: a detailed MARC in JSON dictionary serialization and a standard JSON serialization.</p>
 <ul>
 <li><a class="autorefs autorefs-internal" title="get_authority_marc(session, auth_id, base_url)" href="../api_documentation/#pyreslib.koha.get_authority_marc">Get authority record metadata from Koha API as MARC-in-JSON</a></li>
 <li><a class="autorefs autorefs-internal" title="get_authority_json(session, auth_id, base_url)" href="../api_documentation/#pyreslib.koha.get_authority_json">Get authority record metadata from Koha API as JSON</a></li>
@@ -682,7 +693,7 @@ Follow the <a href="https://koha-community.org/manual/23.11/en/html/webservices.
 <li><a class="autorefs autorefs-internal" title="get_umbrella_terms_from_authority(record, umbrella_fields={'PERSO_NAME': '500', 'CORPO_NAME': '510', 'CHRON_TERM': '548', 'TOPIC_TERM': '550', 'GEOGR_NAME': '551'}, umbrella_subfields={'label': 'a', 'id': '9'})" href="../api_documentation/#pyreslib.koha.get_umbrella_terms_from_authority">umbrella terms</a> associated to an authority</li>
 <li><a class="autorefs autorefs-internal" title="get_main_heading_from_authority(record, headings={'PERSO_NAME': '100', 'CORPO_NAME': '110', 'CHRON_TERM': '148', 'TOPIC_TERM': '150', 'GEOGR_NAME': '151', 'KOOPM_KEYW': '150'}, heading_subfield='a')" href="../api_documentation/#pyreslib.koha.get_main_heading_from_authority">main heading</a> associated to an authority</li>
 <li><a class="autorefs autorefs-internal" title="get_alternative_headings_from_authority(record, headings={'PERSO_NAME': '400', 'CORPO_NAME': '410', 'CHRON_TERM': '448', 'TOPIC_TERM': '450', 'GEOGR_NAME': '451', 'KOOPM_KEYW': '450'}, heading_subfield='a')" href="../api_documentation/#pyreslib.koha.get_alternative_headings_from_authority">alternative headings</a> (variant spelling and translations)</li>
-<li><a class="autorefs autorefs-internal" title="explicit_abbreviations_from_marc(record, abbreviations_dir=os.path.join('data', 'mappings', 'abbreviations'), abbreviation_codes={'relationships': {'fields': ['100$4', '700$4']}, 'languages': {'fields': ['041$a']}, 'item_type': {'fields': ['942$c']}, 'voices_and_musical_instruments': {'fields': ['059$a']}})" href="../api_documentation/#pyreslib.koha.explicit_abbreviations_from_marc">explicit_abbreviations_from_marc</a>: makes abbreviation codes explicit via mappings stored in <code>./data/mappings/abbreviations</code>.</li>
+<li><a class="autorefs autorefs-internal" title="explicit_abbreviations_from_marc(record, abbreviations_dir=os.path.join('data', 'mappings', 'abbreviations'), abbreviation_codes={'relationships': {'fields': ['100$4', '700$4']}, 'languages': {'fields': ['041$a']}, 'item_types': {'fields': ['942$c']}, 'musical_instruments': {'fields': ['059$a']}})" href="../api_documentation/#pyreslib.koha.explicit_abbreviations_from_marc">explicit_abbreviations_from_marc</a>: makes abbreviation codes explicit via mappings stored in <code>./data/mappings/abbreviations</code>.</li>
 </ul>
 <h2 id="marc">MARC</h2>
 <p>This module allows to process MARC files and records with the help of <a href="https://pymarc.readthedocs.io/en/latest/">pymarc</a>. It provides methods to convert MARC records to JSON dictionaries and vice versa, as well as to extract and modify specific information from MARC records.</p>
@@ -693,7 +704,7 @@ Follow the <a href="https://koha-community.org/manual/23.11/en/html/webservices.
 <li><a class="autorefs autorefs-internal" title="csv2marc(csv_filepath, marc_filepath, separator='|')" href="../api_documentation/#pyreslib.marc.csv2marc">Convert CSV file to MARC for ingestion</a> based on template in <code>data/biblio_id/csv</code>.</li>
 </ul>
 <h2 id="google-books">Google Books</h2>
-<p>This module allows to harvest metadata information from Google Books API via ISBN of the book. Useful if you wish to populate your new record with basic metadata by only providing the ISBN code in field 020. A mapping between Google and Koha fields is available in <code>data/mappins/google</code>.</p>
+<p>This module allows to harvest metadata information from the Google Books API via ISBN of the book. This is useful if you wish to populate your new record with basic metadata by only providing the ISBN code in field 020. A mapping between Google and Koha fields is available in <code>data/mappins/google</code>.</p>
 <ul>
 <li><a class="autorefs autorefs-internal" title="enhance_biblio_record_from_isbn(biblio_id, koha_session, base_url, google_api_key)" href="../api_documentation/#pyreslib.google_books.enhance_biblio_record_from_isbn">Enhance record from ISBN code</a></li>
 <li><a class="autorefs autorefs-internal" title="get_metadata_from_google_api(isbn, google_api_key)" href="../api_documentation/#pyreslib.google_books.get_metadata_from_google_api">Get book metadata from Google API based on ISBN</a></li>
@@ -708,14 +719,14 @@ Follow the <a href="https://koha-community.org/manual/23.11/en/html/webservices.
 <li><a class="autorefs autorefs-internal" title="post_page_xml(session, page_xml, collection_id, document_id, page_number, filepath=True)" href="../api_documentation/#pyreslib.transkribus.post_page_xml">Upload transcription via local PAGEXML file</a></li>
 </ul>
 <h2 id="bibtex">BibTeX</h2>
-<p>This modules allows the export of bibliographicn records in BibTeX format, improving the built-in Koha export feature.</p>
+<p>This modules allows the export of bibliographic records in BibTeX format, improving the built-in Koha export feature.</p>
 <ul>
 <li><a class="autorefs autorefs-internal" title="convert_biblio_to_bibtex(biblio_id, bibtex_filepath, koha_session, base_url)" href="../api_documentation/#pyreslib.bibtex.convert_biblio_to_bibtex">Convert bibliographic record into BibTeX</a></li>
 </ul>
 <h2 id="wikidata">Wikidata</h2>
 <p>This module provides a way to programmatically interact with Wikidata or another Wikibase instance. It is mostly based on <a href="wikibaseintegrator.readthedocs.io/en/stable/">WikibaseIntegrator</a> and requires specific username-password or API keys credentials.</p>
 <h3 id="authentication">Authentication</h3>
-<p>In order to avoid Too Many Requests errors from the API endpoint, we advise to create an account on Wikidata (or another Wikibase instance)</p>
+<p>In order to avoid Too Many Requests errors from the API endpoint, we advise to create an account on Wikidata (or another Wikibase instance).</p>
 <ul>
 <li><a class="autorefs autorefs-internal" title="wikibase_integrator_session_basic(username, password, mediawiki_api_url='https://www.wikidata.org/w/api.php')" href="../api_documentation/#pyreslib.wikidata.wikibase_integrator_session_basic">Authenticate to Wikidata or Wikibase instance via username and password</a></li>
 <li><a class="autorefs autorefs-internal" title="wikibase_integrator_session_oauth2(consumer_token, consumer_secret, mediawiki_api_url='https://www.wikidata.org/w/api.php')" href="../api_documentation/#pyreslib.wikidata.wikibase_integrator_session_oauth2">Authenticate via Oauth2 credentials</a>. See <a href="https://www.wikidata.org/wiki/Wikidata:REST_API/Authentication">official documentation</a> for more information.</li>
@@ -724,12 +735,18 @@ Follow the <a href="https://koha-community.org/manual/23.11/en/html/webservices.
 <p>These scripts provide a controlled way to enrich your catalogue's authorities from Wikidata or another Wikibase instance.</p>
 <ul>
 <li><a class="autorefs autorefs-internal" title="external_sources_metadata_authorities(auth_dict, wb, backup_auth_dir=os.path.join('data', 'wikidata', 'backup_auth'), changed_auth_dir=os.path.join('data', 'wikidata', 'changed_auth'), external_ids_mapping_filepath=os.path.join('data', 'mappings', 'lod', 'external_identifiers.json'), uri_field=['024', '1'], source_subfield='2', label_subfield='9', id_subfield='a')" href="../api_documentation/#pyreslib.wikidata.external_sources_metadata_authorities">Add metadata from authority's external URIs field</a>, such as source name, entity label (Wikidata only) and id value. You can customize the external sources list via <code>data/mappings/lod/external_identifiers.json</code> mapping.</li>
-<li><a class="autorefs autorefs-internal" title="enhance_authorities_via_wikidata(auth_dict, wb, starting_auth_id=1, qid_log_dir=os.path.join('data', 'wikidata', 'qid_log'), wikidata_koha_mapping_filepath=os.path.join('data', 'mappings', 'wikidata', 'wikidata-koha-properties.csv'), wikibase_base_url='http://wwww.wikidata.org/entity/', backup_auth_dir=os.path.join('data', 'wikidata', 'backup_auth'), changed_auth_dir=os.path.join('data', 'wikidata', 'changed_auth'), in_progress=False, exclude_types=[], koha_fields={'PERSO_NAME': '500', 'CORPO_NAME': '510', 'CHRON_TERM': '548', 'TOPIC_TERM': '550', 'GEOGR_NAME': '551'}, headings={'PERSO_NAME': '100', 'CORPO_NAME': '110', 'CHRON_TERM': '148', 'TOPIC_TERM': '150', 'GEOGR_NAME': '151'})" href="../api_documentation/#pyreslib.wikidata.enhance_authorities_via_wikidata">Enhance authorities via Wikidata properties</a> by establishing a mapping between properties and umbrella terms. The mapping CSV is avalable at <code>data/mappings/wikidata/wikidata-koha-properties.csv</code>.</li>
+<li><a class="autorefs autorefs-internal" title="enhance_authorities_via_wikidata(auth_dict, wb, auth_id_range={'min': 1, 'max': None}, backup_frequency=10, qid_log_dir=os.path.join('data', 'wikidata', 'qid_log'), wikidata_koha_mapping_filepath=os.path.join('data', 'mappings', 'wikidata', 'wikidata-koha-properties.csv'), wikibase_base_url='http://wwww.wikidata.org/entity/', backup_auth_dir=os.path.join('data', 'wikidata', 'backup_auth'), changed_auth_dir=os.path.join('data', 'wikidata', 'changed_auth'), in_progress=False, exclude_types=[], koha_fields={'PERSO_NAME': '500', 'CORPO_NAME': '510', 'CHRON_TERM': '548', 'TOPIC_TERM': '550', 'GEOGR_NAME': '551'}, headings={'PERSO_NAME': '100', 'CORPO_NAME': '110', 'CHRON_TERM': '148', 'TOPIC_TERM': '150', 'GEOGR_NAME': '151'})" href="../api_documentation/#pyreslib.wikidata.enhance_authorities_via_wikidata">Enhance authorities via Wikidata properties</a> by establishing a mapping between properties and umbrella terms. The mapping CSV is available at <code>data/mappings/wikidata/wikidata-koha-properties.csv</code>.</li>
 </ul>
-<p>The methods do not direct update the Koha catalogue. Instead, they generate <code>backup_auth</code> and <code>changed_auth</code> lists of dictionaries that are stored locally as JSON files. Once the user has manually checked the integrity of the data via sampling, the new records can be updated via <a class="autorefs autorefs-internal" title="update_enhanced_authorities(koha_session, koha_base_url, changed_auth_filepath=os.path.join('data', 'wikidata', 'changed_auth', f'changed_auth-{utilities.get_current_date()}.json'), ckeck_updates=5)" href="../api_documentation/#pyreslib.wikidata.update_enhanced_authorities">pyreslib.wikidata.update_enhanced_authorities</a>.</p>
+<p>The methods do not direct update the Koha catalogue. Instead, they generate <code>backup_auth</code> and <code>changed_auth</code> lists of dictionaries which are stored locally as JSON files. Once the user has manually checked the integrity of the data via sampling, the new records can be updated via <a class="autorefs autorefs-internal" title="update_enhanced_authorities(koha_session, koha_base_url, changed_auth_filepath=os.path.join('data', 'wikidata', 'changed_auth', f'changed_auth-{utilities.get_current_date()}.json'), ckeck_updates=5)" href="../api_documentation/#pyreslib.wikidata.update_enhanced_authorities">pyreslib.wikidata.update_enhanced_authorities</a>.</p>
 <h3 id="mapping-wikidata-properties-uris">Mapping Wikidata properties URIs</h3>
 <p>In order to specify a relation statement between two authorites in our Koha catalogue, we have found a solution by recording the property's URI (such as [country][http://wikidata.org/entity/P17]) via a new subfield <code>i</code>, not belonging to the standard <a href="https://www.loc.gov/marc/authority/ad024.html">MARC21 framework for field 024</a>.</p>
 <p>To facilitate readibility of the URIs, we have created a new Authorized value group called <code>RELATION_PROPERTY</code>, associating each URI to the property name.</p>
+<h2 id="rdf">RDF</h2>
+<p>This module provides a series of scripts in order to export Koha record to RDF data structures using the <a href="https://rdflib.readthedocs.io/en/7.1.1/index.html">RDFlib</a> Python package.</p>
+<ul>
+<li><a class="autorefs autorefs-internal" title="auth_records_to_rdf(auth_ids, session, base_url, koha_namespace, auth_rdf_mapping_filepath='./data/mappings/lod/koha-rdf_mapping-auth.csv', namespaces_filepath='./data/mappings/lod/rdf_namespaces.json', output_dir='./data/rdf/auth/', serialization_format='turtle', explicit_abbreviations=True)" href="../api_documentation/#pyreslib.rdf.auth_records_to_rdf">Serialize authority record to RDF</a></li>
+<li><a class="autorefs autorefs-internal" title="biblio_records_to_rdf(biblio_ids, session, base_url, koha_namespace, biblio_rdf_mapping_filepath='./data/mappings/lod/koha-rdf_mapping-biblio.csv', namespaces_filepath='./data/mappings/lod/rdf_namespaces.json', output_dir='./data/rdf/biblio/', serialization_format='turtle', explicit_abbreviations=True)" href="../api_documentation/#pyreslib.rdf.biblio_records_to_rdf">Serialize bibliographical record to RDF</a></li>
+</ul>
 
 
 

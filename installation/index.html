@@ -594,27 +594,26 @@
 
 
 <h1 id="installation">Installation</h1>
-<p>Lorem ipsum.</p>
 <h2 id="package-installation">Package installation</h2>
 <h3 id="using-pip">Using <a href="https://pip.pypa.io/en/stable/getting-started/">pip</a></h3>
-<p>Generate the virtual enviroment on your project folder:</p>
+<p>Generate the virtual environment on your project folder:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Generate local python binaries in folder</span>
 python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>pyreslib-env
 </code></pre></div>
-<p>Activate virtual enviroment in order to invoke the package:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># activate the enviroment for this terminal</span>
+<p>Activate virtual environment in order to invoke the package:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># activate the environment for this terminal</span>
 <span class="nb">source</span><span class="w"> </span>pyreslib-env/bin/activate
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pyreslib
 </code></pre></div>
 <h3 id="using-uv">Using <a href="https://docs.astral.sh/uv">uv</a></h3>
 <p>Do not forget to include the <code>pyproject.toml</code> file in your project directory. You can find a copy of the file in our <a href="https://github.com/NicholasCorniaOrpheus/py-resounding-libraries/blob/main/pyproject.toml">GitHub repository</a>.</p>
-<p>Generate the virtual enviroment on your project folder:</p>
+<p>Generate the virtual environment on your project folder:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Generate local python binaries in folder</span>
 uv<span class="w"> </span>venv<span class="w"> </span>pyreslib-env
 </code></pre></div>
-<p>Activate virtual enviroment in order to invoke the package:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># activate the enviroment for this terminal</span>
+<p>Activate virtual environment in order to invoke the package:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># activate the environment for this terminal</span>
 <span class="nb">source</span><span class="w"> </span>pyreslib-env/bin/activate
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>add<span class="w"> </span>pyreslib
@@ -639,38 +638,49 @@ uv<span class="w"> </span>venv<span class="w"> </span>pyreslib-env
 │   │   ├── csv
 │   │   ├── json
 │   │   └── marc
-│   └── mappings
-│       ├── abbreviations
-│       │   ├── item_types.json
-│       │   ├── languages.json
-│       │   ├── music_instruments.json
-│       │   └── relationships.json
-│       ├── bibtex
-│       │   ├── country_codes.csv
-│       │   ├── koha_entry_types.json
-│       │   └── role_codes.csv
-│       ├── external_sources
-│       │   └── external_sources.json
-│       ├── google
-│       │   └── google_books-koha_mapping.csv
-│       ├── koha
-│       │   ├── authority_list.csv
-│       │   └── biblio_list.csv
-│       ├── lod
-│       │   └── external_identifiers.json
-│       ├── omekas
-│       │   ├── biblionumber_barcode.csv
-│       │   ├── koha-omekas_mapping - auth.csv
-│       │   ├── koha-omekas_mapping - biblio.csv
-│       │   ├── koha-omekas_mapping - locations.csv
-│       │   ├── koha-omekas_mapping - media.csv
-│       │   ├── koha-omekas_mapping - projects.csv
-│       │   ├── koha-omekas_mapping - researchers.csv
-│       │   └── koha-omekas_mapping - research_groups.csv
-│       └── wikidata
-│           ├── authority_wd_list.csv
-│           ├── wd_authority_list.csv
-│           └── wikidata-koha-properties.csv
+│   ├── mappings
+│   │   ├── abbreviations
+│   │   │   ├── item_types.json
+│   │   │   ├── languages.json
+│   │   │   ├── musical_instruments.json
+│   │   │   └── relationships.json
+│   │   ├── bibtex
+│   │   │   ├── country_codes.csv
+│   │   │   ├── koha_entry_types.json
+│   │   │   └── role_codes.csv
+│   │   ├── external_sources
+│   │   │   └── external_sources.json
+│   │   ├── google
+│   │   │   └── google_books-koha_mapping.csv
+│   │   ├── koha
+│   │   │   ├── authority_list.csv
+│   │   │   └── biblio_list.csv
+│   │   ├── lod
+│   │   │   ├── external_identifiers.json
+│   │   │   ├── koha-rdf_mapping-auth.csv
+│   │   │   ├── koha-rdf_mapping-biblio.csv
+│   │   │   └── rdf_namespaces.json
+│   │   ├── omekas
+│   │   │   ├── biblionumber_barcode.csv
+│   │   │   ├── koha-omekas_mapping - auth.csv
+│   │   │   ├── koha-omekas_mapping - biblio.csv
+│   │   │   ├── koha-omekas_mapping - locations.csv
+│   │   │   ├── koha-omekas_mapping - media.csv
+│   │   │   ├── koha-omekas_mapping - projects.csv
+│   │   │   ├── koha-omekas_mapping - researchers.csv
+│   │   │   └── koha-omekas_mapping - research_groups.csv
+│   │   └── wikidata
+│   │       ├── authority_wd_list.csv
+│   │       ├── wd_authority_list.csv
+│   │       └── wikidata-koha-properties.csv
+│   ├── rdf
+│   │   ├── auth
+│   │   └── biblio
+│   └── wikidata
+│       ├── backup_auth
+│       ├── changed_auth
+│       ├── qid_log
+│       └── statistics
 </code></pre></div>
 <h3 id="credentials">Credentials</h3>
 <p>In your <code>data</code> folder you should create a <code>credentials</code> directory to store all your sensible data. All credentials are stored in <code>credentials.json</code> file. Copy the <a href="https://github.com/NicholasCorniaOrpheus/py-resounding-libraries/blob/main/credentials/credentials.json">credential template</a> from our GitHub repository.</p>
