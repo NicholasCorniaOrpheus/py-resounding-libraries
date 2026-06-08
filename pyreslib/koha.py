@@ -98,7 +98,7 @@ def get_authority_json(session, auth_id: int, base_url: str) -> dict:
 
 
 def get_biblio_marc(session, biblio_id: int, base_url: str) -> dict:
-    """Get MARC in JSON data for biblio from Koha API. **Note**: this method does not return items metadata, use [pyreslib.koha.get_items_from_biblio_json][] in order to extract metadata at item's level.
+    """Get MARC in JSON data for biblio from Koha API. **Note**: this method does not return items metadata, use [pyreslib.koha.get_items_from_biblio_json][] in order to extract metadata at item level.
 
     Args:
         session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
@@ -353,7 +353,7 @@ def get_auth_list_from_csv_report(
     Returns a list of all authorities in the catalogue.
 
     Args:
-        auth_id_csv_filepath (str): File path of the csv file coming from report. By default is `data/mappings/authority_list.csv`
+        auth_id_csv_filepath (str): File path of the csv file coming from report. By default this is `data/mappings/authority_list.csv`
         auth_id_field (str): Koha report field name for authority ID. Default is `authid`.
 
     Returns:
@@ -376,7 +376,7 @@ def get_biblio_list_from_csv_report(
     Returns a list of all bibliographic records in the catalogue.
 
     Args:
-        biblio_id_csv_filepath (str): File path of the csv file coming from report. By default is `data/mappings/biblio_list.csv`
+        biblio_id_csv_filepath (str): File path of the csv file coming from report. By default this is `data/mappings/biblio_list.csv`
         biblio_id_field (str): Koha report field name for biblio ID. Default is `biblionumber`.
 
     Returns:
@@ -399,7 +399,7 @@ def import_koha_authorities_from_marc(
 
     Args:
         marc_filepath (str): Location of the MARC file to be processed. Default directory is `./data/koha_auth/marc`.
-        output_directory (str): Output directory for the generated JSON. The default filename is "auth_dict-{yyyy-mm-dd}.json". Default is `data/koha_auth/json`. Set to `None` if you wisj not to save the list as JSON.
+        output_directory (str): Output directory for the generated JSON. The default filename is "auth_dict-{yyyy-mm-dd}.json". Default is `data/koha_auth/json`. Set to `None` if you wish not to save the list as JSON.
     Returns:
         auth_dict (list): List of authority dictionaries with auth_id, wd_id, and record.
 
@@ -436,7 +436,7 @@ def import_koha_biblios_from_marc(
 
     Args:
         marc_filepath (str): Location of the MARC file to be processed. Default directory is `./data/koha_biblio/marc`.
-        output_directory (str): Output directory for the generated JSON. The default filename is "biblo_dict-{yyyy-mm-dd}.json". Default directory is `./data/koha_biblio/json`. Set to `None` if you wisj not to save the list as JSON.
+        output_directory (str): Output directory for the generated JSON. The default filename is "biblio_dict-{yyyy-mm-dd}.json". Default directory is `./data/koha_biblio/json`. Set to `None` if you wish not to save the list as JSON.
 
     Retruns:
         biblio_dict (list): List of bibliopgraphic record dictionaries with biblio_id and record
@@ -757,7 +757,7 @@ def get_authority_type(record: dict, auth_type_field=["942", "a"]) -> str:
                 lambda x: auth_type_field[1] in x.keys(),
                 query_field[0][auth_type_field[0]]["subfields"],
             )
-        )[0]["a"]
+        )[0][auth_type_field[1]]
 
         return auth_type
 
@@ -891,7 +891,7 @@ def get_main_heading_from_authority(
 
     Args:
         record (dict): MARC-in-JSON record of the authority, conform with Koha API.
-        headings (dict): Dictionary of main heading fields according to authorty type. Default is {"PERSO_NAME": "100","CORPO_NAME": "110","CHRON_TERM": "148","TOPIC_TERM": "150","GEOGR_NAME": "151"}
+        headings (dict): Dictionary of main heading fields according to authority type. Default is {"PERSO_NAME": "100","CORPO_NAME": "110","CHRON_TERM": "148","TOPIC_TERM": "150","GEOGR_NAME": "151"}
         heading_subfield (str): Subfield of the main heading. Default is "a".
 
 
@@ -942,7 +942,7 @@ def get_alternative_headings_from_authority(
 
     Args:
         record (dict): MARC-in-JSON record of the authority, conform with Koha API.
-        headings (dict): Dictionary of main heading fields according to authorty type. Default is {"PERSO_NAME": "100","CORPO_NAME": "110","CHRON_TERM": "148","TOPIC_TERM": "150","GEOGR_NAME": "151"}
+        headings (dict): Dictionary of main heading fields according to authority type. Default is {"PERSO_NAME": "100","CORPO_NAME": "110","CHRON_TERM": "148","TOPIC_TERM": "150","GEOGR_NAME": "151"}
         heading_subfield (str): Subfield of the main heading. Default is "a".
 
 
@@ -987,8 +987,8 @@ def explicit_abbreviations_from_marc(
     abbreviation_codes={
         "relationships": {"fields": ["100$4", "700$4"]},
         "languages": {"fields": ["041$a"]},
-        "item_type": {"fields": ["942$c"]},
-        "voices_and_musical_instruments": {"fields": ["059$a"]},
+        "item_types": {"fields": ["942$c"]},
+        "musical_instruments": {"fields": ["059$a"]},
     },
 ) -> dict:
     """
@@ -997,15 +997,15 @@ def explicit_abbreviations_from_marc(
     Args:
         record (dict): MARC-in-JSON record from Koha API.
         abbreviations_dir (str): Directory path (in data/mappings) containing a series of JSON mappings for standard MARC abbreviation codes.
-
+        abbreviation_codes (dict): Dictionary of abbreviation codes tied to each type.
     Returns:
         explicit_record (dict): MARC-in-JSON record with explicit abbreviations.
 
 
     """
     # load abbreviation jsons
-    for f in os.scandir(abbreviations):
-        if f.endswith(".json"):
+    for f in os.scandir(abbreviations_dir):
+        if f.path.endswith(".json"):
             with open(f.path) as json_file:
                 abbreviation = json.load(json_file)
                 abbreviation_name = f.name.split(".")[0]
@@ -1018,28 +1018,40 @@ def explicit_abbreviations_from_marc(
             field = tag.split("$")[0]
             subfield = tag.split("$")[1]
             # retrieve field and subfield in record
-            query_field = list(lambda x: field in x.keys(), record["fields"])
-            print(query_field)
+            query_field = list(filter(lambda x: field in x.keys(), record["fields"]))
             if len(query_field) > 0:
                 for statement in query_field:
                     query_subfield = list(
-                        lambda x: subfield in x.keys(), statement["subfields"]
+                        filter(
+                            lambda x: subfield in x.keys(),
+                            statement[field]["subfields"],
+                        )
                     )
-                    print(query_subfield)
+                    # print(query_subfield)
                     if len(query_subfield) > 0:
                         for sub_statement in query_subfield:
                             # retrive abbreviation code
-                            retrieved_code = list(
-                                lambda x: x["code"] == sub_statement[subfield],
-                                abbreviation_codes[key]["values"],
-                            )
-                            print(retrieved_code)
-                            if len(retrieved_code) > 0:
-                                # explicit subfield value
-                                sub_statement[subfield] = retrieved_code[0]["label"]
+                            # split values based on space
+                            sub_statements = sub_statement[subfield].split(" ")
+                            explicit_codes = []
+                            found_codes = False
+                            for sub in sub_statements:
+                                retrieved_code = list(
+                                    filter(
+                                        lambda x: x["code"] == sub,
+                                        abbreviation_codes[key]["values"],
+                                    )
+                                )
+                                if len(retrieved_code) > 0:
+                                    # explicit subfield value
+                                    explicit_codes.append(retrieved_code[0]["label"])
+                                else:
+                                    # keep original value
+                                    explicit_codes.append(sub)
 
-                            else:
-                                # code not found, ignore
-                                pass
+                            # update substatement with explicit codes
+                            sub_statement[subfield] = "|".join(explicit_codes)
 
-    print(f"Explicit MARC-in-JSON record: {record}")
+    # print(f"Explicit MARC-in-JSON record: {record}")
+
+    return record

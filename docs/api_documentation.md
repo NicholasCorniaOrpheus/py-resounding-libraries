@@ -34,6 +34,12 @@
     options:
       heading_level: 3
 
+### pyreslib.rdf
+
+::: pyreslib.rdf
+    options:
+      heading_level: 3   
+
 ### pyreslib.google_books
 
 ::: pyreslib.google_books

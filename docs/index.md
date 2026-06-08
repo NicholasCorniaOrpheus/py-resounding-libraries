@@ -1,6 +1,6 @@
 # PyResLib
 
-PyResLib is a Python package designed by the [Resounding Libraries](https://orpheusinstituut.be/en/projects/resounding-libraries) research cluster at Oprheus Instituut, Ghent.
+PyResLib is a Python package designed by the [Resounding Libraries](https://orpheusinstituut.be/en/projects/resounding-libraries) research cluster at Orpheus Instituut, Ghent.
 
 The package's modules allow library staff to: 
 

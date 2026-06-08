@@ -42,7 +42,7 @@ def wikibase_integrator_session_basic(
 		mediawiki_api_url (str): Wikidata REST API by default. You can change it by replacing the `https://www.wikidata.org/w/api.php` with your own Wikibase URL.
 
 	Returns:
-		wb (WikibaseIntegrator): Wikibase Integrator session
+		wb (WikibaseIntegrator): WikibaseIntegrator session
 
 	Examples:
 		>>> wb = pyreslib.koha.wikibase_integrator_session_basic(username="{USERNAME}"", password="{PASSWORD}" , mediawiki_api_url="https://www.wikidata.org/w/rest.php/wikibase/v1")
@@ -143,7 +143,7 @@ def convert_point_in_time_to_date(point_in_time: str, date_format=f"%Y-%m-%d") -
 
 
 def convert_qid_to_URI(qid: str, base_uri="http://wikidata.org/") -> str:
-	"""Returns a a QID string into the entity URI. By default the method uses the Wikidata Concept URI.
+	"""Returns a QID string into the entity URI. By default the method uses the Wikidata Concept URI.
 
 	Args:
 		qid (str): Wikibase Point in Time string similar to ISO 8061 date, with the exception of + sign. The conversion only works for AD dates.
@@ -162,7 +162,8 @@ def convert_qid_to_URI(qid: str, base_uri="http://wikidata.org/") -> str:
 
 
 def wb_get_property_data(wb_entity, pid: str, wikibase_URI=False, base_uri="http://wikidata.org/entity/", date_format: str = f"%Y-%m-%d") -> dict:
-	"""Returns a dictionary with information related to statements, given a WikibaseIntegrator entity tied to a QID, and a specific property PID.
+	"""
+	Returns a dictionary with information related to statements, given a `WikibaseIntegrator` entity tied to a QID and a specific property PID.
 
 	Args:
 		wb_entity: `ItemEntity` object retrieved by using the `item.get()` WikibaseIntegrator method.
@@ -349,7 +350,7 @@ def retrieve_authority_from_qid(qid: str,auth_qid_list: list ,auth_dict_sorted_q
 
 def append_qid_to_qid_log(qid: str,qid_log: list, wb ):
 	"""
-	Appends metadata and occurrence information for a Wikidata entity that might become a candidate authority for the catalogue.
+	Appends metadata and occurrence information from a Wikidata entity which might become a candidate authority for the catalogue.
 	
 	The user can evaluate the final result in `data/wikidata/qid_log` folder.
 	
@@ -524,7 +525,8 @@ def external_sources_metadata_authorities(
 def enhance_authorities_via_wikidata(
 	auth_dict: list,
 	wb,
-	starting_auth_id: int = 1,
+	auth_id_range: list = {"min": 1,"max": None},
+	backup_frequency: int = 10,
 	qid_log_dir: str = os.path.join("data","wikidata","qid_log"),
 	wikidata_koha_mapping_filepath: str = os.path.join("data","mappings","wikidata","wikidata-koha-properties.csv"),
 	wikibase_base_url: str = "http://wwww.wikidata.org/entity/",
@@ -541,7 +543,8 @@ def enhance_authorities_via_wikidata(
 	Args:
 		auth_dict (list): Authorities list of dictionaries formatted according to [pyreslib.koha.import_koha_authorities_from_marc][] or [pyreslib.koha.import_koha_authorities_from_api][].
 		wb: Wikibase Integrator session generated via [pyreslib.wikidata.wikibase_integrator_session_basic][] or [pyreslib.wikidata.wikibase_integrator_session_oauth2][].
-		starting_auth_id (int): Minimal authority id number for enhancement, previous ones will be ignored. Default is 1, meaning all catalogue is going to be exposed to enhancment.
+		auth_id_range (dict): Minimal and maximal authority id number for enhancement, previous and subsequent ones will be ignored. Default is {"min": 1,"max": None}, meaning all catalogue is going to be exposed to enhancement.
+		backup_frequency (int): Backup frequency.
 		wikidata_koha_mapping_filepath (str): Path to Wikidata-Koha mapping CSV.
 		wikibase_base_url(str): Base URL for Wikibase instance. Default is wikidata URI "http://wwww.wikidata.org/entity/".
 		backup_auth_dir (str): Destination path for backup enhanced authorities as JSON.
@@ -592,12 +595,18 @@ def enhance_authorities_via_wikidata(
 	backup_counter = 0
 	start_time = time()
 
+	if auth_id_range["max"] is None:
+		# assign last authority id
+		auth_id_range["max"] = int(auth_dict[-1]["auth_id"]) +1
+
 	print("Enhancing authorities with Wikidata data...")
 
 	for auth in auth_dict:
 		current_auth +=1
-		if int(auth["auth_id"]) < starting_auth_id:
+		if int(auth["auth_id"]) < auth_id_range["min"]:
 			continue
+		elif int(auth["auth_id"]) > auth_id_range["max"]:
+			break	
 		else:
 			print(f"\n\n####### CURRENT AUTHORITY: {auth["auth_id"]} {float(current_auth)/n_authorities*100}%")
 			# check if authority is already in backup_authorities
@@ -681,7 +690,6 @@ def enhance_authorities_via_wikidata(
 												if retrieved_authority is None:
 													print(f"Value {value_qid} not found in Koha thesaurus. Adding it to log list...")
 													append_qid_to_qid_log(value_qid,qid_log,wb)
-													changed_record = False
 												else:
 													# value is in the authority
 													print(f"Found authority {retrieved_authority["auth_id"]}. Adding it as statement for {auth["auth_id"]}...")
@@ -706,11 +714,13 @@ def enhance_authorities_via_wikidata(
 			else:
 				continue
 
-			if changed_record:
+			print(f"Changed record: {changed_record}")
+			if changed_record is True:
 				backup_authorities.append(backup_auth)
 				changed_authorities.append(auth)
+				print(changed_record)
 				backup_counter +=1
-				if backup_counter == 10:
+				if backup_counter == backup_frequency:
 					print("\n\n BACKING UP...")
 					# Saving to JSON...
 					utilities.dict2json(
@@ -738,7 +748,7 @@ def enhance_authorities_via_wikidata(
 
 	# Saving qid_log
 	print(f"Saving QIDs log file to {qid_log_dir}")
-	utilities.dict2csv(qid_log,os.path.join(qid_log_dir,f"qid_log-{get_current_date()}.csv"))
+	utilities.dict2csv(qid_log,os.path.join(qid_log_dir,f"qid_log-{utilities.get_current_date()}.csv"))
 
 	print(f"Enhancing completed in {float(time() - start_time)/60} minutes.")
 
@@ -753,13 +763,13 @@ def generate_statistics_authorities_wikidata_enhancement(
 	authority_types:list =["PERSO_NAME","CORPO_NAME","CHRON_TERM","TOPIC_TERM","GEOGR_NAME"],
 	wd_property_subfield: str = "i"):
 	"""
-	Generates a JSON file that records statistics for the Wikidata enhanchment, such as number of authorities modified, and the type of statements ingested.
+	Generates a JSON file that records statistics for the Wikidata enhanchement, such as number of authorities modified and the type of statements ingested.
 
 	Args:
 		changed_authorities(list): Lists of dictionaries for the enhanced authorities.
 		statistics_filepath (str): Path to output JSON file. Default is `data/wikidata/statistics`.
 		wikidata_koha_mapping_filepath (str): CSV file with Wikidata-Koha mapping of properties and fields. Default is `data/mappings/wikidata/wikidata-koha-properties.csv`.
-		koha_fields (dict): Fields for umbrella terms statements for authority record. Default list is definined according to the 5XX MARC21 framework.
+		koha_fields (dict): Fields for umbrella terms statements for authority record. Default list is defined according to the 5XX MARC21 framework.
 		authority_types (list): List of authority type codes, according to MARC21 framework.
 		wd_property_subfield (str): Subfield where the Wikidata property URI is stored. Default is "i", to be set in MARC framework for every authority.
 
@@ -796,6 +806,10 @@ def generate_statistics_authorities_wikidata_enhancement(
 							if len(property_query) > 0:
 								# append occurence
 								property_query[0][wd_property] +=1
+
+	# saving statistics
+	print(f"Saving statistics to {statistics_filepath}")
+	utilities.dict2json(statistics,statistics_filepath)
 
 
 	return statistics
