@@ -25,7 +25,7 @@
     
     
       
-        <title>Koha Reports - Py Resouding Libraries</title>
+        <title>Koha Reports - Py Resounding Libraries</title>
       
     
     
@@ -114,7 +114,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Py Resouding Libraries" class="md-header__button md-logo" aria-label="Py Resouding Libraries" data-md-component="logo">
+    <a href=".." title="Py Resounding Libraries" class="md-header__button md-logo" aria-label="Py Resounding Libraries" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -128,7 +128,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Py Resouding Libraries
+            Py Resounding Libraries
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -257,13 +257,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Py Resouding Libraries" class="md-nav__button md-logo" aria-label="Py Resouding Libraries" data-md-component="logo">
+    <a href=".." title="Py Resounding Libraries" class="md-nav__button md-logo" aria-label="Py Resounding Libraries" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Py Resouding Libraries
+    Py Resounding Libraries
   </label>
   
     <div class="md-nav__source">
@@ -543,7 +543,7 @@
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">authid</span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">50000</span>
 </code></pre></div>
-<p>Used by [pyreslib.koha.get_auth_list_from_csv_report].</p>
+<p>Used by <a class="autorefs autorefs-internal" title="get_auth_list_from_csv_report(auth_id_csv_filepath='./data/mappings/koha/authority_list.csv', auth_id_field='authid')" href="../api_documentation/#pyreslib.koha.get_auth_list_from_csv_report">pyreslib.koha.get_auth_list_from_csv_report</a>.</p>
 <p>A more advanced report returns a list of authorities with the following fields:</p>
 <ul>
 <li><code>auth_id</code>: unique identifier for authority.</li>
@@ -662,7 +662,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w">  </span><span class="n">biblio</span><span class="p">.</span><span class="n">biblionumber</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">biblio</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">biblio</span><span class="p">.</span><span class="n">biblionumber</span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">50000</span>
 </code></pre></div>
-<p>This report is used in order to batch import bibliographic records via Koha API. Used by [pyreslib.koha.get_biblio_list_from_csv_report].</p>
+<p>This report is used in order to batch import bibliographic records via Koha API. Used by <a class="autorefs autorefs-internal" title="get_biblio_list_from_csv_report(biblio_id_csv_filepath='./data/mappings/koha/biblio_list.csv', biblio_id_field='biblionumber')" href="../api_documentation/#pyreslib.koha.get_biblio_list_from_csv_report">pyreslib.koha.get_biblio_list_from_csv_report</a>.</p>
 <p>An alternative version of this report includes all barcodes of items associated with a given biblionumber:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w">  </span><span class="n">items</span><span class="p">.</span><span class="n">biblionumber</span><span class="p">,</span><span class="n">items</span><span class="p">.</span><span class="n">barcode</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">items</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="n">biblionumber</span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">50000</span>
@@ -716,7 +716,7 @@
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">authid</span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">50000</span>
 </code></pre></div>
-<p>Export the result of the report as CSV file in <code>data/mappins/authority_wd_list.csv</code> and use the method [pyreslib.koha.get_wd_authoritylist].</p>
+<p>Export the result of the report as CSV file in <code>data/mappins/authority_wd_list.csv</code> and use the method [pyreslib.koha.get_wd_authoritylist][].</p>
 
 
 

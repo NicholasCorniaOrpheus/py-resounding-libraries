@@ -25,7 +25,7 @@
     
     
       
-        <title>Installation - Py Resouding Libraries</title>
+        <title>Installation - Py Resounding Libraries</title>
       
     
     
@@ -114,7 +114,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Py Resouding Libraries" class="md-header__button md-logo" aria-label="Py Resouding Libraries" data-md-component="logo">
+    <a href=".." title="Py Resounding Libraries" class="md-header__button md-logo" aria-label="Py Resounding Libraries" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -128,7 +128,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Py Resouding Libraries
+            Py Resounding Libraries
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -257,13 +257,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Py Resouding Libraries" class="md-nav__button md-logo" aria-label="Py Resouding Libraries" data-md-component="logo">
+    <a href=".." title="Py Resounding Libraries" class="md-nav__button md-logo" aria-label="Py Resounding Libraries" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Py Resouding Libraries
+    Py Resounding Libraries
   </label>
   
     <div class="md-nav__source">
@@ -675,13 +675,14 @@ uv<span class="w"> </span>venv<span class="w"> </span>pyreslib-env
 <h3 id="credentials">Credentials</h3>
 <p>In your <code>data</code> folder you should create a <code>credentials</code> directory to store all your sensible data. All credentials are stored in <code>credentials.json</code> file. Copy the <a href="https://github.com/NicholasCorniaOrpheus/py-resounding-libraries/blob/main/credentials/credentials.json">credential template</a> from our GitHub repository.</p>
 <h2 id="mappings">Mappings</h2>
-<p>Create a <code>data/mappings</code> folder in order to store all mappings between your Koha instance and other external services, such as Wikidata, Google Books, Omeka S and Resource Space. You can copy the <a href="">mappings template</a> from our GitHub repository and modify them accordingly.</p>
+<p>Create a <code>data/mappings</code> folder in order to store all mappings between your Koha instance and other external services, such as Wikidata, Google Books, Omeka S and Resource Space. You can copy the <a href="https://github.com/NicholasCorniaOrpheus/py-resounding-libraries/tree/main/data/mappings">mapping templates</a> from our GitHub repository and modify them accordingly.</p>
 <h2 id="koha-setup">Koha Setup</h2>
 <ul>
-<li>Generate Client ID and Secret Key for your Koha admin user.</li>
-<li>Generate public reports for calculating maximal id for authorities and biblionumbers.</li>
-<li>Allow API preferences from Koha Administration. </li>
+<li>Generate Client ID and Secret Key for your Koha admin user according to the <a href="https://koha-community.org/manual/latest/en/html/webservices.html#api-key-management-interface-for-patrons">official documentation</a>.</li>
+<li>Create reports according to the <a href="../reports/">Reports</a> section.</li>
+<li>Allow <a href="https://koha-community.org/manual/latest/en/html/webservicespreferences.html#rest-api">REST API preferences</a> from Koha Administration panel accessible via <code>https://{your_koha_staff_url}/cgi-bin/koha/admin/preferences.pl?tab=web_services#web_services_REST_API</code>. </li>
 </ul>
+<p><img alt="REST_API_configuration" src="../assets/rest_api_conf.png" /></p>
 
 
 
