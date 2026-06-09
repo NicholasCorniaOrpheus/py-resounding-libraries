@@ -75,6 +75,12 @@ your_project
 │   │   ├── csv
 │   │   ├── json
 │   │   └── marc
+│   ├── kraken
+│   │   ├── models
+│   │   │   └── catmus-large
+│   │   │       ├── catmus-print-fondue-large.mlmodel
+│   │   │       └── metadata.json
+│   │   └── transcriptions
 │   ├── mappings
 │   │   ├── abbreviations
 │   │   │   ├── item_types.json
@@ -118,6 +124,7 @@ your_project
 │       ├── changed_auth
 │       ├── qid_log
 │       └── statistics
+
 
 ```
 

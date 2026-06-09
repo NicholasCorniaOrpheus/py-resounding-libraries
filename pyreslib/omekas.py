@@ -1,6 +1,6 @@
 from omeka_s_tools.api import OmekaAPIClient
 import requests
-from pyreslib import koha
+from pyreslib import koha, utilities
 import os
 import json, csv
 
@@ -30,13 +30,6 @@ def omekas_session(api_url: str, key_identity: str, key_credential: str):
     return omekas_session
 
 
-def csv2dict(csv_filename):  # imports a CSV file as dictionary
-    f = open(csv_filename, "r")
-    reader = csv.DictReader(f)
-    d = {"items": []}
-    for row in reader:
-        d["items"].append(row)
-    return d["items"]
 
 
 def generate_omekas_mapping(mappings_directory: str) -> dict:
@@ -50,33 +43,33 @@ def generate_omekas_mapping(mappings_directory: str) -> dict:
     omekas_mapping = {}
 
     # get authorities mapping
-    omekas_mapping["auth"] = csv2dict(
+    omekas_mapping["auth"] = utilities.csv2dict(
         os.path.join(mappings_directory, "koha-omekas_mapping - auth.csv")
     )
     # biblio mapping
-    omekas_mapping["biblio"] = csv2dict(
+    omekas_mapping["biblio"] = utilities.csv2dict(
         os.path.join(mappings_directory, "koha-omekas_mapping - biblio.csv")
     )
     # get media mapping
-    omekas_mapping["media"] = csv2dict(
+    omekas_mapping["media"] = utilities.csv2dict(
         os.path.join(mappings_directory, "koha-omekas_mapping - media.csv")
     )
     # get locations
-    omekas_mapping["locations"] = csv2dict(
+    omekas_mapping["locations"] = utilities.csv2dict(
         os.path.join(mappings_directory, "koha-omekas_mapping - locations.csv")
     )
     # get research groups
-    omekas_mapping["research_groups"] = csv2dict(
+    omekas_mapping["research_groups"] = utilities.csv2dict(
         os.path.join(mappings_directory, "koha-omekas_mapping - research_groups.csv")
     )
 
     # get researchers
-    omekas_mapping["researchers"] = csv2dict(
+    omekas_mapping["researchers"] = utilities.csv2dict(
         os.path.join(mappings_directory, "koha-omekas_mapping - researchers.csv")
     )
 
     # get projects
-    omekas_mapping["projects"] = csv2dict(
+    omekas_mapping["projects"] = utilities.csv2dict(
         os.path.join(mappings_directory, "koha-omekas_mapping - projects.csv")
     )
 

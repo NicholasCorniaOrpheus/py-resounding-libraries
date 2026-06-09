@@ -209,4 +209,4 @@ ORDER BY authid
 LIMIT 50000
 ```
 
-Export the result of the report as CSV file in `data/mappins/authority_wd_list.csv` and use the method [pyreslib.koha.get_wd_authoritylist][].
+Export the result of the report as CSV file in `data/mappins/authority_wd_list.csv` and use the method [pyreslib.koha.get_wd_authority_list][].

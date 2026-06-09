@@ -46,3 +46,4 @@ continent,P30,continent,part of continent,GEOGR_NAME,GEOGR_NAME,continent (part 
 field of work,P101,field of work,discipline,PERSO_NAME,TOPIC_TERM,field of work (discipline) [P101],http://wikidata.org/entity/P101
 interested in,P2650,topic of interest,interested in,PERSO_NAME,TOPIC_TERM,topic of interest (interested in) [P2650],http://wikidata.org/entity/P2650
 affiliation,P1416,affiliation,institution,PERSO_NAME,CORPO_NAME,affiliation (institution) [P1416],http://wikidata.org/entity/P1416
+used by,P1535,used by,,TOPIC_TERM,TOPIC_TERM,used by () [P1535],http://wikidata.org/entity/P1535

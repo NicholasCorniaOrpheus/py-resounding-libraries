@@ -10,13 +10,14 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-version = "0.2.0"
+version = "0.3.0"
 description = "Python package for digital libraries from the Resounding Libraries cluster at Orpheus Instituut"
-keywords = ["koha", "wikidata", "digital-libraries", "transkribus","omekas","bibtex","marc","library-software"]
+keywords = ["koha", "wikidata", "digital-libraries", "transkribus","omekas","bibtex","marc","library-software","kraken","resourcespace","ocr","wikibase"]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "bibtexparser>=1.4.4",
+    "kraken>=7.0.2",
     "omeka-s-tools>=0.3.0",
     "pandas>=2.3.3",
     "pymarc>=5.3.1",
@@ -40,15 +41,27 @@ dev = [
     "ruff>=0.1",
 ]
 
+ocr = [
+    "kraken>=7.0"
+]
+
 [tool.setuptools]
 packages = ["pyreslib"]
 
 [tool.setuptools.package-data]
 pyreslib = ["data/**/*"]
 
+[tool.uv.sources]
+pyreslib = { workspace = true }
+
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pyreslib",
+]
 
 [project.urls]
 Homepage = "https://nicholascorniaorpheus.github.io/py-resounding-libraries/"
