@@ -2545,11 +2545,10 @@ wheels = [
 
 [[package]]
 name = "pyreslib"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "." }
 dependencies = [
     { name = "bibtexparser" },
-    { name = "kraken" },
     { name = "omeka-s-tools" },
     { name = "pandas", version = "2.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "pandas", version = "3.0.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
@@ -2587,7 +2586,6 @@ dev = [
 requires-dist = [
     { name = "bibtexparser", specifier = ">=1.4.4" },
     { name = "black", marker = "extra == 'dev'", specifier = ">=22.0" },
-    { name = "kraken", specifier = ">=7.0.2" },
     { name = "kraken", marker = "extra == 'ocr'", specifier = ">=7.0" },
     { name = "mkdocs", marker = "extra == 'docs'", specifier = ">=1.6.1" },
     { name = "mkdocs-material", marker = "extra == 'docs'", specifier = ">=9.7.6" },
