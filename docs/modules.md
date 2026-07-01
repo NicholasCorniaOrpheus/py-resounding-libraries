@@ -63,6 +63,8 @@ In order to avoid Too Many Requests errors from the API endpoint, we advise to c
 
 These scripts provide a controlled way to enrich your catalogue's authorities from Wikidata or another Wikibase instance.
 
+
+- [Ingest Wikidata URIs from OpenRefine reconciliation][pyreslib.wikidata.add_qids_to_authorities], see the [tutorials](tutorials.md) page for more information.
 - [Add metadata from authority's external URIs field][pyreslib.wikidata.external_sources_metadata_authorities], such as source name, entity label (Wikidata only) and id value. You can customize the external sources list via `data/mappings/lod/external_identifiers.json` mapping.
 - [Enhance authorities via Wikidata properties][pyreslib.wikidata.enhance_authorities_via_wikidata] by establishing a mapping between properties and umbrella terms. The mapping CSV is available at `data/mappings/wikidata/wikidata-koha-properties.csv`.
 

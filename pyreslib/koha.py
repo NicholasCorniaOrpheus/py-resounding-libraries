@@ -628,7 +628,7 @@ def import_koha_biblios_from_api(
 
 def get_wd_authority_list(
     report_csv_file=os.path.join(
-        "data", "mappings", "wikidata", "wd_authoritu_list.csv"
+        "data", "mappings", "wikidata", "wd_authority_list.csv"
     ),
     separator="|",
 ) -> list:
