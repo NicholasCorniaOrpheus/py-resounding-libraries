@@ -2557,6 +2557,7 @@ dependencies = [
     { name = "pyyaml" },
     { name = "requests" },
     { name = "requests-oauth2client" },
+    { name = "shapely" },
     { name = "sparqlwrapper" },
     { name = "urllib3" },
     { name = "wikibaseintegrator" },
@@ -2579,7 +2580,7 @@ ocr = [
 
 [package.dev-dependencies]
 dev = [
-    { name = "pyreslib" },
+    { name = "pyreslib", extra = ["ocr"] },
 ]
 
 [package.metadata]
@@ -2599,6 +2600,7 @@ requires-dist = [
     { name = "requests", specifier = ">=2.33.1" },
     { name = "requests-oauth2client", specifier = ">=1.8.0" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.1" },
+    { name = "shapely", specifier = ">=2.1.2" },
     { name = "sparqlwrapper", specifier = ">=2.0.0" },
     { name = "urllib3", specifier = ">=2.6.3" },
     { name = "wikibaseintegrator", specifier = ">=0.12.15" },
@@ -2606,7 +2608,7 @@ requires-dist = [
 provides-extras = ["docs", "dev", "ocr"]
 
 [package.metadata.requires-dev]
-dev = [{ name = "pyreslib", editable = "." }]
+dev = [{ name = "pyreslib", extras = ["ocr"], editable = "." }]
 
 [[package]]
 name = "pytest"

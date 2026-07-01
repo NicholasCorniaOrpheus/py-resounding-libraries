@@ -8,7 +8,7 @@ from time import time
 
 import statistics as stat
 
-from wikibaseintegrator import wbi_login, WikibaseIntegrator
+from wikibaseintegrator import wbi_login, WikibaseIntegrator, wbi_helpers
 from wikibaseintegrator.wbi_config import config as wbi_config
 from SPARQLWrapper import SPARQLWrapper, JSON
 
@@ -105,6 +105,81 @@ def wikibase_integrator_session_oauth2(
 	wb = WikibaseIntegrator(login=login_instance)
 
 	return wb
+
+
+def add_qids_to_authorities(koha_session,koha_base_url: str, auth_qid_csv: str = "./data/wikidata/ingest_qid_to_auth/add_qids_to_authorities.csv", field: str = "024", subfield:str = "1"):
+	"""
+	Given a CSV file with fields `authid`, `main_heading`, `wd_uri` and `type`, generated from Koha report (see [reports](reports.md) section)
+	and enriched via [OpenRefine](https://openrefine.org/docs/manual/reconciling), the method updates the metadata authorities back to Koha via API.
+
+	Args:
+		 koha_session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
+		 koha_base_url (str): Koha API url from credentials.
+		 auth_qid_csv(str): filepath for the CSV file. Default is "./data/wikidata/ingest_qid_to_auth/add_qids_to_authorities.csv".
+		 field (str): Wikidata field. Default is "024", according to MARC21 framework.
+		 subfield (str): Wikidata URI subfield. Default is "1", according to MARC21 framework.
+
+	Returns:
+		`None`
+	"""
+
+	# import csv as dictionary
+	auth_qid_list = utilities.csv2dict(auth_qid_csv)
+
+	# ingest for each authority the new URI value in field$subfield position
+	for auth in auth_qid_list:
+		auth_id = auth["authid"]
+		main_heading = auth["main_heading"]
+		wd_uri = auth["wd_uri"]
+		#print(f"Current authority: {auth_id}")
+
+		modified = False
+
+		if "wikidata.org" in wd_uri:
+			print(f"Getting {auth_id} record from API...")
+			record = koha.get_authority_marc(session=koha_session,base_url=koha_base_url,auth_id=auth_id)
+			# enrich 024 record
+			field_query = list(filter(lambda x: field in x.keys(), record["fields"]))
+			if len(field_query) >0:
+				# check if QID already present in subfield
+				found = False
+				for statement in field_query:
+					substatement_query = list(filter(lambda x: subfield in x.keys(), statement[field]["subfields"]))
+					if len(substatement_query) >0:
+						if substatement_query[0][subfield] == wd_uri:
+							print(f"Wikidata URI {wd_uri} already present. Skipping...")
+							found = True
+							break
+				if found is not True:
+					modified = True
+					# append new statement after last one
+					print(f"Appending Wikidata URI to new {field} field...")
+					record["fields"].insert(
+						record["fields"].index(field_query[-1]),
+						{field: {"ind1": ' ', "ind2": ' ', "subfields": [{subfield: wd_uri}]}}
+						)
+			else:
+				modified = True
+				print(f"Create new {field} field for URI...")
+				# the field 024 is not present in record, create a new one and append it in the right position
+				for statement in record["fields"]:
+					statement_field = int(list(statement.keys())[0])
+					if statement_field > int(field):
+						# append before statement
+						record["fields"].insert(record["fields"].index(statement)-1,
+							{field: {"ind1": ' ', "ind2": ' ', "subfields": [{subfield: wd_uri}]}})
+						break
+
+			print(modified)
+			if modified:
+				print(f"Updating Wikidata URI to {auth_id} authority...")
+				koha.update_authority_marc(session=koha_session,auth_id=auth_id,marc_json=record,base_url=koha_base_url)
+
+
+
+		
+
+	
 
 
 def convert_point_in_time_to_date(point_in_time: str, date_format=f"%Y-%m-%d") -> str:
@@ -504,19 +579,19 @@ def external_sources_metadata_authorities(
 	print("Saving to JSON...")
 
 	utilities.dict2json(
-	    backup_authorities,
-	    os.path.join(
-	        backup_auth_dir,
-	        f"backup_auth-{utilities.get_current_date()}.json"
-	    ),
+		backup_authorities,
+		os.path.join(
+			backup_auth_dir,
+			f"backup_auth-{utilities.get_current_date()}.json"
+		),
 	)
 
 	utilities.dict2json(
-	    changed_authorities,
-	    os.path.join(
-	        changed_auth_dir,
-	        f"changed_auth-{utilities.get_current_date()}.json"
-	    )
+		changed_authorities,
+		os.path.join(
+			changed_auth_dir,
+			f"changed_auth-{utilities.get_current_date()}.json"
+		)
 	)			
 
 

@@ -17,13 +17,13 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "bibtexparser>=1.4.4",
-    "kraken>=7.0.2",
     "omeka-s-tools>=0.3.0",
     "pandas>=2.3.3",
     "pymarc>=5.3.1",
     "pyyaml>=6.0.3",
     "requests>=2.33.1",
     "requests-oauth2client>=1.8.0",
+    "shapely>=2.1.2",
     "sparqlwrapper>=2.0.0",
     "urllib3>=2.6.3",
     "wikibaseintegrator>=0.12.15",
@@ -60,7 +60,7 @@ build-backend = "setuptools.build_meta"
 
 [dependency-groups]
 dev = [
-    "pyreslib",
+    "pyreslib[ocr]",
 ]
 
 [project.urls]

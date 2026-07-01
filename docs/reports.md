@@ -210,3 +210,52 @@ LIMIT 50000
 ```
 
 Export the result of the report as CSV file in `data/mappins/authority_wd_list.csv` and use the method [pyreslib.koha.get_wd_authority_list][].
+
+### Authority with missing Wikidata URI
+
+This report is used in order to generate the `add_qids_to_authorities.csv` file for the [pyreslib.wikidata.add_qids_to_authorities][] method.
+
+```sql
+SELECT authid, concat(
+ExtractValue(`marcxml`,'//datafield[@tag="100"]/subfield[@code="a"]'), -- PERSO_NAME
+ExtractValue(`marcxml`,'//datafield[@tag="110"]/subfield[@code="a"]'), -- CORPO_NAME
+ExtractValue(`marcxml`,'//datafield[@tag="111"]/subfield[@code="a"]'), -- MEETI_NAME
+ExtractValue(`marcxml`,'//datafield[@tag="130"]/subfield[@code="a"]'), -- UNIF_TITLE
+ExtractValue(`marcxml`,'//datafield[@tag="148"]/subfield[@code="a"]'), -- CHRON_TERM
+ExtractValue(`marcxml`,'//datafield[@tag="150"]/subfield[@code="a"]'), -- TOPIC_TERM
+ExtractValue(`marcxml`,'//datafield[@tag="151"]/subfield[@code="a"]'), -- GEOGR_NAME
+ExtractValue(`marcxml`,'//datafield[@tag="155"]/subfield[@code="a"]')  -- GENRE/FORM
+) AS main_heading,
+ExtractValue(`marcxml`, '//datafield[@tag="024"]/subfield[@code="1"]') AS wd_uri,
+ExtractValue(`marcxml`, '//datafield[@tag="942"]/subfield[@code="a"]') AS type
+FROM `auth_header`
+WHERE ExtractValue(`marcxml`, '//datafield[@tag="024"]/subfield[@code="1"]') IS NULL
+OR ExtractValue(`marcxml`, '//datafield[@tag="024"]/subfield[@code="1"]') = ''
+ORDER BY authid ASC
+```
+
+You can filter out and adjust "surname, name" authorities heading with Google Sheets or Excel function to align them to Wikidata Labels before reconciliation via [OpenRefine](https://openrefine.org/docs/manual/reconciling).
+
+If you wish to filter out a specific Authority Type, such as PERSO_NAME, you can use this alternative report:
+
+```sql
+SELECT authid, concat(
+ExtractValue(`marcxml`,'//datafield[@tag="100"]/subfield[@code="a"]'), -- PERSO_NAME
+ExtractValue(`marcxml`,'//datafield[@tag="110"]/subfield[@code="a"]'), -- CORPO_NAME
+ExtractValue(`marcxml`,'//datafield[@tag="111"]/subfield[@code="a"]'), -- MEETI_NAME
+ExtractValue(`marcxml`,'//datafield[@tag="130"]/subfield[@code="a"]'), -- UNIF_TITLE
+ExtractValue(`marcxml`,'//datafield[@tag="148"]/subfield[@code="a"]'), -- CHRON_TERM
+ExtractValue(`marcxml`,'//datafield[@tag="150"]/subfield[@code="a"]'), -- TOPIC_TERM
+ExtractValue(`marcxml`,'//datafield[@tag="151"]/subfield[@code="a"]'), -- GEOGR_NAME
+ExtractValue(`marcxml`,'//datafield[@tag="155"]/subfield[@code="a"]')  -- GENRE/FORM
+) AS main_heading,
+ExtractValue(`marcxml`, '//datafield[@tag="024"]/subfield[@code="1"]') AS wd_uri,
+ExtractValue(`marcxml`, '//datafield[@tag="942"]/subfield[@code="a"]') AS type
+FROM `auth_header`
+WHERE ExtractValue(`marcxml`, '//datafield[@tag="024"]/subfield[@code="1"]') IS NULL
+OR ExtractValue(`marcxml`, '//datafield[@tag="024"]/subfield[@code="1"]') = '' 
+AND ExtractValue(`marcxml`, '//datafield[@tag="942"]/subfield[@code="a"]') LIKE CONCAT ( '%', <<Authority Type code>>, '%' )
+ORDER BY authid ASC
+
+LIMIT 100 -- Adjust the limit value based on your needs and reconciliation time.
+
