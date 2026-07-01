@@ -5,6 +5,7 @@ nav:
   - Home: index.md
   - Installation: installation.md
   - Modules: modules.md 
+  - Tutorials: tutorials.md
   - Koha Reports: reports.md
   - API Documentation: api_documentation.md
 
