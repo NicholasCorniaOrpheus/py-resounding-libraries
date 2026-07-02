@@ -13,11 +13,12 @@ plugins:
   - search
   - mkdocstrings
 
+extra_css:
+  - assets/css/extras.css
+
 
 theme:
   name: material
-  #logo: docs/assets/rl-icon.png
-  #favicon: docs/assets/favicon.ico
   language: en
   icon:
     previous: fontawesome/solid/angle-left
@@ -28,27 +29,13 @@ theme:
       quote: fontawesome/solid/quote-left
 
   font:
-      text: Sofia Sans
+      text: Crimson Pro
   palette:
-    # Palette toggle for light mode
     - scheme: default
-      primary: light green
-      default: light green
-      footer: light green
-      accent: light green
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-
-    # Palette toggle for dark mode
-    - scheme: slate
-      primary: light green
-      default: light green
-      footer: light green
-      accent: light green
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode        
+      primary: custom
+      default: custom
+      footer: custom
+      accent: custom       
 
   features:
     - navigation.instant

@@ -66,12 +66,14 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Sofia Sans";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Pro:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Crimson Pro";--md-code-font:"Roboto Mono"}</style>
       
     
     
       <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../assets/css/extras.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -89,7 +91,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="light-green">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -147,21 +149,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="light-green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
-      </label>
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
 </form>
@@ -428,6 +416,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#getting-authorized-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting authorized sessions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv-importexport-to-marc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV import/export to MARC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reconciling-authorities-via-openrefine-and-pyreslib" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -474,6 +484,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wikidata-enhancement-of-authorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wikidata enhancement of authorities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-bibliographic-records-and-authorities-as-rdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export bibliographic records and authorities as RDF
+      
+    </span>
+  </a>
   
 </li>
       
@@ -560,6 +592,47 @@
 
 
 <h1 id="tutorials">Tutorials</h1>
+<h2 id="getting-authorized-sessions">Getting authorized sessions</h2>
+<p>In order to get authorization from Koha, Transkribus and Wikidata services, we need to store the API credentials of each platform. Copy the <a href="https://github.com/NicholasCorniaOrpheus/py-resounding-libraries/blob/main/data/credentials/credentials.json">sample file</a> to the <code>data/credentials</code> directory of your project and adjust the credential values according to your passwords and keys.</p>
+<p>In order to authenticate, you need to include these lines to your Python code:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pyreslib</span><span class="w"> </span><span class="kn">import</span> <span class="n">wikidata</span><span class="p">,</span> <span class="n">koha</span><span class="p">,</span> <span class="n">transkribus</span><span class="p">,</span> <span class="n">utilities</span>
+
+<span class="c1">### CREDENTIALS</span>
+
+<span class="n">credentials</span> <span class="o">=</span> <span class="n">utilities</span><span class="o">.</span><span class="n">json2dict</span><span class="p">(</span><span class="s2">&quot;./data/credentials/credentials.json&quot;</span><span class="p">)</span>
+
+<span class="n">koha_base_url</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;koha&quot;</span><span class="p">][</span><span class="s2">&quot;koha_api_url&quot;</span><span class="p">]</span>
+
+<span class="c1"># Generating OAuth2 credentials for Koha API</span>
+<span class="n">koha_session</span> <span class="o">=</span> <span class="n">koha</span><span class="o">.</span><span class="n">koha_session</span><span class="p">(</span>
+    <span class="n">client_id</span><span class="o">=</span><span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;koha&quot;</span><span class="p">][</span><span class="s2">&quot;oauth_credentials&quot;</span><span class="p">][</span><span class="s2">&quot;client_id&quot;</span><span class="p">],</span>
+    <span class="n">client_secret</span><span class="o">=</span><span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;koha&quot;</span><span class="p">][</span><span class="s2">&quot;oauth_credentials&quot;</span><span class="p">][</span><span class="s2">&quot;client_secret&quot;</span><span class="p">],</span>
+    <span class="n">user_agent</span><span class="o">=</span><span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;koha&quot;</span><span class="p">][</span><span class="s2">&quot;oauth_credentials&quot;</span><span class="p">][</span><span class="s2">&quot;user_agent&quot;</span><span class="p">],</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="n">koha_base_url</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Generating session for Transkribus API</span>
+<span class="n">transkribus_session</span> <span class="o">=</span> <span class="n">transkribus</span><span class="o">.</span><span class="n">api_login</span><span class="p">(</span>
+    <span class="n">user</span><span class="o">=</span><span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;transkribus&quot;</span><span class="p">][</span><span class="s2">&quot;user&quot;</span><span class="p">],</span>
+    <span class="n">password</span><span class="o">=</span><span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;transkribus&quot;</span><span class="p">][</span><span class="s2">&quot;password&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="c1"># Generating Wikidata session for Wikibase Integrator</span>
+<span class="n">wb</span> <span class="o">=</span> <span class="n">wikidata</span><span class="o">.</span><span class="n">wikibase_integrator_session_basic</span><span class="p">(</span>
+    <span class="n">username</span><span class="o">=</span><span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;wikidata&quot;</span><span class="p">][</span><span class="s2">&quot;username&quot;</span><span class="p">],</span>
+    <span class="n">password</span><span class="o">=</span><span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;wikidata&quot;</span><span class="p">][</span><span class="s2">&quot;password&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="csv-importexport-to-marc">CSV import/export to MARC</h2>
+<p>This tutorial shows how to convert a MARC file into CSV and TXT.</p>
+<div class="highlight"><pre><span></span><code><span class="n">csv_filepath</span> <span class="o">=</span> <span class="s2">&quot;./data/koha_biblio/csv/records.csv&quot;</span>
+<span class="n">marc_filepath</span> <span class="o">=</span> <span class="s2">&quot;./data/koha_biblio/marc/records.mrc&quot;</span>
+
+<span class="n">marc</span><span class="o">.</span><span class="n">marc2csv</span><span class="p">(</span><span class="n">marc_filepath</span><span class="p">,</span> <span class="n">csv_filepath</span><span class="p">)</span>
+<span class="n">records</span> <span class="o">=</span> <span class="n">marc</span><span class="o">.</span><span class="n">csv2marc</span><span class="p">(</span><span class="n">csv_filepath</span><span class="p">,</span> <span class="n">marc_filepath</span><span class="p">)</span>
+
+<span class="n">marc</span><span class="o">.</span><span class="n">marc2txt</span><span class="p">(</span><span class="n">marc_filepath</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="reconciling-authorities-via-openrefine-and-pyreslib">Reconciling authorities via OpenRefine and PyResLib</h2>
 <p>In this short tutorial, we are going to:</p>
 <ol>
@@ -605,17 +678,7 @@
 
 <span class="c1">### CREDENTIALS</span>
 
-<span class="n">credentials</span> <span class="o">=</span> <span class="n">utilities</span><span class="o">.</span><span class="n">json2dict</span><span class="p">(</span><span class="s2">&quot;./data/credentials/credentials.json&quot;</span><span class="p">)</span>
-
-<span class="n">koha_base_url</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;koha&quot;</span><span class="p">][</span><span class="s2">&quot;koha_api_url&quot;</span><span class="p">]</span>
-
-<span class="c1"># Generating OAuth2 credentials for Koha API</span>
-<span class="n">koha_session</span> <span class="o">=</span> <span class="n">koha</span><span class="o">.</span><span class="n">koha_session</span><span class="p">(</span>
-    <span class="n">client_id</span><span class="o">=</span><span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;koha&quot;</span><span class="p">][</span><span class="s2">&quot;oauth_credentials&quot;</span><span class="p">][</span><span class="s2">&quot;client_id&quot;</span><span class="p">],</span>
-    <span class="n">client_secret</span><span class="o">=</span><span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;koha&quot;</span><span class="p">][</span><span class="s2">&quot;oauth_credentials&quot;</span><span class="p">][</span><span class="s2">&quot;client_secret&quot;</span><span class="p">],</span>
-    <span class="n">user_agent</span><span class="o">=</span><span class="n">credentials</span><span class="p">[</span><span class="s2">&quot;koha&quot;</span><span class="p">][</span><span class="s2">&quot;oauth_credentials&quot;</span><span class="p">][</span><span class="s2">&quot;user_agent&quot;</span><span class="p">],</span>
-    <span class="n">base_url</span><span class="o">=</span><span class="n">koha_base_url</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="c1"># ... see first tutorial for credential code.</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding QIDs from CSV file&quot;</span><span class="p">)</span>
 <span class="n">wikidata</span><span class="o">.</span><span class="n">add_qids_to_authorities</span><span class="p">(</span><span class="n">koha_session</span><span class="o">=</span><span class="n">koha_session</span><span class="p">,</span> <span class="n">koha_base_url</span><span class="o">=</span><span class="n">koha_base_url</span><span class="p">)</span>
@@ -624,6 +687,76 @@
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>ingest_QIDs_from_CSV.py
 </code></pre></div>
 <p>Your authorities should be automatically updated.</p>
+<h2 id="wikidata-enhancement-of-authorities">Wikidata enhancement of authorities</h2>
+<p>Don't forget to set up the <code>wikidata-koha-properties.csv</code> mapping. You can modify the sample CSV according to your preferences and store it in <code>data/mappings/wikidata</code> folder.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pyreslib</span><span class="w"> </span><span class="kn">import</span> <span class="n">koha</span><span class="p">,</span><span class="n">utilities</span><span class="p">,</span><span class="n">wikidata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Importing from latest MARC export...&quot;</span><span class="p">)</span>
+<span class="n">koha_auth_marc_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;koha_auth&quot;</span><span class="p">,</span> <span class="s2">&quot;marc&quot;</span><span class="p">)</span>
+<span class="n">auth_dict</span> <span class="o">=</span> <span class="n">koha</span><span class="o">.</span><span class="n">import_koha_authorities_from_marc</span><span class="p">(</span>
+    <span class="n">marc_filepath</span><span class="o">=</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_latest_file</span><span class="p">(</span><span class="n">koha_auth_marc_dir</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Importing authorities dictionary...&quot;</span><span class="p">)</span>
+<span class="n">auth_dict</span> <span class="o">=</span> <span class="n">utilities</span><span class="o">.</span><span class="n">json2dict</span><span class="p">(</span><span class="s2">&quot;./data/koha_auth/json/auth_dict-YYYY-MM-DD.json&quot;</span><span class="p">)</span>
+
+<span class="n">test_auth_id</span> <span class="o">=</span> <span class="mi">4000</span>
+
+<span class="c1"># Enhance authorities between ID 4000 and 4500 that are not Geographical Terms.</span>
+<span class="n">backup_authorities</span><span class="p">,</span> <span class="n">changed_authorities</span> <span class="o">=</span> <span class="n">wikidata</span><span class="o">.</span><span class="n">enhance_authorities_via_wikidata</span><span class="p">(</span>
+    <span class="n">auth_dict</span><span class="p">,</span>
+    <span class="n">wb</span><span class="p">,</span>
+    <span class="n">auth_id_range</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;min&quot;</span><span class="p">:</span> <span class="n">test_auth_id</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">:</span> <span class="n">test_auth_id</span> <span class="o">+</span> <span class="mi">500</span><span class="p">},</span>
+    <span class="n">exclude_types</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GEOGR_TERM&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Generate statistics from enhancing process</span>
+<span class="n">wikidata</span><span class="o">.</span><span class="n">generate_statistics_authorities_wikidata_enhancement</span><span class="p">(</span><span class="n">changed_authorities</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Have a look at the changed_auth file.&quot;</span><span class="p">)</span>
+<span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Press Enter to submit changes to Koha via API...&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updating enhanched files to Koha&quot;</span><span class="p">)</span>
+<span class="n">wikidata</span><span class="o">.</span><span class="n">update_enhanced_authorities</span><span class="p">(</span>
+    <span class="n">koha_session</span><span class="o">=</span><span class="n">koha_session</span><span class="p">,</span>
+    <span class="n">koha_base_url</span><span class="o">=</span><span class="n">koha_base_url</span><span class="p">,</span>
+    <span class="n">changed_auth_filepath</span><span class="o">=</span><span class="n">utilities</span><span class="o">.</span><span class="n">get_latest_file</span><span class="p">(</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;wikidata&quot;</span><span class="p">,</span> <span class="s2">&quot;changed_auth&quot;</span><span class="p">)</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="export-bibliographic-records-and-authorities-as-rdf">Export bibliographic records and authorities as RDF</h2>
+<p>In this tutorial we are going to export a list of biblio and authority IDs in RDF Turtle format.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pyreslib</span><span class="w"> </span><span class="kn">import</span> <span class="n">koha</span><span class="p">,</span> <span class="n">utilities</span><span class="p">,</span> <span class="n">rdf</span>
+
+<span class="c1">### CREDENTIALS</span>
+
+<span class="c1"># ... see first tutorial for credential code.</span>
+
+<span class="c1">## RDF</span>
+
+<span class="n">biblio_ids_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">432</span><span class="p">]</span>
+
+<span class="n">auth_ids_list</span><span class="o">=</span><span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)]</span> <span class="c1"># first 100 authorities</span>
+
+<span class="n">rdf</span><span class="o">.</span><span class="n">biblio_records_to_rdf</span><span class="p">(</span>
+     <span class="n">biblio_ids</span><span class="o">=</span><span class="n">biblio_ids_list</span><span class="p">,</span>
+     <span class="n">session</span><span class="o">=</span><span class="n">koha_session</span><span class="p">,</span>
+     <span class="n">base_url</span><span class="o">=</span><span class="n">koha_base_url</span><span class="p">,</span>
+    <span class="n">koha_namespace</span><span class="o">=</span><span class="s2">&quot;oikoha&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">rdf</span><span class="o">.</span><span class="n">auth_records_to_rdf</span><span class="p">(</span>
+     <span class="n">auth_ids</span><span class="o">=</span><span class="n">auth_ids_list</span><span class="p">,</span>
+     <span class="n">session</span><span class="o">=</span><span class="n">koha_session</span><span class="p">,</span>
+     <span class="n">base_url</span><span class="o">=</span><span class="n">koha_base_url</span><span class="p">,</span>
+     <span class="n">koha_namespace</span><span class="o">=</span><span class="s2">&quot;oikoha&quot;</span><span class="p">,</span>
+     <span class="n">serialization_format</span><span class="o">=</span><span class="s2">&quot;turtle&quot;</span><span class="p">,</span>
+     <span class="n">explicit_abbreviations</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+ <span class="p">)</span>
+</code></pre></div>
 
 
 

@@ -644,7 +644,7 @@ def get_wd_authority_list(
 
     Examples:
         >>> authority_wd_list = pyreslib.koha.get_authority_wd_list(report_csv_file="path/to/authorities_wd_list.csv")
-        >>> [{"auth_id": 1, "type": "GEOGR_NAME", "main_heading": "Venice", "qid": ["Q641"], "wd_uri": ["http://www.wikidata.org/entity/Q641"]", "wd_label": ["Venice","Venezia"]}, ...]
+        >>> [{"auth_id": 1, "type": "GEOGR_NAME", "main_heading": "Venice", "qid": ["Q641"], "wd_uri": ["http://www.wikidata.org/entity/Q641"], "wd_label": ["Venice","Venezia"]}, ...]
 
 
     """
@@ -667,8 +667,6 @@ def get_wd_authority_list(
 
 
 # Filtering methods for MARC-in-JSON authority records
-
-
 def extract_wikidata_id(record: dict, wd_field=["024", "1"]):
     query = list(filter(lambda x: wd_field[0] in x.keys(), record["fields"]))
     wd_id = []
