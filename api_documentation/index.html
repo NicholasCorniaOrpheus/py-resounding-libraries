@@ -64,12 +64,14 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Sofia Sans";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Pro:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Crimson Pro";--md-code-font:"Roboto Mono"}</style>
       
     
     
       <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../assets/css/extras.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -87,7 +89,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="light-green">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -145,21 +147,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="light-green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
-      </label>
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
 </form>
@@ -1757,7 +1745,9 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pyreslib/koha.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 984</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 982</span>
+<span class="normal"> 983</span>
+<span class="normal"> 984</span>
 <span class="normal"> 985</span>
 <span class="normal"> 986</span>
 <span class="normal"> 987</span>
@@ -1828,9 +1818,7 @@
 <span class="normal">1052</span>
 <span class="normal">1053</span>
 <span class="normal">1054</span>
-<span class="normal">1055</span>
-<span class="normal">1056</span>
-<span class="normal">1057</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">explicit_abbreviations_from_marc</span><span class="p">(</span>
+<span class="normal">1055</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">explicit_abbreviations_from_marc</span><span class="p">(</span>
     <span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
     <span class="n">abbreviations_dir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;mappings&quot;</span><span class="p">,</span> <span class="s2">&quot;abbreviations&quot;</span><span class="p">),</span>
     <span class="n">abbreviation_codes</span><span class="o">=</span><span class="p">{</span>
@@ -2246,7 +2234,9 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pyreslib/koha.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">928</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">926</span>
+<span class="normal">927</span>
+<span class="normal">928</span>
 <span class="normal">929</span>
 <span class="normal">930</span>
 <span class="normal">931</span>
@@ -2294,9 +2284,7 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 <span class="normal">973</span>
 <span class="normal">974</span>
 <span class="normal">975</span>
-<span class="normal">976</span>
-<span class="normal">977</span>
-<span class="normal">978</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_alternative_headings_from_authority</span><span class="p">(</span>
+<span class="normal">976</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_alternative_headings_from_authority</span><span class="p">(</span>
     <span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
     <span class="n">headings</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;PERSO_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;400&quot;</span><span class="p">,</span>
@@ -2893,7 +2881,9 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pyreslib/koha.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">733</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">731</span>
+<span class="normal">732</span>
+<span class="normal">733</span>
 <span class="normal">734</span>
 <span class="normal">735</span>
 <span class="normal">736</span>
@@ -2923,9 +2913,7 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 <span class="normal">760</span>
 <span class="normal">761</span>
 <span class="normal">762</span>
-<span class="normal">763</span>
-<span class="normal">764</span>
-<span class="normal">765</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_authority_type</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">auth_type_field</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;942&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">763</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_authority_type</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">auth_type_field</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;942&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function returns the authority type code of a given record.</span>
 
@@ -3503,7 +3491,9 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pyreslib/koha.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">698</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">696</span>
+<span class="normal">697</span>
+<span class="normal">698</span>
 <span class="normal">699</span>
 <span class="normal">700</span>
 <span class="normal">701</span>
@@ -3533,9 +3523,7 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 <span class="normal">725</span>
 <span class="normal">726</span>
 <span class="normal">727</span>
-<span class="normal">728</span>
-<span class="normal">729</span>
-<span class="normal">730</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_biblio_type</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">biblio_type_field</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;942&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">728</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_biblio_type</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">biblio_type_field</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;942&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function returns the biblio type code of a given record.</span>
 
@@ -4164,7 +4152,9 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pyreslib/koha.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">877</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">875</span>
+<span class="normal">876</span>
+<span class="normal">877</span>
 <span class="normal">878</span>
 <span class="normal">879</span>
 <span class="normal">880</span>
@@ -4210,9 +4200,7 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 <span class="normal">920</span>
 <span class="normal">921</span>
 <span class="normal">922</span>
-<span class="normal">923</span>
-<span class="normal">924</span>
-<span class="normal">925</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_main_heading_from_authority</span><span class="p">(</span>
+<span class="normal">923</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_main_heading_from_authority</span><span class="p">(</span>
     <span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
     <span class="n">headings</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;PERSO_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span>
@@ -4375,7 +4363,9 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pyreslib/koha.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">817</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">815</span>
+<span class="normal">816</span>
+<span class="normal">817</span>
 <span class="normal">818</span>
 <span class="normal">819</span>
 <span class="normal">820</span>
@@ -4430,9 +4420,7 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 <span class="normal">869</span>
 <span class="normal">870</span>
 <span class="normal">871</span>
-<span class="normal">872</span>
-<span class="normal">873</span>
-<span class="normal">874</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_umbrella_terms_from_authority</span><span class="p">(</span>
+<span class="normal">872</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_umbrella_terms_from_authority</span><span class="p">(</span>
     <span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
     <span class="n">umbrella_fields</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;PERSO_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;500&quot;</span><span class="p">,</span>
@@ -4582,7 +4570,7 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 
 <p><span class="doc-section-title">Examples:</span></p>
     <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">authority_wd_list</span> <span class="o">=</span> <span class="n">pyreslib</span><span class="o">.</span><span class="n">koha</span><span class="o">.</span><span class="n">get_authority_wd_list</span><span class="p">(</span><span class="n">report_csv_file</span><span class="o">=</span><span class="s2">&quot;path/to/authorities_wd_list.csv&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">[{</span><span class="s2">&quot;auth_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;GEOGR_NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;main_heading&quot;</span><span class="p">:</span> <span class="s2">&quot;Venice&quot;</span><span class="p">,</span> <span class="s2">&quot;qid&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Q641&quot;</span><span class="p">],</span> <span class="s2">&quot;wd_uri&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;http://www.wikidata.org/entity/Q641&quot;</span><span class="p">]</span><span class="s2">&quot;, &quot;</span><span class="n">wd_label</span><span class="s2">&quot;: [&quot;</span><span class="n">Venice</span><span class="s2">&quot;,&quot;</span><span class="n">Venezia</span><span class="s2">&quot;]}, ...]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[{</span><span class="s2">&quot;auth_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;GEOGR_NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;main_heading&quot;</span><span class="p">:</span> <span class="s2">&quot;Venice&quot;</span><span class="p">,</span> <span class="s2">&quot;qid&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Q641&quot;</span><span class="p">],</span> <span class="s2">&quot;wd_uri&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;http://www.wikidata.org/entity/Q641&quot;</span><span class="p">],</span> <span class="s2">&quot;wd_label&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Venice&quot;</span><span class="p">,</span><span class="s2">&quot;Venezia&quot;</span><span class="p">]},</span> <span class="o">...</span><span class="p">]</span>
 </code></pre></div>
 
 
@@ -4643,7 +4631,7 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; authority_wd_list = pyreslib.koha.get_authority_wd_list(report_csv_file=&quot;path/to/authorities_wd_list.csv&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; [{&quot;auth_id&quot;: 1, &quot;type&quot;: &quot;GEOGR_NAME&quot;, &quot;main_heading&quot;: &quot;Venice&quot;, &quot;qid&quot;: [&quot;Q641&quot;], &quot;wd_uri&quot;: [&quot;http://www.wikidata.org/entity/Q641&quot;]&quot;, &quot;wd_label&quot;: [&quot;Venice&quot;,&quot;Venezia&quot;]}, ...]</span>
+<span class="sd">        &gt;&gt;&gt; [{&quot;auth_id&quot;: 1, &quot;type&quot;: &quot;GEOGR_NAME&quot;, &quot;main_heading&quot;: &quot;Venice&quot;, &quot;qid&quot;: [&quot;Q641&quot;], &quot;wd_uri&quot;: [&quot;http://www.wikidata.org/entity/Q641&quot;], &quot;wd_label&quot;: [&quot;Venice&quot;,&quot;Venezia&quot;]}, ...]</span>
 
 
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -4777,7 +4765,9 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pyreslib/koha.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">768</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">766</span>
+<span class="normal">767</span>
+<span class="normal">768</span>
 <span class="normal">769</span>
 <span class="normal">770</span>
 <span class="normal">771</span>
@@ -4821,9 +4811,7 @@ result (dict): Dictionary containing biblio ID, and MARC-in-JSON record.</p>
 <span class="normal">809</span>
 <span class="normal">810</span>
 <span class="normal">811</span>
-<span class="normal">812</span>
-<span class="normal">813</span>
-<span class="normal">814</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_wikidata_entities_from_authority</span><span class="p">(</span>
+<span class="normal">812</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_wikidata_entities_from_authority</span><span class="p">(</span>
     <span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">wikidata_field</span><span class="o">=</span><span class="s2">&quot;024&quot;</span><span class="p">,</span> <span class="n">wikidata_subfields</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;9&quot;</span><span class="p">}</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
