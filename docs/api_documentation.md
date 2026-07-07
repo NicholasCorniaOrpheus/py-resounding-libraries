@@ -26,6 +26,12 @@
     options:
       heading_level: 3
 
+### pyreslib.tei
+
+::: pyreslib.tei
+    options:
+      heading_level: 3
+
 ### pyreslib.kraken
 
 ::: pyreslib.kraken

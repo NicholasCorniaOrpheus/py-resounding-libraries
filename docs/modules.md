@@ -97,7 +97,7 @@ This module allows the user to interact with the [Transkribus](https://www.trans
 
 This module allows the user to convert Transkribus and Kraken PAGEXML transcriptions into [TEI](https://www.tei-c.org/) format. Via a custom mapping, each PAGEXML region is converted in TEI elements according to their structural tag.
 
-- [Generate TEI from two-column PAGEXML](pyreslib.tei.generate_tei_from_two_column_pagexml)
+- [Generate TEI from two-column PAGEXML][pyreslib.tei.generate_tei_from_two_column_pagexml]
 
 ### Kraken
 
