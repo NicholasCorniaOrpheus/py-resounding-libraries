@@ -93,6 +93,12 @@ This module allows the user to interact with the [Transkribus](https://www.trans
 - [Get plain text transcription of page][pyreslib.transkribus.get_page_txt]
 - [Upload transcription via local PAGEXML file][pyreslib.transkribus.post_page_xml]
 
+### TEI
+
+This module allows the user to convert Transkribus and Kraken PAGEXML transcriptions into [TEI](https://www.tei-c.org/) format. Via a custom mapping, each PAGEXML region is converted in TEI elements according to their structural tag.
+
+- [Generate TEI from two-column PAGEXML](pyreslib.tei.generate_tei_from_two_column_pagexml)
+
 ### Kraken
 
 Kraken is an open-source OCR and HTR software built in Python. Because of its size, we have set its dependencies as optional and you have to build them manually via uv or pip.

@@ -666,7 +666,7 @@
 <h3 id="step-2">Step 2</h3>
 <p>Import your CSV file as new project in your <a href="https://openrefine.org/">OpenRefine</a> application. We are using version 3.10.1 for this tutorial.</p>
 <p>You can split the main_heading column based on a separator via <code>Edit Column/Split into separate columns...</code> command. Afterwards, you can recombine the splitted columns via <code>Edit Column/Join columns...</code>. This procedure is useful in order to turn Personal Names in the form <code>Surname, Name</code> into <code>Name Surname</code> for Wikidata matching.</p>
-<p><img alt="split_columns" src="./assets/split_columns_openrefine.png" /></p>
+<p><img alt="split_columns" src="../assets/split_columns_open_refine.png" /></p>
 <p>Once you have reconciled a reasonable number of authorities, you can create a new column via <code>Edit column/Add column based on this column...</code> that will parse the Wikidata Concept URI from the reconciliation service by using the GREL formula</p>
 <div class="highlight"><pre><span></span><code>&#39;http://www.wikidata.org/entity/&#39;+cell.recon.match.id
 </code></pre></div>
