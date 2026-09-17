@@ -556,6 +556,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TEI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#kraken" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -823,6 +834,11 @@ Follow the <a href="https://koha-community.org/manual/23.11/en/html/webservices.
 <li><a class="autorefs autorefs-internal" title="get_page_xml(session, collection_id, document_id, page_number)" href="../api_documentation/#pyreslib.transkribus.get_page_xml">Get PAGEXML transcription of page</a></li>
 <li><a class="autorefs autorefs-internal" title="get_page_txt(session, collection_id, document_id, page_number)" href="../api_documentation/#pyreslib.transkribus.get_page_txt">Get plain text transcription of page</a></li>
 <li><a class="autorefs autorefs-internal" title="post_page_xml(session, page_xml, collection_id, document_id, page_number, filepath=True)" href="../api_documentation/#pyreslib.transkribus.post_page_xml">Upload transcription via local PAGEXML file</a></li>
+</ul>
+<h3 id="tei">TEI</h3>
+<p>This module allows the user to convert Transkribus and Kraken PAGEXML transcriptions into <a href="https://www.tei-c.org/">TEI</a> format. Via a custom mapping, each PAGEXML region is converted in TEI elements according to their structural tag.</p>
+<ul>
+<li><a class="autorefs autorefs-internal" title="generate_tei_from_two_column_pagexml(page_xml_path, page_center_method='reference_region', reference_type='page-number', PAGEXML_NS='http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15', mapping_file='./mappings/pagexml2tei.json')" href="../api_documentation/#pyreslib.tei.generate_tei_from_two_column_pagexml">Generate TEI from two-column PAGEXML</a></li>
 </ul>
 <h3 id="kraken">Kraken</h3>
 <p>Kraken is an open-source OCR and HTR software built in Python. Because of its size, we have set its dependencies as optional and you have to build them manually via uv or pip.</p>

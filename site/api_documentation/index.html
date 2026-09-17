@@ -1318,6 +1318,61 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pyreslibtei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pyreslib.tei
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyreslib.tei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tei
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyreslib.tei.document_pagexml2tei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        document_pagexml2tei
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyreslib.tei.generate_tei_from_two_column_pagexml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        generate_tei_from_two_column_pagexml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyreslib.tei.render_region_to_tei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        render_region_to_tei
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pyreslibkraken" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -14916,6 +14971,663 @@ None</p>
         <span class="n">filepath</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">page_xml_string</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h3 id="pyreslibtei">pyreslib.tei</h3>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="pyreslib.tei"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="pyreslib.tei.document_pagexml2tei" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">document_pagexml2tei</span><span class="p">(</span><span class="n">document_dir</span><span class="p">,</span> <span class="n">page_center_method</span><span class="o">=</span><span class="s1">&#39;reference_region&#39;</span><span class="p">,</span> <span class="n">reference_type</span><span class="o">=</span><span class="s1">&#39;page-number&#39;</span><span class="p">,</span> <span class="n">PAGEXML_NS</span><span class="o">=</span><span class="s1">&#39;http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15&#39;</span><span class="p">,</span> <span class="n">mapping_file</span><span class="o">=</span><span class="s1">&#39;./mappings/pagexml2tei.json&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Generates TEI files for each PAGEXML in document_dir.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>document_dir</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to local PAGEXML directory to be converted.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>page_center_method</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Method for two-column separation. Default is "reference-region". See [pyreslib.transkribus.reading_order_region][] for more information.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;reference_region&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>reference_type</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tag for the region indicating the center. Default is "page-number".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;page-number&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>PAGEXML_NS</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Transkribus PAGEXML Namespace. Default is http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>mapping_file</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to pagexml2tei.json mapping. Default is <code>./mappings/pagexml2tei.json</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;./mappings/pagexml2tei.json&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p><code>None</code></p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>pyreslib/tei.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">document_pagexml2tei</span><span class="p">(</span>
+    <span class="n">document_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">page_center_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;reference_region&quot;</span><span class="p">,</span>
+    <span class="n">reference_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;page-number&quot;</span><span class="p">,</span>
+    <span class="n">PAGEXML_NS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15&quot;</span><span class="p">,</span>
+    <span class="n">mapping_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;./mappings/pagexml2tei.json&quot;</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generates TEI files for each PAGEXML in document_dir.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        document_dir (str): Path to local PAGEXML directory to be converted.</span>
+<span class="sd">        page_center_method(str): Method for two-column separation. Default is &quot;reference-region&quot;. See [pyreslib.transkribus.reading_order_region][] for more information.</span>
+<span class="sd">        reference_type(str): Tag for the region indicating the center. Default is &quot;page-number&quot;.</span>
+<span class="sd">        PAGEXML_NS(str): Transkribus PAGEXML Namespace. Default is http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15.</span>
+<span class="sd">        mapping_file(str): Path to pagexml2tei.json mapping. Default is `./mappings/pagexml2tei.json`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        `None`</span>
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">document_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">document_dir</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">document_path</span><span class="o">.</span><span class="n">iterdir</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.xml&quot;</span><span class="p">):</span>
+            <span class="n">generate_tei_from_two_column_pagexml</span><span class="p">(</span>
+                <span class="n">page_xml_path</span><span class="o">=</span><span class="n">f</span><span class="p">,</span>
+                <span class="n">page_center_method</span><span class="o">=</span><span class="n">page_center_method</span><span class="p">,</span>
+                <span class="n">reference_type</span><span class="o">=</span><span class="n">reference_type</span><span class="p">,</span>
+                <span class="n">PAGEXML_NS</span><span class="o">=</span><span class="n">PAGEXML_NS</span><span class="p">,</span>
+                <span class="n">mapping_file</span><span class="o">=</span><span class="n">mapping_file</span><span class="p">,</span>
+            <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="pyreslib.tei.generate_tei_from_two_column_pagexml" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">generate_tei_from_two_column_pagexml</span><span class="p">(</span><span class="n">page_xml_path</span><span class="p">,</span> <span class="n">page_center_method</span><span class="o">=</span><span class="s1">&#39;reference_region&#39;</span><span class="p">,</span> <span class="n">reference_type</span><span class="o">=</span><span class="s1">&#39;page-number&#39;</span><span class="p">,</span> <span class="n">PAGEXML_NS</span><span class="o">=</span><span class="s1">&#39;http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15&#39;</span><span class="p">,</span> <span class="n">mapping_file</span><span class="o">=</span><span class="s1">&#39;./mappings/pagexml2tei.json&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get ordered regions according to <a class="autorefs autorefs-internal" title="classify_regions_two_colums(page_xml_path, page_center_method='reference_region', reference_type='page-number', PAGEXML_NS='http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15')" href="#pyreslib.transkribus.classify_regions_two_colums">pyreslib.transkribus.classify_regions_two_colums</a>.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>page_xml_path</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to local PAGEXML.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>page_center_method</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Method for two-column separation. Default is "reference-region". See [pyreslib.transkribus.reading_order_region][] for more information.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;reference_region&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>reference_type</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tag for the region indicating the center. Default is "page-number".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;page-number&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>PAGEXML_NS</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Transkribus PAGEXML Namespace. Default is http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>mapping_file</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to pagexml2tei.json mapping. Default is <code>./mappings/pagexml2tei.json</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;./mappings/pagexml2tei.json&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p><code>None</code></p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>pyreslib/tei.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">generate_tei_from_two_column_pagexml</span><span class="p">(</span>
+    <span class="n">page_xml_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">page_center_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;reference_region&quot;</span><span class="p">,</span>
+    <span class="n">reference_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;page-number&quot;</span><span class="p">,</span>
+    <span class="n">PAGEXML_NS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15&quot;</span><span class="p">,</span>
+    <span class="n">mapping_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;./mappings/pagexml2tei.json&quot;</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get ordered regions according to [pyreslib.transkribus.classify_regions_two_colums][].</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        page_xml_path (str): Path to local PAGEXML.</span>
+<span class="sd">        page_center_method(str): Method for two-column separation. Default is &quot;reference-region&quot;. See [pyreslib.transkribus.reading_order_region][] for more information.</span>
+<span class="sd">        reference_type(str): Tag for the region indicating the center. Default is &quot;page-number&quot;.</span>
+<span class="sd">        PAGEXML_NS(str): Transkribus PAGEXML Namespace. Default is http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15.</span>
+<span class="sd">        mapping_file(str): Path to pagexml2tei.json mapping. Default is `./mappings/pagexml2tei.json`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        `None`</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Getting ordered regions in blocks based on two_column layout...&quot;</span><span class="p">)</span>
+    <span class="n">ordered_regions</span> <span class="o">=</span> <span class="n">transkribus</span><span class="o">.</span><span class="n">classify_regions_two_colums</span><span class="p">(</span>
+        <span class="n">page_xml_path</span><span class="o">=</span><span class="n">page_xml_path</span><span class="p">,</span>
+        <span class="n">page_center_method</span><span class="o">=</span><span class="n">page_center_method</span><span class="p">,</span>
+        <span class="n">reference_type</span><span class="o">=</span><span class="n">reference_type</span><span class="p">,</span>
+        <span class="n">PAGEXML_NS</span><span class="o">=</span><span class="n">PAGEXML_NS</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Load the structural mapping</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">mapping_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">tag_mapping</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;example of element from ordered region:</span>
+<span class="sd">    {&#39;id&#39;: &#39;r_18&#39;, &#39;class&#39;: &#39;center&#39;, &#39;y_centroid&#39;: 86.5, &#39;xml_element&#39;: &lt;Element &#39;{http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15}TextRegion&#39; at 0x7eed1abc1760&gt;, &#39;block&#39;: 1}</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># 0. Initialize new TEI XML structure</span>
+    <span class="n">tei_root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;TEI&quot;</span><span class="p">,</span> <span class="n">xmlns</span><span class="o">=</span><span class="s2">&quot;http://www.tei-c.org/ns/1.0&quot;</span><span class="p">)</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">tei_root</span><span class="p">,</span> <span class="s2">&quot;teiHeader&quot;</span><span class="p">)</span>
+    <span class="c1"># ... [Insert minimal header logic here for FAIR compliance] ...</span>
+
+    <span class="n">text_elem</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">tei_root</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">text_elem</span><span class="p">,</span> <span class="s2">&quot;body&quot;</span><span class="p">)</span>  <span class="c1"># &lt;--- Append content HERE, not to tei_root</span>
+
+    <span class="c1"># Get ordered regions from your helper</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Getting ordered regions in blocks...&quot;</span><span class="p">)</span>
+    <span class="n">ordered_regions</span> <span class="o">=</span> <span class="n">transkribus</span><span class="o">.</span><span class="n">classify_regions_two_colums</span><span class="p">(</span>
+        <span class="n">page_xml_path</span><span class="o">=</span><span class="n">page_xml_path</span><span class="p">,</span>
+        <span class="n">page_center_method</span><span class="o">=</span><span class="n">page_center_method</span><span class="p">,</span>
+        <span class="n">reference_type</span><span class="o">=</span><span class="n">reference_type</span><span class="p">,</span>
+        <span class="n">PAGEXML_NS</span><span class="o">=</span><span class="n">PAGEXML_NS</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># 1. Organize sublists for each block</span>
+    <span class="n">blocks</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">reg</span> <span class="ow">in</span> <span class="n">ordered_regions</span><span class="p">:</span>
+        <span class="n">b_id</span> <span class="o">=</span> <span class="n">reg</span><span class="p">[</span><span class="s2">&quot;block&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">b_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blocks</span><span class="p">:</span>
+            <span class="n">blocks</span><span class="p">[</span><span class="n">b_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">blocks</span><span class="p">[</span><span class="n">b_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+
+    <span class="c1"># Process blocks in numerical order</span>
+    <span class="k">for</span> <span class="n">b_id</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">blocks</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="n">block_elements</span> <span class="o">=</span> <span class="n">blocks</span><span class="p">[</span><span class="n">b_id</span><span class="p">]</span>
+
+        <span class="c1"># 2. Block structure logic</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">block_elements</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># Single element -&gt; Render directly to body to maintain sequence</span>
+            <span class="c1"># Pass block_elements (the dict), not the list itself</span>
+            <span class="n">render_region_to_tei</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">block_elements</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tag_mapping</span><span class="p">,</span> <span class="n">PAGEXML_NS</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Multi-element block -&gt; Use &lt;cb/&gt; milestones for TEI conformance</span>
+            <span class="c1"># Create a section wrapper to keep the block&#39;s columns together</span>
+            <span class="n">section_div</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span>
+                <span class="n">body</span><span class="p">,</span> <span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;section&quot;</span><span class="p">,</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">b_id</span><span class="p">)}</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Group by class</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">block_elements</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;left&quot;</span><span class="p">]</span>
+            <span class="n">right</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">block_elements</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;right&quot;</span><span class="p">]</span>
+            <span class="n">center</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">block_elements</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;center&quot;</span><span class="p">]</span>
+
+            <span class="c1"># Render center (headers) first, then columns</span>
+            <span class="k">for</span> <span class="n">reg</span> <span class="ow">in</span> <span class="n">center</span><span class="p">:</span>
+                <span class="n">render_region_to_tei</span><span class="p">(</span><span class="n">section_div</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">tag_mapping</span><span class="p">,</span> <span class="n">PAGEXML_NS</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">left</span> <span class="ow">or</span> <span class="n">right</span><span class="p">:</span>
+                <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">section_div</span><span class="p">,</span> <span class="s2">&quot;cb&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">})</span>
+                <span class="k">for</span> <span class="n">reg</span> <span class="ow">in</span> <span class="n">left</span><span class="p">:</span>
+                    <span class="n">render_region_to_tei</span><span class="p">(</span><span class="n">section_div</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">tag_mapping</span><span class="p">,</span> <span class="n">PAGEXML_NS</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">right</span><span class="p">:</span>
+                    <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">section_div</span><span class="p">,</span> <span class="s2">&quot;cb&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">})</span>
+                    <span class="k">for</span> <span class="n">reg</span> <span class="ow">in</span> <span class="n">right</span><span class="p">:</span>
+                        <span class="n">render_region_to_tei</span><span class="p">(</span><span class="n">section_div</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">tag_mapping</span><span class="p">,</span> <span class="n">PAGEXML_NS</span><span class="p">)</span>
+
+    <span class="c1"># 4. Save output using Path.with_suffix for robustness [General Python Knowledge]</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">page_xml_path</span><span class="p">)</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.tei&quot;</span><span class="p">)</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">ElementTree</span><span class="p">(</span><span class="n">tei_root</span><span class="p">)</span>
+    <span class="n">tree</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">xml_declaration</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ TEI saved in document order: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="pyreslib.tei.render_region_to_tei" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">render_region_to_tei</span><span class="p">(</span><span class="n">parent_element</span><span class="p">,</span> <span class="n">reg_data</span><span class="p">,</span> <span class="n">tag_mapping</span><span class="p">,</span> <span class="n">ns_uri</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Apply mapping based on regional tag, changing Namespace.</p>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>pyreslib/tei.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">render_region_to_tei</span><span class="p">(</span><span class="n">parent_element</span><span class="p">,</span> <span class="n">reg_data</span><span class="p">,</span> <span class="n">tag_mapping</span><span class="p">,</span> <span class="n">ns_uri</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Apply mapping based on regional tag, changing Namespace.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">xml_el</span> <span class="o">=</span> <span class="n">reg_data</span><span class="p">[</span><span class="s2">&quot;xml_element&quot;</span><span class="p">]</span>
+    <span class="n">custom_attr</span> <span class="o">=</span> <span class="n">xml_el</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;custom&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Extract tag (e.g., &#39;heading&#39;) from Transkribus &#39;custom&#39; string</span>
+    <span class="n">tag_type</span> <span class="o">=</span> <span class="s2">&quot;paragraph&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;type:&quot;</span> <span class="ow">in</span> <span class="n">custom_attr</span><span class="p">:</span>
+        <span class="n">tag_type</span> <span class="o">=</span> <span class="n">custom_attr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;type:&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Apply mapping</span>
+    <span class="n">mapping</span> <span class="o">=</span> <span class="n">tag_mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tag_type</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;element&quot;</span><span class="p">:</span> <span class="s2">&quot;p&quot;</span><span class="p">})</span>
+    <span class="n">element_name</span> <span class="o">=</span> <span class="n">mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;element&quot;</span><span class="p">)</span>
+    <span class="n">attributes</span> <span class="o">=</span> <span class="n">mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;attributes&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># Copy to avoid mutation</span>
+
+    <span class="c1"># Create the TEI element</span>
+    <span class="n">tei_el</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">parent_element</span><span class="p">,</span> <span class="n">element_name</span><span class="p">,</span> <span class="n">attributes</span><span class="p">)</span>
+
+    <span class="c1"># 4. Join all textlines as separate lines (\n)</span>
+    <span class="n">ns</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="n">ns_uri</span><span class="p">}</span>
+    <span class="n">unicode_lines</span> <span class="o">=</span> <span class="n">xml_el</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;.//p:TextLine/p:TextEquiv/p:Unicode&quot;</span><span class="p">,</span> <span class="n">ns</span><span class="p">)</span>
+    <span class="n">text_content</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">line</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">unicode_lines</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">text</span><span class="p">])</span>
+    <span class="n">tei_el</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text_content</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>

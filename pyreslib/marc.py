@@ -48,6 +48,67 @@ def generate_record_dict(marc_filepath: str, json_filepath: str, id_name: str) -
     return record_dict
 
 
+def marcjson2marc(marc_in_json_dict: list, marc_filepath: str) -> None:
+    """Converts a list of MARC-in-JSON records (dictionaries) into a standard
+
+    binary MARC21 file (.mrc) using UTF-8 encoding.
+    """
+    output_dir = os.path.dirname(marc_filepath)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    with open(marc_filepath, "wb") as marc_file:
+        for json_record in marc_in_json_dict:
+            pymarc_record = Record()
+
+            # Enforce UTF-8 Leader Flag
+            leader_str = json_record.get("leader", "     nam a22     a 4500")
+            if len(leader_str) >= 24:
+                leader_list = list(leader_str)
+                leader_list[9] = "a"  # Force Position 9 to 'a' for UTF-8
+                pymarc_record.leader = "".join(leader_list)
+            else:
+                pymarc_record.leader = "     nam a22     a 4500"
+
+            # Reconstruct the fields cleanly
+            for field_wrapper in json_record.get("fields", []):
+                for tag, field_data in field_wrapper.items():
+                    # Control fields (001-009)
+                    if int(tag) < 10 and isinstance(field_data, str):
+                        new_field = Field(tag=tag, data=field_data)
+
+                    # Data fields (010+)
+                    elif isinstance(field_data, dict):
+                        # Clean indicator formatting
+                        ind1 = field_data.get("ind1", " ")
+                        ind2 = field_data.get("ind2", " ")
+                        ind1 = " " if ind1 in ("", "\\") else ind1
+                        ind2 = " " if ind2 in ("", "\\") else ind2
+
+                        # FIX: Map items directly to Subfield objects instead of a flat list
+                        pymarc_subfields = []
+                        for subfield_dict in field_data.get("subfields", []):
+                            for sub_code, sub_val in subfield_dict.items():
+                                pymarc_subfields.append(
+                                    Subfield(code=sub_code, value=str(sub_val))
+                                )
+
+                        new_field = Field(
+                            tag=tag,
+                            indicators=[ind1, ind2],
+                            subfields=pymarc_subfields,
+                        )
+                    else:
+                        continue
+
+                    pymarc_record.add_field(new_field)
+
+            # Write out the raw UTF-8 record bytes
+            marc_file.write(pymarc_record.as_marc())
+
+    print(f"Successfully exported {len(marc_in_json_dict)} records to {marc_filepath}.")
+
+
 def marc2txt(marc_filepath):  # MARC2TXT operations and split
     f = open(marc_filepath, "rb")
     reader = MARCReader(f)

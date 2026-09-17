@@ -42,3 +42,21 @@ def get_latest_file(basepath):  # returns latest file path in a directory
     files = os.listdir(basepath)
     paths = [os.path.join(basepath, basename) for basename in files]
     return max(paths, key=os.path.getctime)
+
+
+def extract_year(date_str: str) -> int:
+    """Extracts the integer year from various string formats.
+
+    Handles: yyyy, yyyy-mm-dd, dd-mm-yyyy, yyyy-mm, mm-yyyy,
+             ~yyyy, c. yyyy, and ranges like 1543-1574 (returns min).
+    """
+    if not date_str or not isinstance(date_str, str):
+        raise ValueError("Input must be a non-empty string")
+
+    # Find all sequences of exactly 4 digits anywhere in the string
+    years = [int(y) for y in re.findall(r"\d{4}", date_str)]
+
+    if years:
+        return min(years)
+
+    raise ValueError(f"Could not extract a valid 4-digit year from: '{date_str}'")

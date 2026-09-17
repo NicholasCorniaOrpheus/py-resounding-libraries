@@ -4,6 +4,7 @@ from requests_oauth2client import OAuth2Client, OAuth2ClientCredentialsAuth
 import json
 import os
 from time import time
+from copy import deepcopy
 
 # Multiprocessing
 from multiprocessing import Pool, cpu_count
@@ -156,7 +157,7 @@ def get_items_from_biblio_json(session, biblio_id: int, base_url: str) -> dict:
         response (dict): JSON serialization of the record's items.
 
     Examples:
-        >>> my_session = pyreslib.koha.oauth2_session(client_id="{CLIENT_ID}"", client_secret="{SECRET_KEY}" , base_url="https://{KOHA_STAFF_URL}/api/v1")
+        >>> my_session = pyreslib.koha.oauth2_session(client_id="{CLIENT_ID}", client_secret="{SECRET_KEY}" , base_url="https://{KOHA_STAFF_URL}/api/v1")
         >>> json_items = pyreslib.koha.get_items_from_biblio_json(my_session,12)
         >>>
 
@@ -168,6 +169,48 @@ def get_items_from_biblio_json(session, biblio_id: int, base_url: str) -> dict:
         f"{base_url}/biblios/{str(biblio_id)}/items", headers=headers
     )
     return response.json()
+
+
+def delete_items(session, items_list: list, base_url: str) -> dict:
+    """Delete a series of items via a list of itemnumbers.
+
+    Args:
+        session (oauth2): Oauth2 session provided by `pyreslib.koha.oauth2_session` method.
+        items_list (list): List of integer IDs for each item to be deleted.
+        base_url (str): Koha API url from credentials.
+
+    Returns:
+        results(dict[str, list]): A dictionary with 'deleted' and 'failed' lists of item IDs.
+
+    Examples:
+        >>> my_session = pyreslib.koha.oauth2_session(client_id="{CLIENT_ID}", client_secret="{SECRET_KEY}" , base_url="https://{KOHA_STAFF_URL}/api/v1")
+        >>> items_list = [2343,45782,32758 ...]
+        >>> pyreslib.koha.delete_items(my_session,items_list,base_url="https://{KOHA_STAFF_URL}/api/v1")
+
+
+    """
+    headers = {"Accept": "application/json"}
+    results ={"deleted": [], "failed": []}
+    for item_id in items_list:
+        try:
+            response = session.delete(
+                f"{base_url.rstrip(" / ")}/items/{item_id}", headers=headers
+            )
+            if response.status_code in (200, 204):
+                results["deleted"].append(item_id)
+            else:
+                print(f"Failed to delete item {item_id}. Status code {response.status_code}")
+                results["failed"].append(item_id)
+        except Exception as e:
+            print(f"Failed to delete item {item_id}")
+            results["failed"].append(item_id)
+
+    print(
+        f"Item deletion completed: {len(results['deleted'])} deleted, "
+        f"{len(results['failed'])} failed out of {len(items_list)} requested."
+    )
+
+    return results
 
 
 def query_biblio_marc(
@@ -353,7 +396,7 @@ def get_auth_list_from_csv_report(
     Returns a list of all authorities in the catalogue.
 
     Args:
-        auth_id_csv_filepath (str): File path of the csv file coming from report. By default this is `data/mappings/authority_list.csv`
+        auth_id_csv_filepath (str): File path of the csv file coming from report. By default this is `data/mappings/koha/authority_list.csv`
         auth_id_field (str): Koha report field name for authority ID. Default is `authid`.
 
     Returns:
@@ -376,7 +419,7 @@ def get_biblio_list_from_csv_report(
     Returns a list of all bibliographic records in the catalogue.
 
     Args:
-        biblio_id_csv_filepath (str): File path of the csv file coming from report. By default this is `data/mappings/biblio_list.csv`
+        biblio_id_csv_filepath (str): File path of the csv file coming from report. By default this is `data/mappings/koha/biblio_list.csv`
         biblio_id_field (str): Koha report field name for biblio ID. Default is `biblionumber`.
 
     Returns:
@@ -449,13 +492,14 @@ def import_koha_biblios_from_marc(
 
     biblio_dict = []
     for record in record_dict:
-        biblio_dict.append({"biblio_id": record["auth_id"], "record": record["record"]})
-
-    # Save results to JSON file
-    output_filepath = os.path.join(
-        output_directory, f"biblio_dict-{utilities.get_current_date()}.json"
-    )
+        biblio_dict.append(
+            {"biblio_id": record["biblio_id"], "record": record["record"]}
+        )
     if output_directory is not None:
+        # Save results to JSON file
+        output_filepath = os.path.join(
+            output_directory, f"biblio_dict-{utilities.get_current_date()}.json"
+        )
         utilities.dict2json(biblio_dict, output_filepath)
 
     return biblio_dict
@@ -1053,3 +1097,201 @@ def explicit_abbreviations_from_marc(
     # print(f"Explicit MARC-in-JSON record: {record}")
 
     return record
+
+
+def find_biblios_with_item_duplicates_from_marc(
+    marc_records_filepath: str,
+    marc_export_filepath: str,
+    items_field: str = "952",
+    control_subfields: set = ("3", "6", "a", "b", "c", "e", "o", "p"),
+) -> list:
+    """
+    Returns a MARC-in-JSON list of dictionaries of records (and its backup) where duplicate items have
+    been found. Note that this method assumes that you have imported the records via a MARC export from Koha, and not from the API.
+
+    Args:
+        marc_records_filepath(str): path to MARC file of catalogue to be checked.
+        marc_export_filepath(str): path for output file that can be ingested in Koha via Cataloguing/Stage records for import.
+
+    Returns:
+        items_duplicates_dict, backup_items_duplicates_dict (list): list of dictionaries in the form of {"biblio_id": ..., "record": {....}} and its backup.
+    """
+
+    # Import MARC records as dictionary
+    print("Importing MARC file as dictionary...")
+    biblio_dict = import_koha_biblios_from_marc(
+        marc_records_filepath, output_directory=None
+    )
+
+    print("Finding records with duplicates...")
+    items_duplicates_dict = []
+    backup_duplicates_dict = []
+    counter = 0
+    for biblio in biblio_dict:
+        # extract items
+        items = list(
+            filter(lambda x: items_field in x.keys(), biblio["record"]["fields"])
+        )
+
+        unique_items = []
+        seen_signatures = set()
+        if len(items) > 0:
+            for item in items:
+                # Extract subfields array from the target field (e.g., '952')
+                subfields_list = item[items_field].get("subfields", [])
+
+                # Create a normalized footprint of only the target subfields.
+                # Sorting by key guarantees consistent comparison regardless of original order.
+                extracted_data = {}
+                for subfield in subfields_list:
+                    for subfield_code, val in subfield.items():
+                        if subfield_code in control_subfields:
+                            extracted_data[subfield_code] = val
+
+                # Convert to a stable hashable type (sorted tuple of key-value pairs)
+                signature = tuple(sorted(extracted_data.items()))
+
+                # If signature is completely empty, it might be an invalid item entry;
+                # decide if you want to skip or retain it. Here we retain it as-is.
+                if not signature:
+                    unique_items.append(item)
+                    continue
+
+                # Deduplication logic
+                if signature not in seen_signatures:
+                    seen_signatures.add(signature)
+                    unique_items.append(item)
+                else:
+                    pass
+                    #print(f"Ignoring duplicate item signature: {dict(signature)}")
+
+            # Check if any duplicates were filtered out
+            if len(unique_items) < len(items):
+                counter += 1
+
+                # Create a deep copy to keep original dataset unmutated
+                biblio_copy = deepcopy(biblio)
+
+                # Filter out ALL original fields matching the items_field
+                filtered_fields = [
+                    f
+                    for f in biblio_copy["record"]["fields"]
+                    if items_field not in f.keys()
+                ]
+
+                # Ingest unique items into the cleaned list
+                filtered_fields.extend(unique_items)
+
+                # Assign back to the copy
+                biblio_copy["record"]["fields"] = filtered_fields
+
+                # add modified biblio to dictionary output list
+                items_duplicates_dict.append(biblio_copy)
+                backup_duplicates_dict.append(biblio)
+
+    print(f"Found {counter} records with duplicate items")
+    if marc_export_filepath is not None:
+        marc.marcjson2marc(
+            marc_in_json_dict=[biblio["record"] for biblio in items_duplicates_dict],
+            marc_filepath=marc_export_filepath,
+        )
+        # saving backup files
+        marc.marcjson2marc(
+            marc_in_json_dict=[biblio["record"] for biblio in backup_duplicates_dict],
+            marc_filepath=marc_export_filepath.replace(".mrc", "_backup.mrc"),
+        )
+
+    return items_duplicates_dict, backup_duplicates_dict
+
+
+def delete_duplicate_items_from_marc(
+    marc_records_filepath: str,
+    marc_export_filepath: str,
+    session,
+    base_url,
+    item_id_key: str = "item_id",
+    items_field: str = "952",
+    control_subfields: set = ("3", "e", "o", "p"),
+    item_json_keys_mapping: dict = {
+        "external_id": "p",
+        "acquisition_source": "e",
+        "call_number": "o",
+        "materials_notes": "3",
+    },
+) -> list:
+    """
+    Deletes duplicate items from a Koha bibliographic MARC catalog via API.
+    First, the catalog is efficiently filtered and duplicates are removed, then all duplicate items are deleted based on control subfields.
+
+    Args:
+        marc_records_filepath(str): path to MARC file of catalogue to be checked.
+        marc_export_filepath(str): path for output file that can be ingested in Koha via Cataloguing/Stage records for import.
+        session: Koha API session generated from [pyreslib.koha.koha_session][].
+        base_url: API base url from credentials.
+        item_id_key(str): JSON key used by Koha API for items recording the internal itemnumber.
+        items_field(str): MARC field, usually 952, where metadata on items are stored by Koha.
+        control_subfields(set): Series of items_field's subfields necessary for identification of an item. By default we use the internal p and o for barcode and callnumber, e for provenance, and 3 for material notes.
+        item_json_keys_mapping(dict): mapping between JSON Koha API response for items and MARC fields.
+    Returns:
+        `None`
+    """
+
+    # 1. Import MARC catalogue (more efficient that bulk import from API) and filter out records with duplicate items.
+    # This task is handled by the [pyreslib.koha.find_biblios_with_item_duplicates_from_marc][] function.
+
+    (
+        items_duplicates_dict,
+        backup_duplicates_dict,
+    ) = find_biblios_with_item_duplicates_from_marc(
+        marc_records_filepath=marc_records_filepath,
+        marc_export_filepath=marc_export_filepath,
+        items_field=items_field,
+        control_subfields=control_subfields,
+    )
+
+    # 2. For each record with duplicate items, use the Koha API in order to retrieve itemnumers to be deleted.
+
+    for biblio in items_duplicates_dict:
+        # get items as list of the form [{"952": {"subfields": [{"p": ..., {"o": ... }}]}}]
+        items = list(
+            filter(lambda x: items_field in x.keys(), biblio["record"]["fields"])
+        )
+
+        # get items list from API
+        api_items = get_items_from_biblio_json(
+            session=session, biblio_id=biblio["biblio_id"], base_url=base_url
+        )
+
+        delete_items_list = []
+        preserve_items_list = []
+        seen_signatures = set()
+
+        # based on control_subfields and the item_json_keys_mapping dictionary, delete duplicate items
+
+        for item in api_items:
+            # extract data and convert to hashable tuple
+            extracted_data = {
+                item_json_keys_mapping[key]: item[key]
+                for key in item
+                if key in item_json_keys_mapping
+            }
+
+            signature = tuple(sorted(extracted_data.items()))
+
+            if signature not in seen_signatures:  # preserve item
+                seen_signatures.add(signature)
+                preserve_items_list.append(item[item_id_key])
+
+            else:
+                # append to delete_items_list for record
+                delete_items_list.append(item[item_id_key])
+
+        # Summary and confirmation prompt before deletion
+        print(f"\n--- Biblio ID: {biblio["biblio_id"]} ---")
+        print(f"Preserved items ({len(preserve_items_list)}): {preserve_items_list}")
+        print(f"Deleting {len(delete_items_list)} duplicate item(s)...")
+        if delete_items_list:
+            #input("Press Enter to continue with deletion (or Ctrl+C to cancel): ")
+            delete_items(
+                session=session, items_list=delete_items_list, base_url=base_url
+            )
