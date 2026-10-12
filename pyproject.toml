@@ -10,7 +10,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-version = "0.5.0"
+version = "0.6.0"
 description = "Python package for digital libraries from the Resounding Libraries cluster at Orpheus Instituut"
 keywords = ["koha", "wikidata", "digital-libraries", "transkribus","omekas","bibtex","marc","library-software","kraken","resourcespace","ocr","wikibase","tei"]
 readme = "README.md"
@@ -21,6 +21,7 @@ dependencies = [
     "pandas>=2.3.3",
     "pymarc>=5.3.1",
     "pyyaml>=6.0.3",
+    "rapidfuzz>=3.14.5",
     "requests>=2.33.1",
     "requests-oauth2client>=1.8.0",
     "shapely>=2.1.2",
@@ -30,6 +31,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+
 docs = [
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.7.6",
@@ -39,6 +41,11 @@ dev = [
     "pytest>=7.0",
     "black>=22.0",
     "ruff>=0.1",
+]
+
+google = [
+    "google-api-python-client>=2.201.0",
+    "google-auth>=2.59.1",
 ]
 
 ocr = [

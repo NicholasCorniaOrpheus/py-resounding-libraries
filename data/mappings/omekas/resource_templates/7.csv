@@ -1,0 +1,31 @@
+field,subfield,property,namespace,property_name,data_type,retrieve_label_subfield,is_biblionumber,is_authority,is_code,is_item,code_type,description
+1,,dcterms:identifier,dcterms,identifier,URI,,TRUE,FALSE,FALSE,FALSE,,Koha biblio ID
+20,a,schema:isbn,schema,isbn,Text,,FALSE,FALSE,FALSE,FALSE,,ISBN code (either 10 or 13)
+773,z,schema:isbn,schema,isbn,Text,,FALSE,FALSE,FALSE,FALSE,,ISBN code (either 10 or 13)
+773,x,schema:issn,schema,issn,Text,,FALSE,FALSE,FALSE,FALSE,,
+41,a,dcterms:language,dcterms,language,Text,,FALSE,FALSE,TRUE,FALSE,languages,Language code
+100,9,dcterms:creator,dcterms,creator,URI,a,FALSE,TRUE,FALSE,FALSE,,Main author
+700,9,dcterms:contributor,dcterms,contributor,URI,a,FALSE,TRUE,FALSE,FALSE,,Added Personal Name
+245,a,dcterms:title,dcterms,title,Text,,FALSE,FALSE,FALSE,FALSE,,Title
+245,b,bf:subtitle,bf,subtitle,Text,,FALSE,FALSE,FALSE,FALSE,,Subtitle
+250,a,bf:editionStatement,bf,editionStatement,Text,,FALSE,FALSE,FALSE,FALSE,,Edition
+260,b,dcterms:publisher,dcterms,publisher,Text,,FALSE,FALSE,FALSE,FALSE,,Publisher
+260,c,dcterms:date,dcterms,date,Text,,FALSE,FALSE,FALSE,FALSE,,Year of publication
+502,a,dcterms:date,dcterms,date,Text,,FALSE,FALSE,FALSE,FALSE,,Year of publication
+366,b,dcterms:date,dcterms,date,Text,,FALSE,FALSE,FALSE,FALSE,,Year of publication
+773,0,dcterms:isPartOf,dcterms,isPartOf,Text,,FALSE,FALSE,FALSE,FALSE,,Parent record
+773,t,dcterms:isPartOf,dcterms,isPartOf,Text,,FALSE,FALSE,FALSE,FALSE,,Parent record
+300,a,bibo:pages,bibo,pages,Text,,FALSE,FALSE,FALSE,FALSE,,Extent pages
+773,g,bibo:pages,bibo,pages,Text,,FALSE,FALSE,FALSE,FALSE,,Extent pages
+856,u,schema:url,schema,url,URI,,FALSE,FALSE,FALSE,FALSE,,URL
+260,a,schema:location,schema,location,Text,,FALSE,FALSE,FALSE,FALSE,,
+500,a,dcterms:description,dcterms,description,Text,,FALSE,FALSE,FALSE,FALSE,,General Note
+520,a,dcterms:abstract,dcterms,abstract,Text,,FALSE,FALSE,FALSE,FALSE,,Summary
+600,9,dcterms:subject,dcterms,subject,URI,a,FALSE,TRUE,FALSE,FALSE,,Keyword Personal
+610,9,dcterms:isPartOf,dcterms,isPartOf,URI,a,FALSE,TRUE,FALSE,FALSE,,Project
+648,9,dcterms:subject,dcterms,subject,URI,a,FALSE,TRUE,FALSE,FALSE,,Keyword Chronological
+650,9,dcterms:subject,dcterms,subject,URI,a,FALSE,TRUE,FALSE,FALSE,,Keyword Topical
+651,9,dcterms:subject,dcterms,subject,URI,a,FALSE,TRUE,FALSE,FALSE,,Keyword Geographical
+506,a,dcterms:license,dcterms,license,Text,,FALSE,FALSE,FALSE,FALSE,,License
+591,a,bibo:status,bibo,status,Text,,FALSE,FALSE,TRUE,FALSE,reviews,Review status
+,,,,,,,FALSE,FALSE,FALSE,FALSE,,

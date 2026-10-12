@@ -34,10 +34,7 @@ def generate_researchers_list_from_public_report(
 	) -> list:
 	
 	# Get public report from koha
-	# Get Koha report data, as raw list of list of the form [ [value], [value2] ...]
-    response = koha_session.get(f"{koha_public_report_url}{str(koha_report_id)}")
-    # avoid duplicates
-    auth_ids = list(set([i[0] for i in response.json()]))
+    auth_ids = koha.get_ids_list_from_koha_public_report(koha_session,koha_public_report_url,koha_report_id)
 
     researchers = []
     for auth_id in auth_ids:
@@ -83,9 +80,7 @@ def generate_research_output_list_from_public_report(
 	) -> list :
 
 	# Get public report from koha
-	# Get Koha report data, as raw list of list of the form [ [value], [value2] ...]
-    response = koha_session.get(f"{koha_public_report_url}{str(koha_report_id)}")
-    biblio_ids = [i[0] for i in response.json()]
+    biblio_ids = koha.get_ids_list_from_koha_public_report(koha_session,koha_public_report_url,koha_report_id)
 
     # Import koha_orcid mapping as dictionary
 
@@ -118,14 +113,40 @@ def generate_research_output_list_from_public_report(
     				else:
     					value = statement[field]
 
-    			
+    	# categorize ORCiD class based on Koha type
 
+    	# the result is an ORCiD compatible dictionary of the research output
     	research_outputs.append(research_output)
 
 
     	...
 
 	
+def import_orcid_research_output_to_koha(
+	orcid_session,
+	koha_session,
+	koha_base_url: str,
+	researchers_list: list,
+	research_output_list: list,
+	koha_orcid_mapping_filepath: str = "./data/mappings/orcid/koha2orcid.json",
+	control_fields: set = {"title", "url", "date", "year"},
+	overwrite: bool = False
+		):
+	"""
+	This function updates research output from an ORCiD profile into Koha catalogus.
+	You can set up a series of control fields in order to avoid duplicates.
+
+	"""
+
+	# for each researcher, get research output dictionary from ORCiD API
+		# filter researcher's output from research_output_list
+		# compare, using the control fields, each output with koha metadata
+		# add new contributions if any control field does not match with existing metadata
+		# submit new records via Koha API
+
+	pass 
+
+
 
 
 

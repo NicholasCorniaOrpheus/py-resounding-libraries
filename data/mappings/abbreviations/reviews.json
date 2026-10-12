@@ -1,0 +1,17 @@
+[
+    {
+      "code" : "1",
+      "label" : "Peer-reviewed",
+      "wd_label" : "peer review",
+      "wd_qid" : "Q215028"
+    },
+    {
+      "code" : "0",
+      "label" : "Not peer-reviewed"
+    },
+    {
+      "code" : "review",
+      "label" : "Editorial reviewed"
+    }
+    
+]

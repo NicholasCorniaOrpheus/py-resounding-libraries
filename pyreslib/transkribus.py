@@ -18,10 +18,10 @@ from pyreslib import koha
 def api_login(user: str, password: str):
     """
     Args:
-                                                                    user (user): Client Username
-                                                                    password (str): Client secret Password
+                        user (user): Client Username
+                        password (str): Client secret Password
     Returns:
-                                                                    session: requests.Session() for Transkribus API
+                                session: requests.Session() for Transkribus API
     """
     session = requests.Session()
     response = session.post(
@@ -77,19 +77,19 @@ def get_document_metadata(session, collection_id: int, document_id: int) -> dict
     Returns a document metadata from Transkribus API
 
     Args:
-                                                                    session: Transkribus session from `pyreslib.transkribus.api_login()` method.
-                                                                    collection_id (int): Collection ID identifier from Transkribus.
-                                                                    document_id (int): Document ID identifier from Transkribus.
+        session: Transkribus session from `pyreslib.transkribus.api_login()` method.
+        collection_id (int): Collection ID identifier from Transkribus.
+        document_id (int): Document ID identifier from Transkribus.
 
 
     Returns:
-                                                                    document (dict): Document metadata
+        document (dict): Document metadata
 
     Examples:
 
-                                                                    >>> session = pyreslib.transkribus.api_login(user,password)
-                                                                    >>> document = pyreslib.transkribus.get_document_metadata(session,collection_id=2792,document_id=16606356)
-                                                                    >>> {"md": {...}, "pageList": {"pages":[...]}, ... }
+        >>> session = pyreslib.transkribus.api_login(user,password)
+        >>> document = pyreslib.transkribus.get_document_metadata(session,collection_id=2792,document_id=16606356)
+        >>> {"md": {...}, "pageList": {"pages":[...]}, ... }
     """
 
     # Get document metadata
@@ -101,67 +101,141 @@ def get_document_metadata(session, collection_id: int, document_id: int) -> dict
 
     return document
 
+def get_transkribus_pages_list_from_document(
+    session, 
+    collection_id: int,
+    document_id: int,
+    allow_filter=True,
+    criterium="GT") -> list:
+    """
+    Returns a list of dictionaries with pages metadata related to a document
+
+    Args:
+        session: Transkribus session from `pyreslib.transkribus.api_login()` method.
+        collection_id (int): Collection ID identifier from Transkribus.
+        document_id (int): Document ID identifier from Transkribus.
+        allow_filter (bool): True if you want to filter only pages with a specific status.
+        criterium (str): Indicates minimal status for import. Default is "GT"= ground truth.
+
+
+    Returns:
+        pages_metadata (list): List of dictionaries of the form [{}]
+
+    Examples:
+
+        >>> session = pyreslib.transkribus.api_login(user,password)
+        >>> pages_metadata = pyreslib.transkribus.get_transkribus_pages_list_from_document(session,collection_id=2792,document_id=16606356)
+        >>> [{"collection_id": ...., "xml_url": ... }, ... ]
+    """
+     # Returns dictionary of pages with filename, XML url and PageId 
+    headers = {"Accept": "application/json"}
+    document = session.get(
+            f"https://transkribus.eu/TrpServer/rest/collections/{collection_id}/{document_id}/fulldoc",
+            headers=headers,
+        ).json()
+
+    pages_metadata = []
+
+    for page in document["pageList"]["pages"]:
+        try:
+            if not allow_filter: # no specific filters
+                latest_xml_version = page["tsList"]["transcripts"][0]["url"]
+                pages_metadata.append({
+                    "collection_id": collection_id,
+                    "document_id": document_id,
+                    "pageId": page["pageId"],
+                    "pageNr": page["pageNr"],
+                    "filename": page["imgFileName"],
+                    "library_identifier": page["imgFileName"].split("_")[0],
+                    "page_number": page["imgFileName"].split("_")[1].split(".")[0],
+                    "image_format": page["imgFileName"].split("_")[1].split(".")[1],
+                    "xml_url": latest_xml_version
+                    })
+            else: # allow filter, according to status transcript criterium
+                # check if latest transcript has status = criterium
+                latest_status = page["tsList"]["transcripts"][0]["status"]
+                latest_xml_version = page["tsList"]["transcripts"][0]["url"]
+                if latest_status == criterium:
+                    pages_metadata.append({
+                        "collection_id": collection_id,
+                        "document_id": document_id,
+                        "pageId": page["pageId"],
+                        "pageNr": page["pageNr"],
+                        "filename": page["imgFileName"],
+                        "library_identifier": page["imgFileName"].split("_")[0],
+                        "page_number": page["imgFileName"].split("_")[1].split(".")[0],
+                        "image_format": page["imgFileName"].split("_")[1].split(".")[1],
+                        "xml_url": latest_xml_version
+                        })
+        except IndexError:
+            print(f"Formatting errors for current page: {page["pageNr"]} ")
+
+    print(f"Number of pages imported: {len(pages_metadata)}")
+
+
+    return pages_metadata
+
 
 # # NOT WORKING problem with status URL.
 # def get_alto_xml_via_export(session, collection_id: int, document_id: int, page_number: int) -> str:
-# 	"""
-# 	Triggers a document export job on Transkribus to extract a page's ALTO XML string.
-# 	"""
-# 	# 1. Trigger the export via POST using the exact parameter from the WADL
-# 	export_url = f"https://transkribus.eu/TrpServer/rest/collections/{collection_id}/{document_id}/export"
+#   """
+#   Triggers a document export job on Transkribus to extract a page's ALTO XML string.
+#   """
+#   # 1. Trigger the export via POST using the exact parameter from the WADL
+#   export_url = f"https://transkribus.eu/TrpServer/rest/collections/{collection_id}/{document_id}/export"
 
-# 	# Configure the query parameters as defined in the WADL schema
-# 	params = {
-# 		"doExportPageXml": "false",       # We only want ALTO
-# 		"doExportAltoXml": "true",        # The target WADL parameter
-# 		"pages": str(page_number)         # Restrict export to only our target page
-# 	}
+#   # Configure the query parameters as defined in the WADL schema
+#   params = {
+#       "doExportPageXml": "false",       # We only want ALTO
+#       "doExportAltoXml": "true",        # The target WADL parameter
+#       "pages": str(page_number)         # Restrict export to only our target page
+#   }
 
-# 	print(f"Triggering export job for Collection {collection_id}, Doc {document_id}, Page {page_number}...")
-# 	# This must be a POST request according to the WADL specification
-# 	response = session.post(export_url, params=params)
-# 	response.raise_for_status()
+#   print(f"Triggering export job for Collection {collection_id}, Doc {document_id}, Page {page_number}...")
+#   # This must be a POST request according to the WADL specification
+#   response = session.post(export_url, params=params)
+#   response.raise_for_status()
 
-# 	# 2. Extract the Job ID from the XML response metadata
-# 	# The response is a job status structural element containing an <jobId> tag
-# 	job_id = response.text.strip()
-# 	print(f"Export Job initialized. Job ID: {job_id}")
+#   # 2. Extract the Job ID from the XML response metadata
+#   # The response is a job status structural element containing an <jobId> tag
+#   job_id = response.text.strip()
+#   print(f"Export Job initialized. Job ID: {job_id}")
 
-# 	# 3. Poll the job status endpoint until processing completes
-# 	status_url = f"https://transkribus.eu/TrpServer/rest/jobs/{job_id}"
+#   # 3. Poll the job status endpoint until processing completes
+#   status_url = f"https://transkribus.eu/TrpServer/rest/jobs/{job_id}"
 
-# 	while True:
-# 		status_response = session.get(status_url)
-# 		status_response.raise_for_status()
+#   while True:
+#       status_response = session.get(status_url)
+#       status_response.raise_for_status()
 
-# 		status_root = ET.fromstring(status_response.text)
-# 		current_status = status_root.find('status').text
-# 		print(f"Current Job Status: {current_status}")
+#       status_root = ET.fromstring(status_response.text)
+#       current_status = status_root.find('status').text
+#       print(f"Current Job Status: {current_status}")
 
-# 		if current_status == "FINISHED":
-# 			# The download URL is stored inside the <exportUrl> element
-# 			download_url = status_root.find('exportUrl').text
-# 			break
-# 		elif current_status in ["FAILED", "CANCELED"]:
-# 			raise RuntimeError(f"Transkribus export job {job_id} terminated unexpectedly: {current_status}")
+#       if current_status == "FINISHED":
+#           # The download URL is stored inside the <exportUrl> element
+#           download_url = status_root.find('exportUrl').text
+#           break
+#       elif current_status in ["FAILED", "CANCELED"]:
+#           raise RuntimeError(f"Transkribus export job {job_id} terminated unexpectedly: {current_status}")
 
-# 		time.sleep(2)  # Wait 2 seconds before checking again
+#       time.sleep(2)  # Wait 2 seconds before checking again
 
-# 	# 4. Download and extract the ALTO XML file from the ZIP archive stream
-# 	print("Downloading processed ZIP payload...")
-# 	zip_response = session.get(download_url)
-# 	zip_response.raise_for_status()
+#   # 4. Download and extract the ALTO XML file from the ZIP archive stream
+#   print("Downloading processed ZIP payload...")
+#   zip_response = session.get(download_url)
+#   zip_response.raise_for_status()
 
-# 	# Read the archive straight out of memory
-# 	with zipfile.ZipFile(io.BytesIO(zip_response.content)) as z:
-# 		# Find any file ending with .xml inside the archive
-# 		xml_files = [f for f in z.namelist() if f.endswith('.xml')]
-# 		if not xml_files:
-# 			raise FileNotFoundError("No ALTO XML structures were found inside the generated archive.")
+#   # Read the archive straight out of memory
+#   with zipfile.ZipFile(io.BytesIO(zip_response.content)) as z:
+#       # Find any file ending with .xml inside the archive
+#       xml_files = [f for f in z.namelist() if f.endswith('.xml')]
+#       if not xml_files:
+#           raise FileNotFoundError("No ALTO XML structures were found inside the generated archive.")
 
-# 		# Read the file text stream content directly
-# 		with z.open(xml_files[0]) as f:
-# 			return f.read().decode('utf-8')
+#       # Read the file text stream content directly
+#       with z.open(xml_files[0]) as f:
+#           return f.read().decode('utf-8')
 
 
 def get_page_xml(
@@ -171,19 +245,19 @@ def get_page_xml(
     Retrieves the PAGEXML transcription of a given page of a document as string.
 
     Args:
-                                                                    session: Transkribus session from `pyreslib.transkribus.api_login()` method.
-                                                                    collection_id (int): Collection ID identifier from Transkribus.
-                                                                    document_id (int): Document ID identifier from Transkribus.
-                                                                    page_number (int): Internal page number identifier from Transkribus.
+        session: Transkribus session from `pyreslib.transkribus.api_login()` method.
+        collection_id (int): Collection ID identifier from Transkribus.
+        document_id (int): Document ID identifier from Transkribus.
+        page_number (int): Internal page number identifier from Transkribus.
 
     Returns:
-                                                                    page_xml (str): string serialization of the PAGEXML transcription of the page by Transkribus. You can parse it later by usin `xml.etree.ElementTree.fromstring()` method.
+        page_xml (str): string serialization of the PAGEXML transcription of the page by Transkribus. You can parse it later by usin `xml.etree.ElementTree.fromstring()` method.
 
     Examples:
-                                                                    >>> import xml.etree.ElementTree as ET
-                                                                    >>> session = pyreslib.transkribus.api_login(user,password)
-                                                                    >>> page_xml = pyreslib.transkribus.get_page_xml(session,collection_id=2792,document_id=145869,page_number=14)
-                                                                    >>> root = ET.fromstring(page_xml)
+        >>> import xml.etree.ElementTree as ET
+        >>> session = pyreslib.transkribus.api_login(user,password)
+        >>> page_xml = pyreslib.transkribus.get_page_xml(session,collection_id=2792,document_id=145869,page_number=14)
+        >>> root = ET.fromstring(page_xml)
     """
 
     headers = {"Accept": "application/xml"}
@@ -292,17 +366,17 @@ def get_page_txt(
     Retrieves the TXT transcription of a given page of a document as string.
 
     Args:
-                                                                    session: Transkribus session from `pyreslib.transkribus.api_login()` method.
-                                                                    collection_id (int): Collection ID identifier from Transkribus.
-                                                                    collection_id (int): Document ID identifier from Transkribus.
-                                                                    page_number (int): Internal page number identifier from Transkribus.
+        session: Transkribus session from `pyreslib.transkribus.api_login()` method.
+        collection_id (int): Collection ID identifier from Transkribus.
+        collection_id (int): Document ID identifier from Transkribus.
+        page_number (int): Internal page number identifier from Transkribus.
 
     Returns:
-                                                                    plain_text (str): string of the plaintext transcription of the page by Transkribus.
+        plain_text (str): string of the plaintext transcription of the page by Transkribus.
 
     Examples:
-                                                                    >>> session = pyreslib.transkribus.api_login(user,password)
-                                                                    >>> plain_text = pyreslib.transkribus.get_page_txt(session,collection_id=2792,document_id=145869,page_number=14)
+        >>> session = pyreslib.transkribus.api_login(user,password)
+        >>> plain_text = pyreslib.transkribus.get_page_txt(session,collection_id=2792,document_id=145869,page_number=14)
     """
 
     # get PAGEXML
@@ -526,10 +600,10 @@ def extract_region_polygonal_coordinates(
     Returns a list of coordinates given the region id.
 
     Args:
-                                                                    region (ET.Element): ET XML element of the region.
+        region (ET.Element): ET XML element of the region.
 
     Returns:
-                                                                    coordinates (list): List of (x,y) tuples of coordinates.
+        coordinates (list): List of (x,y) tuples of coordinates.
 
     """
     # initialize coordinates

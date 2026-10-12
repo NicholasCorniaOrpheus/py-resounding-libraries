@@ -1295,3 +1295,40 @@ def delete_duplicate_items_from_marc(
             delete_items(
                 session=session, items_list=delete_items_list, base_url=base_url
             )
+
+def get_ids_list_from_koha_public_report(
+    session,
+    koha_public_report_url: str,
+    koha_report_id: int,
+    id_position: int = 0) -> list:
+    
+    """
+    Returns a list of unique ids, either bibliographic or authority records, from a Koha public report API.
+    
+    Args:
+        session: Koha API session generated from [pyreslib.koha.koha_session][]. 
+        koha_public_report_url(str): Base url for Koha report defined in `./data/credentials` file.
+        koha_report_id(int): Report id from your Koha instance.
+        id_position(int): List position of id. Default is 0.
+
+    Returns:
+        ids_list(list): List of unique ids.
+
+    """
+    
+    # Get Koha report data, as raw list of list of the form [ [value], [value2] ...]
+    full_url = f"{koha_public_report_url}{str(koha_report_id)}"
+    print(f"Retrieving report via {full_url} ...")
+    response = session.get(full_url)
+    ids = [i[id_position] for i in response.json()]
+    # split strings with multiple ids space-separated
+    all_ids = []
+    for item in ids:
+        if isinstance(item,str):
+            all_ids.extend(item.split())
+        else:
+            all_ids.append(item)
+
+    return list(set(all_ids))
+
+

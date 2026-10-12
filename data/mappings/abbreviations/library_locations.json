@@ -1,0 +1,49 @@
+[
+    {
+      "label": "Koetshuis - Special Collections",
+      "code": "KTS1_C1",
+      "omekas_id": 172
+    },
+    {
+      "label": "Koetshuis - Special Collections",
+      "code": "KTS1_C2",
+      "omekas_id": 172
+    },
+    {
+      "label": "Koetshuis - Special Collections",
+      "code": "KTS1_C3",
+      "omekas_id": 172
+    },
+    {
+      "label": "Koetshuis - Pyramid Room",
+      "code": "KTS1_P",
+      "omekas_id": 239
+    },
+    {
+      "label": "Koetshuis - First Floor, Hallway",
+      "code": "KTS1_H",
+      "omekas_id": 238
+    },
+    {
+      "label": "Koetshuis - Ground level",
+      "code": "KTS0",
+      "omekas_id": 240
+    },
+    {
+      "label": "Main Building - First Floor",
+      "code": "KM12_1",
+      "omekas_id": 242
+    },
+    {
+      "label": "Main Building - Second Floor",
+      "code": "KM12_2",
+      "omekas_id": 243
+    },
+    {
+      "label": "Main Building - Third Floor",
+      "code": "KM12_3",
+      "omekas_id": 244
+    },
+
+
+]

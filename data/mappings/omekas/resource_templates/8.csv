@@ -1,0 +1,14 @@
+field,subfield,property,data_type,retrieve_label_subfield,is_biblionumber,is_authority,is_code,is_item,code_type,description
+1,,dcterms:identifier,Number,,FALSE,TRUE,FALSE,FALSE,,Koha ID
+24,1,schema:identifier,URI,a,FALSE,FALSE,FALSE,FALSE,,
+100,a,dcterms:title,Text,,FALSE,FALSE,FALSE,FALSE,,Main Heading
+510,9,dcterms:isPartOf,URI,a,FALSE,TRUE,FALSE,FALSE,,Umbrella Corporate
+550,9,foaf:topic_interest,URI,a,FALSE,TRUE,FALSE,FALSE,,Umbrella Topical
+,,,,,FALSE,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,FALSE,,
+,,,,,FALSE,FALSE,FALSE,FALSE,,

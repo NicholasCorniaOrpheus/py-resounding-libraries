@@ -1,4 +1,4 @@
-field,subfield,property,data_type,retrieve_label,is_biblionumber,is_authority,is_code,is_item,code_type,description
+field,subfield,property,data_type,retrieve_label_subfield,is_biblionumber,is_authority,is_code,is_item,code_type,description
 245,a,dcterms:title,Text,,FALSE,FALSE,FALSE,FALSE,,Title
 245,b,bf:subtitle,Text,,FALSE,FALSE,FALSE,FALSE,,Subtitle
 250,a,bf:editionStatement,Text,,FALSE,FALSE,FALSE,FALSE,,Edition
