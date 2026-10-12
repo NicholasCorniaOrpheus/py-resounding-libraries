@@ -46,13 +46,7 @@ def convert_biblio_to_bibtex(
 
     entry = {}
 
-    entry_id = (
-        get_authors(record).split(" ")[0].lower()
-        + "_"
-        + get_title(record).replace(" ", "").lower()[:10]
-        + "_"
-        + get_year(record)
-    )
+    entry_id = f"{get_authors(record).split(',')[0].replace(' ','').lower()}_{str(biblio_id)}_{get_year(record)}"
 
     if entry_type == "article":
         entry = {
@@ -585,7 +579,8 @@ def get_pages(record_dict, fields=[["300", "a"], ["773", "g"]]):
                 pages = (
                     subfield_query[0][field[1]].replace("pages", "").replace("-", "--")
                 )
-                return pages
+
+    return str(pages)
 
 
 def get_publisher(record_dict, field="260", subfield="b"):

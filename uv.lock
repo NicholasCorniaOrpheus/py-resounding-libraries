@@ -233,12 +233,12 @@ wheels = [
 
 [[package]]
 name = "bibtexparser"
-version = "1.4.4"
+version = "1.4.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pyparsing" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/44/1c/577d3ce406e88f370e80a6ebf76ae52a2866521e0b585e8ec612759894f1/bibtexparser-1.4.4.tar.gz", hash = "sha256:093b6c824f7a71d3a748867c4057b71f77c55b8dbc07efc993b781771520d8fb", size = 55594, upload-time = "2026-01-29T18:58:01.366Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/92/8d/e296c7af03757debd8fc80df2898cbed4fb69fc61ed2c9b4a1d42e923a9e/bibtexparser-1.4.3.tar.gz", hash = "sha256:a9c7ded64bc137720e4df0b1b7f12734edc1361185f1c9097048ff7c35af2b8f", size = 55582, upload-time = "2024-12-19T20:41:57.754Z" }
 
 [[package]]
 name = "binapy"
@@ -2673,7 +2673,7 @@ wheels = [
 
 [[package]]
 name = "pyreslib"
-version = "0.6.0"
+version = "0.6.5"
 source = { editable = "." }
 dependencies = [
     { name = "bibtexparser" },
@@ -2718,7 +2718,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "bibtexparser", specifier = ">=1.4.4" },
+    { name = "bibtexparser", specifier = "==1.4.3" },
     { name = "black", marker = "extra == 'dev'", specifier = ">=22.0" },
     { name = "google-api-python-client", marker = "extra == 'google'", specifier = ">=2.201.0" },
     { name = "google-auth", marker = "extra == 'google'", specifier = ">=2.59.1" },
