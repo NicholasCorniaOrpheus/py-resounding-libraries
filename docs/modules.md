@@ -137,7 +137,7 @@ This module provides a series of scripts in order to export Koha record to RDF d
 
 ### Omeka S
 
-Still in development...
+This module allows to ingest Koha authorities and bibliographic records into Omeka S items according to CSV resource template mappings. This module is build upon [Omeka S Tools](https://pypi.org/project/omeka-s-tools/).
 
 ### ResourceSpace
 

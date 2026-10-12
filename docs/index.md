@@ -4,7 +4,7 @@ PyResLib is a Python package designed by the [Resounding Libraries](https://orph
 
 The package's modules allow library staff to: 
 
-- Connect several API services, such as [Transkribus](https://www.transkribus.org/) and Google Books, with their [Koha instance](https://koha-community.org/).
+- Connect several API services, such as [Transkribus](https://www.transkribus.org/), [Omeka S](https://omeka.org/s/), [ORCiD](https://orcid.org/) (coming soon) and Google Books, with their [Koha instance](https://koha-community.org/).
 - Bulk edit records and export them in  and JSON format via Python.
 - Enhance Koha authorities with statements and entities from [Wikidata](https://www.wikidata.org/).
 - OCR transcriptions via [Kraken](https://kraken.re/main/index.html) and Transkribus.
